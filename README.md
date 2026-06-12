@@ -45,6 +45,12 @@ python3 scripts/validate.py
 
 # Regenerate indices
 python3 scripts/generate-indices.py
+
+# Repair PR metadata when URL points to a different GitHub repo
+python3 scripts/repair_pr_pages.py
+
+# Enrich PR pages with GitHub body / changed-files summaries (requires gh)
+python3 scripts/enrich_pr_pages.py
 ```
 
 ## Page Types

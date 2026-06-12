@@ -1,8 +1,14 @@
 # Index: By Technique
 
 
-## ck-dsl (1 pages)
+## bank-conflict-padding (2 pages)
 
+- [AMDGPU Kernel Optimization Guide](sources/blogs/amdgpu-kernel-opt.md)
+- [LDS Bank Conflict Padding](wiki/techniques/bank-conflict-padding.md)
+
+## ck-dsl (2 pages)
+
+- [Composable Kernel README](sources/docs/ck-readme.md)
 - [Composable Kernel (CK) DSL](wiki/languages/ck-dsl.md)
 
 ## ck-tile (36 pages)
@@ -44,14 +50,31 @@
 - [[CK_TILE] Scope NumWarps==8 CompV3 tail/epilogue logic to EightWaves …](sources/prs/hipblaslt/PR-7669.md)
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](sources/prs/hipblaslt/PR-8123.md)
 
-## ck-tile-programming (1 pages)
+## ck-tile-programming (3 pages)
 
+- [Composable Kernel Tile Tutorial](sources/blogs/ck-tutorial.md)
+- [Composable Kernel Repository Structure](sources/docs/ck-structure.md)
 - [CK Tile Programming Model](wiki/techniques/ck-tile-programming.md)
 
-## double-buffering (1 pages)
+## double-buffering (3 pages)
 
+- [AMDGPU Kernel Optimization Guide](sources/blogs/amdgpu-kernel-opt.md)
 - [CK Tile Programming Model](wiki/techniques/ck-tile-programming.md)
+- [LDS Double Buffering](wiki/techniques/double-buffering.md)
+
+## mfma-scheduling (2 pages)
+
+- [Matrix Core Programming on CDNA](sources/blogs/matrix-cores-cdna.md)
+- [MFMA Instruction Scheduling](wiki/techniques/mfma-scheduling.md)
 
 ## register-tiling (1 pages)
 
 - [CK Tile Programming Model](wiki/techniques/ck-tile-programming.md)
+
+## vectorized-load (1 pages)
+
+- [Vectorized Global Memory Loads](wiki/techniques/vectorized-loads.md)
+
+## vectorized-loads (1 pages)
+
+- [AMDGPU Kernel Optimization Guide](sources/blogs/amdgpu-kernel-opt.md)

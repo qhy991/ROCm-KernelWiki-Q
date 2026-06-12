@@ -136,7 +136,15 @@ def generate_pr_page(pr: dict, repo_key: str) -> str:
 
     number = pr.get("number", 0)
     title = pr.get("title", "Untitled")
-    url = pr.get("url", f"https://github.com/{full_name}/pull/{number}")
+    canonical_url = f"https://github.com/{full_name}/pull/{number}"
+    url = pr.get("url") or canonical_url
+    if "github.com/" in url:
+        url_repo = url.split("github.com/", 1)[-1].split("/")
+        if len(url_repo) >= 2:
+            actual_repo = f"{url_repo[0]}/{url_repo[1]}"
+            if actual_repo.lower() != full_name.lower():
+                url = f"https://github.com/{actual_repo}/pull/{number}"
+                full_name = actual_repo
     merged_at = pr.get("mergedAt", "")
     if merged_at:
         merged_at = merged_at[:10]  # YYYY-MM-DD
@@ -174,6 +182,17 @@ def generate_pr_page(pr: dict, repo_key: str) -> str:
         inclusion_reason = "kernel-related changes"
     else:
         inclusion_reason = "may contain relevant infrastructure changes"
+
+    body = pr.get("body", "") or ""
+    body_lines = [line.strip() for line in body.splitlines() if line.strip()]
+    summary = ""
+    for line in body_lines:
+        if line.startswith("<!--"):
+            continue
+        summary = line[:500]
+        break
+    if not summary and body_lines:
+        summary = " ".join(body_lines)[:500]
 
     # Build page ID
     page_id = f"pr-{repo_key}-{number}"
@@ -220,7 +239,7 @@ Merged PR #{number} in [{safe_full}]({safe_url}).
 
 ## Description
 
-> Auto-imported from [{safe_full} #{number}]({safe_url}).
+{("> " + summary.replace(chr(10), chr(10) + "> ")) if summary else f"> Auto-imported from [{safe_full} #{number}]({safe_url})."}
 
 See the PR for full details including code changes and review discussion.
 
