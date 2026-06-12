@@ -1,0 +1,165 @@
+# Controlled vocabulary for ROCm-KernelWiki-Q
+# All page tags must come from this registry
+
+architectures:
+  - id: cdna1
+    gfx: [gfx908]
+    gpus: [MI100]
+    generation: 1
+  - id: cdna2
+    gfx: [gfx90a]
+    gpus: [MI250X, MI250, MI210]
+    generation: 2
+  - id: cdna3
+    gfx: [gfx940, gfx942]
+    gpus: [MI300X, MI300A]
+    generation: 3
+  - id: cdna4
+    gfx: [gfx950]
+    gpus: [MI350X, MI355X]
+    generation: 4
+
+hardware_features:
+  # Matrix Core
+  mfma:
+    description: "Matrix Fused Multiply-Add instructions (v_mfma_*)"
+    min_arch: cdna1
+    cuda_equivalent: tensor_core
+  scaled-mfma:
+    description: "CDNA4 Scaled MFMA (F8F6F4 with block scaling)"
+    min_arch: cdna4
+    cuda_equivalent: null
+  block-scale:
+    description: "Block-scaled matrix operations"
+    min_arch: cdna4
+    cuda_equivalent: nvfp4_block_scale
+  dual-cma:
+    description: "Dual Compute Matrix Accelerator per CU"
+    min_arch: cdna3
+    cuda_equivalent: null
+  # Memory
+  lds:
+    description: "Local Data Share (shared memory equivalent)"
+    min_arch: cdna1
+    cuda_equivalent: shared_memory
+  lds-transpose:
+    description: "CDNA4 LDS read-with-transpose"
+    min_arch: cdna4
+    cuda_equivalent: null
+  gws:
+    description: "Global Wave Sync for cross-CU synchronization"
+    min_arch: cdna2
+    cuda_equivalent: cooperative_groups_grid
+  # Cross-lane
+  dpp:
+    description: "Data Parallel Primitives (cross-lane movement)"
+    min_arch: cdna1
+    cuda_equivalent: warp_shuffle
+  bpermute:
+    description: "LDS bypass permutation (ds_bpermute)"
+    min_arch: cdna1
+    cuda_equivalent: warp_shuffle
+  # System
+  wavefront:
+    description: "64-thread execution unit (AMD equivalent of warp)"
+    min_arch: cdna1
+    cuda_equivalent: warp
+  compute-unit:
+    description: "AMD compute unit (CU) with SIMD units"
+    min_arch: cdna1
+    cuda_equivalent: streaming_multiprocessor
+
+techniques:
+  ck-tile-programming:
+    description: "Composable Kernel tile-based programming model"
+    related_hw: [mfma]
+  bank-conflict-padding:
+    description: "Padding LDS to avoid bank conflicts"
+    related_hw: [lds]
+  persistent-kernel:
+    description: "Long-running kernel that processes multiple tiles"
+    related_hw: [gws]
+  mfma-scheduling:
+    description: "Optimal interleaving of MFMA with memory ops"
+    related_hw: [mfma]
+  double-buffering:
+    description: "Overlapping compute and memory transfers"
+    related_hw: []
+  async-copy:
+    description: "Asynchronous global-to-LDS data movement"
+    related_hw: [lds]
+  register-tiling:
+    description: "Keeping data in VGPRs to reduce LDS traffic"
+    related_hw: [mfma]
+  wave-reduction:
+    description: "Cross-wavefront reduction using DPP instructions"
+    related_hw: [dpp]
+  swizzling:
+    description: "XOR-based address transformation for bank conflict avoidance"
+    related_hw: [lds]
+  vectorized-load:
+    description: "Using wide loads (128-bit) for memory throughput"
+    related_hw: []
+  occupancy-tuning:
+    description: "Balancing VGPR/LDS usage for maximum occupancy"
+    related_hw: [wavefront]
+
+kernel_types:
+  - gemm
+  - attention
+  - flash-attention
+  - moe
+  - grouped-gemm
+  - conv
+  - reduction
+  - softmax
+  - layernorm
+  - rmsnorm
+  - embedding
+  - activation
+
+languages:
+  - hip-cpp
+  - ck-dsl
+  - triton-rocm
+  - iree-mlir
+  - assembly
+  - python
+
+tracked_repos:
+  - org: ROCm
+    name: composable_kernel
+    description: "Composable Kernel library"
+    url: https://github.com/ROCm/composable_kernel
+  - org: ROCm
+    name: hipBLASLt
+    description: "hipBLASLt GEMM tuning"
+    url: https://github.com/ROCm/hipBLASLt
+  - org: ROCm
+    name: flash-attention
+    description: "ROCm Flash Attention"
+    url: https://github.com/ROCm/flash-attention
+  - org: ROCm
+    name: MIOpen
+    description: "Deep learning primitives"
+    url: https://github.com/ROCm/MIOpen
+  - org: ROCm
+    name: TransformerEngine
+    description: "ROCm Transformer Engine"
+    url: https://github.com/ROCm/TransformerEngine
+  - org: ROCm
+    name: rocWMMA
+    description: "Matrix core programming API"
+    url: https://github.com/ROCm/rocWMMA
+  - org: vllm-project
+    name: vllm
+    description: "vLLM (ROCm backend)"
+    url: https://github.com/vllm-project/vllm
+  - org: sgl-project
+    name: sglang
+    description: "SGLang (ROCm backend)"
+    url: https://github.com/sgl-project/sglang
+  - org: nod-ai
+    name: shark-ai
+    description: "IREE/SHARK AI runtime"
+    url: https://github.com/nod-ai/shark-ai

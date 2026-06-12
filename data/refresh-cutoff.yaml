@@ -1,0 +1,17 @@
+# Knowledge cutoff for ROCm-KernelWiki-Q
+# Update this date when refreshing the knowledge base
+
+refresh_cutoff: '2026-06-12'
+last_updated: '2026-06-12'
+
+# Tracked source date ranges
+sources:
+  prs:
+    start: '2024-01-01'
+    cutoff: '2026-06-12'
+  blogs:
+    start: '2024-01-01'
+    cutoff: '2026-06-12'
+  docs:
+    start: '2024-01-01'
+    cutoff: '2026-06-12'
