@@ -23,7 +23,7 @@ SOURCES_DIR = ROOT / "sources"
 
 def extract_frontmatter(filepath):
     """Extract YAML frontmatter from a markdown file."""
-    with open(filepath) as f:
+    with open(filepath, encoding="utf-8") as f:
         content = f.read()
     match = re.match(r"^---\n(.*?)\n---", content, re.DOTALL)
     if not match:
