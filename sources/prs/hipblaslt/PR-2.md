@@ -23,11 +23,15 @@ tags:
 kernel_types:
 - gemm
 - layernorm
-languages: []
+- rmsnorm
+languages:
+- python
 captured_at: '2026-06-12'
 status: merged
 inclusion_reason: kernel-related changes
 confidence: source-reported
+description: Add tensilelite. Changed 100 files including `tensilelite/Tensile/Activation.py`,
+  `tensilelite/Tensile/AsmAddressCalculation.py`, `tensilelite/Tensile/AsmMemory
 ---
 
 # [Kernel][Nemotron] SM100 FP8 dense GEMM + ReLU² fusions and Mamba2/RMSNorm fusions for Nemotron-3-Super NVFP4 (B200)

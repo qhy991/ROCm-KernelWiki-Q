@@ -163,3 +163,66 @@ tracked_repos:
     name: shark-ai
     description: "IREE/SHARK AI runtime"
     url: https://github.com/nod-ai/shark-ai
+
+# Canonical aliases: left-hand non-canonical tag -> right-hand canonical term.
+# validate.py warns when an alias is used; generate-indices.py normalizes via this map.
+aliases:
+  matrix-core: mfma
+  composable-kernel: composable_kernel
+  vectorized-loads: vectorized-load
+
+# Auxiliary descriptive tags that are valid but are NOT part of the structured
+# vocabulary (architectures / hardware_features / techniques / kernel_types /
+# languages). Anything in `tags:` not found in the structured vocab or here is
+# flagged by validate.py as off-vocabulary.
+aux_tags:
+  # numeric formats
+  - fp4
+  - fp6
+  - fp8
+  - bf8
+  - fp16
+  - bf16
+  - int8
+  # source / repo provenance
+  - rocm
+  - rocm-kernel
+  - composable_kernel
+  - hipblaslt
+  - flash-attention
+  - cross-repo
+  - tensilelite
+  - library
+  # architecture family marker (non-CDNA PRs flagged for review)
+  - rdna
+  # descriptive categories
+  - ck-tile
+  - cuda
+  - optimization
+  - quantization
+  - fused-kernel
+  - memory
+  - memory-bound
+  - bandwidth
+  - hbm
+  - compute
+  - hardware
+  - migration
+  - scheduling
+  - synchronization
+  - cross-cu
+  - cross-lane
+  - programming
+  - programming-model
+  - tiling
+  - vectorization
+  - occupancy
+  - vgpr
+  - pipeline
+  - hip
+  - porting
+  - runtime-api
+  - isa
+  - inference
+  - training
+  - mi300x

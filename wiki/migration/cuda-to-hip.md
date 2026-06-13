@@ -163,12 +163,13 @@ auto block = cg::this_thread_block();
 ### 6. Grid Synchronization
 
 ```c
-// CUDA: cooperative kernels
-cudaLaunchCooperativeKernel(...);
+// CUDA: cooperative kernels — args is a void** array of argument pointers
+void* args[] = { &arg0, &arg1 };
+cudaLaunchCooperativeKernel((void*)myKernel, grid, block, args, 0, stream);
 
-// HIP: Global Wave Sync (GWS)
-// hipLaunchCooperativeKernel() available on CDNA2+
-hipLaunchCooperativeGGL(myKernel, grid, block, 0, 0, args);
+// HIP: Global Wave Sync (GWS), available on CDNA2+.
+// Direct 1:1 API mapping — same void** args-array signature, no "GGL" variant exists.
+hipLaunchCooperativeKernel((void*)myKernel, grid, block, args, 0, stream);
 ```
 
 ## Build System Changes

@@ -20,6 +20,16 @@ ROOT = Path(__file__).resolve().parent.parent
 WIKI_DIR = ROOT / "wiki"
 SOURCES_DIR = ROOT / "sources"
 
+# Friendly short names for --type (docs use these), mapped to canonical page types.
+TYPE_ALIASES = {
+    "hardware": "wiki-hardware", "technique": "wiki-technique", "kernel": "wiki-kernel",
+    "pattern": "wiki-pattern", "language": "wiki-language", "migration": "wiki-migration",
+    "pr": "source-pr", "doc": "source-doc", "blog": "source-blog",
+}
+
+# Tags that saturate the corpus and carry no discriminative signal in ranking.
+STOP_TAGS = {"rocm", "rocm-kernel"}
+
 
 def extract_frontmatter(filepath):
     """Extract YAML frontmatter from a markdown file."""
@@ -67,9 +77,11 @@ def search_keyword(pages, query):
             if term in title:
                 score += 10
 
-        # Tag match
+        # Tag match (ignore corpus-saturating stop tags)
         for term in query_terms:
             for tag in tags:
+                if tag in STOP_TAGS:
+                    continue
                 if term in tag:
                     score += 5
 
@@ -83,6 +95,10 @@ def search_keyword(pages, query):
         for term in query_terms:
             if term in content_lower:
                 score += 1
+
+        # Prefer curated wiki pages over raw PR/source stubs when otherwise tied.
+        if score > 0 and str(p.get("type", "")).startswith("wiki-"):
+            score += 4
 
         if score > 0:
             scored.append((score, p))
@@ -98,7 +114,8 @@ def filter_pages(pages, **filters):
         tags = filters["tag"] if isinstance(filters["tag"], list) else [filters["tag"]]
         result = [p for p in result if any(t in p.get("tags", []) for t in tags)]
     if filters.get("type"):
-        result = [p for p in result if p.get("type") == filters["type"]]
+        want = TYPE_ALIASES.get(filters["type"], filters["type"])
+        result = [p for p in result if p.get("type") == want]
     if filters.get("architecture"):
         archs = filters["architecture"] if isinstance(filters["architecture"], list) else [filters["architecture"]]
         result = [p for p in result if any(a in p.get("architectures", []) for a in archs)]

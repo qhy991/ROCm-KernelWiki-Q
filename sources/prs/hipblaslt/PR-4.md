@@ -22,6 +22,7 @@ captured_at: '2026-06-12'
 status: merged
 inclusion_reason: kernel-related changes
 confidence: source-reported
+description: test with tensilelite in gitlab
 ---
 
 # templates/skills: add hip + aiter SKILLs for AMD Instinct kernel work

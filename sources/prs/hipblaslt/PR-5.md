@@ -9,8 +9,6 @@ date: unknown
 url: https://github.com/ROCm/hipBLASLt/pull/5
 source_category: upstream-code
 architectures:
-- cdna2
-- cdna3
 - cdna4
 tags:
 - rocm
@@ -24,6 +22,7 @@ captured_at: '2026-06-12'
 status: merged
 inclusion_reason: kernel-related changes
 confidence: source-reported
+description: An example of find top solutions.
 ---
 
 # reference/fp8-gemm-dsr1-rocm: closed-loop case study on AMD MI355X

@@ -18,11 +18,14 @@ tags:
 - hipblaslt
 kernel_types:
 - gemm
-languages: []
+languages:
+- python
 captured_at: '2026-06-12'
 status: merged
 inclusion_reason: kernel-related changes
 confidence: source-reported
+description: Add TensileLite. Changed 100 files including `tensilelite/Tensile/Activation.py`,
+  `tensilelite/Tensile/AsmAddressCalculation.py`, `tensilelite/Tensile/AsmMemory
 ---
 
 # Optimize Featherstone GEMM kernels

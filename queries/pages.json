@@ -1,0 +1,6763 @@
+[
+ {
+  "id": "blog-amdgpu-kernel-opt",
+  "type": "source-blog",
+  "title": "AMDGPU Kernel Optimization Guide",
+  "path": "sources/blogs/amdgpu-kernel-opt.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "optimization",
+   "memory",
+   "occupancy"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "blog-ck-tutorial",
+  "type": "source-blog",
+  "title": "Composable Kernel Tile Tutorial",
+  "path": "sources/blogs/ck-tutorial.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-dsl",
+   "ck-tile",
+   "gemm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "blog-flash-attention-rocm",
+  "type": "source-blog",
+  "title": "ROCm FlashAttention Performance Notes",
+  "path": "sources/blogs/flash-attention-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "attention",
+   "mfma"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "blog-gcn-cross-lane",
+  "type": "source-blog",
+  "title": "AMD GCN Assembly Cross-Lane Operations",
+  "path": "sources/blogs/gcn-cross-lane.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "dpp",
+   "cross-lane",
+   "wavefront"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "blog-matrix-cores-cdna",
+  "type": "source-blog",
+  "title": "Matrix Core Programming on CDNA",
+  "path": "sources/blogs/matrix-cores-cdna.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "mfma",
+   "matrix-core",
+   "gemm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "doc-cdna4-isa",
+  "type": "source-doc",
+  "title": "AMD CDNA4 Instruction Set Architecture Reference",
+  "path": "sources/docs/cdna4-isa.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "isa",
+   "mfma",
+   "cdna4",
+   "hardware"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "doc-cdna4-whitepaper",
+  "type": "source-doc",
+  "title": "AMD Instinct MI350 Series Architecture Overview",
+  "path": "sources/docs/cdna4-whitepaper.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cdna4",
+   "hardware",
+   "matrix-core",
+   "hbm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "doc-ck-readme",
+  "type": "source-doc",
+  "title": "Composable Kernel README",
+  "path": "sources/docs/ck-readme.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-dsl",
+   "composable-kernel",
+   "gemm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "doc-ck-structure",
+  "type": "source-doc",
+  "title": "Composable Kernel Repository Structure",
+  "path": "sources/docs/ck-structure.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-dsl",
+   "composable-kernel",
+   "gemm",
+   "attention"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "doc-flash-attention-rocm",
+  "type": "source-doc",
+  "title": "ROCm Flash Attention Repository",
+  "path": "sources/docs/flash-attention-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "attention",
+   "mfma"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "doc-hip-porting-guide",
+  "type": "source-doc",
+  "title": "CUDA to HIP Porting Guide",
+  "path": "sources/docs/hip-porting-guide.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "migration",
+   "cuda",
+   "hip-cpp"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "doc-hip-programming-guide",
+  "type": "source-doc",
+  "title": "HIP Programming Guide",
+  "path": "sources/docs/hip-programming-guide.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "hip-cpp",
+   "migration",
+   "runtime-api"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "doc-mi300x-workload",
+  "type": "source-doc",
+  "title": "MI300X Workload Optimization Guide",
+  "path": "sources/docs/mi300x-workload.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "mi300x",
+   "optimization",
+   "inference",
+   "training"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "hw-dpp-cross-lane",
+  "type": "wiki-hardware",
+  "title": "DPP \u2014 Data-Parallel Primitives (Cross-Lane Operations)",
+  "path": "wiki/hardware/dpp-cross-lane.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "dpp",
+   "cross-lane",
+   "compute",
+   "hardware"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "hw-gws",
+  "type": "wiki-hardware",
+  "title": "GWS \u2014 Global Wave Sync",
+  "path": "wiki/hardware/gws.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "gws",
+   "synchronization",
+   "hardware",
+   "cross-cu"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "hw-lds",
+  "type": "wiki-hardware",
+  "title": "LDS \u2014 Local Data Share",
+  "path": "wiki/hardware/lds.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "lds",
+   "memory",
+   "hardware"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "hw-lds-transpose",
+  "type": "wiki-hardware",
+  "title": "LDS Read-with-Transpose (CDNA4)",
+  "path": "wiki/hardware/lds-transpose.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "lds",
+   "lds-transpose",
+   "memory",
+   "hardware",
+   "cdna4"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "hw-mfma-matrix-core",
+  "type": "wiki-hardware",
+  "title": "MFMA Matrix Core (CDNA1\u2013CDNA4)",
+  "path": "wiki/hardware/mfma-matrix-core.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "mfma",
+   "matrix-core",
+   "compute",
+   "hardware"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "hw-scaled-mfma",
+  "type": "wiki-hardware",
+  "title": "Scaled MFMA (CDNA4 Block-Scaled Matrix Operations)",
+  "path": "wiki/hardware/scaled-mfma.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "scaled-mfma",
+   "mfma",
+   "block-scale",
+   "matrix-core",
+   "fp8",
+   "compute"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "hw-wavefront",
+  "type": "wiki-hardware",
+  "title": "Wavefront (64-thread execution unit)",
+  "path": "wiki/hardware/wavefront.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "wavefront",
+   "hardware",
+   "compute"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "kernel-conv-rocm",
+  "type": "wiki-kernel",
+  "title": "Convolution Kernels on ROCm (CK Grouped Conv)",
+  "path": "wiki/kernels/conv-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "conv",
+   "grouped-gemm",
+   "optimization",
+   "mfma",
+   "wmma"
+  ],
+  "kernel_types": [
+   "conv",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-flash-attention-rocm",
+  "type": "wiki-kernel",
+  "title": "Flash Attention on ROCm",
+  "path": "wiki/kernels/flash-attention-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "flash-attention",
+   "mfma",
+   "lds",
+   "dpp"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-moe-grouped-gemm-cdna4",
+  "type": "wiki-kernel",
+  "title": "MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)",
+  "path": "wiki/kernels/moe-grouped-gemm-cdna4.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "moe",
+   "grouped-gemm",
+   "gemm",
+   "quantization",
+   "fp4",
+   "fp8",
+   "block-scale",
+   "cdna4"
+  ],
+  "kernel_types": [
+   "moe",
+   "grouped-gemm",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "lang-ck-dsl",
+  "type": "wiki-language",
+  "title": "Composable Kernel (CK) DSL",
+  "path": "wiki/languages/ck-dsl.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-dsl",
+   "composable-kernel",
+   "programming",
+   "library"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "lang-triton-rocm",
+  "type": "wiki-language",
+  "title": "Triton on ROCm (Triton-ROCm Backend)",
+  "path": "wiki/languages/triton-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "triton-rocm",
+   "programming",
+   "programming-model",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "migration-cdna3-to-cdna4",
+  "type": "wiki-migration",
+  "title": "CDNA3 (MI300X) \u2192 CDNA4 (MI350X) Migration Guide",
+  "path": "wiki/migration/cdna3-to-cdna4.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "migration",
+   "cdna3",
+   "cdna4",
+   "mfma",
+   "scaled-mfma",
+   "lds-transpose",
+   "block-scale"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "migration-cuda-to-hip",
+  "type": "wiki-migration",
+  "title": "CUDA \u2192 HIP Migration Guide",
+  "path": "wiki/migration/cuda-to-hip.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "migration",
+   "cuda",
+   "hip",
+   "porting"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "pattern-memory-bound-amd",
+  "type": "wiki-pattern",
+  "title": "Memory-Bound Kernel Optimization on AMD CDNA",
+  "path": "wiki/patterns/memory-bound-amd.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "memory-bound",
+   "optimization",
+   "bandwidth",
+   "hbm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-aiter-2886",
+  "type": "source-pr",
+  "title": "[TRITON] Conv Kernels First Commit to AITER",
+  "path": "sources/prs/hipblaslt/PR-2886.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "conv",
+   "cross-repo",
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a Triton conv2d library targeted at AMD RDNA GPUs, plus a"
+ },
+ {
+  "id": "pr-aiter-3058",
+  "type": "source-pr",
+  "title": "[Triton] batched_gemm_a16wfp4 (gfx950): fuse dot_scaled accumulator; branchless mxfp4 quant; tune small-N configs",
+  "path": "sources/prs/hipblaslt/PR-3058.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fp4",
+   "fused-kernel",
+   "hipblaslt",
+   "optimization",
+   "quantization",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Three independent kernel-level improvements to the `batched_gemm_a16wfp4` Triton hot path on AMD MI355X (gfx950), plus per-shape config files for two previously"
+ },
+ {
+  "id": "pr-aiter-3168",
+  "type": "source-pr",
+  "title": "[TRITON] gfx1201: gemm_a8w8 tuning configs (Mistral-3 / Qwen3 shapes)",
+  "path": "sources/prs/hipblaslt/PR-3168.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "optimization",
+   "rdna",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Two small additions that let aiter run on RDNA4 (gfx1201, RX 9070 XT family) without the calling project having to maintain its own kernel/config replicas."
+ },
+ {
+  "id": "pr-aiter-3272",
+  "type": "source-pr",
+  "title": "Revert \"[Triton] Declare triton>=3.6.0 dependency \"",
+  "path": "sources/prs/hipblaslt/PR-3272.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Reverts ROCm/aiter#2695"
+ },
+ {
+  "id": "pr-aiter-3285",
+  "type": "source-pr",
+  "title": "Add GLM-4.7-FP8 tuned/untuned BF16 GEMM configs (gfx950)",
+  "path": "sources/prs/hipblaslt/PR-3285.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "bf16",
+   "cross-repo",
+   "fp8",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Adds tuned BF16 GEMM configurations for GLM-4.7-FP8 detected from vLLM server log untuned warnings on gfx950."
+ },
+ {
+  "id": "pr-aiter-3343",
+  "type": "source-pr",
+  "title": "gfx1201 gemm_a8w8: blockscale HIP\u2192triton fallback + tuning configs (plain + blockscale_preshuffled)",
+  "path": "sources/prs/hipblaslt/PR-3343.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "optimization",
+   "rdna",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Two consolidated changes to make aiter's a8w8 GEMM family portable + tuned on gfx1201:"
+ },
+ {
+  "id": "pr-aiter-3355",
+  "type": "source-pr",
+  "title": "[gluon gemm_afp4wfp4] Fix data access pattern to remove redundant data loads",
+  "path": "sources/prs/hipblaslt/PR-3355.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "The original Gluon `gemm_afp4wfp4` kernel suffered from an inferior performance compared to the brother Triton kernel and was around 14% slower (considering a p"
+ },
+ {
+  "id": "pr-aiter-3422",
+  "type": "source-pr",
+  "title": "Add GLM-5.1 FP8 blockscale GEMM/FMoE tunings for gfx942 (MI300X/MI325)",
+  "path": "sources/prs/hipblaslt/PR-3422.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "cross-repo",
+   "fp8",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "moe"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Model: [zai-org/GLM-5.1-FP8](https://huggingface.co/zai-org/GLM-5.1-FP8)"
+ },
+ {
+  "id": "pr-aiter-3450",
+  "type": "source-pr",
+  "title": "[FLYDSL MOE] mixed_moe + moe_gemm_2stage: fx internal-types cleanup (ASM-identical)",
+  "path": "sources/prs/hipblaslt/PR-3450.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "grouped-gemm",
+   "hipblaslt",
+   "moe",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "moe"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Internal-types cleanup of the FlyDSL MXFP4 **mixed-MoE GEMM** kernel (`mixed_moe_gemm_2stage.py`, `compile_mixed_moe_gemm1`/`2`), replacing raw `arith`/`vector`"
+ },
+ {
+  "id": "pr-aiter-3457",
+  "type": "source-pr",
+  "title": "Fused SplitK zero-init for FP8 a8w8 blockscale GEMMs (y_is_zeroed) + re-enable CKTile SplitK",
+  "path": "sources/prs/hipblaslt/PR-3457.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fp8",
+   "fused-kernel",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "rmsnorm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "SplitK (KBatch > 1) blockscale GEMMs accumulate partial products into the output `Y`"
+ },
+ {
+  "id": "pr-aiter-3470",
+  "type": "source-pr",
+  "title": "[PERF] MXFP4 (a4w4) MoE backend for gfx950",
+  "path": "sources/prs/hipblaslt/PR-3470.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fp4",
+   "grouped-gemm",
+   "hipblaslt",
+   "moe",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "moe"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "# [PERF] mxfp4_moe \u2014 a native MXFP4 (a4w4) MoE backend for gfx950"
+ },
+ {
+  "id": "pr-aiter-3583",
+  "type": "source-pr",
+  "title": "[feat] FP8 (DeepSeek-V4 layout) sparse paged prefill attention",
+  "path": "sources/prs/hipblaslt/PR-3583.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "cross-repo",
+   "flash-attention",
+   "fp8",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds **FP8 KV-cache support** to the OPUS sparse paged prefill attention (`pa_sparse_prefill_opus`) using the **DeepSeek-V4 / asm-v4** mixed-precision head-dim "
+ },
+ {
+  "id": "pr-aiter-3642",
+  "type": "source-pr",
+  "title": "Tune fused GEMM AFP4WFP4 A16W16 gfx950 config and add benchmark",
+  "path": "sources/prs/hipblaslt/PR-3642.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fused-kernel",
+   "gemm",
+   "hipblaslt",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR adds benchmark coverage and gfx950 tuning for the non-preshuffled `fused_gemm_afp4wfp4_a16w16` fused GEMM. The kernel already had a wrapper, kernel, tes"
+ },
+ {
+  "id": "pr-amdmigraphx-4811",
+  "type": "source-pr",
+  "title": "Rewrite skinny gemms to mul+reduce_sum",
+  "path": "sources/prs/hipblaslt/PR-4811.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This algorithm is usually much faster than mfmas."
+ },
+ {
+  "id": "pr-axolotl-3692",
+  "type": "source-pr",
+  "title": "feat(compile): expose torch_compile_options for Inductor flag tuning",
+  "path": "sources/prs/hipblaslt/PR-3692.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "# Description"
+ },
+ {
+  "id": "pr-composable_kernel-3540",
+  "type": "source-pr",
+  "title": "feat: Add Interwave scheduler for aquant memory pipeline",
+  "path": "sources/prs/composable_kernel/PR-3540.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "In `example/ck_tile/38_block_scale_gemm` for quant_mode=aquant the current memory pipeline only supports one scheduling mechanism (intrawave) where each wave wo"
+ },
+ {
+  "id": "pr-composable_kernel-3541",
+  "type": "source-pr",
+  "title": "Fix error when building with -DCMAKE_BUILD_TYPE=Debug",
+  "path": "sources/prs/composable_kernel/PR-3541.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This change fixes the following failure when building with build type Debug:"
+ },
+ {
+  "id": "pr-composable_kernel-3542",
+  "type": "source-pr",
+  "title": "refactor: remove Default scheduler implementation as it not used anymore",
+  "path": "sources/prs/composable_kernel/PR-3542.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "The universal GEMM's memory pipeline (software pipeline) has a \"default\" scheduler implementation for scheduling data computation instructions. This implementat"
+ },
+ {
+  "id": "pr-composable_kernel-3543",
+  "type": "source-pr",
+  "title": "[CK TILE GEMM] Add bf8 support to tile engine streamk generator",
+  "path": "sources/prs/composable_kernel/PR-3543.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "ck-tile",
+   "fp8",
+   "composable_kernel",
+   "gemm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "[CK TILE GEMM] Add bf8 support to tile engine streamk generator"
+ },
+ {
+  "id": "pr-composable_kernel-3544",
+  "type": "source-pr",
+  "title": "[CK] Add base class GridwiseGemm_xdl_cshuffle_base for all gridwise_gemm_xdl classes",
+  "path": "sources/prs/composable_kernel/PR-3544.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm",
+   "softmax"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "1. Add base class GridwiseGemm_xdl_cshuffle_base for all gridwise_gemm_xdl classes."
+ },
+ {
+  "id": "pr-composable_kernel-3545",
+  "type": "source-pr",
+  "title": "[FMHA] Support page_size=1 (linear layout) in batch prefill pipeline",
+  "path": "sources/prs/composable_kernel/PR-3545.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "flash-attention",
+   "attention",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Key Changes:"
+ },
+ {
+  "id": "pr-composable_kernel-3547",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] Convert convolution traits to a struct with factory functions",
+  "path": "sources/prs/composable_kernel/PR-3547.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "The convolution traits for forward XDL kernels were complicated and the design wasn't going to scale."
+ },
+ {
+  "id": "pr-composable_kernel-3549",
+  "type": "source-pr",
+  "title": "Remove unnecessary hip_fp16 include from stream_config",
+  "path": "sources/prs/composable_kernel/PR-3549.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Remove unnecessary hip_fp16 include from stream_config"
+ },
+ {
+  "id": "pr-composable_kernel-3550",
+  "type": "source-pr",
+  "title": "[CK Profiler] Initialize tensors on GPU in CK profiler",
+  "path": "sources/prs/composable_kernel/PR-3550.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR migrates CK profilers from CPU-side to GPU-side tensor initialization, eliminating a performance bottleneck. The convolution profilers now use the `Devi"
+ },
+ {
+  "id": "pr-composable_kernel-3551",
+  "type": "source-pr",
+  "title": "[CK] Refactor GPU verification kernel to gather error stats on GPU",
+  "path": "sources/prs/composable_kernel/PR-3551.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Refactors the GPU verification to not exit early on errors, instead gathering all errors and returning a struct with error stats."
+ },
+ {
+  "id": "pr-composable_kernel-3554",
+  "type": "source-pr",
+  "title": "[CK TILE ENGINE] CI fix for Basic Tile Engine",
+  "path": "sources/prs/composable_kernel/PR-3554.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR addresses CI issues in the Basic Tile Engine and enables Basic Tile Engine flow in CI, along with cascading changes in correspondence to https://github."
+ },
+ {
+  "id": "pr-composable_kernel-3555",
+  "type": "source-pr",
+  "title": "[CK_TILE ENGINE] Fix incorrect List import in reduce_parameter.py",
+  "path": "sources/prs/composable_kernel/PR-3555.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "- Fixed incorrect import of `List` from `pyparsing` to use the correct `typing.List` instead"
+ },
+ {
+  "id": "pr-composable_kernel-3556",
+  "type": "source-pr",
+  "title": "[CK TILE] Add grouped convolution forward tests",
+  "path": "sources/prs/composable_kernel/PR-3556.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "conv",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "[CK TILE] Add grouped convolution forward tests using builder"
+ },
+ {
+  "id": "pr-composable_kernel-3557",
+  "type": "source-pr",
+  "title": "CK Tile: fix some issues",
+  "path": "sources/prs/composable_kernel/PR-3557.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "Please describe the motivation behind the pull request, whether it enables a new feature or fixes a bug. If there are associated pull requests or issues, please"
+ },
+ {
+  "id": "pr-composable_kernel-3558",
+  "type": "source-pr",
+  "title": "Update buffer_views.rst",
+  "path": "sources/prs/composable_kernel/PR-3558.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "a note got into the buffer_view doc. Removing"
+ },
+ {
+  "id": "pr-composable_kernel-3559",
+  "type": "source-pr",
+  "title": "[CK_TILE] Temporarily disable CK Tile Stream-K reduction tests",
+  "path": "sources/prs/composable_kernel/PR-3559.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "gemm",
+   "reduction"
+  ],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "On a recent develop build, there was a failure in our CK Tile Stream-K reduction tests. These failures are not easily reproducible; hence, we are disabling thes"
+ },
+ {
+  "id": "pr-composable_kernel-3562",
+  "type": "source-pr",
+  "title": "Fix grouped conv bwd data wmma check",
+  "path": "sources/prs/composable_kernel/PR-3562.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fix grouped conv bwd data wmma Is Supported check for NXdlPerWAve32. If there is too small number of iteration to increase number of waves then it should return"
+ },
+ {
+  "id": "pr-composable_kernel-3564",
+  "type": "source-pr",
+  "title": "Batched gemm softmax gemm descriptor fix",
+  "path": "sources/prs/composable_kernel/PR-3564.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "softmax",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "softmax"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This change is needed for MIGraphX"
+ },
+ {
+  "id": "pr-composable_kernel-3566",
+  "type": "source-pr",
+  "title": "Disable ActiveWorkgroupsPerCU for different arch in wmma kernels",
+  "path": "sources/prs/composable_kernel/PR-3566.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Disable ActiveWorkgroupsPerCU for different arch in wmma kernels"
+ },
+ {
+  "id": "pr-composable_kernel-3568",
+  "type": "source-pr",
+  "title": "[FMHA] Enable page size 16 for batch prefill kernel",
+  "path": "sources/prs/composable_kernel/PR-3568.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "flash-attention",
+   "attention",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "- Enable support for page_size=16 in the FMHA batch prefill kernel."
+ },
+ {
+  "id": "pr-composable_kernel-3569",
+  "type": "source-pr",
+  "title": "[CK][Examples] Fixing stride issues in ck examples 68/69 by workaroun\u2026",
+  "path": "sources/prs/composable_kernel/PR-3569.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "\u2026d - Bypassing hostTensor validation"
+ },
+ {
+  "id": "pr-composable_kernel-3570",
+  "type": "source-pr",
+  "title": "Add aiter test_batch_prefill.",
+  "path": "sources/prs/composable_kernel/PR-3570.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "For now just adding the test_batch_prefill to daily testing."
+ },
+ {
+  "id": "pr-composable_kernel-3571",
+  "type": "source-pr",
+  "title": "CK: removed the api reference",
+  "path": "sources/prs/composable_kernel/PR-3571.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "The CK team has asked that the CK/CK Tile API reference be removed because it's of limited use. The CK/CK Tile is a template-only library that also contains exa"
+ },
+ {
+  "id": "pr-composable_kernel-3572",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] Update owners file for more reviews for CK Builder",
+  "path": "sources/prs/composable_kernel/PR-3572.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Adding CK owners @vpietila-amd and @Snektron , who are active developers on CK Builder. This will reduce review burden on @aosewski  and @bartekxk  and help wit"
+ },
+ {
+  "id": "pr-composable_kernel-3573",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] Update README.md files to match recent code changes",
+  "path": "sources/prs/composable_kernel/PR-3573.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "This is mostly adjustments to enum values so that the docs align correctly with the current code."
+ },
+ {
+  "id": "pr-composable_kernel-3576",
+  "type": "source-pr",
+  "title": "Add LLM-agnostic Docker and build analysis tools",
+  "path": "sources/prs/composable_kernel/PR-3576.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR introduces utility tools for building, testing, and analyzing Composable Kernel. The tools are designed to be LLM-agnostic and can be used with any AI a"
+ },
+ {
+  "id": "pr-composable_kernel-3577",
+  "type": "source-pr",
+  "title": "Bump rocm-docs-core[api_reference] from 1.31.1 to 1.31.2 in /docs/sphinx",
+  "path": "sources/prs/composable_kernel/PR-3577.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Bumps [rocm-docs-core[api_reference]](https://github.com/ROCm/rocm-docs-core) from 1.31.1 to 1.31.2."
+ },
+ {
+  "id": "pr-composable_kernel-3578",
+  "type": "source-pr",
+  "title": "Multi AB support for wave transfer",
+  "path": "sources/prs/composable_kernel/PR-3578.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "- add multi AB support for wave transfer"
+ },
+ {
+  "id": "pr-composable_kernel-3580",
+  "type": "source-pr",
+  "title": "Remove code duplications in batched gemm wmma",
+  "path": "sources/prs/composable_kernel/PR-3580.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "There is currently a lot of code duplication in the batch gemm device structs. We removed some duplications in the gemm structs by creating a common base struct"
+ },
+ {
+  "id": "pr-composable_kernel-3581",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] Disable CK Builder for SLES15 in Jenkins CI",
+  "path": "sources/prs/composable_kernel/PR-3581.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "SLES15 is a legacy platform with limited C++20 ecosystem support. The CK Builder (#3574) requires C++20."
+ },
+ {
+  "id": "pr-composable_kernel-3582",
+  "type": "source-pr",
+  "title": "WMMA grouped conv fwd large tensor extra flavors",
+  "path": "sources/prs/composable_kernel/PR-3582.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Added additional flavors for WMMA conv fwd large tensor."
+ },
+ {
+  "id": "pr-composable_kernel-3583",
+  "type": "source-pr",
+  "title": "Fixing GEMM Multi D on Tile Engine",
+  "path": "sources/prs/composable_kernel/PR-3583.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Currently GEMM Multi D Operator for Tile Engine is failing due to indentation error, with this PR it has been fixed"
+ },
+ {
+  "id": "pr-composable_kernel-3584",
+  "type": "source-pr",
+  "title": "[CK TILE QUANT GEMM] use OverrideADataType in aquant pipeline",
+  "path": "sources/prs/composable_kernel/PR-3584.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "quantization",
+   "rocm",
+   "ck-tile",
+   "composable_kernel",
+   "gemm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Byte is the smallest unit for transposition. When tensor A has data type i4, ck must internally convert it to the same data type as B for transposition."
+ },
+ {
+  "id": "pr-composable_kernel-3585",
+  "type": "source-pr",
+  "title": "Optimize sequence_gen and uniform_sequence_gen to reduce template instantiation depth",
+  "path": "sources/prs/composable_kernel/PR-3585.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "- Use compiler builtin `__make_integer_seq` for `sequence_gen` and `uniform_sequence_gen`"
+ },
+ {
+  "id": "pr-composable_kernel-3586",
+  "type": "source-pr",
+  "title": "[CK_TILE][FMHA] Add new tile size for async",
+  "path": "sources/prs/composable_kernel/PR-3586.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "rocm",
+   "ck-tile",
+   "composable_kernel",
+   "attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR adds a new tile size configuration for async pipeline operations in the FMHA (Fused Multi-Head Attention) forward pass implementation. The changes intro"
+ },
+ {
+  "id": "pr-composable_kernel-3592",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] Add reflection for wmma and bwd weight instances to ck builder reflection",
+  "path": "sources/prs/composable_kernel/PR-3592.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "This PR adds reflection for wmma fwd as well as xdl and wmma bwd_weight kernels to the ck builder"
+ },
+ {
+  "id": "pr-composable_kernel-3594",
+  "type": "source-pr",
+  "title": "[CK Profiler] Restore CPU tensor initialization when verification is not done on GPU",
+  "path": "sources/prs/composable_kernel/PR-3594.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "With #3550 merged, the large case tests fail in the nightly CI. This PR restores CPU-side initialization when either no verification is done, or verification is"
+ },
+ {
+  "id": "pr-composable_kernel-3595",
+  "type": "source-pr",
+  "title": "WMMA grouped conv fwd large tensor bias bnorm clamp",
+  "path": "sources/prs/composable_kernel/PR-3595.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Added bias bnorm clamp operation for WMMA conv fwd large tensor (FP16/BF16 data type and NHWGCxGKYXC layout)."
+ },
+ {
+  "id": "pr-composable_kernel-3597",
+  "type": "source-pr",
+  "title": "Optimize clang-format check in Jenkins CI",
+  "path": "sources/prs/composable_kernel/PR-3597.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "This PR optimizes the Jenkins CI clang-format check to be faster and remove the git dependency."
+ },
+ {
+  "id": "pr-composable_kernel-3598",
+  "type": "source-pr",
+  "title": "Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions",
+  "path": "sources/prs/composable_kernel/PR-3598.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "bf16",
+   "composable_kernel",
+   "fp16",
+   "rdna",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Enables hipTensor to access the WMMA HW functionalities for datatype FP16 + compute type FP16 and datatype BF16 + compute type BF16 on gfx11 and gfx12."
+ },
+ {
+  "id": "pr-composable_kernel-3599",
+  "type": "source-pr",
+  "title": "[CK TILE] remove dependency on std chrono",
+  "path": "sources/prs/composable_kernel/PR-3599.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "I did some more digging and found that chrono is overkill for what we need.  Including <chrono> is notoriously slow because it is a heavyweight header. It doesn"
+ },
+ {
+  "id": "pr-composable_kernel-3601",
+  "type": "source-pr",
+  "title": "Mx fp6 flatmm",
+  "path": "sources/prs/composable_kernel/PR-3601.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "new feature: support dwordx3 sync/async load/store and support mx-fp6 flatmm"
+ },
+ {
+  "id": "pr-composable_kernel-3602",
+  "type": "source-pr",
+  "title": "Bump rocm-docs-core[api_reference] from 1.31.2 to 1.31.3 in /docs/sphinx",
+  "path": "sources/prs/composable_kernel/PR-3602.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Bumps [rocm-docs-core[api_reference]](https://github.com/ROCm/rocm-docs-core) from 1.31.2 to 1.31.3."
+ },
+ {
+  "id": "pr-composable_kernel-3603",
+  "type": "source-pr",
+  "title": "[CK_Tile] Support for a4w4 (fp4) in block scale gemm AB quant",
+  "path": "sources/prs/composable_kernel/PR-3603.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "quantization",
+   "rocm",
+   "ck-tile",
+   "composable_kernel",
+   "gemm",
+   "fp4"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Support for packed 4-bit floating point for both A and B tensors in block scale gemm. Tested with A using 1D block scale and B using 2D block scale. Works for b"
+ },
+ {
+  "id": "pr-composable_kernel-3604",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] Replace reference conv with old ck implementation",
+  "path": "sources/prs/composable_kernel/PR-3604.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "In #3381, reference algorithms were added to CK Tile. But it turns out that there already was a reference implementation in old CK. This PR replaces the referen"
+ },
+ {
+  "id": "pr-composable_kernel-3605",
+  "type": "source-pr",
+  "title": "Re enable f8 x bf8 tests on compv3 and compv4",
+  "path": "sources/prs/composable_kernel/PR-3605.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "fp8"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Previously failing fp8 x bf8 tests now pass, so they can be re-enabled."
+ },
+ {
+  "id": "pr-composable_kernel-3607",
+  "type": "source-pr",
+  "title": "[CK Tile] multi reduce improvements",
+  "path": "sources/prs/composable_kernel/PR-3607.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Some performance improvement have been implemented:"
+ },
+ {
+  "id": "pr-composable_kernel-3608",
+  "type": "source-pr",
+  "title": "Add build time optimization documentation",
+  "path": "sources/prs/composable_kernel/PR-3608.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Add `BUILD_TIME_OPTIMIZATION.md` documenting techniques for reducing C++ template instantiation overhead"
+ },
+ {
+  "id": "pr-composable_kernel-3611",
+  "type": "source-pr",
+  "title": "[CK TILE] Fix basic gemm pipelines add v1 interwave pipeline",
+  "path": "sources/prs/composable_kernel/PR-3611.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "gemm",
+   "ck-tile",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "[CK TILE] Fix basic gemm pipelines. Refactor and add missing local prefetch. Add interwave pipeline for v1"
+ },
+ {
+  "id": "pr-composable_kernel-3613",
+  "type": "source-pr",
+  "title": "[CK_TILE][FMHA] Revert new tile size for async (#3586)\"",
+  "path": "sources/prs/composable_kernel/PR-3613.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "rocm",
+   "ck-tile",
+   "composable_kernel",
+   "attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "This reverts commit f3aafb95552cc2570f952667848310fbe3e982e7."
+ },
+ {
+  "id": "pr-composable_kernel-3615",
+  "type": "source-pr",
+  "title": "[CK_TILE] Fix Int32 Overflow in Deterministic FMHA BWD",
+  "path": "sources/prs/composable_kernel/PR-3615.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "rocm",
+   "ck-tile",
+   "composable_kernel",
+   "attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR fixes an integer overflow issue in the deterministic FMHA backward implementation by changing batch/nhead stride variables from index_t (32-bit) to long"
+ },
+ {
+  "id": "pr-composable_kernel-3617",
+  "type": "source-pr",
+  "title": "Remove code duplications in batched gemm (multi D) gemm (multi D) wmma",
+  "path": "sources/prs/composable_kernel/PR-3617.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Please describe the motivation behind the pull request, whether it enables a new feature or fixes a bug. If there are associated pull requests or issues, please"
+ },
+ {
+  "id": "pr-composable_kernel-3618",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] conv bwd weight testing",
+  "path": "sources/prs/composable_kernel/PR-3618.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "**NOTE**: Targetting https://github.com/ROCm/composable_kernel/pull/3604, merge that one first and **update the target branch** (GitHub should implement proper "
+ },
+ {
+  "id": "pr-composable_kernel-3619",
+  "type": "source-pr",
+  "title": "Implement device grouped gemm fixed nk multi abd for rdna4",
+  "path": "sources/prs/composable_kernel/PR-3619.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "grouped-gemm",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add support for grouped gemm multi ABD fixed NK. MR contains:"
+ },
+ {
+  "id": "pr-composable_kernel-3620",
+  "type": "source-pr",
+  "title": "GEMM Blockscale ABQuant Optimization",
+  "path": "sources/prs/composable_kernel/PR-3620.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Improve abquant performance"
+ },
+ {
+  "id": "pr-composable_kernel-3621",
+  "type": "source-pr",
+  "title": "[CK] Adding CK Tile to the doc",
+  "path": "sources/prs/composable_kernel/PR-3621.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Cherry picking the CK Tile doc into 7.2.0"
+ },
+ {
+  "id": "pr-composable_kernel-3622",
+  "type": "source-pr",
+  "title": "Fixing Perfetto Image Notification",
+  "path": "sources/prs/composable_kernel/PR-3622.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "This is a fix for when the automation periodically fails when pushing the Perfetto image notification. The failure is triggered when a branch name contains an U"
+ },
+ {
+  "id": "pr-composable_kernel-3623",
+  "type": "source-pr",
+  "title": "[CK_TILE][FMHA]Add new tile size for async",
+  "path": "sources/prs/composable_kernel/PR-3623.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "rocm",
+   "ck-tile",
+   "composable_kernel",
+   "attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR adds a new tile size configuration for the async FMHA pipeline and relocates a buffer load fence to address a compiler bug in ROCm 7.1.1."
+ },
+ {
+  "id": "pr-composable_kernel-3624",
+  "type": "source-pr",
+  "title": "[CK TILE] Enable CK TILE Conv Fwd tests in CI and fix check_err",
+  "path": "sources/prs/composable_kernel/PR-3624.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "conv",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Enable CK TILE Conv Fwd tests in CI and fix check_err by temporary do it on host. Disable v5 instances since they dont work, disable bhalf tests since reference"
+ },
+ {
+  "id": "pr-composable_kernel-3625",
+  "type": "source-pr",
+  "title": "[CK_TILE] Fix alignment in Stream-K workspace buffer",
+  "path": "sources/prs/composable_kernel/PR-3625.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "gemm",
+   "reduction"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Recently, a Stream-K reduction unit test failed; these tests were temporarily disabled in #3559 since the failure was difficult to reproduce (i.e., the test onl"
+ },
+ {
+  "id": "pr-composable_kernel-3626",
+  "type": "source-pr",
+  "title": "Reducing CMake configuration and generation time by limiting search space for device instance cpp files.",
+  "path": "sources/prs/composable_kernel/PR-3626.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Particularly with slow filesystems, the current CMake config and generation stages take several minutes. This PR limits glob recurse to search for old CK device"
+ },
+ {
+  "id": "pr-composable_kernel-3627",
+  "type": "source-pr",
+  "title": "Add ck-rocprof: GPU profiling tool for rocprof-compute",
+  "path": "sources/prs/composable_kernel/PR-3627.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Adds a new command-line profiling tool (`ck-rocprof`) to simplify GPU performance analysis workflow using AMD rocprof-compute."
+ },
+ {
+  "id": "pr-composable_kernel-3629",
+  "type": "source-pr",
+  "title": "[CK_Tile] Adding support for preshuffleQuant in AB quant Block Scale Gemm",
+  "path": "sources/prs/composable_kernel/PR-3629.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "quantization",
+   "rocm",
+   "ck-tile",
+   "composable_kernel",
+   "gemm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Support for PreshuffleQuant in AB quant"
+ },
+ {
+  "id": "pr-composable_kernel-3631",
+  "type": "source-pr",
+  "title": "Add missing check target in reduce tile engine op",
+  "path": "sources/prs/composable_kernel/PR-3631.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "The \"check\" target was missing in the Tile Engine reduce operation. It cause the CI to fails as the test were not executed."
+ },
+ {
+  "id": "pr-composable_kernel-3632",
+  "type": "source-pr",
+  "title": "Grouped conv fwd direct load vector=2",
+  "path": "sources/prs/composable_kernel/PR-3632.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add instance with vector load equal to 2 for grouped conv fwd."
+ },
+ {
+  "id": "pr-composable_kernel-3633",
+  "type": "source-pr",
+  "title": "Revert \" Fp8 block scale quantization for fmha  fwd\"",
+  "path": "sources/prs/composable_kernel/PR-3633.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "quantization",
+   "flash-attention",
+   "rocm",
+   "fp8",
+   "composable_kernel",
+   "attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Reverts ROCm/composable_kernel#3330"
+ },
+ {
+  "id": "pr-composable_kernel-3634",
+  "type": "source-pr",
+  "title": "Solve the staging compiler regression and enhance the docker container execution in script/tools",
+  "path": "sources/prs/composable_kernel/PR-3634.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "reduction",
+   "softmax"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR has two features:"
+ },
+ {
+  "id": "pr-composable_kernel-3635",
+  "type": "source-pr",
+  "title": "Revert \"Revert \" Fp8 block scale quantization for fmha  fwd\"\"",
+  "path": "sources/prs/composable_kernel/PR-3635.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "quantization",
+   "flash-attention",
+   "rocm",
+   "fp8",
+   "composable_kernel",
+   "attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Reverts ROCm/composable_kernel#3633"
+ },
+ {
+  "id": "pr-composable_kernel-3636",
+  "type": "source-pr",
+  "title": "ck: add CK_USE_GFX950 macro",
+  "path": "sources/prs/composable_kernel/PR-3636.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "PR #3248 introduced a GPU architecture related template config in conv_bwd_data instances. It lead to [MIOpen CI fail](https://github.com/ROCm/rocm-libraries/ac"
+ },
+ {
+  "id": "pr-composable_kernel-3638",
+  "type": "source-pr",
+  "title": "[CK_TILE] ABQuant New Preshuffle",
+  "path": "sources/prs/composable_kernel/PR-3638.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR updates the preshuffle format for ABQuant to align with old-ck and AITER implementations by modifying tensor distribution logic, adjusting warp GEMM con"
+ },
+ {
+  "id": "pr-composable_kernel-3639",
+  "type": "source-pr",
+  "title": "[CK] Add new instances for merging multiple fwd conv groups into a single GEMM batch",
+  "path": "sources/prs/composable_kernel/PR-3639.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "gemm",
+   "conv",
+   "rocm"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Added new instances for merging multiple fwd conv groups into a single GEMM batch. Allowed group merging for C > 1 when vector load/store size is 1 for the outp"
+ },
+ {
+  "id": "pr-composable_kernel-3640",
+  "type": "source-pr",
+  "title": "[Compiler] Addressing new compiler warnings",
+  "path": "sources/prs/composable_kernel/PR-3640.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention",
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Clang enables new lifetime warnings in production and we see build errors due to this with the staging compiler."
+ },
+ {
+  "id": "pr-composable_kernel-3642",
+  "type": "source-pr",
+  "title": "Improving CI failure notifications",
+  "path": "sources/prs/composable_kernel/PR-3642.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "The failure notifications failed to detect a docker login failure with the current pattern matching regex. The pattern was updated to be more reliable when iden"
+ },
+ {
+  "id": "pr-composable_kernel-3643",
+  "type": "source-pr",
+  "title": "[CK TILE ENGINE] Updating supported warp tile in Tile Engine",
+  "path": "sources/prs/composable_kernel/PR-3643.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR removes the [4, 64, 16] warp tile configuration from supported tile sizes across multiple GPU architectures in the Tile Engine's GEMM validation utiliti"
+ },
+ {
+  "id": "pr-composable_kernel-3644",
+  "type": "source-pr",
+  "title": "Add python analysis scripts for Clang's time trace",
+  "path": "sources/prs/composable_kernel/PR-3644.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR introduces a Python toolkit for analyzing Clang's `-ftime-trace` build performance data. This is the foundation for our systematic effort to reduce CK a"
+ },
+ {
+  "id": "pr-composable_kernel-3648",
+  "type": "source-pr",
+  "title": "Grouped Conv Bwd Weight Direct Load",
+  "path": "sources/prs/composable_kernel/PR-3648.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add Grouped Conv Bwd Weight Direct Load implementation and instances"
+ },
+ {
+  "id": "pr-composable_kernel-3649",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] Integrate CKB validation with CK verification",
+  "path": "sources/prs/composable_kernel/PR-3649.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "**NOTE**: Targetting #3618 merge that one first!!"
+ },
+ {
+  "id": "pr-composable_kernel-3651",
+  "type": "source-pr",
+  "title": "Add dockerfile for manylinux.",
+  "path": "sources/prs/composable_kernel/PR-3651.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Adding the dockerfile for manylinux OS."
+ },
+ {
+  "id": "pr-composable_kernel-3653",
+  "type": "source-pr",
+  "title": "feat: add split_k support for block scale gemm bquant mode.",
+  "path": "sources/prs/composable_kernel/PR-3653.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "quantization",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "This PR implements split-K support for BQuantGrouped mode across all data types (fp8, bf8, fp8i4, bf8i4), with proper handling of packed data types."
+ },
+ {
+  "id": "pr-composable_kernel-3656",
+  "type": "source-pr",
+  "title": "[Conv] Enable bwd weight splitk autodeduction with cap",
+  "path": "sources/prs/composable_kernel/PR-3656.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Enables split-k autodeduction for old CK bwd weight convolutions. Since the autodeduction can produce very large split-k values that lead to inaccuracy, the ded"
+ },
+ {
+  "id": "pr-composable_kernel-3657",
+  "type": "source-pr",
+  "title": "Optimize batch prefill kernel performance for VECTORIZED_LAYOUT KV cache",
+  "path": "sources/prs/composable_kernel/PR-3657.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Add multi-dimensional page index support (YsGatherDims) in tile_scatter_gather"
+ },
+ {
+  "id": "pr-composable_kernel-3658",
+  "type": "source-pr",
+  "title": "fix some syntax errors",
+  "path": "sources/prs/composable_kernel/PR-3658.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixing some syntax errors caught by cppcheck."
+ },
+ {
+  "id": "pr-composable_kernel-3659",
+  "type": "source-pr",
+  "title": "[CK] removing api ref etc",
+  "path": "sources/prs/composable_kernel/PR-3659.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Cherry pick of recent changes where the api reference is removed."
+ },
+ {
+  "id": "pr-composable_kernel-3661",
+  "type": "source-pr",
+  "title": "Decouple configure/build/test tools from Docker",
+  "path": "sources/prs/composable_kernel/PR-3661.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Create a two-layer tool architecture separating core build tools from Docker container management"
+ },
+ {
+  "id": "pr-composable_kernel-3662",
+  "type": "source-pr",
+  "title": "[CK_TILE] Stream-K Tile Engine Test Config File Generation",
+  "path": "sources/prs/composable_kernel/PR-3662.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "gemm",
+   "reduction"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Currently, Stream-K's unit tests are manual gtests. That said, these tests are difficult to scale due to needing to manually create testing types and individual"
+ },
+ {
+  "id": "pr-composable_kernel-3663",
+  "type": "source-pr",
+  "title": "Adding Additional Failure Patterns for Alerts",
+  "path": "sources/prs/composable_kernel/PR-3663.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Added two new patterns to detect Docker login and sccache failures."
+ },
+ {
+  "id": "pr-composable_kernel-3666",
+  "type": "source-pr",
+  "title": "Fix block scale init value",
+  "path": "sources/prs/composable_kernel/PR-3666.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "quantization",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Change descale range from hardcoded [0.012, 0.015] to dynamic [max*0.8, max]"
+ },
+ {
+  "id": "pr-composable_kernel-3667",
+  "type": "source-pr",
+  "title": "Update pytorch version in convolution dataset test generation",
+  "path": "sources/prs/composable_kernel/PR-3667.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "The version of pytorch used in convolution dataset test generation was old enough to not being able to find MI350X GPU with `torch.cuda.is_available()`. Very sl"
+ },
+ {
+  "id": "pr-composable_kernel-3672",
+  "type": "source-pr",
+  "title": "[CK_TILE] Fix incompatible vector type arguments for the intrinsic calls",
+  "path": "sources/prs/composable_kernel/PR-3672.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fix incompatible vector type conversions (mainly signed <-> unsigned) compilation errors that reported by staging compiler."
+ },
+ {
+  "id": "pr-composable_kernel-3674",
+  "type": "source-pr",
+  "title": "Test fix for gemm_b_scale_xdl_v3.",
+  "path": "sources/prs/composable_kernel/PR-3674.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Please describe the motivation behind the pull request, whether it enables a new feature or fixes a bug. If there are associated pull requests or issues, please"
+ },
+ {
+  "id": "pr-composable_kernel-3677",
+  "type": "source-pr",
+  "title": "[CK_BUILDER] fix test related to changed xdl bwd cshuf v3 interface",
+  "path": "sources/prs/composable_kernel/PR-3677.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This fixes a failing test on develop related to CK-Builder"
+ },
+ {
+  "id": "pr-composable_kernel-3680",
+  "type": "source-pr",
+  "title": "Enable Grouped Conv Tile Fwd Tests daily",
+  "path": "sources/prs/composable_kernel/PR-3680.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "conv"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Enable Grouped Conv Tile Fwd Tests daily for all grouped conv ck tile instances"
+ },
+ {
+  "id": "pr-composable_kernel-3681",
+  "type": "source-pr",
+  "title": "Fix redundant cast in model sensitive rmsnorm",
+  "path": "sources/prs/composable_kernel/PR-3681.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "layernorm"
+  ],
+  "kernel_types": [
+   "layernorm",
+   "rmsnorm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "[Source](https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen3/modeling_qwen3.py#L58)"
+ },
+ {
+  "id": "pr-composable_kernel-3683",
+  "type": "source-pr",
+  "title": "Fix softmax unit test",
+  "path": "sources/prs/composable_kernel/PR-3683.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "softmax",
+   "rocm"
+  ],
+  "kernel_types": [
+   "softmax"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "PR fixes test_softmax_rank4 on compiler version 7.11.0-711 reported in issue ROCM-1675."
+ },
+ {
+  "id": "pr-composable_kernel-3684",
+  "type": "source-pr",
+  "title": "Add a flag to build CK libs required for HipTensor.",
+  "path": "sources/prs/composable_kernel/PR-3684.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "These changes will add an option HIPTENSOR_REQ_LIBS_ONLY to build CK reductions, contractions, and \"other\" libraries currently required by HipTensor."
+ },
+ {
+  "id": "pr-composable_kernel-3693",
+  "type": "source-pr",
+  "title": "Remove builds on legacy OSs from CI",
+  "path": "sources/prs/composable_kernel/PR-3693.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "We need to reduce the size of jenkinsfile and removing the builds on legacy OSs seems like the best option."
+ },
+ {
+  "id": "pr-composable_kernel-3699",
+  "type": "source-pr",
+  "title": "Fix path to ck tile conv fwd instance generator",
+  "path": "sources/prs/composable_kernel/PR-3699.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "conv",
+   "rocm",
+   "ck-tile"
+  ],
+  "kernel_types": [
+   "conv"
+  ],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fix path to ck tile conv fwd instance generator"
+ },
+ {
+  "id": "pr-composable_kernel-3702",
+  "type": "source-pr",
+  "title": "Remove perf numbers from docs",
+  "path": "sources/prs/composable_kernel/PR-3702.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- Remove concrete performance improvement numbers from BUILD_TIME_OPTIMIZATION.md"
+ },
+ {
+  "id": "pr-composable_kernel-3703",
+  "type": "source-pr",
+  "title": "Fix one more lifetimebound error.",
+  "path": "sources/prs/composable_kernel/PR-3703.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixing one last remaining lifetimebound compilation error."
+ },
+ {
+  "id": "pr-composable_kernel-3705",
+  "type": "source-pr",
+  "title": "Revert \"Implement device grouped gemm fixed nk multi abd for rdna4\"",
+  "path": "sources/prs/composable_kernel/PR-3705.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "grouped-gemm",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Reverts ROCm/composable_kernel#3619"
+ },
+ {
+  "id": "pr-flash-attention-100",
+  "type": "source-pr",
+  "title": "Enable MQA/GQA in backward",
+  "path": "sources/prs/flash-attention/PR-100.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "enable mqa/gqa in backward"
+ },
+ {
+  "id": "pr-flash-attention-101",
+  "type": "source-pr",
+  "title": "Dropout",
+  "path": "sources/prs/flash-attention/PR-101.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Add Dropout support"
+ },
+ {
+  "id": "pr-flash-attention-103",
+  "type": "source-pr",
+  "title": "Support page attention in mha_varlen_fwd",
+  "path": "sources/prs/flash-attention/PR-103.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Support page attention in mha_varlen_fwd. Changed 3 files including `csrc/flash_attn_ck/mha_varlen_fwd.cpp`, `tests/test_flash_attn_ck.py` (+1 more files)."
+ },
+ {
+  "id": "pr-flash-attention-104",
+  "type": "source-pr",
+  "title": "Fix mha_varlen_fwd num_split and change ck interface",
+  "path": "sources/prs/flash-attention/PR-104.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fix mha_varlen_fwd num_split and change ck interface. Changed 2 files including `csrc/flash_attn_ck/mha_varlen_fwd.cpp` (+1 more files)."
+ },
+ {
+  "id": "pr-flash-attention-105",
+  "type": "source-pr",
+  "title": "add RDNA CI",
+  "path": "sources/prs/flash-attention/PR-105.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "add rdna ci"
+ },
+ {
+  "id": "pr-flash-attention-107",
+  "type": "source-pr",
+  "title": "Minor fixes",
+  "path": "sources/prs/flash-attention/PR-107.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "a bunch of minor fixes"
+ },
+ {
+  "id": "pr-flash-attention-112",
+  "type": "source-pr",
+  "title": "[CK_TILE] FAv3 bwd test case & api usage update",
+  "path": "sources/prs/flash-attention/PR-112.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "[CK_TILE] FAv3 bwd test case & api usage update. Changed 3 files including `csrc/flash_attn_ck/mha_bwd.cpp`, `csrc/flash_attn_ck/mha_varlen_bwd.cpp`, `tests/tes"
+ },
+ {
+  "id": "pr-flash-attention-113",
+  "type": "source-pr",
+  "title": "[CK_TILE] FAv3 bwd minor changes",
+  "path": "sources/prs/flash-attention/PR-113.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "[CK_TILE] FAv3 bwd minor changes. Changed 1 files including `csrc/flash_attn_ck/mha_bwd.cpp`."
+ },
+ {
+  "id": "pr-flash-attention-114",
+  "type": "source-pr",
+  "title": "[CK_TILE] Enable FAv3 bwd for head_size=64 dtype=bf16 atomic32",
+  "path": "sources/prs/flash-attention/PR-114.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "bf16",
+   "flash-attention",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "[CK_TILE] Enable FAv3 bwd for head_size=64 dtype=bf16 atomic32. Changed 3 files including `csrc/flash_attn_ck/mha_bwd.cpp`, `tests/test_flash_attn_ck_fa3.py` (+"
+ },
+ {
+  "id": "pr-flash-attention-116",
+  "type": "source-pr",
+  "title": "fp8 forward",
+  "path": "sources/prs/flash-attention/PR-116.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "enable fp8 forward for fa"
+ },
+ {
+  "id": "pr-flash-attention-117",
+  "type": "source-pr",
+  "title": "fa3 update ck",
+  "path": "sources/prs/flash-attention/PR-117.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "fa3 update ck. Changed 2 files including `tests/test_flash_attn_ck_fa3.py` (+1 more files)."
+ },
+ {
+  "id": "pr-flash-attention-118",
+  "type": "source-pr",
+  "title": "update CK",
+  "path": "sources/prs/flash-attention/PR-118.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "update CK. Changed 1 files including `csrc/composable_kernel`."
+ },
+ {
+  "id": "pr-flash-attention-119",
+  "type": "source-pr",
+  "title": "fp8 backward",
+  "path": "sources/prs/flash-attention/PR-119.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "add fp8 backward"
+ },
+ {
+  "id": "pr-flash-attention-121",
+  "type": "source-pr",
+  "title": "reenable gfx1100 ci",
+  "path": "sources/prs/flash-attention/PR-121.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "flash-attention",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "reenable gfx1100 ci. The test suite timesout on gfx1000 so we are sampling a subset of the tests.  The full suite will run on a CDNA machine."
+ },
+ {
+  "id": "pr-flash-attention-122",
+  "type": "source-pr",
+  "title": "Performant backward Triton implementation with separated dkdv and dq kernels",
+  "path": "sources/prs/flash-attention/PR-122.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton-rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR introduces a performant version of the backward kernel implementation in Triton. It follows the same implementation strategy as the [example in upstream"
+ },
+ {
+  "id": "pr-flash-attention-124",
+  "type": "source-pr",
+  "title": "Quick Fixes",
+  "path": "sources/prs/flash-attention/PR-124.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "fix some minor bugs"
+ },
+ {
+  "id": "pr-flash-attention-125",
+  "type": "source-pr",
+  "title": "change version to 3.0.0.r1",
+  "path": "sources/prs/flash-attention/PR-125.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "change version to 3.0.0.r1. Changed 2 files including `flash_attn/__init__.py` (+1 more files)."
+ },
+ {
+  "id": "pr-flash-attention-128",
+  "type": "source-pr",
+  "title": "update triton commit",
+  "path": "sources/prs/flash-attention/PR-128.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton-rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "update triton compiler commit to today"
+ },
+ {
+  "id": "pr-flash-attention-129",
+  "type": "source-pr",
+  "title": "update base docker image",
+  "path": "sources/prs/flash-attention/PR-129.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "update base docker image to most recent version"
+ },
+ {
+  "id": "pr-flash-attention-130",
+  "type": "source-pr",
+  "title": "Casting Kernel",
+  "path": "sources/prs/flash-attention/PR-130.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "This pr adds a few featrues, a triton kernel for casting to fp8, to ability to bench the api functions & add tests that are remaining from upstream tests"
+ },
+ {
+  "id": "pr-flash-attention-131",
+  "type": "source-pr",
+  "title": "Clean up readme",
+  "path": "sources/prs/flash-attention/PR-131.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Clean up readme"
+ },
+ {
+  "id": "pr-flash-attention-132",
+  "type": "source-pr",
+  "title": "use triton==3.2.0",
+  "path": "sources/prs/flash-attention/PR-132.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton-rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "use triton==3.2.0"
+ },
+ {
+  "id": "pr-flash-attention-134",
+  "type": "source-pr",
+  "title": "Update README.md",
+  "path": "sources/prs/flash-attention/PR-134.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Clean Up README"
+ },
+ {
+  "id": "pr-flash-attention-135",
+  "type": "source-pr",
+  "title": "Bench",
+  "path": "sources/prs/flash-attention/PR-135.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "add bench code and bwd versions. One by @jtang10 and Juuso Korhonen"
+ },
+ {
+  "id": "pr-flash-attention-137",
+  "type": "source-pr",
+  "title": "Fused Bwd",
+  "path": "sources/prs/flash-attention/PR-137.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "fused-kernel",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "fix bugs in fused bwd kernel"
+ },
+ {
+  "id": "pr-flash-attention-138",
+  "type": "source-pr",
+  "title": "Enable Alibi",
+  "path": "sources/prs/flash-attention/PR-138.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "* add alibi to backward and enable it"
+ },
+ {
+  "id": "pr-flash-attention-139",
+  "type": "source-pr",
+  "title": "Add alibi in the new bwd kernel",
+  "path": "sources/prs/flash-attention/PR-139.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "add alibi in the new backward kernel"
+ },
+ {
+  "id": "pr-flash-attention-140",
+  "type": "source-pr",
+  "title": "Add fp8 to fused kernel",
+  "path": "sources/prs/flash-attention/PR-140.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "fused-kernel",
+   "rocm",
+   "fp8",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add fp8 to fused kernel. Changed 5 files including `.github/workflows/amd_tests.yml`, `flash_attn/flash_attn_triton_amd/bwd_prefill_onekernel.py`, `flash_attn/f"
+ },
+ {
+  "id": "pr-flash-attention-141",
+  "type": "source-pr",
+  "title": "head, seq, batch grid order for triton flash attention bwd.",
+  "path": "sources/prs/flash-attention/PR-141.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "rocm",
+   "triton-rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Change the grid order for triton flash attention bwd."
+ },
+ {
+  "id": "pr-flash-attention-144",
+  "type": "source-pr",
+  "title": "Fix keys",
+  "path": "sources/prs/flash-attention/PR-144.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Fix keys in autotune code"
+ },
+ {
+  "id": "pr-flash-attention-147",
+  "type": "source-pr",
+  "title": "[CK_TILE] Use more reasonable splitkv heuristic",
+  "path": "sources/prs/flash-attention/PR-147.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "[CK_TILE] Use more reasonable splitkv heuristic. Changed 2 files including `csrc/flash_attn_ck/flash_common.cpp`, `csrc/flash_attn_ck/flash_common.hpp`."
+ },
+ {
+  "id": "pr-flash-attention-148",
+  "type": "source-pr",
+  "title": "Pad LSE",
+  "path": "sources/prs/flash-attention/PR-148.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention",
+   "softmax"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Pad Softmax LSE to match main implementation"
+ },
+ {
+  "id": "pr-flash-attention-150",
+  "type": "source-pr",
+  "title": "Pass logits soft-capping arguments",
+  "path": "sources/prs/flash-attention/PR-150.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Pass logits soft-capping arguments. Changed 3 files including `csrc/flash_attn_ck/mha_fwd.cpp`, `csrc/flash_attn_ck/mha_fwd_kvcache.cpp`, `csrc/flash_attn_ck/mh"
+ },
+ {
+  "id": "pr-flash-attention-151",
+  "type": "source-pr",
+  "title": "Sliding Window Forward",
+  "path": "sources/prs/flash-attention/PR-151.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Sliding Window implmentation for `fwd`, `varlen_fwd` & `fwd_kvcache`"
+ },
+ {
+  "id": "pr-flash-attention-152",
+  "type": "source-pr",
+  "title": "Fix Device Segfault",
+  "path": "sources/prs/flash-attention/PR-152.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "If tensors are on a specific device such device 7 and triton launches a kernel on the default device such as device 0. We get a segfault. I add asserts to catch"
+ },
+ {
+  "id": "pr-flash-attention-154",
+  "type": "source-pr",
+  "title": "Fix fp8 docs",
+  "path": "sources/prs/flash-attention/PR-154.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Update fp8 section of readme."
+ },
+ {
+  "id": "pr-flash-attention-155",
+  "type": "source-pr",
+  "title": "Sliding Window block classification logic",
+  "path": "sources/prs/flash-attention/PR-155.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Add Sliding Window block classification logic"
+ },
+ {
+  "id": "pr-flash-attention-156",
+  "type": "source-pr",
+  "title": "Tune BWD",
+  "path": "sources/prs/flash-attention/PR-156.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "optimization"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Tune varlen bwd"
+ },
+ {
+  "id": "pr-flash-attention-157",
+  "type": "source-pr",
+  "title": "Enable FA V3",
+  "path": "sources/prs/flash-attention/PR-157.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "enable FA V3. It adds support for f8. We also add support for Paged Attention."
+ },
+ {
+  "id": "pr-flash-attention-159",
+  "type": "source-pr",
+  "title": "AITER integration",
+  "path": "sources/prs/flash-attention/PR-159.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Integrate Triton FA module with aiter"
+ },
+ {
+  "id": "pr-flash-attention-160",
+  "type": "source-pr",
+  "title": "Tune FP8 Perf",
+  "path": "sources/prs/flash-attention/PR-160.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "flash-attention",
+   "optimization"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Improve the perf of fp8"
+ },
+ {
+  "id": "pr-flash-attention-173",
+  "type": "source-pr",
+  "title": "Update to ROCm/composable_kernel@e951863",
+  "path": "sources/prs/flash-attention/PR-173.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "- [ ] Look over the contributing guidelines at https://github.com/ROCm/ROCm/blob/develop/CONTRIBUTING.md#pull-requests."
+ },
+ {
+  "id": "pr-flash-attention-174",
+  "type": "source-pr",
+  "title": "update CK",
+  "path": "sources/prs/flash-attention/PR-174.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "update CK and corresponding paratemeter"
+ },
+ {
+  "id": "pr-flash-attention-176",
+  "type": "source-pr",
+  "title": "Update to ROCm/rocm-libraries#4368 (ROCm/rocm-libraries@17f7dfc)",
+  "path": "sources/prs/flash-attention/PR-176.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Update for ROCm/rocm-libraries#4368"
+ },
+ {
+  "id": "pr-flash-attention-177",
+  "type": "source-pr",
+  "title": "Update to ROCm/rocm-libraries@a358a21",
+  "path": "sources/prs/flash-attention/PR-177.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Update to ROCm/rocm-libraries@a358a21"
+ },
+ {
+  "id": "pr-flash-attention-178",
+  "type": "source-pr",
+  "title": "[CK_TILE] Update CK and add RDNA build support",
+  "path": "sources/prs/flash-attention/PR-178.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "flash-attention",
+   "rdna",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Update CK to a gfx1x FMHA-capable version and align FlashAttention CK argument wiring accordingly."
+ },
+ {
+  "id": "pr-flash-attention-179",
+  "type": "source-pr",
+  "title": "[CK_TILE] Fix NaN for FMHA BWD When seq_q=0",
+  "path": "sources/prs/flash-attention/PR-179.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "ck-tile",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "When the variable-length FMHA backward pass encounters a batch entry whose query sequence length is zero (`seqlen_q == 0`), the CK_TILE backward pipelines could"
+ },
+ {
+  "id": "pr-flash-attention-181",
+  "type": "source-pr",
+  "title": "Update CK submodule and fix fmha_bwd_args",
+  "path": "sources/prs/flash-attention/PR-181.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "- Update CK submodule to latest version"
+ },
+ {
+  "id": "pr-flash-attention-182",
+  "type": "source-pr",
+  "title": "[CK_TILE] Use Unified Workspace for FMHA BWD",
+  "path": "sources/prs/flash-attention/PR-182.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "ck-tile",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "- [x] Depends on ROCm/rocm-libraries#6152"
+ },
+ {
+  "id": "pr-flash-attention-183",
+  "type": "source-pr",
+  "title": "[CK_TILE] FMHA BWD: stream-async workspace prepare",
+  "path": "sources/prs/flash-attention/PR-183.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "ck-tile",
+   "rocm",
+   "flash-attention"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "- [x] Depends on ROCm/rocm-libraries#7331"
+ },
+ {
+  "id": "pr-flashinfer-3413",
+  "type": "source-pr",
+  "title": "feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)",
+  "path": "sources/prs/hipblaslt/PR-3413.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "bf16",
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a new `backend=\"cutile\"` option to `flashinfer.gemm.bmm_bf16`, wrapping a `cuda.tile` Python kernel ported from NVIDIA TileGym's `_ragged_bmm_kernel`. Exte"
+ },
+ {
+  "id": "pr-flashinfer-3601",
+  "type": "source-pr",
+  "title": "[WIP] test: cut unit-test CI wall time",
+  "path": "sources/prs/hipblaslt/PR-3601.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention",
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Cuts CI wall time for six of the slowest unit-test files. No test cases removed; collection counts, tolerances, and comparison semantics unchanged."
+ },
+ {
+  "id": "pr-hipblaslt-1",
+  "type": "source-pr",
+  "title": "Optimize Featherstone GEMM kernels",
+  "path": "sources/prs/hipblaslt/PR-1.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "gemm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add TensileLite. Changed 100 files including `tensilelite/Tensile/Activation.py`, `tensilelite/Tensile/AsmAddressCalculation.py`, `tensilelite/Tensile/AsmMemory"
+ },
+ {
+  "id": "pr-hipblaslt-101",
+  "type": "source-pr",
+  "title": "fix(train): gfx1201 ROCm fixes + unsloth bnb-4bit Gemma 4 31B QLoRA",
+  "path": "sources/prs/hipblaslt/PR-101.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "fix GSU bug: incorrect size range checking. Changed 1 files including `tensilelite/Tensile/KernelWriterConversion.py`."
+ },
+ {
+  "id": "pr-hipblaslt-102",
+  "type": "source-pr",
+  "title": "[MetaxGPU][testing] correct FP64 MMA store layout to fix the test pre\u2026",
+  "path": "sources/prs/hipblaslt/PR-102.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add hardware only mode for findAllSolutions. Changed 10 files including `tensilelite/Tensile/Source/lib/include/Tensile/CachingLibrary.hpp`, `tensilelite/Tensil"
+ },
+ {
+  "id": "pr-hipblaslt-12",
+  "type": "source-pr",
+  "title": "feat(flydsl): add core 7 FlyDSL skill pack",
+  "path": "sources/prs/hipblaslt/PR-12.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "TT logic / fix solutions / optimiza sgpr usage. Changed 16 files including `library/src/amd_detail/rocblaslt/src/Tensile/Logic/asm_full/aldebaran/104CU/GridBase"
+ },
+ {
+  "id": "pr-hipblaslt-16",
+  "type": "source-pr",
+  "title": "Add coda-kernels-rust: CODA GEMM-epilogue kernels in Rust, CPU + CUDA",
+  "path": "sources/prs/hipblaslt/PR-16.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "gemm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Support bias type. Changed 100 files including `clients/benchmarks/client.cpp`, `clients/benchmarks/program_options.hpp`, `clients/common/hipblaslt_arguments.cp"
+ },
+ {
+  "id": "pr-hipblaslt-1657",
+  "type": "source-pr",
+  "title": "AMD - gpt-oss vllm mxfp4: AITER tuning + n-gram spec decode + server \u2026",
+  "path": "sources/prs/hipblaslt/PR-1657.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "optimization",
+   "rocm",
+   "hipblaslt",
+   "fp4"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "58 GEMM sizes tuned and merged with average ~40% improvement on reliable system. 7 GEMM we cannot improve sufficient performance."
+ },
+ {
+  "id": "pr-hipblaslt-1663",
+  "type": "source-pr",
+  "title": "[TLX][AMD] gfx9 fp16 GEMM tutorial (a16w16) v0-v9 on gfx950",
+  "path": "sources/prs/hipblaslt/PR-1663.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "gemm",
+   "fp16",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Update gfx942 BBS NN/NT/TN GridBased yamls for grid v3 fix"
+ },
+ {
+  "id": "pr-hipblaslt-1822",
+  "type": "source-pr",
+  "title": "fix: AMD gfx1201 (RDNA4/ROCm) \u2014 INT8 Triton f32 MFMA, LTX Video device fix, validate_settings KeyError",
+  "path": "sources/prs/hipblaslt/PR-1822.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "hipblaslt",
+   "mfma",
+   "rdna",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "1. For ticket: [SWDEV-522530](https://ontrack-internal.amd.com/browse/SWDEV-522530)"
+ },
+ {
+  "id": "pr-hipblaslt-2",
+  "type": "source-pr",
+  "title": "[Kernel][Nemotron] SM100 FP8 dense GEMM + ReLU\u00b2 fusions and Mamba2/RMSNorm fusions for Nemotron-3-Super NVFP4 (B200)",
+  "path": "sources/prs/hipblaslt/PR-2.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "fp8",
+   "fp4",
+   "rocm",
+   "gemm",
+   "hipblaslt",
+   "layernorm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "layernorm",
+   "rmsnorm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add tensilelite. Changed 100 files including `tensilelite/Tensile/Activation.py`, `tensilelite/Tensile/AsmAddressCalculation.py`, `tensilelite/Tensile/AsmMemory"
+ },
+ {
+  "id": "pr-hipblaslt-20",
+  "type": "source-pr",
+  "title": "feat: shared-engine refactor + Nemotron-Nano-30B GB10 prefill/decode optimizations (~5\u00d7)",
+  "path": "sources/prs/hipblaslt/PR-20.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "\u2026ferent unit tests"
+ },
+ {
+  "id": "pr-hipblaslt-203",
+  "type": "source-pr",
+  "title": "Add hip-and-triton-kernel-optimization skill",
+  "path": "sources/prs/hipblaslt/PR-203.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton-rocm",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp",
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Put ws args before GSU workspace. Changed 6 files including `tensilelite/Tensile/Contractions.py`, `tensilelite/Tensile/Source/client/include/SolutionIterator.h"
+ },
+ {
+  "id": "pr-hipblaslt-2175",
+  "type": "source-pr",
+  "title": "[AIROCMLIR-191] Add gemm+gemm support to CI",
+  "path": "sources/prs/hipblaslt/PR-2175.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "gemm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "- add Stream-K I8II gfx950 liblogics"
+ },
+ {
+  "id": "pr-hipblaslt-2262",
+  "type": "source-pr",
+  "title": "[AIROCMLIR-71] Add gemm+gemm and conv+gemm support to quickTuningGen.py",
+  "path": "sources/prs/hipblaslt/PR-2262.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "conv",
+   "rocm",
+   "gemm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Add some Origami libraries for gfx950 (#2242). Changed 100 files including `library/src/amd_detail/rocblaslt/src/Tensile/Logic/asm_full/gfx950/GridBased/gfx950_"
+ },
+ {
+  "id": "pr-hipblaslt-2297",
+  "type": "source-pr",
+  "title": "Made a new branch to add necessary files for batched_gemm_a16w8_block\u2026",
+  "path": "sources/prs/hipblaslt/PR-2297.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Bumps [rocm-docs-core](https://github.com/ROCm/rocm-docs-core) from 1.18.2 to 1.31.3."
+ },
+ {
+  "id": "pr-hipblaslt-241",
+  "type": "source-pr",
+  "title": "feat(tilelang): Add End2End tilelang profile backend and example",
+  "path": "sources/prs/hipblaslt/PR-241.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "alpha vector sample. Changed 53 files including `library/src/amd_detail/rocblaslt/src/Tensile/Logic/asm_full/aquavanjaram/gfx941/Equality/aquavanjaram_Cijk_Ailk"
+ },
+ {
+  "id": "pr-hipblaslt-269",
+  "type": "source-pr",
+  "title": "feat(skills): enhance FlyDSL optimization skills",
+  "path": "sources/prs/hipblaslt/PR-269.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add FP8FP16_FP8SS. Changed 6 files including `tensilelite/Tensile/KernelWriterAssembly.py`, `tensilelite/Tensile/Source/client/include/TypedId.hpp`, `tensilelit"
+ },
+ {
+  "id": "pr-hipblaslt-3",
+  "type": "source-pr",
+  "title": "[Hipblaslt] [Subtiling] Add non-uniform partition size to Logical Scheduler",
+  "path": "sources/prs/hipblaslt/PR-3.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "1. Remove LICENSE.md"
+ },
+ {
+  "id": "pr-hipblaslt-330",
+  "type": "source-pr",
+  "title": "[WIP] [Feature] Add Turbo MXFP8 Grouped GEMM (gfx950) for MoE",
+  "path": "sources/prs/hipblaslt/PR-330.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "grouped-gemm",
+   "rocm",
+   "gemm",
+   "moe",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm",
+   "moe"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Add build.os in .readthedoc.yaml. Changed 1 files including `.readthedocs.yaml`."
+ },
+ {
+  "id": "pr-hipblaslt-34",
+  "type": "source-pr",
+  "title": "feat(compile): expose torch_compile_options for Inductor flag tuning",
+  "path": "sources/prs/hipblaslt/PR-34.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "hipblaslt",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Add hipBLASLt Dockerfile. Changed 2 files including `docker/Dockerfile`, `docker/README.md`."
+ },
+ {
+  "id": "pr-hipblaslt-353",
+  "type": "source-pr",
+  "title": "feat: triton_grouped_gemm: add work-stealing variant with ws_mode API ",
+  "path": "sources/prs/hipblaslt/PR-353.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "bug fix, correct typo in previous host validation commit. Changed 1 files including `clients/common/cblas_interface.cpp`."
+ },
+ {
+  "id": "pr-hipblaslt-364",
+  "type": "source-pr",
+  "title": "feat(quantize): add fused FP8 quantization kernels with amax+scale and cast+transpose",
+  "path": "sources/prs/hipblaslt/PR-364.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "fp8",
+   "quantization",
+   "rocm",
+   "fused-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "## Brief ##"
+ },
+ {
+  "id": "pr-hipblaslt-366",
+  "type": "source-pr",
+  "title": "opt(gemm): add AITER MXFP4 preshuffle fast path",
+  "path": "sources/prs/hipblaslt/PR-366.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "gemm",
+   "hipblaslt",
+   "fp4"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "[Tensilelite] Fixe the conflict GSUM kernel name for I8/H/S and H/H/S. Changed 2 files including `tensilelite/Tensile/KernelWriterConversion.py`, `tensilelite/T"
+ },
+ {
+  "id": "pr-hipblaslt-37",
+  "type": "source-pr",
+  "title": "HydraGNN perf characterization + iterative sysopt-loop recipe (MI355X)",
+  "path": "sources/prs/hipblaslt/PR-37.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "hipblaslt",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "[Changes]"
+ },
+ {
+  "id": "pr-hipblaslt-374",
+  "type": "source-pr",
+  "title": "feat: support build on gfx1250",
+  "path": "sources/prs/hipblaslt/PR-374.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Improve bench. Changed 4 files including `clients/benchmarks/client.cpp`, `clients/include/host_vector.hpp`, `clients/include/norm.hpp`, `clients/include/testin"
+ },
+ {
+  "id": "pr-hipblaslt-377",
+  "type": "source-pr",
+  "title": "[ROCm] Add Triton MLA decode + prefill kernels for MI300X",
+  "path": "sources/prs/hipblaslt/PR-377.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "rocm",
+   "triton-rocm",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fix bad_alloc. Changed 3 files including `clients/benchmarks/client.cpp`, `clients/include/hipblaslt_arguments.hpp`, `clients/include/testing_matmul.hpp`."
+ },
+ {
+  "id": "pr-hipblaslt-381",
+  "type": "source-pr",
+  "title": "Add Triton ROCm backend for FP4 GEMM ops (MXFP4 + NVFP4) on MI300X / MI350X",
+  "path": "sources/prs/hipblaslt/PR-381.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "fp4",
+   "rocm",
+   "gemm",
+   "triton-rocm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add mix precision gg free size. Changed 4 files including `clients/include/hipblaslt_arguments.hpp`, `clients/samples/groupedgemm_fixed_mk/sample_hipblaslt_grou"
+ },
+ {
+  "id": "pr-hipblaslt-388",
+  "type": "source-pr",
+  "title": "[ROCm] Add Triton Backend for BF16 Grouped GEMM Backward Kernels",
+  "path": "sources/prs/hipblaslt/PR-388.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "grouped-gemm",
+   "rocm",
+   "gemm",
+   "bf16",
+   "triton-rocm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "gfx94x is missing gridbased HSS yamls. Add them in this commit."
+ },
+ {
+  "id": "pr-hipblaslt-4",
+  "type": "source-pr",
+  "title": "templates/skills: add hip + aiter SKILLs for AMD Instinct kernel work",
+  "path": "sources/prs/hipblaslt/PR-4.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "test with tensilelite in gitlab"
+ },
+ {
+  "id": "pr-hipblaslt-424",
+  "type": "source-pr",
+  "title": "Add BF16xFP4 MoE GEMM stage1 kernel",
+  "path": "sources/prs/hipblaslt/PR-424.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "grouped-gemm",
+   "rocm",
+   "gemm",
+   "moe",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm",
+   "moe"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Sanitize c style heuristic array. Changed 2 files including `library/src/amd_detail/rocblaslt/include/rocblaslt-types.h`, `library/src/amd_detail/rocblaslt/src/"
+ },
+ {
+  "id": "pr-hipblaslt-431",
+  "type": "source-pr",
+  "title": "Add A16W4 MoE GEMM stage2 kernel (BF16 activations x MXFP4 weights)",
+  "path": "sources/prs/hipblaslt/PR-431.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "grouped-gemm",
+   "fp4",
+   "rocm",
+   "gemm",
+   "moe",
+   "bf16",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm",
+   "moe"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "## Brief ##"
+ },
+ {
+  "id": "pr-hipblaslt-433",
+  "type": "source-pr",
+  "title": "Adds Grouped and Batched GEMM kernels with blockscaling matching DeepGEMM API",
+  "path": "sources/prs/hipblaslt/PR-433.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "gemm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Merge GSU1 and GSUM into one kernel. Changed 8 files including `tensilelite/Tensile/AsmAddressCalculation.py`, `tensilelite/Tensile/Components/ComputeStoreVgprs"
+ },
+ {
+  "id": "pr-hipblaslt-5",
+  "type": "source-pr",
+  "title": "reference/fp8-gemm-dsr1-rocm: closed-loop case study on AMD MI355X",
+  "path": "sources/prs/hipblaslt/PR-5.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "gemm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "An example of find top solutions."
+ },
+ {
+  "id": "pr-hipblaslt-52",
+  "type": "source-pr",
+  "title": "Add CDNA3 FP8 support",
+  "path": "sources/prs/hipblaslt/PR-52.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "hipblaslt",
+   "cdna3"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Add AUX support."
+ },
+ {
+  "id": "pr-hipblaslt-605",
+  "type": "source-pr",
+  "title": "add MXFP8 pre-swizzling for gfx1250 GEMM (#568)",
+  "path": "sources/prs/hipblaslt/PR-605.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "gemm",
+   "hipblaslt",
+   "rdna",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Free more sgprs in post-loop. Changed 2 files including `tensilelite/Tensile/KernelWriter.py`, `tensilelite/Tensile/KernelWriterAssembly.py`."
+ },
+ {
+  "id": "pr-hipblaslt-62",
+  "type": "source-pr",
+  "title": "feat(forge): introduce forge/ subdir \u2014 AI-agent kernel tuning + PR guardian gate",
+  "path": "sources/prs/hipblaslt/PR-62.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "hipblaslt",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Remove the reconstruction of ``ContractionProblemGemm``. Should improve performance."
+ },
+ {
+  "id": "pr-hipblaslt-666",
+  "type": "source-pr",
+  "title": "scripts: add HIP->FlyDSL multi-agent port orchestrator",
+  "path": "sources/prs/hipblaslt/PR-666.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "instruction cache flush. Changed 7 files including `clients/benchmarks/client.cpp`, `clients/common/hipblaslt_arguments.cpp`, `clients/include/argument_model.hp"
+ },
+ {
+  "id": "pr-hipblaslt-686",
+  "type": "source-pr",
+  "title": "Kokkos-Polybench: Add GEMM kernel",
+  "path": "sources/prs/hipblaslt/PR-686.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "gemm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "BS=1~128"
+ },
+ {
+  "id": "pr-hipblaslt-805",
+  "type": "source-pr",
+  "title": "Feat/fused ulysses qkv projection",
+  "path": "sources/prs/hipblaslt/PR-805.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fused-kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "for https://ontrack-internal.amd.com/browse/SWDEV-453076"
+ },
+ {
+  "id": "pr-hipblaslt-811",
+  "type": "source-pr",
+  "title": "[gfx1201] Mistral-3 + Qwen3-8B-FP8 on RDNA4 via native triton attention",
+  "path": "sources/prs/hipblaslt/PR-811.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "flash-attention",
+   "fp8",
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "For ROCm 6.2 release, as same as #807."
+ },
+ {
+  "id": "pr-hipblaslt-970",
+  "type": "source-pr",
+  "title": "MoE: Grouped Triton GEMM for TTFT improvements",
+  "path": "sources/prs/hipblaslt/PR-970.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "grouped-gemm",
+   "rocm",
+   "gemm",
+   "moe",
+   "triton-rocm",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm",
+   "moe"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "* Add log bench for cpp api in runKernelFromInvocation"
+ },
+ {
+  "id": "pr-intel_xpu_backend_for_triton-7152",
+  "type": "source-pr",
+  "title": "Add fused_gemm_benchmark.py: fused two-GEMM SwiGLU kernel benchmark",
+  "path": "sources/prs/hipblaslt/PR-7152.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fused-kernel",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a benchmark for the fused SwiGLU pattern common in LLM FFN layers (`y = silu(x @ w_g + b_g) * (x @ w_fc + b_fc)`), refactored from PR #7151 to align with `"
+ },
+ {
+  "id": "pr-llama.cpp-24408",
+  "type": "source-pr",
+  "title": "vulkan: Intel Xe flash attention, GEMM optimizations, and optional weight compression (Xe-LPG Plus/Xe2/Xe3) [MEGA PR]",
+  "path": "sources/prs/hipblaslt/PR-24408.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "cross-repo",
+   "flash-attention",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "**Co-authors:** @jxia4intel, @sliu39"
+ },
+ {
+  "id": "pr-modular-6474",
+  "type": "source-pr",
+  "title": "[max/kernels] Fix MXFP4 dequant matmul on MI300X (CDNA3): use FP8 fnuz dtype",
+  "path": "sources/prs/hipblaslt/PR-6474.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "cdna3",
+   "cross-repo",
+   "fp4",
+   "fp8",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "`mxfp4_dequant_matmul_amd` and `mxfp4_dequant_grouped_matmul_amd` both"
+ },
+ {
+  "id": "pr-onednn-5303",
+  "type": "source-pr",
+  "title": "xe: gemm: fixup bdpas scale arg layout",
+  "path": "sources/prs/hipblaslt/PR-5303.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "quantization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "bdpas scale args use an incorrect register layout, causing incorrect results for mxfp4 calculations on CRI. bdpas instructions expect the following layout for s"
+ },
+ {
+  "id": "pr-onnxruntime-28760",
+  "type": "source-pr",
+  "title": "webgpu: adjust the parms for gemm-subgroup kernel",
+  "path": "sources/prs/hipblaslt/PR-28760.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "### Description"
+ },
+ {
+  "id": "pr-pytorch-177961",
+  "type": "source-pr",
+  "title": "[ROCm] Enable native AsyncTP",
+  "path": "sources/prs/hipblaslt/PR-177961.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "attention",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Enables the native asynchronous Tensor Parallel (`fused_all_gather_matmul`) path on ROCm, using AMD's Composable Kernel (CK) tile library as the GEMM backend. T"
+ },
+ {
+  "id": "pr-pytorch-186642",
+  "type": "source-pr",
+  "title": "[inductor][rocm] make AMD MM matrix_instr_nonkdim configurable",
+  "path": "sources/prs/hipblaslt/PR-186642.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "The AMD MM Triton autotune sweep hard-codes `matrix_instr_nonkdim` to `[0, 16]`, so shapes where the `mfma_32x32` path wins cannot be reached without patching i"
+ },
+ {
+  "id": "pr-pytorch-187108",
+  "type": "source-pr",
+  "title": "Add dense FlexGEMM QuACK tuning",
+  "path": "sources/prs/hipblaslt/PR-187108.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "rmsnorm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Stack from [ghstack](https://github.com/ezyang/ghstack/tree/0.15.0) (oldest at bottom):"
+ },
+ {
+  "id": "pr-rocm_libraries-5813",
+  "type": "source-pr",
+  "title": "[CK_TILE] Enable full transpose layout support for MX GEMM pipeline",
+  "path": "sources/prs/hipblaslt/PR-5813.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR enables all four matrix layout combinations (Row/Col, Row/Row, Col/Col, Col/Row) for the MX GEMM pipeline with `32x32x64` MFMA warp tiles, using `ds_rea"
+ },
+ {
+  "id": "pr-rocm_libraries-6557",
+  "type": "source-pr",
+  "title": "Correct compute type conversion for User offline tuning",
+  "path": "sources/prs/hipblaslt/PR-6557.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "[AIHPBLAS-3537](https://amd-hub.atlassian.net/browse/AIHPBLAS-3537 )"
+ },
+ {
+  "id": "pr-rocm_libraries-6604",
+  "type": "source-pr",
+  "title": "Add Triton specialization paths to origami (gated on target_t)",
+  "path": "sources/prs/hipblaslt/PR-6604.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "This PR adds Triton-target specialization paths to the Origami analytical model, gated on `config.target == target_t::triton`. It introduces a small set of Trit"
+ },
+ {
+  "id": "pr-rocm_libraries-6993",
+  "type": "source-pr",
+  "title": "[Tensilelite] Fix incorrect output for SIA0 + PGR",
+  "path": "sources/prs/hipblaslt/PR-6993.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "With `SIA=0`, the kernel produces incorrect GEMM"
+ },
+ {
+  "id": "pr-rocm_libraries-7196",
+  "type": "source-pr",
+  "title": "[CK Tile] Wavelet gemm pipeline for conv fwd",
+  "path": "sources/prs/hipblaslt/PR-7196.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "conv",
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "In the current CShuffleV3 conv fwd kernel, the in-kernel conv-to-GEMM transform generates significant INT32 VALU pressure per MFMA instruction. On VALU-heavy sh"
+ },
+ {
+  "id": "pr-rocm_libraries-7520",
+  "type": "source-pr",
+  "title": "[hipBLASLt] Fix FP8 origami enum drift in PredictionLibrary::findTopSolutions",
+  "path": "sources/prs/hipblaslt/PR-7520.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fp8",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixes ROCM-24181 / [GH #7056](https://github.com/ROCm/rocm-libraries/issues/7056)."
+ },
+ {
+  "id": "pr-rocm_libraries-7636",
+  "type": "source-pr",
+  "title": "[hipBLASLt] [TensileLite] Add initial tail loop support for Subtile path",
+  "path": "sources/prs/hipblaslt/PR-7636.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Lifts the subtile-impl K constraint from `K % DepthU == 0` to `K % 32 == 0` by"
+ },
+ {
+  "id": "pr-rocm_libraries-7655",
+  "type": "source-pr",
+  "title": "[tensile] gfx12 assembly compatibility",
+  "path": "sources/prs/hipblaslt/PR-7655.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "tensilelite"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "assembly",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Tensile CI is broken because gfx1201 tests were enabled (previously no-op succeed pipelines, untracked and unknown for some time) which exposed numerous issues "
+ },
+ {
+  "id": "pr-rocm_libraries-7669",
+  "type": "source-pr",
+  "title": "[CK_TILE] Scope NumWarps==8 CompV3 tail/epilogue logic to EightWaves \u2026",
+  "path": "sources/prs/hipblaslt/PR-7669.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "cross-repo",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "> The tile_example_gemm_universal GEMM kernel produces incorrect numerical results (92.76% wrong values) when configured with M_warp=4 and N_warp=2, due to the "
+ },
+ {
+  "id": "pr-rocm_libraries-7767",
+  "type": "source-pr",
+  "title": "# [TensileLite] Decouple MXFP8 scale DepthU from data DepthU (`ScaleDepthURatio`)",
+  "path": "sources/prs/hipblaslt/PR-7767.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "quantization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a new Solution parameter `ScaleDepthURatio{A,B}` (`R`, valid values `[1, 2]`) that lets the per-DepthU scale fetch cadence run at `1/R` the rate of the dat"
+ },
+ {
+  "id": "pr-rocm_libraries-7781",
+  "type": "source-pr",
+  "title": "TensileLite: Add multi-DU support.",
+  "path": "sources/prs/hipblaslt/PR-7781.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "This branch adds multi-DU (DepthU) support to the subtile-based kernel pipeline \u2014 allowing data and scale tensors to use different DepthU values via a new Depth"
+ },
+ {
+  "id": "pr-rocm_libraries-7782",
+  "type": "source-pr",
+  "title": "[Hipblaslt] Allow Subtile path to use BF16 any-K and MX K%32 tail loop",
+  "path": "sources/prs/hipblaslt/PR-7782.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "bf16",
+   "cross-repo",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "The subtile path previously required callers to pre-pad `K` to a multiple of `DepthU` (and `MX_PAD_K = 256` for the MX scale buffer), and the host side silently"
+ },
+ {
+  "id": "pr-rocm_libraries-7788",
+  "type": "source-pr",
+  "title": "RotateCoObject",
+  "path": "sources/prs/hipblaslt/PR-7788.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "[AIHPBLAS-3595](https://amd-hub.atlassian.net/browse/AIHPBLAS-3595)"
+ },
+ {
+  "id": "pr-rocm_libraries-7794",
+  "type": "source-pr",
+  "title": "[hipblaslt] Fix ~600ms cold-call stall on MI300A for f16/bf16 GEMMs regression",
+  "path": "sources/prs/hipblaslt/PR-7794.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "bf16",
+   "cross-repo",
+   "fp16",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixes a ~600 ms cold-call stall in `hipblasLtMatmul` on **MI300A (gfx942 APU, 228 CU / 6 XCC)** for `float16 NT`, `bfloat16 NN`, and `bfloat16 TN` GEMMs in ROCm"
+ },
+ {
+  "id": "pr-rocm_libraries-7828",
+  "type": "source-pr",
+  "title": "WIP: [tensilelite] Port emitMfmaInstruction to C++ via nanobind",
+  "path": "sources/prs/hipblaslt/PR-7828.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Proof-of-concept demonstrating that Claude Code + a few reasonable prompts can migrate a Python emission function to C++ with nanobind bindings with very little"
+ },
+ {
+  "id": "pr-rocm_libraries-7851",
+  "type": "source-pr",
+  "title": "[CK] feat(ssd): add fp16/bf16 support with fp32 accumulation",
+  "path": "sources/prs/hipblaslt/PR-7851.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "bf16",
+   "cross-repo",
+   "fp16",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Add fp16 and bf16 data type support to the Mamba-2 SSD forward example, as listed in the roadmap of PR #6378."
+ },
+ {
+  "id": "pr-rocm_libraries-7951",
+  "type": "source-pr",
+  "title": "[WIP] Add TensileLite race detection CI workflow",
+  "path": "sources/prs/hipblaslt/PR-7951.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Run Tensile GEMM kernels through the rocjitsu emulator with race detection enabled. No GPU required \u2014 the emulator simulates AMD GPU execution on CPU."
+ },
+ {
+  "id": "pr-rocm_libraries-7980",
+  "type": "source-pr",
+  "title": "[hipblaslt][tensilelite] Remove legacy StreamK modes",
+  "path": "sources/prs/hipblaslt/PR-7980.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "For AIHPBLAS-3677"
+ },
+ {
+  "id": "pr-rocm_libraries-8096",
+  "type": "source-pr",
+  "title": "[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone",
+  "path": "sources/prs/hipblaslt/PR-8096.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "[InitCIterWmma in Tensile (PR #7795)](https://github.com/ROCm/rocm-libraries/pull/7795) had to **clone the entire unrolled loop body (iter0..iterN)** at the Pyt"
+ },
+ {
+  "id": "pr-rocm_libraries-8101",
+  "type": "source-pr",
+  "title": "Move cluster barrier implementation from tensilelite to stinkytofu",
+  "path": "sources/prs/hipblaslt/PR-8101.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Move cluster barrier implementation from tensilelite to stinkytofu to avoid affecting scheduling."
+ },
+ {
+  "id": "pr-rocm_libraries-8117",
+  "type": "source-pr",
+  "title": "[hipblaslt][tensilelite] Add `smoke` test suite",
+  "path": "sources/prs/hipblaslt/PR-8117.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "Add a small TensileLite smoke suite for quickly validating that codegen and GPU execution work on a target architecture without running the full common YAML tes"
+ },
+ {
+  "id": "pr-rocm_libraries-8123",
+  "type": "source-pr",
+  "title": "[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM",
+  "path": "sources/prs/hipblaslt/PR-8123.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds the **Tile Engine \u2192 Dispatcher bridge for GEMM**, following the exact pattern FMHA and grouped conv already use: a single shared config dataclass owned by "
+ },
+ {
+  "id": "pr-rocm_libraries-8197",
+  "type": "source-pr",
+  "title": "[hipBLASLt] Fix occupancy calculation in TensileLite",
+  "path": "sources/prs/hipblaslt/PR-8197.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixes incorrect occupancy (`CUOccupancy`) reporting for gfx950 (and related"
+ },
+ {
+  "id": "pr-rocm_libraries-8209",
+  "type": "source-pr",
+  "title": "rocWMMA: add gfx1032 (RDNA2) support with software WMMA fallback",
+  "path": "sources/prs/hipblaslt/PR-8209.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "layernorm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "I have an RX 6650 XT (gfx1032) and wanted to get rocWMMA running on it. The hardware `v_wmma_f32_16x16x16_f16` instruction is present in the ISA and assembles f"
+ },
+ {
+  "id": "pr-rocm_libraries-8222",
+  "type": "source-pr",
+  "title": "hipBLASLt: Kokoro fp32 tuning for gfx1100 (navi31 Equality logic)",
+  "path": "sources/prs/hipblaslt/PR-8222.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "optimization",
+   "rdna",
+   "rocm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": "End-to-end tuning pass for the Kokoro-82M TTS model (fp32) on"
+ },
+ {
+  "id": "pr-rocm_libraries-8302",
+  "type": "source-pr",
+  "title": "[hipBLASLt] Add GEKO GEMM kernel optimizer and Ductile genetic-algorithm tuning backend",
+  "path": "sources/prs/hipblaslt/PR-8302.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Tuning GEMM kernels in hipBLASLt today is a largely manual, multi-step process: capturing"
+ },
+ {
+  "id": "pr-rocm_libraries-8336",
+  "type": "source-pr",
+  "title": "[hipblaslt][G-F-A] Demo calling triton fp4 kernel",
+  "path": "sources/prs/hipblaslt/PR-8336.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fp4",
+   "hipblaslt",
+   "rocm",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "assembly",
+   "hip-cpp",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Triton kernel is compiled from https://github.com/ROCm/aiter/tree/main/aiter/ops/triton/gemm/basic by the [script](https://gist.github.com/jinchen62/4316c7719b7"
+ },
+ {
+  "id": "pr-rocm_libraries-8340",
+  "type": "source-pr",
+  "title": "Remove SGPR for SwInstructionPrefetchRelStaticPass",
+  "path": "sources/prs/hipblaslt/PR-8340.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rdna",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "# Rename SwPrefetchInsertionPass \u2192 SwInstructionPrefetchRelStaticPass, remove scratch SGPR, add FileCheck"
+ },
+ {
+  "id": "pr-rocmlir-2400",
+  "type": "source-pr",
+  "title": "[AIROCMLIR-798] Add LDS usage estimate CAPI function",
+  "path": "sources/prs/hipblaslt/PR-2400.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "lds",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a new public CAPI, `mlirMIGraphXLDSUsageFitsArch`, that lets MIGraphX cheaply check (from problem sizes alone) whether a fused GEMM+GEMM / attention proble"
+ },
+ {
+  "id": "pr-sglang-13",
+  "type": "source-pr",
+  "title": "[AMD/gfx950] FlyDSL kgather diagnostic backend for DSv4 sparse FP8 MLA decode",
+  "path": "sources/prs/hipblaslt/PR-13.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "fp8",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "# [AMD/gfx950] FlyDSL kgather diagnostic backend for DSv4 sparse FP8 MLA decode"
+ },
+ {
+  "id": "pr-tilelang-2326",
+  "type": "source-pr",
+  "title": "[AMD][ROCm] Fix CI failures on gfx950, gfx1100, gfx1151, and gfx1201",
+  "path": "sources/prs/hipblaslt/PR-2326.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "gemm",
+   "reduction"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "HI @LeiWang1999"
+ },
+ {
+  "id": "pr-triton-10585",
+  "type": "source-pr",
+  "title": "[AMD] Restrict BlockPingPong scheduling for loop-variant masked loads",
+  "path": "sources/prs/hipblaslt/PR-10585.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [
+   "conv",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "iree-mlir"
+  ],
+  "confidence": "source-reported",
+  "summary": "conv_bwd_weight (and any GEMM-shaped kernel) compiled with numStages=2 silently produced wrong results on gfx950 when the operand global loads carried a mask th"
+ },
+ {
+  "id": "pr-vllm-41446",
+  "type": "source-pr",
+  "title": "[Kernel][AMD] Optimize GatedDeltaNet FLA prefill kernels on MI300X",
+  "path": "sources/prs/hipblaslt/PR-41446.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "rocm",
+   "rocm-kernel"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Optimize GatedDeltaNet (Qwen3-Next / Qwen3.5) FLA prefill kernels for AMD MI300X (gfx942). Validated end-to-end on `Qwen/Qwen3.5-122B-A10B-FP8`."
+ },
+ {
+  "id": "pr-vllm-44626",
+  "type": "source-pr",
+  "title": "[ROCm][AITER] Use pre-shuffled FP8 GEMM for Quark per-channel attention weights",
+  "path": "sources/prs/hipblaslt/PR-44626.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "cross-repo",
+   "flash-attention",
+   "fp8",
+   "gemm",
+   "hipblaslt",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "On ROCm with AITER enabled, FP8-quantized attention projections produced by"
+ },
+ {
+  "id": "technique-bank-conflict-padding",
+  "type": "wiki-technique",
+  "title": "LDS Bank Conflict Padding",
+  "path": "wiki/techniques/bank-conflict-padding.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "lds",
+   "memory",
+   "optimization"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "reduction"
+  ],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "technique-ck-tile-programming",
+  "type": "wiki-technique",
+  "title": "CK Tile Programming Model",
+  "path": "wiki/techniques/ck-tile-programming.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "ck-tile",
+   "composable-kernel",
+   "programming-model",
+   "tiling"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "moe",
+   "grouped-gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-double-buffering",
+  "type": "wiki-technique",
+  "title": "LDS Double Buffering",
+  "path": "wiki/techniques/double-buffering.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "memory",
+   "optimization",
+   "pipeline"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-mfma-scheduling",
+  "type": "wiki-technique",
+  "title": "MFMA Instruction Scheduling",
+  "path": "wiki/techniques/mfma-scheduling.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "mfma",
+   "optimization",
+   "compute"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-persistent-kernel",
+  "type": "wiki-technique",
+  "title": "Persistent Kernel Pattern",
+  "path": "wiki/techniques/persistent-kernel.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "persistent-kernel",
+   "gws",
+   "scheduling",
+   "optimization"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "moe",
+   "grouped-gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-register-tiling",
+  "type": "wiki-technique",
+  "title": "Register Tiling for MFMA Kernels",
+  "path": "wiki/techniques/register-tiling.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "register-tiling",
+   "mfma",
+   "optimization",
+   "vgpr"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "moe"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-vectorized-load",
+  "type": "wiki-technique",
+  "title": "Vectorized Global Memory Loads",
+  "path": "wiki/techniques/vectorized-loads.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "memory",
+   "optimization",
+   "vectorization"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "conv"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ }
+]

@@ -1,0 +1,31 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Validate pages (errors fail the build)
+        run: python3 scripts/validate.py
+
+      - name: Indices are up to date (no uncommitted drift)
+        run: |
+          python3 scripts/generate-indices.py
+          if ! git diff --quiet -- queries/; then
+            echo "::error::queries/ indices are stale — run scripts/generate-indices.py and commit."
+            git --no-pager diff --stat -- queries/
+            exit 1
+          fi
+
+      - name: Tests
+        run: python3 -m pytest tests/ -q

@@ -22,6 +22,9 @@ captured_at: '2026-06-12'
 status: merged
 inclusion_reason: may contain relevant infrastructure changes
 confidence: source-reported
+techniques:
+- mfma-scheduling
+description: 1. Remove LICENSE.md
 ---
 
 # [Hipblaslt] [Subtiling] Add non-uniform partition size to Logical Scheduler

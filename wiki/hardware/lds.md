@@ -84,11 +84,11 @@ __global__ void my_kernel(float* output) {
 CDNA4 introduces LDS instructions that can read and transpose data in a single operation:
 
 ```asm
-; CDNA4 only: read 16x16 tile and transpose
-ds_read_transt_b128 v[0:3], v0 offset:0
+; CDNA4 only: read tile and transpose in hardware (ds_read_<width>_tr_<elem>)
+ds_read_b128_tr_b16 v[0:3], v0 offset:0
 ```
 
-This eliminates the need for separate transpose kernels in GEMM epilogues and attention score computation.
+This eliminates the need for separate transpose kernels in GEMM epilogues and attention score computation. See [LDS Read-with-Transpose](lds-transpose.md) for the full instruction family.
 
 ## Performance Optimization
 

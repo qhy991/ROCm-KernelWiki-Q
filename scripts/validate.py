@@ -1,59 +1,77 @@
 #!/usr/bin/env python3
 """
-Validate all pages in ROCm-KernelWiki-Q against the schema.
-Checks: required fields, tag vocabulary, link integrity, version consistency.
+Validate all pages in ROCm-KernelWiki-Q against the schema and controlled vocabulary.
+
+Checks (ERROR = fails the build, WARN = should be cleaned up):
+  ERROR  missing required field, unknown page type, invalid architecture,
+         invalid confidence, id prefix not matching type, duplicate id,
+         id not matching filename for PR pages, incomplete performance_claim
+  WARN   off-vocabulary tag/kernel_type/language/technique/hardware_feature,
+         alias used instead of canonical term, malformed date, non-http url,
+         source-pr with empty kernel_types AND languages, source-pr stuck on the
+         default [cdna2,cdna3,cdna4] arch triple, unresolved sources/related ref,
+         unresolved performance_claims source_id
 
 Usage:
-    python3 scripts/validate.py [--fix]
+    python3 scripts/validate.py            # report; exit non-zero only on ERRORs
+    python3 scripts/validate.py --strict   # exit non-zero on ERRORs or WARNs
+    python3 scripts/validate.py --quiet     # only print the summary
 """
 
-import os
+import argparse
 import re
 import sys
 import yaml
 from pathlib import Path
-from collections import defaultdict
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 WIKI_DIR = ROOT / "wiki"
 SOURCES_DIR = ROOT / "sources"
-QUERIES_DIR = ROOT / "queries"
+
+DEFAULT_ARCH_TRIPLE = ["cdna2", "cdna3", "cdna4"]
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def load_yaml(path):
-    """Load YAML file."""
     with open(path) as f:
         return yaml.safe_load(f) or {}
 
 
-def load_schemas():
-    """Load page type schemas."""
-    return load_yaml(DATA_DIR / "schemas.yaml")
-
-
-def load_tags():
-    """Load controlled vocabulary."""
-    return load_yaml(DATA_DIR / "tags.yaml")
-
-
 def extract_frontmatter(filepath):
-    """Extract YAML frontmatter from a markdown file."""
     with open(filepath) as f:
         content = f.read()
     match = re.match(r"^---\n(.*?)\n---", content, re.DOTALL)
     if not match:
         return None, content
-    fm_text = match.group(1)
     try:
-        fm = yaml.safe_load(fm_text) or {}
-    except yaml.YAMLError as e:
+        fm = yaml.safe_load(match.group(1)) or {}
+    except yaml.YAMLError:
         return None, content
     return fm, content
 
 
+def build_vocab(tags):
+    """Return (canonical_structured, full_tag_vocab, aliases) sets/dicts."""
+    archs = {a["id"] for a in tags.get("architectures", [])}
+    hw = set(tags.get("hardware_features", {}).keys())
+    tech = set(tags.get("techniques", {}).keys())
+    kt = set(tags.get("kernel_types", []))
+    langs = set(tags.get("languages", []))
+    aux = set(tags.get("aux_tags", []))
+    aliases = tags.get("aliases", {}) or {}
+
+    structured = archs | hw | tech | kt | langs
+    tag_vocab = structured | aux | set(aliases.keys())
+    return {
+        "archs": archs, "hw": hw, "tech": tech, "kt": kt, "langs": langs,
+        "aux": aux, "aliases": aliases, "structured": structured,
+        "tag_vocab": tag_vocab,
+    }
+
+
 def collect_all_ids():
-    """Collect all page IDs across wiki and sources."""
+    """Map id -> [paths]; a list reveals duplicates."""
     ids = {}
     for dir_path in [WIKI_DIR, SOURCES_DIR]:
         if not dir_path.exists():
@@ -61,119 +79,138 @@ def collect_all_ids():
         for md_file in dir_path.rglob("*.md"):
             fm, _ = extract_frontmatter(md_file)
             if fm and "id" in fm:
-                ids[fm["id"]] = md_file.relative_to(ROOT)
+                ids.setdefault(fm["id"], []).append(md_file.relative_to(ROOT))
     return ids
 
 
-def validate_page(filepath, schemas, tags, all_ids):
-    """Validate a single page against its schema."""
-    errors = []
-    warnings = []
+def _as_list(v):
+    if v is None:
+        return []
+    return v if isinstance(v, list) else [v]
+
+
+def validate_page(filepath, schemas, vocab, all_ids):
+    errors, warnings = [], []
+
+    def err(msg):
+        errors.append(msg)
+
+    def warn(msg):
+        warnings.append(msg)
 
     fm, content = extract_frontmatter(filepath)
     if fm is None:
-        return [{"error": "no_frontmatter", "message": "No YAML frontmatter found"}], []
+        return ["No YAML frontmatter found"], []
 
     page_type = fm.get("type", "")
     page_type_def = schemas.get("page_types", {}).get(page_type)
-
     if not page_type_def:
-        warnings.append({"warning": "unknown_type", "message": f"Unknown page type: {page_type}"})
-        return errors, warnings
+        return [f"Unknown page type: {page_type!r}"], []
 
-    # Check required fields
-    required = page_type_def.get("required_fields", [])
-    for field in required:
+    # Required fields
+    for field in page_type_def.get("required_fields", []):
         if field not in fm:
-            errors.append({"error": "missing_field", "field": field, "message": f"Missing required field: {field}"})
+            err(f"missing required field: {field}")
 
-    # Check architectures against controlled vocabulary
-    valid_archs = {a["id"] for a in tags.get("architectures", [])}
-    page_archs = fm.get("architectures", [])
-    for arch in page_archs:
-        if arch not in valid_archs:
-            errors.append({"error": "invalid_tag", "field": "architectures", "value": arch,
-                          "message": f"Invalid architecture: {arch}. Valid: {sorted(valid_archs)}"})
+    # id <-> type prefix
+    expected_prefix = page_type_def.get("id_prefix", "")
+    page_id = fm.get("id", "")
+    if expected_prefix and page_id and not page_id.startswith(expected_prefix):
+        err(f"id {page_id!r} does not start with {expected_prefix!r} for type {page_type}")
 
-    # Check tags against controlled vocabulary
-    all_valid_tags = set()
-    for hw in tags.get("hardware_features", {}):
-        all_valid_tags.add(hw if isinstance(hw, str) else hw)
-    for tech in tags.get("techniques", {}):
-        all_valid_tags.add(tech if isinstance(tech, str) else tech)
-    for kt in tags.get("kernel_types", []):
-        all_valid_tags.add(kt)
-    for lang in tags.get("languages", []):
-        all_valid_tags.add(lang)
+    # duplicate id
+    if page_id and len(all_ids.get(page_id, [])) > 1:
+        others = ", ".join(str(p) for p in all_ids[page_id])
+        err(f"duplicate id {page_id!r} also used by: {others}")
 
-    # Also add architecture IDs as valid tags
-    all_valid_tags.update(valid_archs)
+    # architectures (ERROR on invalid value)
+    for arch in _as_list(fm.get("architectures")):
+        if arch not in vocab["archs"]:
+            err(f"invalid architecture: {arch} (valid: {sorted(vocab['archs'])})")
 
-    page_tags = fm.get("tags", [])
-    for tag in page_tags:
-        # Be lenient — some tags might be subtags or descriptive
-        # Only warn for completely unknown tags
-        pass
+    # controlled-vocab list fields (WARN on off-vocab / alias)
+    field_vocab = {
+        "tags": vocab["tag_vocab"],
+        "kernel_types": vocab["kt"],
+        "languages": vocab["langs"],
+        "techniques": vocab["tech"],
+        "hardware_features": vocab["hw"],
+    }
+    for field, allowed in field_vocab.items():
+        for val in _as_list(fm.get(field)):
+            if val in vocab["aliases"]:
+                warn(f"{field}: {val!r} is an alias; use {vocab['aliases'][val]!r}")
+            elif val not in allowed:
+                warn(f"{field}: off-vocabulary value {val!r}")
 
-    # Check link integrity (sources and related)
+    # confidence (ERROR on invalid)
+    valid_conf = {"verified", "source-reported", "inferred", "experimental"}
+    conf = fm.get("confidence", "")
+    if conf and conf not in valid_conf:
+        err(f"invalid confidence: {conf}")
+
+    # date format (WARN)
+    date_val = fm.get("date")
+    if date_val and not DATE_RE.match(str(date_val)):
+        warn(f"date not YYYY-MM-DD: {date_val!r}")
+
+    # url sanity (WARN)
+    url = fm.get("url")
+    if url and not str(url).startswith("http"):
+        warn(f"url does not look like a link: {url!r}")
+
+    # link integrity (WARN)
     for field in ["sources", "related"]:
-        refs = fm.get(field, [])
-        if isinstance(refs, str):
-            refs = [refs]
-        for ref in refs:
+        for ref in _as_list(fm.get(field)):
             if ref not in all_ids:
-                # Not necessarily an error — might not be created yet
-                warnings.append({"warning": "broken_link", "field": field, "value": ref,
-                               "message": f"Reference not found: {ref}"})
+                warn(f"{field}: unresolved reference {ref!r}")
 
-    # Check confidence level
-    confidence = fm.get("confidence", "")
-    valid_confidence = {"verified", "source-reported", "inferred", "experimental"}
-    if confidence and confidence not in valid_confidence:
-        errors.append({"error": "invalid_confidence", "value": confidence,
-                      "message": f"Invalid confidence: {confidence}"})
+    # source-pr specific quality gates (WARN)
+    if page_type == "source-pr":
+        if not _as_list(fm.get("kernel_types")) and not _as_list(fm.get("languages")):
+            warn("source-pr has empty kernel_types AND languages (un-retrievable by those indices)")
+        if sorted(_as_list(fm.get("architectures"))) == DEFAULT_ARCH_TRIPLE:
+            warn("source-pr still on default [cdna2,cdna3,cdna4] arch triple")
 
-    # Check performance claims structure (wiki-kernel type)
+    # performance_claims structure (ERROR) + source_id resolution (WARN)
     if page_type == "wiki-kernel":
-        perf_claims = fm.get("performance_claims", [])
-        for i, claim in enumerate(perf_claims):
-            required_claim_fields = ["gpu", "dtype", "metric", "value", "source_id"]
-            for field in required_claim_fields:
+        for i, claim in enumerate(fm.get("performance_claims", []) or []):
+            for field in ["gpu", "dtype", "metric", "value", "source_id"]:
                 if field not in claim:
-                    errors.append({"error": "incomplete_perf_claim", "index": i, "field": field,
-                                  "message": f"Performance claim [{i}] missing: {field}"})
+                    err(f"performance_claim[{i}] missing: {field}")
+            sid = claim.get("source_id")
+            if sid and sid not in all_ids:
+                warn(f"performance_claim[{i}] source_id unresolved: {sid!r}")
 
     return errors, warnings
 
 
 def main():
-    schemas = load_schemas()
-    tags = load_tags()
+    parser = argparse.ArgumentParser(description="Validate ROCm-KernelWiki-Q pages")
+    parser.add_argument("--strict", action="store_true", help="exit non-zero on warnings too")
+    parser.add_argument("--quiet", action="store_true", help="only print the summary")
+    args = parser.parse_args()
+
+    schemas = load_yaml(DATA_DIR / "schemas.yaml")
+    vocab = build_vocab(load_yaml(DATA_DIR / "tags.yaml"))
     all_ids = collect_all_ids()
 
-    total_errors = 0
-    total_warnings = 0
-    total_pages = 0
+    total_errors = total_warnings = total_pages = 0
 
-    # Validate wiki pages
     for dir_path in [WIKI_DIR, SOURCES_DIR]:
         if not dir_path.exists():
             continue
         for md_file in sorted(dir_path.rglob("*.md")):
             total_pages += 1
-            errors, warnings = validate_page(md_file, schemas, tags, all_ids)
-
-            if errors:
-                rel_path = md_file.relative_to(ROOT)
+            errors, warnings = validate_page(md_file, schemas, vocab, all_ids)
+            rel = md_file.relative_to(ROOT)
+            if not args.quiet:
                 for e in errors:
-                    print(f"  ERROR  {rel_path}: {e['message']}")
-                total_errors += len(errors)
-
-            if warnings:
-                rel_path = md_file.relative_to(ROOT)
+                    print(f"  ERROR  {rel}: {e}")
                 for w in warnings:
-                    print(f"  WARN   {rel_path}: {w['message']}")
-                total_warnings += len(warnings)
+                    print(f"  WARN   {rel}: {w}")
+            total_errors += len(errors)
+            total_warnings += len(warnings)
 
     print(f"\n{'='*60}")
     print(f"Validated: {total_pages} pages")
@@ -182,7 +219,11 @@ def main():
     print(f"Known IDs: {len(all_ids)}")
     print(f"{'='*60}")
 
-    return 1 if total_errors > 0 else 0
+    if total_errors > 0:
+        return 1
+    if args.strict and total_warnings > 0:
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
