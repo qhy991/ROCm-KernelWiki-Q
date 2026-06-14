@@ -3,11 +3,12 @@
 Fetch a single page by its `id` (deterministic lookup, the basic retrieval primitive).
 
 Usage:
-    python3 scripts/get_page.py hw-mfma-matrix-core          # full page
-    python3 scripts/get_page.py pr-composable_kernel-3540    # a PR source page
-    python3 scripts/get_page.py hw-gws --frontmatter         # frontmatter only
-    python3 scripts/get_page.py hw-gws --field sources       # one field's value
-    python3 scripts/get_page.py mfma                         # fuzzy: suggest ids
+    python3 scripts/get_page.py hw-mfma-matrix-core                      # full page
+    python3 scripts/get_page.py pr-composable_kernel-3540                # a PR source page
+    python3 scripts/get_page.py hw-gws --frontmatter                     # frontmatter only
+    python3 scripts/get_page.py hw-gws --field sources                   # one field's value
+    python3 scripts/get_page.py kernel-flash-attention-rocm --body-only  # markdown body only
+    python3 scripts/get_page.py mfma                                     # fuzzy: suggest ids
 """
 
 import argparse
@@ -36,6 +37,7 @@ def build_index():
         if not d.exists():
             continue
         for md in d.rglob("*.md"):
+            # encoding="utf-8" keeps reads correct on Windows (KerSor RAG retrieval).
             fm, body = extract_frontmatter(md.read_text(encoding="utf-8"))
             pid = fm.get("id")
             if pid:
@@ -48,6 +50,11 @@ def main():
     ap.add_argument("id", help="page id (e.g. hw-mfma-matrix-core)")
     ap.add_argument("--frontmatter", action="store_true", help="print frontmatter only")
     ap.add_argument("--field", help="print just one frontmatter field")
+    ap.add_argument(
+        "--body-only",
+        action="store_true",
+        help="print markdown body without YAML frontmatter",
+    )
     args = ap.parse_args()
 
     index = build_index()
@@ -70,6 +77,9 @@ def main():
         return 0
     if args.frontmatter:
         print(yaml.safe_dump(fm, sort_keys=False).strip())
+        return 0
+    if args.body_only:
+        print(body.strip())
         return 0
 
     print(f"# Path: {path.relative_to(ROOT)}\n")
