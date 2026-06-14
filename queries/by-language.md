@@ -6,7 +6,7 @@
 - [[tensile] gfx12 assembly compatibility](../sources/prs/hipblaslt/PR-7655.md)
 - [[hipblaslt][G-F-A] Demo calling triton fp4 kernel](../sources/prs/hipblaslt/PR-8336.md)
 
-## ck-dsl (63 pages)
+## ck-dsl (64 pages)
 
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md)
 - [Composable Kernel README](../sources/docs/ck-readme.md)
@@ -14,6 +14,7 @@
 - [ROCm Flash Attention Repository](../sources/docs/flash-attention-rocm.md)
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md)
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
 - [Composable Kernel (CK) DSL](../wiki/languages/ck-dsl.md)
 - [feat: Add Interwave scheduler for aquant memory pipeline](../sources/prs/composable_kernel/PR-3540.md)
@@ -72,13 +73,15 @@
 - [[CK] feat(ssd): add fp16/bf16 support with fp32 accumulation](../sources/prs/hipblaslt/PR-7851.md)
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md)
 
-## hip-cpp (113 pages)
+## hip-cpp (115 pages)
 
 - [ROCm Flash Attention Repository](../sources/docs/flash-attention-rocm.md)
 - [HIP Programming Guide](../sources/docs/hip-programming-guide.md)
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md)
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
+- [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md)
 - [Composable Kernel (CK) DSL](../wiki/languages/ck-dsl.md)
 - [Fused SplitK zero-init for FP8 a8w8 blockscale GEMMs (y_is_zeroed) + re-enable CKTile SplitK](../sources/prs/hipblaslt/PR-3457.md)
 - [[PERF] MXFP4 (a4w4) MoE backend for gfx950](../sources/prs/hipblaslt/PR-3470.md)

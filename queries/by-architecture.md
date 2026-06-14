@@ -1,7 +1,7 @@
 # Index: By Architecture
 
 
-## cdna1 (13 pages)
+## cdna1 (17 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [Composable Kernel README](../sources/docs/ck-readme.md) `[source-doc]` arch:cdna1, cdna2, cdna3, cdna4
@@ -11,13 +11,17 @@
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [MFMA Matrix Core (CDNA1–CDNA4)](../wiki/hardware/mfma-matrix-core.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
+- [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [CUDA → HIP Migration Guide](../wiki/migration/cuda-to-hip.md) `[wiki-migration]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [MFMA Instruction Scheduling](../wiki/techniques/mfma-scheduling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna2 (247 pages)
+## cdna2 (251 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -36,7 +40,9 @@
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [Composable Kernel (CK) DSL](../wiki/languages/ck-dsl.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [Triton on ROCm (Triton-ROCm Backend)](../wiki/languages/triton-rocm.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [CUDA → HIP Migration Guide](../wiki/migration/cuda-to-hip.md) `[wiki-migration]` arch:cdna1, cdna2, cdna3, cdna4
@@ -265,9 +271,11 @@
 - [MFMA Instruction Scheduling](../wiki/techniques/mfma-scheduling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna3 (255 pages)
+## cdna3 (259 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -287,7 +295,9 @@
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [Composable Kernel (CK) DSL](../wiki/languages/ck-dsl.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [Triton on ROCm (Triton-ROCm Backend)](../wiki/languages/triton-rocm.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [CDNA3 (MI300X) → CDNA4 (MI350X) Migration Guide](../wiki/migration/cdna3-to-cdna4.md) `[wiki-migration]` arch:cdna3, cdna4
@@ -523,7 +533,9 @@
 - [MFMA Instruction Scheduling](../wiki/techniques/mfma-scheduling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
 ## cdna4 (277 pages)
 

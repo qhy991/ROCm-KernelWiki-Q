@@ -35,11 +35,12 @@
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [DPP — Data-Parallel Primitives (Cross-Lane Operations)](../wiki/hardware/dpp-cross-lane.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 
-## dpp (3 pages)
+## dpp (4 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [DPP — Data-Parallel Primitives (Cross-Lane Operations)](../wiki/hardware/dpp-cross-lane.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
 ## dual-cma (5 pages)
 
@@ -54,13 +55,15 @@
 - [GWS — Global Wave Sync](../wiki/hardware/gws.md) `[wiki-hardware]` arch:cdna2, cdna3, cdna4
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
-## lds (13 pages)
+## lds (16 pages)
 
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS Read-with-Transpose (CDNA4)](../wiki/hardware/lds-transpose.md) `[wiki-hardware]` arch:cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [[CK_Tile] Support for a4w4 (fp4) in block scale gemm AB quant](../sources/prs/composable_kernel/PR-3603.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 - [# [TensileLite] Decouple MXFP8 scale DepthU from data DepthU (`ScaleDepthURatio`)](../sources/prs/hipblaslt/PR-7767.md) `[source-pr]` arch:cdna4
@@ -68,6 +71,7 @@
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 
 ## lds-transpose (6 pages)
@@ -79,7 +83,7 @@
 - [CDNA3 (MI300X) → CDNA4 (MI350X) Migration Guide](../wiki/migration/cdna3-to-cdna4.md) `[wiki-migration]` arch:cdna3, cdna4
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 
-## mfma (29 pages)
+## mfma (30 pages)
 
 - [ROCm FlashAttention Performance Notes](../sources/blogs/flash-attention-rocm.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -90,6 +94,7 @@
 - [Scaled MFMA (CDNA4 Block-Scaled Matrix Operations)](../wiki/hardware/scaled-mfma.md) `[wiki-hardware]` arch:cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [CDNA3 (MI300X) → CDNA4 (MI350X) Migration Guide](../wiki/migration/cdna3-to-cdna4.md) `[wiki-migration]` arch:cdna3, cdna4
 - [Fix grouped conv bwd data wmma check](../sources/prs/composable_kernel/PR-3562.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -136,8 +141,9 @@
 - [TensileLite: Add multi-DU support.](../sources/prs/hipblaslt/PR-7781.md) `[source-pr]` arch:cdna4
 - [[Hipblaslt] Allow Subtile path to use BF16 any-K and MX K%32 tail loop](../sources/prs/hipblaslt/PR-7782.md) `[source-pr]` arch:cdna4
 
-## wavefront (3 pages)
+## wavefront (4 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3

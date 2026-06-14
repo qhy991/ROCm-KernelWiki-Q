@@ -124,8 +124,9 @@
 
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## gemm (103 pages)
+## gemm (104 pages)
 
+- [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) conf:verified arch:cdna1, cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[TRITON] Conv Kernels First Commit to AITER](../sources/prs/hipblaslt/PR-2886.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[Triton] batched_gemm_a16wfp4 (gfx950): fuse dot_scaled accumulator; branchless mxfp4 quant; tune small-N configs](../sources/prs/hipblaslt/PR-3058.md) conf:source-reported arch:cdna4
@@ -264,8 +265,9 @@
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## reduction (14 pages)
+## reduction (15 pages)
 
+- [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) conf:verified arch:cdna1, cdna2, cdna3
 - [[CK_TILE ENGINE] Fix incorrect List import in reduce_parameter.py](../sources/prs/composable_kernel/PR-3555.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Temporarily disable CK Tile Stream-K reduction tests](../sources/prs/composable_kernel/PR-3559.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[CK_BUILDER] Update owners file for more reviews for CK Builder](../sources/prs/composable_kernel/PR-3572.md) conf:source-reported arch:cdna2, cdna3, cdna4

@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-284 pages. Machine-readable form: [pages.json](pages.json).
+288 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -285,11 +285,13 @@
 - `hw-scaled-mfma` — [Scaled MFMA (CDNA4 Block-Scaled Matrix Operations)](../wiki/hardware/scaled-mfma.md)
 - `hw-wavefront` — [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md)
 
-## wiki-kernel (3)
+## wiki-kernel (5)
 
 - `kernel-conv-rocm` — [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
 - `kernel-flash-attention-rocm` — [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
+- `kernel-gemm-rocm` — [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md)
 - `kernel-moe-grouped-gemm-cdna4` — [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
+- `kernel-reduction-rocm` — [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md)
 
 ## wiki-language (2)
 
@@ -305,7 +307,7 @@
 
 - `pattern-memory-bound-amd` — [Memory-Bound Kernel Optimization on AMD CDNA](../wiki/patterns/memory-bound-amd.md)
 
-## wiki-technique (7)
+## wiki-technique (9)
 
 - `technique-bank-conflict-padding` — [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md)
 - `technique-ck-tile-programming` — [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md)
@@ -313,4 +315,6 @@
 - `technique-mfma-scheduling` — [MFMA Instruction Scheduling](../wiki/techniques/mfma-scheduling.md)
 - `technique-persistent-kernel` — [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md)
 - `technique-register-tiling` — [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md)
+- `technique-swizzling` — [LDS Address Swizzling](../wiki/techniques/swizzling.md)
 - `technique-vectorized-load` — [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md)
+- `technique-wave-reduction` — [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md)

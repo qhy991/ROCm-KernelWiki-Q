@@ -481,6 +481,32 @@
   "summary": ""
  },
  {
+  "id": "kernel-gemm-rocm",
+  "type": "wiki-kernel",
+  "title": "GEMM Implementation on AMD CDNA",
+  "path": "wiki/kernels/gemm-rocm.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3"
+  ],
+  "tags": [
+   "gemm",
+   "mfma",
+   "lds",
+   "register-tiling"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
   "id": "kernel-moe-grouped-gemm-cdna4",
   "type": "wiki-kernel",
   "title": "MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)",
@@ -511,6 +537,30 @@
    "triton-rocm"
   ],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-reduction-rocm",
+  "type": "wiki-kernel",
+  "title": "Reduction Kernels on ROCm",
+  "path": "wiki/kernels/reduction-rocm.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3"
+  ],
+  "tags": [
+   "reduction",
+   "wave-reduction",
+   "lds"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "verified",
   "summary": ""
  },
  {
@@ -6736,6 +6786,26 @@
   "summary": ""
  },
  {
+  "id": "technique-swizzling",
+  "type": "wiki-technique",
+  "title": "LDS Address Swizzling",
+  "path": "wiki/techniques/swizzling.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3"
+  ],
+  "tags": [
+   "swizzling",
+   "lds",
+   "bank-conflict-padding"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
   "id": "technique-vectorized-load",
   "type": "wiki-technique",
   "title": "Vectorized Global Memory Loads",
@@ -6758,6 +6828,26 @@
   ],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-wave-reduction",
+  "type": "wiki-technique",
+  "title": "Wavefront Reduction using DPP",
+  "path": "wiki/techniques/wave-reduction.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3"
+  ],
+  "tags": [
+   "wave-reduction",
+   "dpp",
+   "wavefront"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
   "summary": ""
  }
 ]
