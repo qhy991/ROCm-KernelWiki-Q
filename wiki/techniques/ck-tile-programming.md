@@ -3,7 +3,7 @@ id: technique-ck-tile-programming
 title: CK Tile Programming Model
 type: wiki-technique
 architectures: [cdna2, cdna3, cdna4]
-tags: [ck-tile, composable-kernel, programming-model, tiling]
+tags: [ck-tile, composable_kernel, programming-model, tiling]
 confidence: source-reported
 techniques: [ck-tile-programming, register-tiling, double-buffering]
 hardware_features: [mfma, lds]

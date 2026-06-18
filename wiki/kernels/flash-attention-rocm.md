@@ -8,7 +8,7 @@ confidence: source-reported
 kernel_types: [attention, flash-attention]
 languages: [hip-cpp, ck-dsl]
 related: [hw-mfma-matrix-core, hw-lds, technique-mfma-scheduling]
-sources: [blog-matrix-cores-cdna, doc-flash-attention-rocm]
+sources: [blog-matrix-cores-cdna, doc-flash-attention-rocm, blog-flash-attention-rocm]
 performance_claims:
   - gpu: MI300X
     dtype: fp16

@@ -18,6 +18,18 @@ architectures:
     gfx: [gfx950]
     gpus: [MI350X, MI355X]
     generation: 4
+  - id: rdna2
+    gfx: [gfx10]
+    gpus: [RX 6000]
+    generation: 2
+  - id: rdna3
+    gfx: [gfx11]
+    gpus: [RX 7000]
+    generation: 3
+  - id: rdna4
+    gfx: [gfx12]
+    gpus: [RX 9000]
+    generation: 4
 
 hardware_features:
   # Matrix Core

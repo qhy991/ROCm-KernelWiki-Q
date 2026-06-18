@@ -3,7 +3,7 @@ id: hw-mfma-matrix-core
 title: MFMA Matrix Core (CDNA1–CDNA4)
 type: wiki-hardware
 architectures: [cdna1, cdna2, cdna3, cdna4]
-tags: [mfma, matrix-core, compute, hardware]
+tags: [mfma, compute, hardware]
 confidence: verified
 hardware_features: [mfma, dual-cma]
 related: [hw-lds, hw-dpp-cross-lane, hw-wavefront]

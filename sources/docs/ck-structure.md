@@ -3,7 +3,7 @@ id: doc-ck-structure
 title: Composable Kernel Repository Structure
 type: source-doc
 architectures: [cdna2, cdna3, cdna4]
-tags: [ck-dsl, composable-kernel, gemm, attention]
+tags: [ck-dsl, composable_kernel, gemm, attention]
 date: '2026-01-01'
 url: https://github.com/ROCm/composable_kernel/blob/develop/include/ck/README.md
 source_category: upstream-code

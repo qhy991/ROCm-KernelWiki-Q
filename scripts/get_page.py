@@ -48,7 +48,7 @@ def build_index():
 def main():
     ap = argparse.ArgumentParser(description="Fetch a page by id")
     ap.add_argument("id", help="page id (e.g. hw-mfma-matrix-core)")
-    ap.add_argument("--frontmatter", action="store_true", help="print frontmatter only")
+    ap.add_argument("--frontmatter", "--frontmatter-only", dest="frontmatter", action="store_true", help="print frontmatter only")
     ap.add_argument("--field", help="print just one frontmatter field")
     ap.add_argument(
         "--body-only",

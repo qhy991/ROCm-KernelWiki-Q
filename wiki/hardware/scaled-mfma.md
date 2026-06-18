@@ -3,7 +3,7 @@ id: hw-scaled-mfma
 title: Scaled MFMA (CDNA4 Block-Scaled Matrix Operations)
 type: wiki-hardware
 architectures: [cdna4]
-tags: [scaled-mfma, mfma, block-scale, matrix-core, fp8, compute]
+tags: [scaled-mfma, mfma, block-scale, fp8, compute]
 confidence: source-reported
 hardware_features: [mfma, scaled-mfma, block-scale]
 related: [hw-mfma-matrix-core]

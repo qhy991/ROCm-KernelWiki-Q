@@ -7,7 +7,7 @@ date: '2025-01-01'
 url: https://github.com/nod-ai/shark-ai/blob/main/docs/amdgpu_kernel_optimization_guide.md
 architectures: [cdna2, cdna3, cdna4]
 tags: [optimization, memory, occupancy]
-techniques: [vectorized-loads, double-buffering, bank-conflict-padding]
+techniques: [vectorized-load, double-buffering, bank-conflict-padding]
 confidence: source-reported
 ---
 

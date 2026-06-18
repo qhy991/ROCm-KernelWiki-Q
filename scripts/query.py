@@ -125,6 +125,17 @@ def filter_pages(pages, **filters):
     if filters.get("kernel_type"):
         kts = filters["kernel_type"] if isinstance(filters["kernel_type"], list) else [filters["kernel_type"]]
         result = [p for p in result if any(kt in p.get("kernel_types", []) for kt in kts)]
+    if filters.get("operator"):
+        operators = filters["operator"] if isinstance(filters["operator"], list) else [filters["operator"]]
+        operator_set = {str(op).lower() for op in operators}
+        result = [
+            p for p in result
+            if operator_set & {
+                str(value).lower()
+                for field in ("kernel_types", "tags")
+                for value in p.get(field, [])
+            }
+        ]
     if filters.get("confidence"):
         result = [p for p in result if p.get("confidence") == filters["confidence"]]
     return result
@@ -170,6 +181,7 @@ def main():
     parser.add_argument("--architecture", "-a", action="append", help="Filter by architecture (cdna3, cdna4)")
     parser.add_argument("--technique", action="append", help="Filter by technique")
     parser.add_argument("--kernel-type", action="append", help="Filter by kernel type")
+    parser.add_argument("--operator", action="append", help="Common cross-KernelWiki operator filter")
     parser.add_argument("--confidence", help="Filter by confidence level")
     parser.add_argument("--limit", "-n", type=int, default=10, help="Max results")
     parser.add_argument("--verbose", "-v", action="store_true", help="Show content snippets")
@@ -179,7 +191,7 @@ def main():
     pages = collect_pages()
 
     # Apply structured filters
-    if args.tag or args.type or args.architecture or args.technique or args.kernel_type or args.confidence:
+    if args.tag or args.type or args.architecture or args.technique or args.kernel_type or args.operator or args.confidence:
         results = filter_pages(
             pages,
             tag=args.tag,
@@ -187,6 +199,7 @@ def main():
             architecture=args.architecture,
             technique=args.technique,
             kernel_type=args.kernel_type,
+            operator=args.operator,
             confidence=args.confidence,
         )
     elif args.query:

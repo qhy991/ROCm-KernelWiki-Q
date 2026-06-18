@@ -21,7 +21,7 @@
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna2 (251 pages)
+## cdna2 (237 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -38,19 +38,20 @@
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [MFMA Matrix Core (CDNA1–CDNA4)](../wiki/hardware/mfma-matrix-core.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
+- [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [MFMA GEMM on ROCm](../wiki/kernels/gemm-mfma-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
+- [Reduction and Softmax Kernels on ROCm](../wiki/kernels/reduction-softmax-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Stream-K and Split-K GEMM on ROCm](../wiki/kernels/streamk-splitk-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel (CK) DSL](../wiki/languages/ck-dsl.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [Triton on ROCm (Triton-ROCm Backend)](../wiki/languages/triton-rocm.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [CUDA → HIP Migration Guide](../wiki/migration/cuda-to-hip.md) `[wiki-migration]` arch:cdna1, cdna2, cdna3, cdna4
 - [Memory-Bound Kernel Optimization on AMD CDNA](../wiki/patterns/memory-bound-amd.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
-- [[TRITON] Conv Kernels First Commit to AITER](../sources/prs/hipblaslt/PR-2886.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[TRITON] gfx1201: gemm_a8w8 tuning configs (Mistral-3 / Qwen3 shapes)](../sources/prs/hipblaslt/PR-3168.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Revert "[Triton] Declare triton>=3.6.0 dependency "](../sources/prs/hipblaslt/PR-3272.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [gfx1201 gemm_a8w8: blockscale HIP→triton fallback + tuning configs (plain + blockscale_preshuffled)](../sources/prs/hipblaslt/PR-3343.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[FLYDSL MOE] mixed_moe + moe_gemm_2stage: fx internal-types cleanup (ASM-identical)](../sources/prs/hipblaslt/PR-3450.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fused SplitK zero-init for FP8 a8w8 blockscale GEMMs (y_is_zeroed) + re-enable CKTile SplitK](../sources/prs/hipblaslt/PR-3457.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[feat] FP8 (DeepSeek-V4 layout) sparse paged prefill attention](../sources/prs/hipblaslt/PR-3583.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -95,7 +96,6 @@
 - [[CK Profiler] Restore CPU tensor initialization when verification is not done on GPU](../sources/prs/composable_kernel/PR-3594.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [WMMA grouped conv fwd large tensor bias bnorm clamp](../sources/prs/composable_kernel/PR-3595.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Optimize clang-format check in Jenkins CI](../sources/prs/composable_kernel/PR-3597.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions](../sources/prs/composable_kernel/PR-3598.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK TILE] remove dependency on std chrono](../sources/prs/composable_kernel/PR-3599.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Mx fp6 flatmm](../sources/prs/composable_kernel/PR-3601.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Bump rocm-docs-core[api_reference] from 1.31.2 to 1.31.3 in /docs/sphinx](../sources/prs/composable_kernel/PR-3602.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -109,7 +109,6 @@
 - [[CK_TILE] Fix Int32 Overflow in Deterministic FMHA BWD](../sources/prs/composable_kernel/PR-3615.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Remove code duplications in batched gemm (multi D) gemm (multi D) wmma](../sources/prs/composable_kernel/PR-3617.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_BUILDER] conv bwd weight testing](../sources/prs/composable_kernel/PR-3618.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Implement device grouped gemm fixed nk multi abd for rdna4](../sources/prs/composable_kernel/PR-3619.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [GEMM Blockscale ABQuant Optimization](../sources/prs/composable_kernel/PR-3620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK] Adding CK Tile to the doc](../sources/prs/composable_kernel/PR-3621.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fixing Perfetto Image Notification](../sources/prs/composable_kernel/PR-3622.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -153,7 +152,6 @@
 - [Fix path to ck tile conv fwd instance generator](../sources/prs/composable_kernel/PR-3699.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Remove perf numbers from docs](../sources/prs/composable_kernel/PR-3702.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fix one more lifetimebound error.](../sources/prs/composable_kernel/PR-3703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Revert "Implement device grouped gemm fixed nk multi abd for rdna4"](../sources/prs/composable_kernel/PR-3705.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Enable MQA/GQA in backward](../sources/prs/flash-attention/PR-100.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Dropout](../sources/prs/flash-attention/PR-101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Support page attention in mha_varlen_fwd](../sources/prs/flash-attention/PR-103.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -167,7 +165,6 @@
 - [fa3 update ck](../sources/prs/flash-attention/PR-117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [update CK](../sources/prs/flash-attention/PR-118.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [fp8 backward](../sources/prs/flash-attention/PR-119.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [reenable gfx1100 ci](../sources/prs/flash-attention/PR-121.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Performant backward Triton implementation with separated dkdv and dq kernels](../sources/prs/flash-attention/PR-122.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Quick Fixes](../sources/prs/flash-attention/PR-124.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [change version to 3.0.0.r1](../sources/prs/flash-attention/PR-125.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -207,12 +204,10 @@
 - [feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)](../sources/prs/hipblaslt/PR-3413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[WIP] test: cut unit-test CI wall time](../sources/prs/hipblaslt/PR-3601.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Optimize Featherstone GEMM kernels](../sources/prs/hipblaslt/PR-1.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [fix(train): gfx1201 ROCm fixes + unsloth bnb-4bit Gemma 4 31B QLoRA](../sources/prs/hipblaslt/PR-101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[MetaxGPU][testing] correct FP64 MMA store layout to fix the test pre…](../sources/prs/hipblaslt/PR-102.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(flydsl): add core 7 FlyDSL skill pack](../sources/prs/hipblaslt/PR-12.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add coda-kernels-rust: CODA GEMM-epilogue kernels in Rust, CPU + CUDA](../sources/prs/hipblaslt/PR-16.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [AMD - gpt-oss vllm mxfp4: AITER tuning + n-gram spec decode + server …](../sources/prs/hipblaslt/PR-1657.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [fix: AMD gfx1201 (RDNA4/ROCm) — INT8 Triton f32 MFMA, LTX Video device fix, validate_settings KeyError](../sources/prs/hipblaslt/PR-1822.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Kernel][Nemotron] SM100 FP8 dense GEMM + ReLU² fusions and Mamba2/RMSNorm fusions for Nemotron-3-Super NVFP4 (B200)](../sources/prs/hipblaslt/PR-2.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat: shared-engine refactor + Nemotron-Nano-30B GB10 prefill/decode optimizations (~5×)](../sources/prs/hipblaslt/PR-20.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add hip-and-triton-kernel-optimization skill](../sources/prs/hipblaslt/PR-203.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -224,18 +219,15 @@
 - [feat: triton_grouped_gemm: add work-stealing variant with ws_mode API ](../sources/prs/hipblaslt/PR-353.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(quantize): add fused FP8 quantization kernels with amax+scale and cast+transpose](../sources/prs/hipblaslt/PR-364.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [opt(gemm): add AITER MXFP4 preshuffle fast path](../sources/prs/hipblaslt/PR-366.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [feat: support build on gfx1250](../sources/prs/hipblaslt/PR-374.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[ROCm] Add Triton Backend for BF16 Grouped GEMM Backward Kernels](../sources/prs/hipblaslt/PR-388.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [templates/skills: add hip + aiter SKILLs for AMD Instinct kernel work](../sources/prs/hipblaslt/PR-4.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add BF16xFP4 MoE GEMM stage1 kernel](../sources/prs/hipblaslt/PR-424.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add A16W4 MoE GEMM stage2 kernel (BF16 activations x MXFP4 weights)](../sources/prs/hipblaslt/PR-431.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Adds Grouped and Batched GEMM kernels with blockscaling matching DeepGEMM API](../sources/prs/hipblaslt/PR-433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/hipblaslt/PR-605.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(forge): introduce forge/ subdir — AI-agent kernel tuning + PR guardian gate](../sources/prs/hipblaslt/PR-62.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [scripts: add HIP->FlyDSL multi-agent port orchestrator](../sources/prs/hipblaslt/PR-666.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Kokkos-Polybench: Add GEMM kernel](../sources/prs/hipblaslt/PR-686.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Feat/fused ulysses qkv projection](../sources/prs/hipblaslt/PR-805.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[gfx1201] Mistral-3 + Qwen3-8B-FP8 on RDNA4 via native triton attention](../sources/prs/hipblaslt/PR-811.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [MoE: Grouped Triton GEMM for TTFT improvements](../sources/prs/hipblaslt/PR-970.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add fused_gemm_benchmark.py: fused two-GEMM SwiGLU kernel benchmark](../sources/prs/hipblaslt/PR-7152.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [vulkan: Intel Xe flash attention, GEMM optimizations, and optional weight compression (Xe-LPG Plus/Xe2/Xe3) [MEGA PR]](../sources/prs/hipblaslt/PR-24408.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -249,20 +241,14 @@
 - [[Tensilelite] Fix incorrect output for SIA0 + PGR](../sources/prs/hipblaslt/PR-6993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK Tile] Wavelet gemm pipeline for conv fwd](../sources/prs/hipblaslt/PR-7196.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipBLASLt] Fix FP8 origami enum drift in PredictionLibrary::findTopSolutions](../sources/prs/hipblaslt/PR-7520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[tensile] gfx12 assembly compatibility](../sources/prs/hipblaslt/PR-7655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Scope NumWarps==8 CompV3 tail/epilogue logic to EightWaves …](../sources/prs/hipblaslt/PR-7669.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [RotateCoObject](../sources/prs/hipblaslt/PR-7788.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [WIP: [tensilelite] Port emitMfmaInstruction to C++ via nanobind](../sources/prs/hipblaslt/PR-7828.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK] feat(ssd): add fp16/bf16 support with fp32 accumulation](../sources/prs/hipblaslt/PR-7851.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[WIP] Add TensileLite race detection CI workflow](../sources/prs/hipblaslt/PR-7951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone](../sources/prs/hipblaslt/PR-8096.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Move cluster barrier implementation from tensilelite to stinkytofu](../sources/prs/hipblaslt/PR-8101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipblaslt][tensilelite] Add `smoke` test suite](../sources/prs/hipblaslt/PR-8117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [rocWMMA: add gfx1032 (RDNA2) support with software WMMA fallback](../sources/prs/hipblaslt/PR-8209.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [hipBLASLt: Kokoro fp32 tuning for gfx1100 (navi31 Equality logic)](../sources/prs/hipblaslt/PR-8222.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipblaslt][G-F-A] Demo calling triton fp4 kernel](../sources/prs/hipblaslt/PR-8336.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Remove SGPR for SwInstructionPrefetchRelStaticPass](../sources/prs/hipblaslt/PR-8340.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[AIROCMLIR-798] Add LDS usage estimate CAPI function](../sources/prs/hipblaslt/PR-2400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[ROCm][AITER] Use pre-shuffled FP8 GEMM for Quark per-channel attention weights](../sources/prs/hipblaslt/PR-44626.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
@@ -275,7 +261,7 @@
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna3 (259 pages)
+## cdna3 (250 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -293,20 +279,26 @@
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [MFMA Matrix Core (CDNA1–CDNA4)](../wiki/hardware/mfma-matrix-core.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
+- [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [FP8 and Block-Scale GEMM on ROCm](../wiki/kernels/fp8-blockscale-gemm-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
+- [FP8 FlashAttention on ROCm](../wiki/kernels/fp8-flash-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
+- [MFMA GEMM on ROCm](../wiki/kernels/gemm-mfma-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
+- [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Paged Prefill Attention on ROCm](../wiki/kernels/paged-prefill-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3
+- [Reduction and Softmax Kernels on ROCm](../wiki/kernels/reduction-softmax-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Stream-K and Split-K GEMM on ROCm](../wiki/kernels/streamk-splitk-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Triton FlashAttention on ROCm](../wiki/kernels/triton-flash-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [Composable Kernel (CK) DSL](../wiki/languages/ck-dsl.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [Triton on ROCm (Triton-ROCm Backend)](../wiki/languages/triton-rocm.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [CDNA3 (MI300X) → CDNA4 (MI350X) Migration Guide](../wiki/migration/cdna3-to-cdna4.md) `[wiki-migration]` arch:cdna3, cdna4
 - [CUDA → HIP Migration Guide](../wiki/migration/cuda-to-hip.md) `[wiki-migration]` arch:cdna1, cdna2, cdna3, cdna4
 - [Memory-Bound Kernel Optimization on AMD CDNA](../wiki/patterns/memory-bound-amd.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
-- [[TRITON] Conv Kernels First Commit to AITER](../sources/prs/hipblaslt/PR-2886.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[TRITON] gfx1201: gemm_a8w8 tuning configs (Mistral-3 / Qwen3 shapes)](../sources/prs/hipblaslt/PR-3168.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Revert "[Triton] Declare triton>=3.6.0 dependency "](../sources/prs/hipblaslt/PR-3272.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [gfx1201 gemm_a8w8: blockscale HIP→triton fallback + tuning configs (plain + blockscale_preshuffled)](../sources/prs/hipblaslt/PR-3343.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add GLM-5.1 FP8 blockscale GEMM/FMoE tunings for gfx942 (MI300X/MI325)](../sources/prs/hipblaslt/PR-3422.md) `[source-pr]` arch:cdna3
 - [[FLYDSL MOE] mixed_moe + moe_gemm_2stage: fx internal-types cleanup (ASM-identical)](../sources/prs/hipblaslt/PR-3450.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fused SplitK zero-init for FP8 a8w8 blockscale GEMMs (y_is_zeroed) + re-enable CKTile SplitK](../sources/prs/hipblaslt/PR-3457.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -352,7 +344,6 @@
 - [[CK Profiler] Restore CPU tensor initialization when verification is not done on GPU](../sources/prs/composable_kernel/PR-3594.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [WMMA grouped conv fwd large tensor bias bnorm clamp](../sources/prs/composable_kernel/PR-3595.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Optimize clang-format check in Jenkins CI](../sources/prs/composable_kernel/PR-3597.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions](../sources/prs/composable_kernel/PR-3598.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK TILE] remove dependency on std chrono](../sources/prs/composable_kernel/PR-3599.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Mx fp6 flatmm](../sources/prs/composable_kernel/PR-3601.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Bump rocm-docs-core[api_reference] from 1.31.2 to 1.31.3 in /docs/sphinx](../sources/prs/composable_kernel/PR-3602.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -366,7 +357,6 @@
 - [[CK_TILE] Fix Int32 Overflow in Deterministic FMHA BWD](../sources/prs/composable_kernel/PR-3615.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Remove code duplications in batched gemm (multi D) gemm (multi D) wmma](../sources/prs/composable_kernel/PR-3617.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_BUILDER] conv bwd weight testing](../sources/prs/composable_kernel/PR-3618.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Implement device grouped gemm fixed nk multi abd for rdna4](../sources/prs/composable_kernel/PR-3619.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [GEMM Blockscale ABQuant Optimization](../sources/prs/composable_kernel/PR-3620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK] Adding CK Tile to the doc](../sources/prs/composable_kernel/PR-3621.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fixing Perfetto Image Notification](../sources/prs/composable_kernel/PR-3622.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -410,7 +400,6 @@
 - [Fix path to ck tile conv fwd instance generator](../sources/prs/composable_kernel/PR-3699.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Remove perf numbers from docs](../sources/prs/composable_kernel/PR-3702.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fix one more lifetimebound error.](../sources/prs/composable_kernel/PR-3703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Revert "Implement device grouped gemm fixed nk multi abd for rdna4"](../sources/prs/composable_kernel/PR-3705.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Enable MQA/GQA in backward](../sources/prs/flash-attention/PR-100.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Dropout](../sources/prs/flash-attention/PR-101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Support page attention in mha_varlen_fwd](../sources/prs/flash-attention/PR-103.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -424,7 +413,6 @@
 - [fa3 update ck](../sources/prs/flash-attention/PR-117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [update CK](../sources/prs/flash-attention/PR-118.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [fp8 backward](../sources/prs/flash-attention/PR-119.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [reenable gfx1100 ci](../sources/prs/flash-attention/PR-121.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Performant backward Triton implementation with separated dkdv and dq kernels](../sources/prs/flash-attention/PR-122.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Quick Fixes](../sources/prs/flash-attention/PR-124.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [change version to 3.0.0.r1](../sources/prs/flash-attention/PR-125.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -464,12 +452,10 @@
 - [feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)](../sources/prs/hipblaslt/PR-3413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[WIP] test: cut unit-test CI wall time](../sources/prs/hipblaslt/PR-3601.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Optimize Featherstone GEMM kernels](../sources/prs/hipblaslt/PR-1.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [fix(train): gfx1201 ROCm fixes + unsloth bnb-4bit Gemma 4 31B QLoRA](../sources/prs/hipblaslt/PR-101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[MetaxGPU][testing] correct FP64 MMA store layout to fix the test pre…](../sources/prs/hipblaslt/PR-102.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(flydsl): add core 7 FlyDSL skill pack](../sources/prs/hipblaslt/PR-12.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add coda-kernels-rust: CODA GEMM-epilogue kernels in Rust, CPU + CUDA](../sources/prs/hipblaslt/PR-16.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [AMD - gpt-oss vllm mxfp4: AITER tuning + n-gram spec decode + server …](../sources/prs/hipblaslt/PR-1657.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [fix: AMD gfx1201 (RDNA4/ROCm) — INT8 Triton f32 MFMA, LTX Video device fix, validate_settings KeyError](../sources/prs/hipblaslt/PR-1822.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Kernel][Nemotron] SM100 FP8 dense GEMM + ReLU² fusions and Mamba2/RMSNorm fusions for Nemotron-3-Super NVFP4 (B200)](../sources/prs/hipblaslt/PR-2.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat: shared-engine refactor + Nemotron-Nano-30B GB10 prefill/decode optimizations (~5×)](../sources/prs/hipblaslt/PR-20.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add hip-and-triton-kernel-optimization skill](../sources/prs/hipblaslt/PR-203.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -481,7 +467,6 @@
 - [feat: triton_grouped_gemm: add work-stealing variant with ws_mode API ](../sources/prs/hipblaslt/PR-353.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(quantize): add fused FP8 quantization kernels with amax+scale and cast+transpose](../sources/prs/hipblaslt/PR-364.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [opt(gemm): add AITER MXFP4 preshuffle fast path](../sources/prs/hipblaslt/PR-366.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [feat: support build on gfx1250](../sources/prs/hipblaslt/PR-374.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[ROCm] Add Triton MLA decode + prefill kernels for MI300X](../sources/prs/hipblaslt/PR-377.md) `[source-pr]` arch:cdna3
 - [[ROCm] Add Triton Backend for BF16 Grouped GEMM Backward Kernels](../sources/prs/hipblaslt/PR-388.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [templates/skills: add hip + aiter SKILLs for AMD Instinct kernel work](../sources/prs/hipblaslt/PR-4.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -489,12 +474,10 @@
 - [Add A16W4 MoE GEMM stage2 kernel (BF16 activations x MXFP4 weights)](../sources/prs/hipblaslt/PR-431.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Adds Grouped and Batched GEMM kernels with blockscaling matching DeepGEMM API](../sources/prs/hipblaslt/PR-433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add CDNA3 FP8 support](../sources/prs/hipblaslt/PR-52.md) `[source-pr]` arch:cdna3
-- [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/hipblaslt/PR-605.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(forge): introduce forge/ subdir — AI-agent kernel tuning + PR guardian gate](../sources/prs/hipblaslt/PR-62.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [scripts: add HIP->FlyDSL multi-agent port orchestrator](../sources/prs/hipblaslt/PR-666.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Kokkos-Polybench: Add GEMM kernel](../sources/prs/hipblaslt/PR-686.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Feat/fused ulysses qkv projection](../sources/prs/hipblaslt/PR-805.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[gfx1201] Mistral-3 + Qwen3-8B-FP8 on RDNA4 via native triton attention](../sources/prs/hipblaslt/PR-811.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [MoE: Grouped Triton GEMM for TTFT improvements](../sources/prs/hipblaslt/PR-970.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add fused_gemm_benchmark.py: fused two-GEMM SwiGLU kernel benchmark](../sources/prs/hipblaslt/PR-7152.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [vulkan: Intel Xe flash attention, GEMM optimizations, and optional weight compression (Xe-LPG Plus/Xe2/Xe3) [MEGA PR]](../sources/prs/hipblaslt/PR-24408.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -509,21 +492,15 @@
 - [[Tensilelite] Fix incorrect output for SIA0 + PGR](../sources/prs/hipblaslt/PR-6993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK Tile] Wavelet gemm pipeline for conv fwd](../sources/prs/hipblaslt/PR-7196.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipBLASLt] Fix FP8 origami enum drift in PredictionLibrary::findTopSolutions](../sources/prs/hipblaslt/PR-7520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[tensile] gfx12 assembly compatibility](../sources/prs/hipblaslt/PR-7655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Scope NumWarps==8 CompV3 tail/epilogue logic to EightWaves …](../sources/prs/hipblaslt/PR-7669.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [RotateCoObject](../sources/prs/hipblaslt/PR-7788.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipblaslt] Fix ~600ms cold-call stall on MI300A for f16/bf16 GEMMs regression](../sources/prs/hipblaslt/PR-7794.md) `[source-pr]` arch:cdna3
 - [WIP: [tensilelite] Port emitMfmaInstruction to C++ via nanobind](../sources/prs/hipblaslt/PR-7828.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK] feat(ssd): add fp16/bf16 support with fp32 accumulation](../sources/prs/hipblaslt/PR-7851.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[WIP] Add TensileLite race detection CI workflow](../sources/prs/hipblaslt/PR-7951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone](../sources/prs/hipblaslt/PR-8096.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Move cluster barrier implementation from tensilelite to stinkytofu](../sources/prs/hipblaslt/PR-8101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipblaslt][tensilelite] Add `smoke` test suite](../sources/prs/hipblaslt/PR-8117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [rocWMMA: add gfx1032 (RDNA2) support with software WMMA fallback](../sources/prs/hipblaslt/PR-8209.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [hipBLASLt: Kokoro fp32 tuning for gfx1100 (navi31 Equality logic)](../sources/prs/hipblaslt/PR-8222.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipblaslt][G-F-A] Demo calling triton fp4 kernel](../sources/prs/hipblaslt/PR-8336.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Remove SGPR for SwInstructionPrefetchRelStaticPass](../sources/prs/hipblaslt/PR-8340.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[AIROCMLIR-798] Add LDS usage estimate CAPI function](../sources/prs/hipblaslt/PR-2400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Kernel][AMD] Optimize GatedDeltaNet FLA prefill kernels on MI300X](../sources/prs/hipblaslt/PR-41446.md) `[source-pr]` arch:cdna3
 - [[ROCm][AITER] Use pre-shuffled FP8 GEMM for Quark per-channel attention weights](../sources/prs/hipblaslt/PR-44626.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -537,7 +514,7 @@
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna4 (277 pages)
+## cdna4 (268 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -558,20 +535,26 @@
 - [MFMA Matrix Core (CDNA1–CDNA4)](../wiki/hardware/mfma-matrix-core.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Scaled MFMA (CDNA4 Block-Scaled Matrix Operations)](../wiki/hardware/scaled-mfma.md) `[wiki-hardware]` arch:cdna4
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
+- [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [FP8 and Block-Scale GEMM on ROCm](../wiki/kernels/fp8-blockscale-gemm-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
+- [FP8 FlashAttention on ROCm](../wiki/kernels/fp8-flash-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
+- [MFMA GEMM on ROCm](../wiki/kernels/gemm-mfma-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Paged Prefill Attention on ROCm](../wiki/kernels/paged-prefill-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
+- [Reduction and Softmax Kernels on ROCm](../wiki/kernels/reduction-softmax-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Stream-K and Split-K GEMM on ROCm](../wiki/kernels/streamk-splitk-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [Triton FlashAttention on ROCm](../wiki/kernels/triton-flash-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [Composable Kernel (CK) DSL](../wiki/languages/ck-dsl.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [Triton on ROCm (Triton-ROCm Backend)](../wiki/languages/triton-rocm.md) `[wiki-language]` arch:cdna2, cdna3, cdna4
 - [CDNA3 (MI300X) → CDNA4 (MI350X) Migration Guide](../wiki/migration/cdna3-to-cdna4.md) `[wiki-migration]` arch:cdna3, cdna4
 - [CUDA → HIP Migration Guide](../wiki/migration/cuda-to-hip.md) `[wiki-migration]` arch:cdna1, cdna2, cdna3, cdna4
 - [Memory-Bound Kernel Optimization on AMD CDNA](../wiki/patterns/memory-bound-amd.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
-- [[TRITON] Conv Kernels First Commit to AITER](../sources/prs/hipblaslt/PR-2886.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Triton] batched_gemm_a16wfp4 (gfx950): fuse dot_scaled accumulator; branchless mxfp4 quant; tune small-N configs](../sources/prs/hipblaslt/PR-3058.md) `[source-pr]` arch:cdna4
-- [[TRITON] gfx1201: gemm_a8w8 tuning configs (Mistral-3 / Qwen3 shapes)](../sources/prs/hipblaslt/PR-3168.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Revert "[Triton] Declare triton>=3.6.0 dependency "](../sources/prs/hipblaslt/PR-3272.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add GLM-4.7-FP8 tuned/untuned BF16 GEMM configs (gfx950)](../sources/prs/hipblaslt/PR-3285.md) `[source-pr]` arch:cdna4
-- [gfx1201 gemm_a8w8: blockscale HIP→triton fallback + tuning configs (plain + blockscale_preshuffled)](../sources/prs/hipblaslt/PR-3343.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[gluon gemm_afp4wfp4] Fix data access pattern to remove redundant data loads](../sources/prs/hipblaslt/PR-3355.md) `[source-pr]` arch:cdna4
 - [[FLYDSL MOE] mixed_moe + moe_gemm_2stage: fx internal-types cleanup (ASM-identical)](../sources/prs/hipblaslt/PR-3450.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fused SplitK zero-init for FP8 a8w8 blockscale GEMMs (y_is_zeroed) + re-enable CKTile SplitK](../sources/prs/hipblaslt/PR-3457.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -619,7 +602,6 @@
 - [[CK Profiler] Restore CPU tensor initialization when verification is not done on GPU](../sources/prs/composable_kernel/PR-3594.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [WMMA grouped conv fwd large tensor bias bnorm clamp](../sources/prs/composable_kernel/PR-3595.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Optimize clang-format check in Jenkins CI](../sources/prs/composable_kernel/PR-3597.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions](../sources/prs/composable_kernel/PR-3598.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK TILE] remove dependency on std chrono](../sources/prs/composable_kernel/PR-3599.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Mx fp6 flatmm](../sources/prs/composable_kernel/PR-3601.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Bump rocm-docs-core[api_reference] from 1.31.2 to 1.31.3 in /docs/sphinx](../sources/prs/composable_kernel/PR-3602.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -633,7 +615,6 @@
 - [[CK_TILE] Fix Int32 Overflow in Deterministic FMHA BWD](../sources/prs/composable_kernel/PR-3615.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Remove code duplications in batched gemm (multi D) gemm (multi D) wmma](../sources/prs/composable_kernel/PR-3617.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_BUILDER] conv bwd weight testing](../sources/prs/composable_kernel/PR-3618.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Implement device grouped gemm fixed nk multi abd for rdna4](../sources/prs/composable_kernel/PR-3619.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [GEMM Blockscale ABQuant Optimization](../sources/prs/composable_kernel/PR-3620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK] Adding CK Tile to the doc](../sources/prs/composable_kernel/PR-3621.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fixing Perfetto Image Notification](../sources/prs/composable_kernel/PR-3622.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -679,7 +660,6 @@
 - [Fix path to ck tile conv fwd instance generator](../sources/prs/composable_kernel/PR-3699.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Remove perf numbers from docs](../sources/prs/composable_kernel/PR-3702.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fix one more lifetimebound error.](../sources/prs/composable_kernel/PR-3703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Revert "Implement device grouped gemm fixed nk multi abd for rdna4"](../sources/prs/composable_kernel/PR-3705.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Enable MQA/GQA in backward](../sources/prs/flash-attention/PR-100.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Dropout](../sources/prs/flash-attention/PR-101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Support page attention in mha_varlen_fwd](../sources/prs/flash-attention/PR-103.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -693,7 +673,6 @@
 - [fa3 update ck](../sources/prs/flash-attention/PR-117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [update CK](../sources/prs/flash-attention/PR-118.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [fp8 backward](../sources/prs/flash-attention/PR-119.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [reenable gfx1100 ci](../sources/prs/flash-attention/PR-121.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Performant backward Triton implementation with separated dkdv and dq kernels](../sources/prs/flash-attention/PR-122.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Quick Fixes](../sources/prs/flash-attention/PR-124.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [change version to 3.0.0.r1](../sources/prs/flash-attention/PR-125.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -733,13 +712,11 @@
 - [feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)](../sources/prs/hipblaslt/PR-3413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[WIP] test: cut unit-test CI wall time](../sources/prs/hipblaslt/PR-3601.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Optimize Featherstone GEMM kernels](../sources/prs/hipblaslt/PR-1.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [fix(train): gfx1201 ROCm fixes + unsloth bnb-4bit Gemma 4 31B QLoRA](../sources/prs/hipblaslt/PR-101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[MetaxGPU][testing] correct FP64 MMA store layout to fix the test pre…](../sources/prs/hipblaslt/PR-102.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(flydsl): add core 7 FlyDSL skill pack](../sources/prs/hipblaslt/PR-12.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add coda-kernels-rust: CODA GEMM-epilogue kernels in Rust, CPU + CUDA](../sources/prs/hipblaslt/PR-16.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [AMD - gpt-oss vllm mxfp4: AITER tuning + n-gram spec decode + server …](../sources/prs/hipblaslt/PR-1657.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[TLX][AMD] gfx9 fp16 GEMM tutorial (a16w16) v0-v9 on gfx950](../sources/prs/hipblaslt/PR-1663.md) `[source-pr]` arch:cdna4
-- [fix: AMD gfx1201 (RDNA4/ROCm) — INT8 Triton f32 MFMA, LTX Video device fix, validate_settings KeyError](../sources/prs/hipblaslt/PR-1822.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Kernel][Nemotron] SM100 FP8 dense GEMM + ReLU² fusions and Mamba2/RMSNorm fusions for Nemotron-3-Super NVFP4 (B200)](../sources/prs/hipblaslt/PR-2.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat: shared-engine refactor + Nemotron-Nano-30B GB10 prefill/decode optimizations (~5×)](../sources/prs/hipblaslt/PR-20.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add hip-and-triton-kernel-optimization skill](../sources/prs/hipblaslt/PR-203.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -755,7 +732,6 @@
 - [feat(quantize): add fused FP8 quantization kernels with amax+scale and cast+transpose](../sources/prs/hipblaslt/PR-364.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [opt(gemm): add AITER MXFP4 preshuffle fast path](../sources/prs/hipblaslt/PR-366.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [HydraGNN perf characterization + iterative sysopt-loop recipe (MI355X)](../sources/prs/hipblaslt/PR-37.md) `[source-pr]` arch:cdna4
-- [feat: support build on gfx1250](../sources/prs/hipblaslt/PR-374.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add Triton ROCm backend for FP4 GEMM ops (MXFP4 + NVFP4) on MI300X / MI350X](../sources/prs/hipblaslt/PR-381.md) `[source-pr]` arch:cdna4
 - [[ROCm] Add Triton Backend for BF16 Grouped GEMM Backward Kernels](../sources/prs/hipblaslt/PR-388.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [templates/skills: add hip + aiter SKILLs for AMD Instinct kernel work](../sources/prs/hipblaslt/PR-4.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -763,12 +739,10 @@
 - [Add A16W4 MoE GEMM stage2 kernel (BF16 activations x MXFP4 weights)](../sources/prs/hipblaslt/PR-431.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Adds Grouped and Batched GEMM kernels with blockscaling matching DeepGEMM API](../sources/prs/hipblaslt/PR-433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [reference/fp8-gemm-dsr1-rocm: closed-loop case study on AMD MI355X](../sources/prs/hipblaslt/PR-5.md) `[source-pr]` arch:cdna4
-- [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/hipblaslt/PR-605.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(forge): introduce forge/ subdir — AI-agent kernel tuning + PR guardian gate](../sources/prs/hipblaslt/PR-62.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [scripts: add HIP->FlyDSL multi-agent port orchestrator](../sources/prs/hipblaslt/PR-666.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Kokkos-Polybench: Add GEMM kernel](../sources/prs/hipblaslt/PR-686.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Feat/fused ulysses qkv projection](../sources/prs/hipblaslt/PR-805.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[gfx1201] Mistral-3 + Qwen3-8B-FP8 on RDNA4 via native triton attention](../sources/prs/hipblaslt/PR-811.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [MoE: Grouped Triton GEMM for TTFT improvements](../sources/prs/hipblaslt/PR-970.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add fused_gemm_benchmark.py: fused two-GEMM SwiGLU kernel benchmark](../sources/prs/hipblaslt/PR-7152.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [vulkan: Intel Xe flash attention, GEMM optimizations, and optional weight compression (Xe-LPG Plus/Xe2/Xe3) [MEGA PR]](../sources/prs/hipblaslt/PR-24408.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -784,7 +758,6 @@
 - [[CK Tile] Wavelet gemm pipeline for conv fwd](../sources/prs/hipblaslt/PR-7196.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipBLASLt] Fix FP8 origami enum drift in PredictionLibrary::findTopSolutions](../sources/prs/hipblaslt/PR-7520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipBLASLt] [TensileLite] Add initial tail loop support for Subtile path](../sources/prs/hipblaslt/PR-7636.md) `[source-pr]` arch:cdna4
-- [[tensile] gfx12 assembly compatibility](../sources/prs/hipblaslt/PR-7655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Scope NumWarps==8 CompV3 tail/epilogue logic to EightWaves …](../sources/prs/hipblaslt/PR-7669.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [# [TensileLite] Decouple MXFP8 scale DepthU from data DepthU (`ScaleDepthURatio`)](../sources/prs/hipblaslt/PR-7767.md) `[source-pr]` arch:cdna4
 - [TensileLite: Add multi-DU support.](../sources/prs/hipblaslt/PR-7781.md) `[source-pr]` arch:cdna4
@@ -794,16 +767,11 @@
 - [[CK] feat(ssd): add fp16/bf16 support with fp32 accumulation](../sources/prs/hipblaslt/PR-7851.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[WIP] Add TensileLite race detection CI workflow](../sources/prs/hipblaslt/PR-7951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipblaslt][tensilelite] Remove legacy StreamK modes](../sources/prs/hipblaslt/PR-7980.md) `[source-pr]` arch:cdna4
-- [[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone](../sources/prs/hipblaslt/PR-8096.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Move cluster barrier implementation from tensilelite to stinkytofu](../sources/prs/hipblaslt/PR-8101.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipblaslt][tensilelite] Add `smoke` test suite](../sources/prs/hipblaslt/PR-8117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipBLASLt] Fix occupancy calculation in TensileLite](../sources/prs/hipblaslt/PR-8197.md) `[source-pr]` arch:cdna4
-- [rocWMMA: add gfx1032 (RDNA2) support with software WMMA fallback](../sources/prs/hipblaslt/PR-8209.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [hipBLASLt: Kokoro fp32 tuning for gfx1100 (navi31 Equality logic)](../sources/prs/hipblaslt/PR-8222.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[hipBLASLt] Add GEKO GEMM kernel optimizer and Ductile genetic-algorithm tuning backend](../sources/prs/hipblaslt/PR-8302.md) `[source-pr]` arch:cdna4
 - [[hipblaslt][G-F-A] Demo calling triton fp4 kernel](../sources/prs/hipblaslt/PR-8336.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Remove SGPR for SwInstructionPrefetchRelStaticPass](../sources/prs/hipblaslt/PR-8340.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[AIROCMLIR-798] Add LDS usage estimate CAPI function](../sources/prs/hipblaslt/PR-2400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[AMD/gfx950] FlyDSL kgather diagnostic backend for DSv4 sparse FP8 MLA decode](../sources/prs/hipblaslt/PR-13.md) `[source-pr]` arch:cdna4
 - [[AMD][ROCm] Fix CI failures on gfx950, gfx1100, gfx1151, and gfx1201](../sources/prs/hipblaslt/PR-2326.md) `[source-pr]` arch:cdna4
@@ -816,3 +784,32 @@
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+
+## rdna2 (2 pages)
+
+- [reenable gfx1100 ci](../sources/prs/flash-attention/PR-121.md) `[source-pr]` arch:rdna3, rdna2
+- [rocWMMA: add gfx1032 (RDNA2) support with software WMMA fallback](../sources/prs/hipblaslt/PR-8209.md) `[source-pr]` arch:rdna2
+
+## rdna3 (3 pages)
+
+- [Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions](../sources/prs/composable_kernel/PR-3598.md) `[source-pr]` arch:rdna4, rdna3
+- [reenable gfx1100 ci](../sources/prs/flash-attention/PR-121.md) `[source-pr]` arch:rdna3, rdna2
+- [hipBLASLt: Kokoro fp32 tuning for gfx1100 (navi31 Equality logic)](../sources/prs/hipblaslt/PR-8222.md) `[source-pr]` arch:rdna3
+
+## rdna4 (15 pages)
+
+- [[TRITON] Conv Kernels First Commit to AITER](../sources/prs/hipblaslt/PR-2886.md) `[source-pr]` arch:rdna4
+- [[TRITON] gfx1201: gemm_a8w8 tuning configs (Mistral-3 / Qwen3 shapes)](../sources/prs/hipblaslt/PR-3168.md) `[source-pr]` arch:rdna4
+- [gfx1201 gemm_a8w8: blockscale HIP→triton fallback + tuning configs (plain + blockscale_preshuffled)](../sources/prs/hipblaslt/PR-3343.md) `[source-pr]` arch:rdna4
+- [Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions](../sources/prs/composable_kernel/PR-3598.md) `[source-pr]` arch:rdna4, rdna3
+- [Implement device grouped gemm fixed nk multi abd for rdna4](../sources/prs/composable_kernel/PR-3619.md) `[source-pr]` arch:rdna4
+- [Revert "Implement device grouped gemm fixed nk multi abd for rdna4"](../sources/prs/composable_kernel/PR-3705.md) `[source-pr]` arch:rdna4
+- [fix(train): gfx1201 ROCm fixes + unsloth bnb-4bit Gemma 4 31B QLoRA](../sources/prs/hipblaslt/PR-101.md) `[source-pr]` arch:rdna4
+- [fix: AMD gfx1201 (RDNA4/ROCm) — INT8 Triton f32 MFMA, LTX Video device fix, validate_settings KeyError](../sources/prs/hipblaslt/PR-1822.md) `[source-pr]` arch:rdna4
+- [feat: support build on gfx1250](../sources/prs/hipblaslt/PR-374.md) `[source-pr]` arch:rdna4
+- [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/hipblaslt/PR-605.md) `[source-pr]` arch:rdna4
+- [[gfx1201] Mistral-3 + Qwen3-8B-FP8 on RDNA4 via native triton attention](../sources/prs/hipblaslt/PR-811.md) `[source-pr]` arch:rdna4
+- [[tensile] gfx12 assembly compatibility](../sources/prs/hipblaslt/PR-7655.md) `[source-pr]` arch:rdna4
+- [[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone](../sources/prs/hipblaslt/PR-8096.md) `[source-pr]` arch:rdna4
+- [Move cluster barrier implementation from tensilelite to stinkytofu](../sources/prs/hipblaslt/PR-8101.md) `[source-pr]` arch:rdna4
+- [Remove SGPR for SwInstructionPrefetchRelStaticPass](../sources/prs/hipblaslt/PR-8340.md) `[source-pr]` arch:rdna4

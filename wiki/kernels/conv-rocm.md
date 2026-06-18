@@ -3,7 +3,7 @@ id: kernel-conv-rocm
 title: Convolution Kernels on ROCm (CK Grouped Conv)
 type: wiki-kernel
 architectures: [cdna2, cdna3, cdna4]
-tags: [conv, grouped-gemm, optimization, mfma, wmma]
+tags: [conv, grouped-gemm, optimization, mfma]
 confidence: source-reported
 kernel_types: [conv, grouped-gemm]
 languages: [hip-cpp, ck-dsl]

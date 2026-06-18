@@ -5,7 +5,7 @@ repo: ROCm/hipBLASLt
 pr: 5
 title: 'reference/fp8-gemm-dsr1-rocm: closed-loop case study on AMD MI355X'
 author: andyluo7
-date: unknown
+date: '2022-11-28'
 url: https://github.com/ROCm/hipBLASLt/pull/5
 source_category: upstream-code
 architectures:
@@ -17,9 +17,10 @@ tags:
 - hipblaslt
 kernel_types:
 - gemm
-languages: []
+languages:
+- hip-cpp
 captured_at: '2026-06-12'
-status: merged
+status: closed
 inclusion_reason: kernel-related changes
 confidence: source-reported
 description: An example of find top solutions.
@@ -27,14 +28,18 @@ description: An example of find top solutions.
 
 # reference/fp8-gemm-dsr1-rocm: closed-loop case study on AMD MI355X
 
-Merged PR #5 in [ROCm/hipBLASLt](https://github.com/ROCm/hipBLASLt/pull/5).
+Closed PR #5 in [ROCm/hipBLASLt](https://github.com/ROCm/hipBLASLt/pull/5).
 
 **Author:** andyluo7
-**Merged:** unknown
+**Closed:** 2022-11-28
 
 ## Description
 
 > An example of find top solutions.
+
+## Changed Files
+
+- `library/src/amd_detail/rocblaslt/src/tensile_host.cpp` (+4/-2)
 
 See the PR for full details including code changes and review discussion.
 

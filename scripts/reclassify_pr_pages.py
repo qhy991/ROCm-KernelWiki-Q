@@ -32,8 +32,8 @@ SOURCES_DIR = ROOT / "sources" / "prs"
 
 KERNEL_TYPE_RULES = [
     ("grouped-gemm", r"grouped[_-]?gemm|group_gemm"),
-    ("gemm", r"\bgemm\b|_gemm|/gemm|universal_gemm"),
-    ("attention", r"attention|fmha|flash[_-]?attn|flash_fwd|flash_bwd|\bmha\b|sdpa|\bmqa\b|\bgqa\b|kv[_-]?cache|paged|rotary|\brope\b|alibi|causal|varlen|seqlen|\bbshd\b"),
+    ("gemm", r"\bgemm\b|_gemm|/gemm|universal_gemm|\bmatmul\b|dequant[_-]?matmul|quant[_-]?matmul"),
+    ("attention", r"attention|fmha|flash[_-]?attn|flash_fwd|flash_bwd|\bmha\b|sdpa|\bmqa\b|\bgqa\b|kv[_-]?cache|paged|rotary|\brope\b|alibi|causal|varlen|seqlen|\bbshd\b|prefill|decode|\bqkv\b|\bmla\b"),
     ("moe", r"\bmoe\b|mixture[_-]?of[_-]?expert|moe_|fused_moe"),
     ("conv", r"\bconv\b|conv2d|conv3d|convolution|conv_fwd|conv_bwd|grouped_conv"),
     ("reduction", r"\breduce\b|reduction|reduc_"),

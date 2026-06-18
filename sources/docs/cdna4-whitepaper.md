@@ -3,7 +3,7 @@ id: doc-cdna4-whitepaper
 title: AMD Instinct MI350 Series Architecture Overview
 type: source-doc
 architectures: [cdna4]
-tags: [cdna4, hardware, matrix-core, hbm]
+tags: [cdna4, hardware, mfma, hbm]
 date: '2025-01-01'
 url: https://www.amd.com/en/products/accelerators/instinct/mi350.html
 source_category: official-doc

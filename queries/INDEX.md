@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-288 pages. Machine-readable form: [pages.json](pages.json).
+297 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -285,13 +285,22 @@
 - `hw-scaled-mfma` — [Scaled MFMA (CDNA4 Block-Scaled Matrix Operations)](../wiki/hardware/scaled-mfma.md)
 - `hw-wavefront` — [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md)
 
-## wiki-kernel (5)
+## wiki-kernel (14)
 
+- `kernel-ck-tile-gemm-rocm` — [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
 - `kernel-conv-rocm` — [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
 - `kernel-flash-attention-rocm` — [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
+- `kernel-fp8-blockscale-gemm-rocm` — [FP8 and Block-Scale GEMM on ROCm](../wiki/kernels/fp8-blockscale-gemm-rocm.md)
+- `kernel-fp8-flash-attention-rocm` — [FP8 FlashAttention on ROCm](../wiki/kernels/fp8-flash-attention-rocm.md)
+- `kernel-gemm-mfma-rocm` — [MFMA GEMM on ROCm](../wiki/kernels/gemm-mfma-rocm.md)
 - `kernel-gemm-rocm` — [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md)
+- `kernel-hipblaslt-fused-gemm-rocm` — [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md)
 - `kernel-moe-grouped-gemm-cdna4` — [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
+- `kernel-paged-prefill-attention-rocm` — [Paged Prefill Attention on ROCm](../wiki/kernels/paged-prefill-attention-rocm.md)
 - `kernel-reduction-rocm` — [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md)
+- `kernel-reduction-softmax-rocm` — [Reduction and Softmax Kernels on ROCm](../wiki/kernels/reduction-softmax-rocm.md)
+- `kernel-streamk-splitk-gemm-rocm` — [Stream-K and Split-K GEMM on ROCm](../wiki/kernels/streamk-splitk-gemm-rocm.md)
+- `kernel-triton-flash-attention-rocm` — [Triton FlashAttention on ROCm](../wiki/kernels/triton-flash-attention-rocm.md)
 
 ## wiki-language (2)
 

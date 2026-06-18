@@ -6,7 +6,7 @@ author: AMD ROCm Blogs
 date: '2024-01-01'
 url: https://rocm.blogs.amd.com/software-tools-optimization/matrix-cores-cdna/README.html
 architectures: [cdna2, cdna3, cdna4]
-tags: [mfma, matrix-core, gemm]
+tags: [mfma, gemm]
 hardware_features: [mfma, dual-cma]
 techniques: [mfma-scheduling]
 confidence: source-reported

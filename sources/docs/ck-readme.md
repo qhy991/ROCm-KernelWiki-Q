@@ -3,7 +3,7 @@ id: doc-ck-readme
 title: Composable Kernel README
 type: source-doc
 architectures: [cdna1, cdna2, cdna3, cdna4]
-tags: [ck-dsl, composable-kernel, gemm]
+tags: [ck-dsl, composable_kernel, gemm]
 date: '2026-01-01'
 url: https://github.com/ROCm/composable_kernel/blob/develop/README.md
 source_category: upstream-code

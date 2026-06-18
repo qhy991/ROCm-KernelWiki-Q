@@ -110,6 +110,22 @@ def build_summary(pr_data: dict) -> str:
     return summarize_files(files, title)
 
 
+def pr_status_and_date(pr_data: dict, fallback_date: str = "unknown") -> tuple[str, str]:
+    """Return canonical wiki status/date from GitHub PR metadata."""
+    merged_at = pr_data.get("mergedAt")
+    if merged_at:
+        return "merged", merged_at[:10]
+
+    state = str(pr_data.get("state") or "").lower()
+    closed_at = pr_data.get("closedAt")
+    created_at = pr_data.get("createdAt")
+    if state == "closed" and closed_at:
+        return "closed", closed_at[:10]
+    if state == "open":
+        return "open", created_at[:10] if created_at else fallback_date
+    return state or "closed", created_at[:10] if created_at else fallback_date
+
+
 def fetch_pr_data(repo: str, number: int) -> dict:
     cmd = [
         "gh",
@@ -119,7 +135,7 @@ def fetch_pr_data(repo: str, number: int) -> dict:
         "--repo",
         repo,
         "--json",
-        "body,mergedAt,url,title,files",
+        "body,closedAt,createdAt,files,mergedAt,state,title,url",
     ]
     result = subprocess.run(cmd, capture_output=True, text=True, check=True)
     return json.loads(result.stdout)
@@ -141,7 +157,12 @@ def format_files_section(files: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def enrich_page(path: Path, force: bool = False, dry_run: bool = False) -> bool:
+def enrich_page(
+    path: Path,
+    force: bool = False,
+    dry_run: bool = False,
+    only_unknown_date: bool = False,
+) -> bool:
     text = path.read_text(encoding="utf-8")
     fm, body = extract_frontmatter(text)
     if fm.get("type") != "source-pr":
@@ -152,7 +173,11 @@ def enrich_page(path: Path, force: bool = False, dry_run: bool = False) -> bool:
     if not repo or not number:
         return False
 
-    if not force and not is_stub_page(body):
+    has_unknown_date = str(fm.get("date", "")).lower() == "unknown"
+    if only_unknown_date and not has_unknown_date:
+        return False
+
+    if not force and not is_stub_page(body) and not has_unknown_date:
         return False
 
     try:
@@ -165,15 +190,16 @@ def enrich_page(path: Path, force: bool = False, dry_run: bool = False) -> bool:
         return False
 
     canonical_url = f"https://github.com/{repo}/pull/{number}"
-    merged = (pr_data.get("mergedAt") or "")[:10] or fm.get("date", "unknown")
+    status, date_value = pr_status_and_date(pr_data, fallback_date=fm.get("date", "unknown"))
     files_section = format_files_section(pr_data.get("files", []) or [])
+    status_label = "Merged" if status == "merged" else "Closed" if status == "closed" else "Opened"
 
     new_body = f"""# {fm.get('title', path.stem)}
 
-Merged PR #{number} in [{repo}]({canonical_url}).
+{status_label} PR #{number} in [{repo}]({canonical_url}).
 
 **Author:** {fm.get('author', 'unknown')}
-**Merged:** {merged}
+**{status_label}:** {date_value}
 
 ## Description
 
@@ -189,8 +215,9 @@ See the PR for full details including code changes and review discussion.
 
     frontmatter = dict(fm)
     frontmatter["url"] = canonical_url
-    if merged != "unknown":
-        frontmatter["date"] = merged
+    frontmatter["status"] = status
+    if date_value != "unknown":
+        frontmatter["date"] = date_value
 
     new_text = "---\n" + yaml.safe_dump(frontmatter, sort_keys=False).strip() + "\n---\n\n" + new_body
     if not dry_run:
@@ -203,6 +230,7 @@ def main() -> int:
     parser.add_argument("--repo", default=None, help="Only enrich one repo key")
     parser.add_argument("--limit", type=int, default=0, help="Max pages to enrich")
     parser.add_argument("--force", action="store_true", help="Re-enrich non-stub pages too")
+    parser.add_argument("--only-unknown-date", action="store_true", help="Only repair pages whose date is unknown")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -214,7 +242,12 @@ def main() -> int:
         if not repo_dir.exists():
             continue
         for path in sorted(repo_dir.glob("PR-*.md")):
-            if enrich_page(path, force=args.force, dry_run=args.dry_run):
+            if enrich_page(
+                path,
+                force=args.force,
+                dry_run=args.dry_run,
+                only_unknown_date=args.only_unknown_date,
+            ):
                 updated += 1
                 print(f"enriched {path.relative_to(ROOT)}")
             if args.limit and updated >= args.limit:

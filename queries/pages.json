@@ -96,7 +96,6 @@
   ],
   "tags": [
    "mfma",
-   "matrix-core",
    "gemm"
   ],
   "kernel_types": [],
@@ -134,7 +133,7 @@
   "tags": [
    "cdna4",
    "hardware",
-   "matrix-core",
+   "mfma",
    "hbm"
   ],
   "kernel_types": [],
@@ -155,7 +154,7 @@
   ],
   "tags": [
    "ck-dsl",
-   "composable-kernel",
+   "composable_kernel",
    "gemm"
   ],
   "kernel_types": [],
@@ -177,7 +176,7 @@
   ],
   "tags": [
    "ck-dsl",
-   "composable-kernel",
+   "composable_kernel",
    "gemm",
    "attention"
   ],
@@ -373,7 +372,6 @@
   ],
   "tags": [
    "mfma",
-   "matrix-core",
    "compute",
    "hardware"
   ],
@@ -394,7 +392,6 @@
    "scaled-mfma",
    "mfma",
    "block-scale",
-   "matrix-core",
    "fp8",
    "compute"
   ],
@@ -425,6 +422,34 @@
   "summary": ""
  },
  {
+  "id": "kernel-ck-tile-gemm-rocm",
+  "type": "wiki-kernel",
+  "title": "CK Tile GEMM on ROCm",
+  "path": "wiki/kernels/ck-tile-gemm-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "gemm",
+   "ck-tile",
+   "composable_kernel",
+   "programming-model",
+   "tiling",
+   "optimization"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
   "id": "kernel-conv-rocm",
   "type": "wiki-kernel",
   "title": "Convolution Kernels on ROCm (CK Grouped Conv)",
@@ -438,8 +463,7 @@
    "conv",
    "grouped-gemm",
    "optimization",
-   "mfma",
-   "wmma"
+   "mfma"
   ],
   "kernel_types": [
    "conv",
@@ -481,6 +505,93 @@
   "summary": ""
  },
  {
+  "id": "kernel-fp8-blockscale-gemm-rocm",
+  "type": "wiki-kernel",
+  "title": "FP8 and Block-Scale GEMM on ROCm",
+  "path": "wiki/kernels/fp8-blockscale-gemm-rocm.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "gemm",
+   "fp8",
+   "fp4",
+   "quantization",
+   "block-scale",
+   "cdna4",
+   "composable_kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-fp8-flash-attention-rocm",
+  "type": "wiki-kernel",
+  "title": "FP8 FlashAttention on ROCm",
+  "path": "wiki/kernels/fp8-flash-attention-rocm.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "flash-attention",
+   "fp8",
+   "quantization",
+   "fused-kernel",
+   "optimization"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl",
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-gemm-mfma-rocm",
+  "type": "wiki-kernel",
+  "title": "MFMA GEMM on ROCm",
+  "path": "wiki/kernels/gemm-mfma-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "gemm",
+   "mfma",
+   "lds",
+   "composable_kernel",
+   "hipblaslt",
+   "optimization"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
   "id": "kernel-gemm-rocm",
   "type": "wiki-kernel",
   "title": "GEMM Implementation on AMD CDNA",
@@ -504,6 +615,36 @@
    "ck-dsl"
   ],
   "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "kernel-hipblaslt-fused-gemm-rocm",
+  "type": "wiki-kernel",
+  "title": "hipBLASLt Fused GEMM and Quantization on ROCm",
+  "path": "wiki/kernels/hipblaslt-fused-gemm-rocm.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "gemm",
+   "fp8",
+   "fused-kernel",
+   "quantization",
+   "hipblaslt",
+   "cross-repo",
+   "inference"
+  ],
+  "kernel_types": [
+   "gemm",
+   "activation"
+  ],
+  "languages": [
+   "hip-cpp",
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "source-reported",
   "summary": ""
  },
  {
@@ -540,6 +681,34 @@
   "summary": ""
  },
  {
+  "id": "kernel-paged-prefill-attention-rocm",
+  "type": "wiki-kernel",
+  "title": "Paged Prefill Attention on ROCm",
+  "path": "wiki/kernels/paged-prefill-attention-rocm.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "flash-attention",
+   "inference",
+   "memory",
+   "fp8",
+   "composable_kernel"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
   "id": "kernel-reduction-rocm",
   "type": "wiki-kernel",
   "title": "Reduction Kernels on ROCm",
@@ -564,6 +733,90 @@
   "summary": ""
  },
  {
+  "id": "kernel-reduction-softmax-rocm",
+  "type": "wiki-kernel",
+  "title": "Reduction and Softmax Kernels on ROCm",
+  "path": "wiki/kernels/reduction-softmax-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "reduction",
+   "softmax",
+   "dpp",
+   "bpermute",
+   "memory",
+   "optimization"
+  ],
+  "kernel_types": [
+   "reduction",
+   "softmax"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-streamk-splitk-gemm-rocm",
+  "type": "wiki-kernel",
+  "title": "Stream-K and Split-K GEMM on ROCm",
+  "path": "wiki/kernels/streamk-splitk-gemm-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "gemm",
+   "scheduling",
+   "persistent-kernel",
+   "optimization",
+   "composable_kernel",
+   "hipblaslt"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-triton-flash-attention-rocm",
+  "type": "wiki-kernel",
+  "title": "Triton FlashAttention on ROCm",
+  "path": "wiki/kernels/triton-flash-attention-rocm.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "flash-attention",
+   "triton-rocm",
+   "optimization",
+   "training"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
   "id": "lang-ck-dsl",
   "type": "wiki-language",
   "title": "Composable Kernel (CK) DSL",
@@ -575,7 +828,7 @@
   ],
   "tags": [
    "ck-dsl",
-   "composable-kernel",
+   "composable_kernel",
    "programming",
    "library"
   ],
@@ -682,9 +935,7 @@
   "title": "[TRITON] Conv Kernels First Commit to AITER",
   "path": "sources/prs/hipblaslt/PR-2886.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "conv",
@@ -739,9 +990,7 @@
   "title": "[TRITON] gfx1201: gemm_a8w8 tuning configs (Mistral-3 / Qwen3 shapes)",
   "path": "sources/prs/hipblaslt/PR-3168.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "cross-repo",
@@ -816,9 +1065,7 @@
   "title": "gfx1201 gemm_a8w8: blockscale HIP\u2192triton fallback + tuning configs (plain + blockscale_preshuffled)",
   "path": "sources/prs/hipblaslt/PR-3343.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "cross-repo",
@@ -1085,6 +1332,7 @@
    "rocm-kernel"
   ],
   "kernel_types": [
+   "attention",
    "gemm"
   ],
   "languages": [
@@ -1591,7 +1839,9 @@
    "rocm",
    "rocm-kernel"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention"
+  ],
   "languages": [],
   "confidence": "source-reported",
   "summary": "For now just adding the test_batch_prefill to daily testing."
@@ -1993,9 +2243,8 @@
   "title": "Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions",
   "path": "sources/prs/composable_kernel/PR-3598.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4",
+   "rdna3"
   ],
   "tags": [
    "bf16",
@@ -2335,14 +2584,13 @@
   "title": "Implement device grouped gemm fixed nk multi abd for rdna4",
   "path": "sources/prs/composable_kernel/PR-3619.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "composable_kernel",
-   "grouped-gemm",
    "gemm",
+   "grouped-gemm",
+   "rdna",
    "rocm"
   ],
   "kernel_types": [
@@ -2997,7 +3245,9 @@
    "rocm",
    "rocm-kernel"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention"
+  ],
   "languages": [],
   "confidence": "source-reported",
   "summary": "- Add multi-dimensional page index support (YsGatherDims) in tile_scatter_gather"
@@ -3420,14 +3670,13 @@
   "title": "Revert \"Implement device grouped gemm fixed nk multi abd for rdna4\"",
   "path": "sources/prs/composable_kernel/PR-3705.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "composable_kernel",
-   "grouped-gemm",
    "gemm",
+   "grouped-gemm",
+   "rdna",
    "rocm"
   ],
   "kernel_types": [
@@ -3750,9 +3999,8 @@
   "title": "reenable gfx1100 ci",
   "path": "sources/prs/flash-attention/PR-121.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna3",
+   "rdna2"
   ],
   "tags": [
    "flash-attention",
@@ -4694,9 +4942,7 @@
   "title": "fix(train): gfx1201 ROCm fixes + unsloth bnb-4bit Gemma 4 31B QLoRA",
   "path": "sources/prs/hipblaslt/PR-101.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "hipblaslt",
@@ -4796,6 +5042,7 @@
    "fp4"
   ],
   "kernel_types": [
+   "attention",
    "gemm"
   ],
   "languages": [],
@@ -4829,9 +5076,7 @@
   "title": "fix: AMD gfx1201 (RDNA4/ROCm) \u2014 INT8 Triton f32 MFMA, LTX Video device fix, validate_settings KeyError",
   "path": "sources/prs/hipblaslt/PR-1822.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "hipblaslt",
@@ -4891,7 +5136,9 @@
    "rocm-kernel",
    "hipblaslt"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention"
+  ],
   "languages": [],
   "confidence": "source-reported",
   "summary": "\u2026ferent unit tests"
@@ -5193,9 +5440,7 @@
   "title": "feat: support build on gfx1250",
   "path": "sources/prs/hipblaslt/PR-374.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "hipblaslt",
@@ -5223,7 +5468,9 @@
    "triton-rocm",
    "hipblaslt"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention"
+  ],
   "languages": [
    "hip-cpp",
    "triton-rocm"
@@ -5401,7 +5648,9 @@
   "kernel_types": [
    "gemm"
   ],
-  "languages": [],
+  "languages": [
+   "hip-cpp"
+  ],
   "confidence": "source-reported",
   "summary": "An example of find top solutions."
  },
@@ -5430,9 +5679,7 @@
   "title": "add MXFP8 pre-swizzling for gfx1250 GEMM (#568)",
   "path": "sources/prs/hipblaslt/PR-605.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "gemm",
@@ -5528,7 +5775,9 @@
    "fused-kernel",
    "hipblaslt"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention"
+  ],
   "languages": [],
   "confidence": "source-reported",
   "summary": "for https://ontrack-internal.amd.com/browse/SWDEV-453076"
@@ -5539,9 +5788,7 @@
   "title": "[gfx1201] Mistral-3 + Qwen3-8B-FP8 on RDNA4 via native triton attention",
   "path": "sources/prs/hipblaslt/PR-811.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "attention",
@@ -5584,6 +5831,7 @@
    "moe"
   ],
   "languages": [
+   "hip-cpp",
    "triton-rocm"
   ],
   "confidence": "source-reported",
@@ -5660,7 +5908,9 @@
    "hipblaslt",
    "rocm"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "gemm"
+  ],
   "languages": [],
   "confidence": "source-reported",
   "summary": "`mxfp4_dequant_matmul_amd` and `mxfp4_dequant_grouped_matmul_amd` both"
@@ -5974,9 +6224,7 @@
   "title": "[tensile] gfx12 assembly compatibility",
   "path": "sources/prs/hipblaslt/PR-7655.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "cross-repo",
@@ -6239,9 +6487,7 @@
   "title": "[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone",
   "path": "sources/prs/hipblaslt/PR-8096.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "cross-repo",
@@ -6264,9 +6510,7 @@
   "title": "Move cluster barrier implementation from tensilelite to stinkytofu",
   "path": "sources/prs/hipblaslt/PR-8101.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "cross-repo",
@@ -6298,6 +6542,7 @@
   "tags": [
    "cross-repo",
    "hipblaslt",
+   "rdna",
    "rocm",
    "rocm-kernel"
   ],
@@ -6366,9 +6611,7 @@
   "title": "rocWMMA: add gfx1032 (RDNA2) support with software WMMA fallback",
   "path": "sources/prs/hipblaslt/PR-8209.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna2"
   ],
   "tags": [
    "cross-repo",
@@ -6393,9 +6636,7 @@
   "title": "hipBLASLt: Kokoro fp32 tuning for gfx1100 (navi31 Equality logic)",
   "path": "sources/prs/hipblaslt/PR-8222.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna3"
   ],
   "tags": [
    "cross-repo",
@@ -6467,9 +6708,7 @@
   "title": "Remove SGPR for SwInstructionPrefetchRelStaticPass",
   "path": "sources/prs/hipblaslt/PR-8340.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
    "cross-repo",
@@ -6599,7 +6838,9 @@
    "rocm",
    "rocm-kernel"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention"
+  ],
   "languages": [
    "python"
   ],
@@ -6672,7 +6913,7 @@
   ],
   "tags": [
    "ck-tile",
-   "composable-kernel",
+   "composable_kernel",
    "programming-model",
    "tiling"
   ],

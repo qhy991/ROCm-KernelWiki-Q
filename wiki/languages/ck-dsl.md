@@ -3,7 +3,7 @@ id: lang-ck-dsl
 title: Composable Kernel (CK) DSL
 type: wiki-language
 architectures: [cdna2, cdna3, cdna4]
-tags: [ck-dsl, composable-kernel, programming, library]
+tags: [ck-dsl, composable_kernel, programming, library]
 confidence: source-reported
 sources: [doc-ck-structure, doc-ck-readme]
 related: [technique-ck-tile-programming, hw-mfma-matrix-core, kernel-flash-attention-rocm]
