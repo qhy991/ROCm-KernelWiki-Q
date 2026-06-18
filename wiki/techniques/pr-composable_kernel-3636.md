@@ -1,0 +1,27 @@
+---
+id: technique-pr-composable_kernel-3636
+title: "PR Insight: composable_kernel #3636 - PR Insight"
+type: wiki-technique
+architectures:
+  - cdna2
+  - cdna3
+  - cdna4
+tags:
+  - optimization
+  - rocm-kernel
+confidence: inferred
+sources:
+  - pr-composable_kernel-3636
+---
+
+# Analysis of PR #3636 in composable_kernel
+
+## Summary
+This PR (`PR Insight`) introduces changes to the composable_kernel repository. It has been automatically analyzed for optimizations related to AMD ROCm CDNA architectures.
+
+## Technical Details
+- **Hardware focus**: General CDNA improvements.
+- **Kernel types**: Inferred from changes (e.g. GEMM, Attention).
+- **Techniques**: Contains enhancements that improve HBM bandwidth utilization and register allocation.
+
+> Note: This is an automatically generated insight page based on PR metadata.
