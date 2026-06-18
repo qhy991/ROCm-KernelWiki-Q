@@ -141,7 +141,7 @@ def filter_pages(pages, **filters):
     return result
 
 
-def format_results(pages, limit=10):
+def format_results(pages, limit=10, compact=False):
     """Format search results for display."""
     if not pages:
         return "No results found."
@@ -151,6 +151,12 @@ def format_results(pages, limit=10):
         eid = p.get("id", "?")
         title = p.get("title", eid)
         ptype = p.get("type", "?")
+
+        if compact:
+            # One-line-per-result, matching the cross-KernelWiki compact contract.
+            lines.append(f"  [{ptype}] {eid}: {title}  ({p['path']})")
+            continue
+
         conf = p.get("confidence", "?")
         archs = ", ".join(p.get("architectures", []))
         tags = ", ".join(p.get("tags", [])[:5])
@@ -184,6 +190,8 @@ def main():
     parser.add_argument("--operator", action="append", help="Common cross-KernelWiki operator filter")
     parser.add_argument("--confidence", help="Filter by confidence level")
     parser.add_argument("--limit", "-n", type=int, default=10, help="Max results")
+    parser.add_argument("--compact", action="store_true", help="Compact one-line-per-result output")
+    parser.add_argument("--paths-only", action="store_true", help="Output only file paths, one per line")
     parser.add_argument("--verbose", "-v", action="store_true", help="Show content snippets")
 
     args = parser.parse_args()
@@ -208,7 +216,12 @@ def main():
         parser.print_help()
         return 1
 
-    print(format_results(results, args.limit))
+    if args.paths_only:
+        for p in results[:args.limit]:
+            print(p["path"])
+        return 0
+
+    print(format_results(results, args.limit, compact=args.compact))
 
     # Show snippets if verbose
     if args.verbose and results:
