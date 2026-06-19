@@ -2,10 +2,10 @@
 id: kernel-gemm-rocm
 title: "GEMM Implementation on AMD CDNA"
 type: wiki-kernel
-architectures: [cdna1, cdna2, cdna3]
+architectures: [cdna1, cdna2, cdna3, rdna3, rdna4]
 tags: [gemm, mfma, lds, register-tiling]
 confidence: verified
-sources: []
+sources: [pr-composable_kernel-3598, pr-composable_kernel-3619]
 kernel_types: [gemm]
 languages: [hip-cpp, ck-dsl]
 reproducibility: snippet
@@ -14,6 +14,8 @@ reproducibility: snippet
 # GEMM Implementation on AMD CDNA
 
 General Matrix Multiplication (GEMM) on AMD CDNA architectures fundamentally relies on the Matrix Fused Multiply-Add (MFMA) instructions to achieve peak throughput.
+
+For RDNA-specific WMMA/grouped-GEMM and local-serving variants, see [RDNA ROCm Kernels](rdna-rocm.md). Keep CDNA MFMA assumptions separate from RDNA WMMA/SWMMAC evidence.
 
 ## Hierarchical Tiling Strategy
 

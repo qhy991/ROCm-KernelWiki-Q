@@ -21,6 +21,9 @@ sources:
   - pr-aiter-3457
   - pr-vllm-44626
   - pr-rocm_libraries-7520
+  - pr-rocm_libraries-8302
+  - pr-rocm_libraries-8336
+  - pr-rocm_libraries-8604
 reproducibility: concept
 ---
 
@@ -44,6 +47,27 @@ fused work:
 
 The fused approach trades a more complex kernel for fewer global-memory round trips and fewer launches, which is valuable in autoregressive inference.
 
+## hipBLASLt / rocm-libraries Transition
+
+Recent hipBLASLt work is landing under `ROCm/rocm-libraries`, while older source pages in this wiki may still live under `sources/prs/hipblaslt/` for compatibility. Prefer the `repo:` field and page `id` over the directory name when interpreting evidence:
+
+```text
+id:   pr-rocm_libraries-8302
+repo: ROCm/rocm-libraries
+path: sources/prs/hipblaslt/PR-8302.md
+```
+
+This matters because current tuning work is no longer only a hipBLASLt repository concern. It spans TensileLite codegen, Origami solution selection, AITER kernels, Triton-generated custom kernels, and vLLM integration.
+
+## Production Tuning Themes
+
+| Theme | Evidence | Kernel-design lesson |
+|-------|----------|----------------------|
+| Automated search | `pr-rocm_libraries-8302` | GEKO/Ductile moves gfx950 GEMM tuning from manual library edits toward genetic-algorithm search. |
+| Triton custom kernels | `pr-rocm_libraries-8336` | hipBLASLt can call a Triton-compiled FP4 GEMM assembly path through TensileLite custom-kernel plumbing. |
+| Shape-aware heuristics | `pr-rocm_libraries-8604` | Adding a Subtile kernel family requires Origami to reject it for losing shape regimes. |
+| Fused zero-init | `pr-aiter-3457` | Split-K accumulation contracts can require producer-side or fused output initialization. |
+
 ## Evidence Map
 
 | Evidence | What it contributes |
@@ -55,8 +79,10 @@ The fused approach trades a more complex kernel for fewer global-memory round tr
 | `pr-aiter-3457` | Fused Split-K zero-init for FP8 A8W8 blockscale GEMMs |
 | `pr-vllm-44626` | Preshuffled FP8 GEMM for per-channel attention weights |
 | `pr-rocm_libraries-7520` | hipBLASLt FP8 solution-selection compatibility fix |
+| `pr-rocm_libraries-8302` | GEKO/Ductile genetic-algorithm GEMM tuning backend |
+| `pr-rocm_libraries-8336` | Triton FP4 custom kernel integration demo |
+| `pr-rocm_libraries-8604` | Origami heuristic becomes Subtile-aware for gfx950 BF16 TN |
 
 ## Retrieval Cues
 
 Retrieve this page for hipBLASLt FP8 GEMM, fused quantization, amax scale update, preshuffled FP8 weights, Split-K fused epilogues, or production inference GEMM tuning on ROCm.
-

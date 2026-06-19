@@ -6,13 +6,15 @@ architectures: [cdna2, cdna3, cdna4]
 tags: [conv, grouped-gemm, optimization, mfma]
 confidence: source-reported
 kernel_types: [conv, grouped-gemm]
-languages: [hip-cpp, ck-dsl]
-techniques: [ck-tile-programming, mfma-scheduling, double-buffering]
+languages: [hip-cpp, ck-dsl, assembly, python]
+techniques: [ck-tile-programming, mfma-scheduling, double-buffering, occupancy-tuning]
 hardware_features: [mfma, lds]
 related:
   - hw-mfma-matrix-core
   - hw-lds
   - technique-ck-tile-programming
+  - technique-occupancy-tuning
+  - lang-amd-assembly
   - kernel-moe-grouped-gemm-cdna4
 sources:
   - pr-composable_kernel-3547
@@ -23,6 +25,9 @@ sources:
   - pr-composable_kernel-3632
   - pr-composable_kernel-3648
   - pr-composable_kernel-3624
+  - pr-miopen-3702
+  - pr-miopen-3918
+  - pr-miopen-3925
   - doc-ck-readme
   - doc-ck-structure
 reproducibility: concept
@@ -78,6 +83,18 @@ CK provides both **im2col** (explicit reshape) and **direct-load** (implicit on-
 ### XDL (MFMA) Forward
 
 The standard path uses XDL (cross-lane data movement) with MFMA. Two sub-variants exist:
+
+## MIOpen Solver and Heuristic Layer
+
+CK pages explain many conv kernels as GEMM-like tiles, but MIOpen adds another layer: solver selection. The chosen solver may be a CK/XDL implicit-GEMM path, a direct solver, or a handwritten assembly Winograd path.
+
+| Solver path | What it contributes | Evidence |
+|-------------|---------------------|----------|
+| Winograd Rage assembly | Handwritten gfx942 assembly kernels selected by filter size | `pr-miopen-3702` |
+| 3D conv KTN heuristics | TunaNet input/config encoders score gfx942 CK 3D grouped conv candidates | `pr-miopen-3918` |
+| 3D conv AI heuristics | TunaNet model and metadata extraction for gfx942 3D convolution candidate selection | `pr-miopen-3925` |
+
+This means a convolution performance issue can live in three places: the kernel implementation, the solver heuristic, or the model metadata used to select a candidate. Do not assume a slower conv shape requires a new kernel before checking MIOpen's selection path.
 
 - **Im2col**: Explicit input expansion to GEMM layout. Simpler but uses more memory.
 - **Direct load** ([`pr-composable_kernel-3632`](../../sources/prs/composable_kernel/PR-3632.md)): Implicit on-the-fly im2col during LDS load. Eliminates the expansion buffer; the kernel computes the im2col index mapping in hardware. Available with vector load sizes 1 and 2.

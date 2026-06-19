@@ -5,6 +5,8 @@ type: wiki-technique
 architectures: [cdna2, cdna3, cdna4]
 tags: [rocm, gemm, triton-rocm, fp16, bf16, fp8, programming, optimization, compute, memory-bound]
 confidence: inferred
+sources:
+  - pr-triton-456
 ---
 
 # Triton PR 456: Enable All Types in GEMM Tutorial

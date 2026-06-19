@@ -20,7 +20,16 @@ sources:
   - pr-composable_kernel-3603
   - pr-composable_kernel-3620
   - pr-composable_kernel-3540
+  - pr-composable_kernel-3735
   - pr-aiter-3470
+  - pr-transformerengine-578
+  - pr-composable_kernel-3619
+  - pr-vllm-46063
+  - pr-vllm-46117
+  - pr-vllm-46123
+  - pr-sglang-28658
+  - pr-sglang-28676
+  - pr-sglang-28712
   - doc-cdna4-isa
 reproducibility: concept
 ---
@@ -60,6 +69,18 @@ Stage 2: Scatter-Reduce
 ```
 
 The implementations differ in how they handle the grouped GEMM stage and the data format.
+
+## Activation and Epilogue Fusion
+
+Production MoE kernels often need more than grouped matmul. Transformer MLP experts commonly fuse bias, activation, scaling, and scatter/reduce behavior around the GEMM core.
+
+| Fusion point | Design concern | Evidence |
+|--------------|----------------|----------|
+| SwiGLU / SwiGLU-step | Activation parameters such as clamp and alpha must match the model contract | `pr-composable_kernel-3735` |
+| Split-K epilogue | `k_batch == 1` should store final output, not accumulate stale data | `pr-composable_kernel-3735` |
+| AITER MXFP4 backend | MoE sort, quant, GEMM, epilogue, scatter, and reduce are integrated for gfx950 | `pr-aiter-3470` |
+
+When indexing MoE work, separate the **GEMM substrate** from the **expert epilogue contract**. A low-precision GEMM can be correct in isolation but still fail a model if the activation, bias, routing, or split-K accumulation semantics differ.
 
 ## Implementation Approaches
 
@@ -127,6 +148,10 @@ CK Tile's a4w4 path ([`pr-composable_kernel-3603`](../../sources/prs/composable_
 | MXFP8 (Turbo) | MXFP8 | MXFP8 | per-block | CDNA4 (gfx950) | [`pr-hipblaslt-330`](../../sources/prs/hipblaslt/PR-330.md) |
 | A4W4 (native FP4) | FP4 | FP4 | per-block | CDNA2–4 | [`pr-composable_kernel-3603`](../../sources/prs/composable_kernel/PR-3603.md) |
 | MXFP4 (AITER) | FP4 | FP4 | per-block | CDNA4 (gfx950) | [`pr-aiter-3470`](../../sources/prs/aiter/PR-3470.md) |
+| MXFP4 + biased SwiGLU | FP4 | FP4 | per-block | CDNA4 candidate path | [`pr-composable_kernel-3735`](../../sources/prs/composable_kernel/PR-3735.md) |
+| MXFP8 grouped GEMM (TE) | MXFP8 | MXFP8 | backend-specific | gfx1250 integration evidence | [`pr-transformerengine-578`](../../sources/prs/transformerengine/PR-578.md) |
+| MXFP8 grouped GEMM (TE CK) | MXFP8 | MXFP8 | backend-specific | gfx1250 integration evidence, not CDNA4 claim | [`pr-transformerengine-613`](../../sources/prs/transformerengine/PR-613.md) |
+| RDNA4 grouped GEMM (CK) | BF16/INT8 or FP16 examples | fixed-NK multi-ABD | ordinary WMMA path | RDNA4 contrast case | [`pr-composable_kernel-3619`](../../sources/prs/composable_kernel/PR-3619.md) |
 
 ## Mapping to Hardware Features
 
@@ -147,6 +172,19 @@ CK Tile's a4w4 path ([`pr-composable_kernel-3603`](../../sources/prs/composable_
 | Research / custom kernel | CK Tile ABQuant with preshuffle pipeline |
 | Triton-based framework (vLLM, SGLang) | Triton grouped GEMM with work-stealing |
 | Very large expert count (>128) | Persistent kernel pattern for launch overhead |
+
+## Serving Framework Evidence
+
+Recent open vLLM and SGLang PRs show that production MoE serving often tunes the dispatch boundary as much as the GEMM itself:
+
+| Evidence | What it contributes |
+|----------|---------------------|
+| `pr-vllm-46063` | Open vLLM AITER small-M dispatch proposal for MiniMax-M3 MXFP8 dense and grouped-MoE decode on gfx950 |
+| `pr-vllm-46117` | Open vLLM native MXFP8 decode tile/grouped-MoE tuning for MiniMax-M3 on CDNA4 |
+| `pr-vllm-46123` | Open vLLM opt-in FlyDSL BF16 two-stage MoE route for MiniMax-M3 MXFP8 emulation on gfx942 |
+| `pr-sglang-28658` | Open SGLang fusion of shared-expert sigmoid/cast into the MoE append kernel to reduce decode launches |
+| `pr-sglang-28676` | Open SGLang correctness fix for MXFP8 routed-MoE layout caches across RL weight reloads |
+| `pr-sglang-28712` | Open SGLang MiniMax-M3 foundation PR with gfx95 MXFP8 MoE configs and top-k/JIT routing kernels |
 
 ## References
 

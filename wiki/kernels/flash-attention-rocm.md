@@ -6,9 +6,28 @@ architectures: [cdna2, cdna3, cdna4]
 tags: [attention, flash-attention, mfma, lds, dpp]
 confidence: source-reported
 kernel_types: [attention, flash-attention]
-languages: [hip-cpp, ck-dsl]
-related: [hw-mfma-matrix-core, hw-lds, technique-mfma-scheduling]
-sources: [blog-matrix-cores-cdna, doc-flash-attention-rocm, blog-flash-attention-rocm]
+languages: [hip-cpp, ck-dsl, triton-rocm, python]
+techniques: [ck-tile-programming, mfma-scheduling, double-buffering, occupancy-tuning]
+hardware_features: [mfma, lds, dpp, wavefront]
+related:
+  - hw-mfma-matrix-core
+  - hw-lds
+  - technique-mfma-scheduling
+  - technique-occupancy-tuning
+  - kernel-fp8-flash-attention-rocm
+  - kernel-paged-prefill-attention-rocm
+  - kernel-triton-flash-attention-rocm
+sources:
+  - blog-matrix-cores-cdna
+  - doc-flash-attention-rocm
+  - blog-flash-attention-rocm
+  - pr-flash-attention-157
+  - pr-flash-attention-179
+  - pr-flash-attention-181
+  - pr-flash-attention-182
+  - pr-flash-attention-183
+  - pr-flash-attention-178
+  - pr-flash-attention-184
 performance_claims:
   - gpu: MI300X
     dtype: fp16
@@ -145,6 +164,37 @@ max_val = fmax(max_val, __shfl_xor(max_val, 1));
 2. **Double buffering**: Load next K/V tile while computing current attention scores
 3. **KV cache layout**: Use paged KV cache (vLLM) for variable-length sequences
 4. **FP8 on CDNA3+**: Use `v_mfma_f32_*_fp8_*` for KV cache in FP8
+
+## CK Tile Backward Workspace Evolution
+
+The ROCm FlashAttention backward path has a second performance surface outside the MFMA loop: workspace ownership and host/device synchronization. Recent CK Tile PRs show a staged migration:
+
+| Evidence | Lesson |
+|----------|--------|
+| `pr-flash-attention-181` | Small CK submodule/API changes can require host-wrapper argument updates such as `sink_ptr` and `d_sink_ptr`. |
+| `pr-flash-attention-182` | The backward wrapper moved to CK's unified workspace API, replacing explicit `dq_acc` tensor plumbing with workspace-size, prepare, and launcher calls. |
+| `pr-flash-attention-183` | Workspace preparation became stream-async to avoid a host-blocking `cu_seqlens.cpu()` style synchronization in group-mode backward. |
+
+For profiling, this means a slow FMHA backward step may not be caused by MFMA occupancy. Check whether the wrapper allocates, copies, or prepares sequence metadata on the host path before tuning tile sizes.
+
+## Edge Cases and Architecture Guards
+
+`seq_q=0` backward is a representative correctness edge case. `pr-flash-attention-179` fixed a NaN path by updating CK and adding a dedicated test, with the underlying issue connected to early exit and register allocation behavior in CK-side fixes.
+
+Architecture gating is another recurring theme. `pr-flash-attention-178` enabled RDNA build support with guards for unstable backward paths, while `pr-flash-attention-184` is an open PR that removes local gfx11/gfx12 backward guards after updating CK. For CDNA-focused retrieval, treat RDNA PRs as compatibility evidence rather than direct CDNA performance claims. For RDNA-specific retrieval, use `kernel-rdna-rocm`.
+
+## Evidence Map
+
+| Evidence | What it contributes |
+|----------|---------------------|
+| `blog-flash-attention-rocm` | Baseline ROCm FlashAttention performance and backend context |
+| `pr-flash-attention-157` | FlashAttention v3 enablement with FP8 and paged-attention paths |
+| `pr-flash-attention-179` | FMHA backward `seq_q=0` NaN edge-case fix |
+| `pr-flash-attention-181` | CK submodule and `fmha_bwd_args` compatibility update |
+| `pr-flash-attention-182` | Unified workspace API migration for FMHA backward |
+| `pr-flash-attention-183` | Stream-async workspace preparation for FMHA backward |
+| `pr-flash-attention-178` | RDNA gfx11/gfx12 build support with backward guards |
+| `pr-flash-attention-184` | Open RDNA backward enablement after CK update |
 
 ## References
 

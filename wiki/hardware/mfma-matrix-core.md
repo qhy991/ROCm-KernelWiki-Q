@@ -7,7 +7,7 @@ tags: [mfma, compute, hardware]
 confidence: verified
 hardware_features: [mfma, dual-cma]
 related: [hw-lds, hw-dpp-cross-lane, hw-wavefront]
-sources: [doc-cdna4-isa, doc-cdna4-whitepaper, blog-matrix-cores-cdna]
+sources: [doc-cdna4-isa, doc-cdna4-whitepaper, blog-matrix-cores-cdna, pr-rocwmma-500, pr-rocwmma-510]
 cuda_equivalent: tensor_core
 ---
 

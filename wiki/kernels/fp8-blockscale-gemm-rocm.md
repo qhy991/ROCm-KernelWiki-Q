@@ -23,6 +23,14 @@ sources:
   - pr-composable_kernel-3629
   - pr-hipblaslt-52
   - pr-hipblaslt-5
+  - pr-transformerengine-537
+  - pr-transformerengine-535
+  - pr-transformerengine-613
+  - pr-transformerengine-605
+  - pr-transformerengine-568
+  - pr-transformerengine-630
+  - pr-transformerengine-627
+  - pr-transformerengine-571
 reproducibility: concept
 ---
 
@@ -58,8 +66,15 @@ On CDNA4, block-scale support makes native FP4/FP8 kernels more attractive becau
 | `pr-composable_kernel-3629` | Preshuffle quantization for AB block-scale GEMM |
 | `pr-hipblaslt-52` | CDNA3 FP8 support in hipBLASLt |
 | `pr-hipblaslt-5` | MI355X FP8 GEMM closed-loop case study |
+| [`pr-transformerengine-537`](../../sources/prs/transformerengine/PR-537.md) | MXFP4 training recipe: fused cast+transpose, layout shuffle, AITER GEMM dispatch, and weight caching |
+| [`pr-transformerengine-535`](../../sources/prs/transformerengine/PR-535.md) | Shape-based MXFP4 GEMM tuning selection and quantizer-copy fix |
+| [`pr-transformerengine-613`](../../sources/prs/transformerengine/PR-613.md) | CK MXFP8 grouped GEMM integration for gfx1250; useful as RDNA4 integration evidence, not CDNA4 performance evidence |
+| [`pr-transformerengine-605`](../../sources/prs/transformerengine/PR-605.md) | Dev-branch gfx1250 MXFP8 scale pre-swizzling and production-like GEMM tests |
+| [`pr-transformerengine-568`](../../sources/prs/transformerengine/PR-568.md) | Original gfx1250-branch MXFP8 scale pre-swizzling implementation |
+| [`pr-transformerengine-630`](../../sources/prs/transformerengine/PR-630.md) | Open NN/NT transpose workaround for gfx1250 MXFP8 GEMM layouts |
+| [`pr-transformerengine-627`](../../sources/prs/transformerengine/PR-627.md) | Open K-dimension restriction relaxation for gfx1250 MXFP8 GEMM |
+| [`pr-transformerengine-571`](../../sources/prs/transformerengine/PR-571.md) | FP4 swizzle instruction compatibility for gfx1250; PR reports no gfx950 performance difference |
 
 ## Database Use
 
 Index this page with `dtype=fp8`, `dtype=fp4`, `quantization=block_scale`, and `hardware=scaled_mfma`. It should be linked to MoE, attention projection, and fused GEMM pages because they reuse the same low-precision matmul substrate.
-
