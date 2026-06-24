@@ -96,7 +96,7 @@
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
-## lds (96 pages)
+## lds (95 pages)
 
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -161,7 +161,6 @@
 - [Query lds size for tune_gemm and tune_streamk](../sources/prs/triton/PR-680.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) `[source-pr]` arch:cdna3
 - [MoE wvSplitK_int4: CU-count grid + skip duplicate MatA to LDS + gfx1151 N=1 K<1024 retune](../sources/prs/vllm/PR-920.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [triton_unified_attention: fix LDS overflow on gfx11 introduced by num_stages=3 retune](../sources/prs/vllm/PR-958.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4

@@ -238,3 +238,12 @@ aux_tags:
   - inference
   - training
   - mi300x
+  - llm
+  - kv-cache
+  - triton
+  - fusion
+  - bandwidth-bound
+  - miopen
+  - instruction-selection
+  - vgpr-optimization
+  - bounds-checking
