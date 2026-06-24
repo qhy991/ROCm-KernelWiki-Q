@@ -2941,7 +2941,7 @@
 
 - [rocWMMA: add gfx1032 (RDNA2) support with software WMMA fallback](../sources/prs/hipblaslt/PR-8209.md) `[source-pr]` arch:rdna2
 
-## rdna3 (8 pages)
+## rdna3 (12 pages)
 
 - [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, rdna3, rdna4
 - [RDNA ROCm Kernels (gfx11/gfx12)](../wiki/kernels/rdna-rocm.md) `[wiki-kernel]` arch:rdna3, rdna4
@@ -2951,6 +2951,10 @@
 - [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/hipblaslt/PR-8624.md) `[source-pr]` arch:rdna3, rdna4, cdna3, cdna4
 - [Tune gfx1100 BBS GEMM kernels for Llama-3.1-8b-Instruct](../sources/prs/hipblaslt/PR-8631.md) `[source-pr]` arch:rdna3
 - [[ROCm][Kernel] Add HybridW4A16LinearKernel: Triton prefill + HIP skinny decode](../sources/prs/vllm/PR-40977.md) `[source-pr]` arch:rdna3, rdna4
+- [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md) `[source-pr]` arch:rdna3
+- [[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff](../sources/prs/vllm/PR-998.md) `[source-pr]` arch:rdna3
+- [Evading the RDNA3 4096B Cache Cliff via Stride Padding](../wiki/techniques/pr-vllm-rocm-998.md) `[wiki-technique]` arch:rdna3
+- [Applying Cache Cliff Stride Padding to W4A16 MoE Experts](../wiki/techniques/pr-vllm-rocm-1003.md) `[wiki-technique]` arch:rdna3
 
 ## rdna4 (40 pages)
 

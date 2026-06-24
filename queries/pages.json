@@ -13829,6 +13829,52 @@
   "summary": ""
  },
  {
+  "id": "pr-vllm-rocm-1003",
+  "type": "source-pr",
+  "title": "[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff",
+  "path": "sources/prs/vllm/PR-1003.md",
+  "architectures": [
+   "rdna3"
+  ],
+  "tags": [
+   "w4a16",
+   "cache-cliff",
+   "stride-padding",
+   "gfx1151"
+  ],
+  "kernel_types": [
+   "moe"
+  ],
+  "languages": [
+   "cpp"
+  ],
+  "confidence": null,
+  "summary": ""
+ },
+ {
+  "id": "pr-vllm-rocm-998",
+  "type": "source-pr",
+  "title": "[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff",
+  "path": "sources/prs/vllm/PR-998.md",
+  "architectures": [
+   "rdna3"
+  ],
+  "tags": [
+   "cache-cliff",
+   "stride-padding",
+   "openvla",
+   "gfx1151"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "cpp"
+  ],
+  "confidence": null,
+  "summary": ""
+ },
+ {
   "id": "technique-async-copy-lds",
   "type": "wiki-technique",
   "title": "\u5f02\u6b65 Global\u2192LDS \u62f7\u8d1d (Asynchronous Global to LDS Copy)",
@@ -14032,6 +14078,25 @@
   "summary": ""
  },
  {
+  "id": "technique-gfx11x-4096b-cache-cliff",
+  "type": "wiki-technique",
+  "title": "Evading the RDNA3 4096B Cache Cliff via Stride Padding",
+  "path": "wiki/techniques/pr-vllm-rocm-998.md",
+  "architectures": [
+   "rdna3"
+  ],
+  "tags": [
+   "cache-cliff",
+   "stride-padding"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
   "id": "technique-hip-graph-capture",
   "type": "wiki-technique",
   "title": "HIP Graph Capture and Replay",
@@ -14191,6 +14256,26 @@
   ],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-moe-stride-padding-gfx11x",
+  "type": "wiki-technique",
+  "title": "Applying Cache Cliff Stride Padding to W4A16 MoE Experts",
+  "path": "wiki/techniques/pr-vllm-rocm-1003.md",
+  "architectures": [
+   "rdna3"
+  ],
+  "tags": [
+   "w4a16",
+   "cache-cliff",
+   "stride-padding"
+  ],
+  "kernel_types": [
+   "moe"
+  ],
+  "languages": [],
+  "confidence": "verified",
   "summary": ""
  },
  {

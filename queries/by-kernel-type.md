@@ -252,7 +252,7 @@
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## gemm (235 pages)
+## gemm (237 pages)
 
 - [Batched GEMM on ROCm](../wiki/kernels/batched-gemm-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
@@ -465,12 +465,14 @@
 - [Revert "[ROCm] Add hipblaslt swizzle gemm kernel"](../sources/prs/vllm/PR-837.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Add hybrid MoE kernel with wvSplitK int4 GEMM](../sources/prs/vllm/PR-876.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Add bf16 wvSplitK skinny GEMM benchmark](../sources/prs/vllm/PR-922.md) conf:source-reported arch:cdna2, cdna3, cdna4
+- [[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff](../sources/prs/vllm/PR-998.md) conf:? arch:rdna3
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) conf:verified arch:cdna1, cdna2, cdna3, cdna4
 - [Non-Temporal Store (L2 Cache Bypass)](../wiki/techniques/buffer-store-nt.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [合并内存访问模式 (Coalesced Memory Access Patterns)](../wiki/techniques/coalesced-memory.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
+- [Evading the RDNA3 4096B Cache Cliff via Stride Padding](../wiki/techniques/pr-vllm-rocm-998.md) conf:verified arch:rdna3
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) conf:source-reported arch:cdna3, cdna4
 - [CDNA4 FP8 Scaled MFMA](../wiki/techniques/mfma-fp8-cdna4.md) conf:source-reported arch:cdna4
@@ -577,7 +579,7 @@
 - [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## moe (65 pages)
+## moe (67 pages)
 
 - [Fused MoE GEMM (vLLM ROCm)](../wiki/kernels/fused-moe-gemm-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) conf:source-reported arch:cdna2, cdna3, cdna4
@@ -639,9 +641,11 @@
 - [[ROCm][gfx11] hybrid_w4a16_moe: shape-tune Triton MoE for Qwen3.5-A3B (4× workspace shrink, ~2× / ~5× kernel)](../sources/prs/vllm/PR-946.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[ROCm][gfx11] int4 wvSplitK + MoE int4: per-shape dispatch tunes for Qwen3.5-A3B](../sources/prs/vllm/PR-951.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [fix(moe): tune fused_moe per-M config for gfx1151 Qwen3-30B FP16 deco…](../sources/prs/vllm/PR-972.md) conf:source-reported arch:cdna2, cdna3, cdna4
+- [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md) conf:? arch:rdna3
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) conf:source-reported arch:cdna3, cdna4
+- [Applying Cache Cliff Stride Padding to W4A16 MoE Experts](../wiki/techniques/pr-vllm-rocm-1003.md) conf:verified arch:rdna3
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) conf:source-reported arch:cdna2, cdna3, cdna4
 

@@ -316,3 +316,8 @@ aux_tags:
   - performance
   - wmma
   - scratch-memory
+  - w4a16
+  - cache-cliff
+  - stride-padding
+  - openvla
+  - gfx1151

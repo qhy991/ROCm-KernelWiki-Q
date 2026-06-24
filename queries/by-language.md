@@ -140,6 +140,11 @@
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md)
 - [support ck-tile blockquant gemm in vllm](../sources/prs/vllm/PR-642.md)
 
+## cpp (2 pages)
+
+- [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md)
+- [[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff](../sources/prs/vllm/PR-998.md)
+
 ## hip-cpp (135 pages)
 
 - [ROCm Flash Attention Repository](../sources/docs/flash-attention-rocm.md)
