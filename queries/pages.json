@@ -1300,7 +1300,8 @@
   "architectures": [
    "cdna1",
    "cdna2",
-   "cdna3"
+   "cdna3",
+   "cdna4"
   ],
   "tags": [
    "reduction",
@@ -43412,6 +43413,37 @@
   ],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-670-technique",
+  "type": "technique",
+  "title": "Persistent Kernel Optimization for Flash Attention Forward in ROCm Triton",
+  "path": "wiki/techniques/pr-triton-670.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "triton",
+   "attention",
+   "optimization",
+   "performance",
+   "hardware",
+   "synchronization",
+   "scheduling"
+  ],
+  "kernel_types": [
+   "flash-attention",
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": null,
   "summary": ""
  },
  {
@@ -90333,26 +90365,32 @@
  {
   "id": "technique-pr-triton-640",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #640 - PR Insight",
+  "title": "Custom RDNA Configuration Support for Triton Navi Kernels",
   "path": "wiki/techniques/pr-triton-640.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna2",
+   "rdna3",
+   "rdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
+   "rdna",
    "optimization",
-   "rocm-kernel"
+   "hardware",
+   "scheduling"
   ],
   "kernel_types": [],
-  "languages": [],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-641",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #641 - PR Insight",
+  "title": "Triton Layer Normalization Optimization on AMD CDNA",
   "path": "wiki/techniques/pr-triton-641.md",
   "architectures": [
    "cdna2",
@@ -90361,7 +90399,16 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "memory-bound",
+   "wave-reduction",
+   "vectorized-load",
+   "persistent-kernel",
+   "lds",
+   "dpp",
+   "bpermute",
+   "register-tiling",
+   "occupancy-tuning"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90371,7 +90418,7 @@
  {
   "id": "technique-pr-triton-647",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #647 - PR Insight",
+  "title": "Matmul Performance Regression Pipeline in Triton",
   "path": "wiki/techniques/pr-triton-647.md",
   "architectures": [
    "cdna2",
@@ -90380,25 +90427,8 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-649",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #649 - PR Insight",
-  "path": "wiki/techniques/pr-triton-649.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
+   "pipeline",
+   "rocm",
    "rocm-kernel"
   ],
   "kernel_types": [],
@@ -90409,7 +90439,7 @@
  {
   "id": "technique-pr-triton-652",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #652 - PR Insight",
+  "title": "PR Insight: Triton Stream-K v0.2 Enhancements",
   "path": "wiki/techniques/pr-triton-652.md",
   "architectures": [
    "cdna2",
@@ -90418,7 +90448,11 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "synchronization",
+   "scheduling",
+   "cross-cu",
+   "memory-bound"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90428,7 +90462,7 @@
  {
   "id": "technique-pr-triton-653",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #653 - PR Insight",
+  "title": "Stream Pipeliner v2 Requirements: Enforcing num_stages > 0 in Triton",
   "path": "wiki/techniques/pr-triton-653.md",
   "architectures": [
    "cdna2",
@@ -90437,17 +90471,22 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "pipeline",
+   "scheduling",
+   "double-buffering",
+   "memory-bound"
   ],
   "kernel_types": [],
-  "languages": [],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-655",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #655 - PR Insight",
+  "title": "Software Pipelining: Enforcing Double Buffering with num_stages=2 in Triton",
   "path": "wiki/techniques/pr-triton-655.md",
   "architectures": [
    "cdna2",
@@ -90455,27 +90494,15 @@
    "cdna4"
   ],
   "tags": [
+   "double-buffering",
+   "async-copy",
+   "mfma-scheduling",
+   "occupancy-tuning",
+   "lds",
+   "mfma",
+   "triton-rocm",
    "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-656",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #656 - PR Insight",
-  "path": "wiki/techniques/pr-triton-656.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "memory-bound"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90485,7 +90512,7 @@
  {
   "id": "technique-pr-triton-658",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #658 - PR Insight",
+  "title": "Triton GEMM Tuning: Software Pipelining Minimum Stages",
   "path": "wiki/techniques/pr-triton-658.md",
   "architectures": [
    "cdna2",
@@ -90493,7 +90520,13 @@
    "cdna4"
   ],
   "tags": [
+   "triton-rocm",
+   "gemm",
+   "double-buffering",
    "optimization",
+   "memory-bound",
+   "pipeline",
+   "scheduling",
    "rocm-kernel"
   ],
   "kernel_types": [],
@@ -90504,7 +90537,7 @@
  {
   "id": "technique-pr-triton-660",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #660 - PR Insight",
+  "title": "Stream-K GEMM Implementation (v0.3) in Triton",
   "path": "wiki/techniques/pr-triton-660.md",
   "architectures": [
    "cdna2",
@@ -90512,7 +90545,10 @@
    "cdna4"
   ],
   "tags": [
+   "persistent-kernel",
+   "scheduling",
    "optimization",
+   "memory-bound",
    "rocm-kernel"
   ],
   "kernel_types": [],
@@ -90523,7 +90559,7 @@
  {
   "id": "technique-pr-triton-661",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #661 - PR Insight",
+  "title": "Triton stream-pipelineV2 LDS Usage Optimization",
   "path": "wiki/techniques/pr-triton-661.md",
   "architectures": [
    "cdna2",
@@ -90532,7 +90568,11 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "memory",
+   "pipeline",
+   "tiling",
+   "lds",
+   "double-buffering"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90542,7 +90582,7 @@
  {
   "id": "technique-pr-triton-662",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #662 - PR Insight",
+  "title": "Triton GEMM Tuning Configurations for CI Pipeline",
   "path": "wiki/techniques/pr-triton-662.md",
   "architectures": [
    "cdna2",
@@ -90551,7 +90591,9 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "pipeline",
+   "occupancy-tuning"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90561,7 +90603,7 @@
  {
   "id": "technique-pr-triton-663",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #663 - PR Insight",
+  "title": "Autotuning Artifact Management in Triton ROCm: Dump outputs to `tune_gemm/output`",
   "path": "wiki/techniques/pr-triton-663.md",
   "architectures": [
    "cdna2",
@@ -90570,36 +90612,22 @@
   ],
   "tags": [
    "optimization",
+   "rocm",
    "rocm-kernel"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-664",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #664 - PR Insight",
-  "path": "wiki/techniques/pr-triton-664.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "kernel_types": [
+   "gemm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+  "languages": [
+   "triton-rocm"
   ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-665",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #665 - PR Insight",
+  "title": "Chained Dot Optimization via Shuffle Conversion (FP8)",
   "path": "wiki/techniques/pr-triton-665.md",
   "architectures": [
    "cdna2",
@@ -90607,37 +90635,26 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "fp8",
    "optimization",
-   "rocm-kernel"
+   "cross-lane",
+   "vgpr"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-668",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #668 - PR Insight",
-  "path": "wiki/techniques/pr-triton-668.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "kernel_types": [
+   "gemm",
+   "attention"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+  "languages": [
+   "triton-rocm"
   ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-669",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #669 - PR Insight",
+  "title": "Tianxing/fa int8: INT8 Flash Attention in Triton for ROCm",
   "path": "wiki/techniques/pr-triton-669.md",
   "architectures": [
    "cdna2",
@@ -90645,27 +90662,13 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-670",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #670 - PR Insight",
-  "path": "wiki/techniques/pr-triton-670.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "mfma",
+   "flash-attention",
+   "int8",
+   "quantization",
+   "memory-bound",
+   "rocm-kernel",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90675,7 +90678,7 @@
  {
   "id": "technique-pr-triton-672",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #672 - PR Insight",
+  "title": "Blocked RMSNorm Implementation for Large N",
   "path": "wiki/techniques/pr-triton-672.md",
   "architectures": [
    "cdna2",
@@ -90683,46 +90686,36 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "tiling"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "rmsnorm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-673",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #673 - PR Insight",
+  "title": "PR Insight: Triton #673 - Enabling MI300 Continuous Integration",
   "path": "wiki/techniques/pr-triton-673.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-676",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #676 - PR Insight",
-  "path": "wiki/techniques/pr-triton-676.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "triton-rocm",
+   "hardware",
+   "mi300x",
+   "rocm",
+   "compute",
+   "memory-bound"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90732,7 +90725,7 @@
  {
   "id": "technique-pr-triton-677",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #677 - PR Insight",
+  "title": "Triton 8-bit GEMM Scaling Support",
   "path": "wiki/techniques/pr-triton-677.md",
   "architectures": [
    "cdna2",
@@ -90740,18 +90733,26 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "triton",
+   "quantization",
    "optimization",
-   "rocm-kernel"
+   "int8",
+   "fp8"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-678",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #678 - PR Insight",
+  "title": "CI Update: PyTorch Latest Docker in Triton Post-Merge",
   "path": "wiki/techniques/pr-triton-678.md",
   "architectures": [
    "cdna2",
@@ -90759,8 +90760,10 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "rocm-kernel",
+   "triton",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90770,7 +90773,7 @@
  {
   "id": "technique-pr-triton-679",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #679 - PR Insight",
+  "title": "Triton PR 679: Update CI to use pytorch:latest",
   "path": "wiki/techniques/pr-triton-679.md",
   "architectures": [
    "cdna2",
@@ -90778,132 +90781,20 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
+   "rocm",
    "rocm-kernel"
   ],
   "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-680",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #680 - PR Insight",
-  "path": "wiki/techniques/pr-triton-680.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "languages": [
+   "triton-rocm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-682",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #682 - PR Insight",
-  "path": "wiki/techniques/pr-triton-682.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-683",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #683 - PR Insight",
-  "path": "wiki/techniques/pr-triton-683.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-684",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #684 - PR Insight",
-  "path": "wiki/techniques/pr-triton-684.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-685",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #685 - PR Insight",
-  "path": "wiki/techniques/pr-triton-685.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-686",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #686 - PR Insight",
-  "path": "wiki/techniques/pr-triton-686.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-687",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #687 - PR Insight",
+  "title": "PR Insight: Triton #687 - Host-Side Dependency Management (Numpy 1.26)",
   "path": "wiki/techniques/pr-triton-687.md",
   "architectures": [
    "cdna2",
@@ -90911,8 +90802,9 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "triton-rocm",
+   "python",
+   "runtime-api"
   ],
   "kernel_types": [],
   "languages": [],
@@ -90922,7 +90814,7 @@
  {
   "id": "technique-pr-triton-688",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #688 - PR Insight",
+  "title": "Infrastructure Insight: Triton CI NumPy Pinning (PR #688)",
   "path": "wiki/techniques/pr-triton-688.md",
   "architectures": [
    "cdna2",
@@ -90930,12 +90822,15 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "rocm-kernel",
+   "python",
+   "triton-rocm",
+   "flash-attention"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
+  "confidence": "verified",
   "summary": ""
  },
  {
@@ -99824,6 +99719,60 @@
   "summary": ""
  },
  {
+  "id": "technique-triton-649",
+  "type": "wiki-technique",
+  "title": "Instruction Scheduling Autotuning in Triton GEMM",
+  "path": "wiki/techniques/pr-triton-649.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "optimization",
+   "scheduling",
+   "mfma-scheduling",
+   "mfma",
+   "gemm",
+   "triton-rocm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "technique-triton-dynamic-scaling",
+  "type": "wiki-technique",
+  "title": "Dynamic Scale Loading in Triton GEMM Kernels",
+  "path": "wiki/techniques/pr-triton-684.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "quantization",
+   "optimization",
+   "memory",
+   "fp8",
+   "int8"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
   "id": "technique-triton-gemm-tuning",
   "type": "wiki-technique",
   "title": "Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias",
@@ -99850,6 +99799,78 @@
   "summary": ""
  },
  {
+  "id": "technique-triton-persistent-rmsnorm",
+  "type": "wiki-technique",
+  "title": "Persistent Loop-Based RMSNorm Kernel (Triton)",
+  "path": "wiki/techniques/pr-triton-676.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "memory-bound",
+   "bandwidth",
+   "optimization",
+   "pipeline",
+   "scheduling",
+   "rocm",
+   "memory"
+  ],
+  "kernel_types": [
+   "rmsnorm",
+   "layernorm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "technique-triton-rmsnorm-cleanup",
+  "type": "wiki-technique",
+  "title": "Triton RMSNorm Cleanup and Compatibility",
+  "path": "wiki/techniques/pr-triton-656.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "optimization",
+   "memory-bound",
+   "runtime-api"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "technique-triton-rmsnorm-m1",
+  "type": "wiki-technique",
+  "title": "RMSNorm Optimization for M=1 in Triton",
+  "path": "wiki/techniques/pr-triton-668.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "triton-rocm",
+   "layernorm",
+   "memory-bound",
+   "inference",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
   "id": "technique-triton-rocprofv2-tuning",
   "type": "wiki-technique",
   "title": "Accelerating Triton GEMM Tuning with rocprofv2",
@@ -99867,6 +99888,32 @@
   ],
   "kernel_types": [],
   "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "technique-triton-streamk-grid",
+  "type": "wiki-technique",
+  "title": "StreamK Grid Prediction Model in Triton",
+  "path": "wiki/techniques/pr-triton-664.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm-kernel",
+   "optimization",
+   "scheduling",
+   "compute",
+   "occupancy"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
@@ -100132,6 +100179,105 @@
   "summary": ""
  },
  {
+  "id": "wiki-technique-pr-triton-680",
+  "type": "wiki-technique",
+  "title": "Dynamic LDS Bounds Querying for GEMM and Stream-K Autotuning",
+  "path": "wiki/techniques/pr-triton-680.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton-rocm",
+   "lds",
+   "optimization",
+   "scheduling",
+   "memory-bound",
+   "hardware"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-pr-triton-682",
+  "type": "wiki-technique",
+  "title": "AMD Performance Cherry Picks (Triton PR 4925)",
+  "path": "wiki/techniques/pr-triton-682.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "optimization",
+   "memory-bound",
+   "scheduling"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-pr-triton-685",
+  "type": "wiki-technique",
+  "title": "Triton MoE GEMM Implementation and Optimization",
+  "path": "wiki/techniques/pr-triton-685.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "optimization",
+   "memory-bound",
+   "tiling"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-pr-triton-686",
+  "type": "wiki-technique",
+  "title": "Stream Pipelining for Persistent RMSNorm Kernels",
+  "path": "wiki/techniques/pr-triton-686.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "pipeline",
+   "persistent-kernel",
+   "memory-bound",
+   "optimization"
+  ],
+  "kernel_types": [
+   "rmsnorm",
+   "layernorm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
   "id": "wiki-technique-triton-608",
   "type": "wiki-technique",
   "title": "Triton Flash Attention: Constexpr SM Scale & ASM Optimizations",
@@ -100158,6 +100304,29 @@
    "triton-rocm",
    "assembly"
   ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-triton-gemm-layouts-683",
+  "type": "wiki-technique",
+  "title": "Triton GEMM Layout Optimizations (PR 683 Cherry Picks)",
+  "path": "wiki/techniques/pr-triton-683.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "optimization",
+   "rocm",
+   "swizzling",
+   "register-tiling",
+   "bank-conflict-padding",
+   "memory-bound"
+  ],
+  "kernel_types": [],
+  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },

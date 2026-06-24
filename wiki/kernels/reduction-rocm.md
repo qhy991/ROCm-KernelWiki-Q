@@ -2,10 +2,10 @@
 id: kernel-reduction-rocm
 title: "Reduction Kernels on ROCm"
 type: wiki-kernel
-architectures: [cdna1, cdna2, cdna3]
+architectures: [cdna1, cdna2, cdna3, cdna4]
 tags: [reduction, wave-reduction, lds]
 confidence: verified
-sources: []
+sources: [pr-triton-457]
 kernel_types: [reduction]
 languages: [hip-cpp]
 reproducibility: concept

@@ -1,7 +1,7 @@
 # Index: By Technique
 
 
-## async-copy (7 pages)
+## async-copy (8 pages)
 
 - [Cooperative Loading](../wiki/patterns/cooperative-loading.md)
 - [生产者-消费者流水线 (Producer-Consumer Pipeline)](../wiki/patterns/producer-consumer-pipeline.md)
@@ -10,13 +10,15 @@
 - [Triton Attention Tuning: Supporting Head Size <= 256 via Autotuning](../wiki/techniques/pr-triton-560.md)
 - [Autotuning Space Expansion for Flash Attention](../wiki/techniques/pr-triton-615.md)
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md)
+- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md)
 
-## bank-conflict-padding (4 pages)
+## bank-conflict-padding (5 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md)
 - [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/hipblaslt/PR-605.md)
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md)
+- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md)
 
 ## ck-tile-programming (38 pages)
 
@@ -85,7 +87,7 @@
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md)
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md)
 
-## mfma-scheduling (34 pages)
+## mfma-scheduling (35 pages)
 
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md)
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
@@ -121,6 +123,7 @@
 - [PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation](../wiki/techniques/pr-triton-562.md)
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md)
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md)
+- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md)
 
 ## occupancy-tuning (36 pages)
 
@@ -161,7 +164,7 @@
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md)
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md)
 
-## persistent-kernel (14 pages)
+## persistent-kernel (16 pages)
 
 - [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md)
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
@@ -172,11 +175,13 @@
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
 - [[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests](../sources/prs/hipblaslt/PR-8622.md)
 - [Deep Analysis: Stream-K Kernel Implementations in ROCm Triton](../wiki/techniques/pr-triton-579.md)
+- [Persistent Kernel Optimization for Flash Attention Forward in ROCm Triton](../wiki/techniques/pr-triton-670.md)
 - [[ROCm][Kernel][AITER] BlockScale FP8 SplitK zero-init fusion](../sources/prs/vllm/PR-44976.md)
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md)
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md)
 - [Persistent Softmax Optimization in Triton](../wiki/techniques/pr-triton-634.md)
+- [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md)
 
 ## register-tiling (18 pages)
 

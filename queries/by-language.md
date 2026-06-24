@@ -287,7 +287,7 @@
 
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
 
-## python (116 pages)
+## python (117 pages)
 
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
@@ -405,6 +405,7 @@
 - [Isolated Execution for Triton Core Tests on ROCm](../wiki/techniques/pr-triton-511.md)
 - [Absolute Path Adjustments for GEMM Tuning in Triton](../wiki/techniques/pr-triton-578.md)
 - [Triton GEMM Tuning Script Cleanup](../wiki/techniques/pr-triton-629.md)
+- [Dynamic Scale Loading in Triton GEMM Kernels](../wiki/techniques/pr-triton-684.md)
 
 ## triton (3 pages)
 
@@ -412,7 +413,7 @@
 - [Fused RMSNorm and Quantization](../wiki/kernels/rms-norm-quant-fused.md)
 - [[feat] add ag_gemm and moe_rs overlap kernels for dsv4 prefill](../sources/prs/sglang/PR-28639.md)
 
-## triton-rocm (144 pages)
+## triton-rocm (157 pages)
 
 - [Activation Kernels (SiLU, GELU, SwiGLU)](../wiki/kernels/activation-kernels.md)
 - [Embedding Lookup Kernel Optimization](../wiki/kernels/embedding-lookup.md)
@@ -476,6 +477,7 @@
 - [seperate ci on triton-mlir and main](../sources/prs/triton/PR-581.md)
 - [Copy *tune_gemm* from `triton-mlir` branch to `main_perf` branch](../sources/prs/triton/PR-614.md)
 - [Move utility tools from triton-mlir to main_perf branch](../sources/prs/triton/PR-635.md)
+- [Persistent Kernel Optimization for Flash Attention Forward in ROCm Triton](../wiki/techniques/pr-triton-670.md)
 - [Triton bypassLDS changes](../sources/prs/triton/PR-695.md)
 - [Shared/triton gfx950 launch fixed extract slice](../sources/prs/triton/PR-810.md)
 - [fp8 support for Navi4 in triton 3.3.x](../sources/prs/triton/PR-828.md)
@@ -553,9 +555,21 @@
 - [Persistent Softmax Optimization in Triton](../wiki/techniques/pr-triton-634.md)
 - [Utility Tools: Layout Plotting for Triton MLIR on ROCm](../wiki/techniques/pr-triton-635.md)
 - [Online Softmax Implementation in Triton](../wiki/techniques/pr-triton-639.md)
+- [Custom RDNA Configuration Support for Triton Navi Kernels](../wiki/techniques/pr-triton-640.md)
+- [Stream Pipeliner v2 Requirements: Enforcing num_stages > 0 in Triton](../wiki/techniques/pr-triton-653.md)
+- [Autotuning Artifact Management in Triton ROCm: Dump outputs to `tune_gemm/output`](../wiki/techniques/pr-triton-663.md)
+- [Chained Dot Optimization via Shuffle Conversion (FP8)](../wiki/techniques/pr-triton-665.md)
+- [Blocked RMSNorm Implementation for Large N](../wiki/techniques/pr-triton-672.md)
+- [Triton 8-bit GEMM Scaling Support](../wiki/techniques/pr-triton-677.md)
+- [Triton PR 679: Update CI to use pytorch:latest](../wiki/techniques/pr-triton-679.md)
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md)
+- [Dynamic Scale Loading in Triton GEMM Kernels](../wiki/techniques/pr-triton-684.md)
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md)
+- [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md)
+- [StreamK Grid Prediction Model in Triton](../wiki/techniques/pr-triton-664.md)
 - [Testing and Benchmarking Explicit Dot GEMM in ROCm Triton](../wiki/techniques/pr-triton-637.md)
+- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md)
+- [Stream Pipelining for Persistent RMSNorm Kernels](../wiki/techniques/pr-triton-686.md)
 - [Triton Flash Attention: Constexpr SM Scale & ASM Optimizations](../wiki/techniques/pr-triton-608.md)
 - [Triton Compiler Support for Tensor Pointers in scf::IfOp](../wiki/techniques/pr-triton-555.md)
 
