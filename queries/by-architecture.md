@@ -653,7 +653,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna3 (974 pages)
+## cdna3 (976 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -939,6 +939,7 @@
 - [Update Triton Version](../sources/prs/flash-attention/PR-91.md) `[source-pr]` arch:cdna3
 - [update Triton commit readme](../sources/prs/flash-attention/PR-92.md) `[source-pr]` arch:cdna3
 - [[CK_TILE] Fix fmha fwd splitkv block table read out-of-bound](../sources/prs/flash-attention/PR-98.md) `[source-pr]` arch:cdna3
+- [[ROCm] fa3 update ck: Enable FlashAttention-3 Asynchrony via Composable Kernel](../sources/prs/flash-attention/PR-117.md) `[source-pr]` arch:cdna3
 - [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) `[source-pr]` arch:cdna3
 - [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) `[source-pr]` arch:cdna3
 - [feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)](../sources/prs/hipblaslt/PR-3413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -1149,6 +1150,7 @@
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [合并内存访问模式 (Coalesced Memory Access Patterns)](../wiki/techniques/coalesced-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [FlashAttention-3 Asynchronous Ping-Pong Buffering via CK](../wiki/techniques/pr-flash-attention-rocm-117.md) `[wiki-technique]` arch:cdna3
 - [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md) `[wiki-technique]` arch:cdna3
 - [Fused Shared Expert (FSE) Slot Mapping for AITER MoE](../wiki/techniques/pr-vllm-rocm-44434.md) `[wiki-technique]` arch:cdna3

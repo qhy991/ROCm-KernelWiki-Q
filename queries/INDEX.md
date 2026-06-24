@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-1070 pages. Machine-readable form: [pages.json](pages.json).
+1072 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -23,7 +23,7 @@
 - `doc-hip-programming-guide` — [HIP Programming Guide](../sources/docs/hip-programming-guide.md)
 - `doc-mi300x-workload` — [MI300X Workload Optimization Guide](../sources/docs/mi300x-workload.md)
 
-## source-pr (489)
+## source-pr (490)
 
 - `pr-MIOpen-3427` — [Softmax log backward : Increase precision of fp16's accumulator to fp32](../sources/prs/MIOpen/PR-3427.md)
 - `pr-MIOpen-3479` — [Convert softmax from CTest to GTest](../sources/prs/MIOpen/PR-3479.md)
@@ -239,6 +239,7 @@
 - `pr-flash-attention-91` — [Update Triton Version](../sources/prs/flash-attention/PR-91.md)
 - `pr-flash-attention-92` — [update Triton commit readme](../sources/prs/flash-attention/PR-92.md)
 - `pr-flash-attention-98` — [[CK_TILE] Fix fmha fwd splitkv block table read out-of-bound](../sources/prs/flash-attention/PR-98.md)
+- `pr-flash-attention-rocm-117` — [[ROCm] fa3 update ck: Enable FlashAttention-3 Asynchrony via Composable Kernel](../sources/prs/flash-attention/PR-117.md)
 - `pr-flash-attention-rocm-182` — [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
 - `pr-flash-attention-rocm-183` — [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - `pr-flashinfer-3413` — [feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)](../sources/prs/hipblaslt/PR-3413.md)
@@ -606,7 +607,7 @@
 - `pattern-tile-quantize-dequant` — [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md)
 - `pattern-warp-specialization` — [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 
-## wiki-technique (492)
+## wiki-technique (493)
 
 - `technique-async-copy-lds` — [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - `technique-atomic-operations-hip` — [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md)
@@ -615,6 +616,7 @@
 - `technique-ck-tile-programming` — [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md)
 - `technique-coalesced-memory` — [合并内存访问模式 (Coalesced Memory Access Patterns)](../wiki/techniques/coalesced-memory.md)
 - `technique-double-buffering` — [LDS Double Buffering](../wiki/techniques/double-buffering.md)
+- `technique-fa3-asynchrony-ck` — [FlashAttention-3 Asynchronous Ping-Pong Buffering via CK](../wiki/techniques/pr-flash-attention-rocm-117.md)
 - `technique-flat-vs-buffer` — [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md)
 - `technique-fmha-bwd-unified-workspace` — [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md)
 - `technique-fused-shared-expert-mapping` — [Fused Shared Expert (FSE) Slot Mapping for AITER MoE](../wiki/techniques/pr-vllm-rocm-44434.md)

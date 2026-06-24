@@ -224,7 +224,7 @@
 - [Memory-Bound Optimization Patterns](../wiki/patterns/memory-bound-optimization.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Scatter/Gather Memory Access Patterns](../wiki/patterns/scatter-gather.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## flash-attention (34 pages)
+## flash-attention (36 pages)
 
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Flash Decoding on ROCm](../wiki/kernels/flash-decoding-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
@@ -247,12 +247,14 @@
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md) conf:source-reported arch:cdna2, cdna3
 - [Improve FMHA bwd](../sources/prs/flash-attention/PR-70.md) conf:source-reported arch:cdna2, cdna3
 - [Ck tile/kvcache](../sources/prs/flash-attention/PR-74.md) conf:source-reported arch:cdna2, cdna3
+- [[ROCm] fa3 update ck: Enable FlashAttention-3 Asynchrony via Composable Kernel](../sources/prs/flash-attention/PR-117.md) conf:? arch:cdna3
 - [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) conf:? arch:cdna3
 - [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) conf:? arch:cdna3
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md) conf:source-reported arch:rdna4
 - [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md) conf:? arch:cdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) conf:source-reported arch:cdna3
 - [Non-Temporal Store (L2 Cache Bypass)](../wiki/techniques/buffer-store-nt.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
+- [FlashAttention-3 Asynchronous Ping-Pong Buffering via CK](../wiki/techniques/pr-flash-attention-rocm-117.md) conf:verified arch:cdna3
 - [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md) conf:verified arch:cdna3
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) conf:source-reported arch:cdna3, cdna4
 - [PR Insight: triton #475 - FP8 QK Flash Attention Integration](../wiki/techniques/pr-triton-475.md) conf:inferred arch:cdna2, cdna3, cdna4

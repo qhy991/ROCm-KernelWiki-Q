@@ -271,6 +271,7 @@ techniques:
   sparse-attention: null
   grouped-gemm: null
   scale-layout-transform: null
+  asynchronous-execution: null
 kernel_types:
 - gemm
 - attention
@@ -522,3 +523,5 @@ aux_tags:
 - rocisa
 - w-mxfp4-a-fp8
 - moe-emulation
+- flash-attention-3
+- ping-pong-buffering

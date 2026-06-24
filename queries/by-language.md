@@ -138,8 +138,9 @@
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md)
 - [support ck-tile blockquant gemm in vllm](../sources/prs/vllm/PR-642.md)
 
-## cpp (6 pages)
+## cpp (7 pages)
 
+- [[ROCm] fa3 update ck: Enable FlashAttention-3 Asynchrony via Composable Kernel](../sources/prs/flash-attention/PR-117.md)
 - [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
 - [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md)

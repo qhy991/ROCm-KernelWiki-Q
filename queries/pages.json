@@ -6894,6 +6894,29 @@
   "summary": ""
  },
  {
+  "id": "pr-flash-attention-rocm-117",
+  "type": "source-pr",
+  "title": "[ROCm] fa3 update ck: Enable FlashAttention-3 Asynchrony via Composable Kernel",
+  "path": "sources/prs/flash-attention/PR-117.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "flash-attention-3",
+   "composable_kernel",
+   "asynchronous-execution",
+   "ping-pong-buffering"
+  ],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "cpp"
+  ],
+  "confidence": null,
+  "summary": ""
+ },
+ {
   "id": "pr-flash-attention-rocm-182",
   "type": "source-pr",
   "title": "[CK_TILE] Use Unified Workspace for FMHA BWD",
@@ -13472,6 +13495,27 @@
   ],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-fa3-asynchrony-ck",
+  "type": "wiki-technique",
+  "title": "FlashAttention-3 Asynchronous Ping-Pong Buffering via CK",
+  "path": "wiki/techniques/pr-flash-attention-rocm-117.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "flash-attention-3",
+   "composable_kernel",
+   "asynchronous-execution",
+   "ping-pong-buffering"
+  ],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [],
+  "confidence": "verified",
   "summary": ""
  },
  {
