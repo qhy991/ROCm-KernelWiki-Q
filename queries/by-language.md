@@ -13,7 +13,7 @@
 - [[ROCm][Perf] Enable shuffle kv cache layout and assembly paged attention kernel for AiterFlashAttentionBackend](../sources/prs/vllm/PR-836.md)
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md)
 
-## ck-dsl (124 pages)
+## ck-dsl (122 pages)
 
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md)
 - [Composable Kernel README](../sources/docs/ck-readme.md)
@@ -128,8 +128,6 @@
 - [[CK_TILE] Use more reasonable splitkv heuristic](../sources/prs/flash-attention/PR-147.md)
 - [[CK_TILE] Update CK and add RDNA build support](../sources/prs/flash-attention/PR-178.md)
 - [[CK_TILE] Fix NaN for FMHA BWD When seq_q=0](../sources/prs/flash-attention/PR-179.md)
-- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
-- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - [[CK_TILE] Update CK and enable RDNA backward](../sources/prs/flash-attention/PR-184.md)
 - [Sync Ck tile compile flag with rocm6.2](../sources/prs/flash-attention/PR-77.md)
 - [[CK_TILE] Fix fmha fwd splitkv block table read out-of-bound](../sources/prs/flash-attention/PR-98.md)
@@ -140,12 +138,14 @@
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md)
 - [support ck-tile blockquant gemm in vllm](../sources/prs/vllm/PR-642.md)
 
-## cpp (2 pages)
+## cpp (4 pages)
 
+- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
+- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md)
 - [[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff](../sources/prs/vllm/PR-998.md)
 
-## hip-cpp (135 pages)
+## hip-cpp (134 pages)
 
 - [ROCm Flash Attention Repository](../sources/docs/flash-attention-rocm.md)
 - [HIP Programming Guide](../sources/docs/hip-programming-guide.md)
@@ -199,7 +199,6 @@
 - [[ck_tile/fmha] Fix sink un-mask under right-window and emit fp8bf16 batch_prefill sink kernels](../sources/prs/composable_kernel/PR-3732.md)
 - [[CK_TILE] fix(fmha): clamp paged KV lookups in batch prefill](../sources/prs/composable_kernel/PR-3733.md)
 - [Support biased SwiGLU in MXFP4 MoE](../sources/prs/composable_kernel/PR-3735.md)
-- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - [[CK_TILE] Update CK and enable RDNA backward](../sources/prs/flash-attention/PR-184.md)
 - [Ck tile/flash attention](../sources/prs/flash-attention/PR-61.md)
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md)

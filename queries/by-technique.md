@@ -23,7 +23,7 @@
 - [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md)
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
 
-## ck-tile-programming (38 pages)
+## ck-tile-programming (37 pages)
 
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md)
 - [Composable Kernel Repository Structure](../sources/docs/ck-structure.md)
@@ -46,7 +46,6 @@
 - [[CK_TILE] fix(fmha): clamp paged KV lookups in batch prefill](../sources/prs/composable_kernel/PR-3733.md)
 - [Support biased SwiGLU in MXFP4 MoE](../sources/prs/composable_kernel/PR-3735.md)
 - [[CK Tile] Prepare mixed batch-prefill FP8 KV contract](../sources/prs/composable_kernel/PR-3745.md)
-- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - [[CK_TILE] Update CK and enable RDNA backward](../sources/prs/flash-attention/PR-184.md)
 - [Ck tile/flash attention](../sources/prs/flash-attention/PR-61.md)
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md)

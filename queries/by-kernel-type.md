@@ -11,7 +11,7 @@
 - [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md) conf:source-reported arch:cdna3, cdna4
 - [[AMD] Fuse shared-expert sigmoid + bf16->fp32 cast into the MoE append kernel (3 kernels -> 1)](../sources/prs/sglang/PR-28658.md) conf:source-reported arch:cdna3, cdna4
 
-## attention (108 pages)
+## attention (106 pages)
 
 - [ROCm FlashAttention Performance Notes](../sources/blogs/flash-attention-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [ROCm Flash Attention Repository](../sources/docs/flash-attention-rocm.md) conf:verified arch:cdna2, cdna3, cdna4
@@ -64,8 +64,6 @@
 - [Support page attention in mha_varlen_fwd](../sources/prs/flash-attention/PR-103.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [head, seq, batch grid order for triton flash attention bwd.](../sources/prs/flash-attention/PR-141.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Fix NaN for FMHA BWD When seq_q=0](../sources/prs/flash-attention/PR-179.md) conf:source-reported arch:cdna2, cdna3, cdna4
-- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) conf:source-reported arch:cdna2, cdna3, cdna4
-- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Update CK and enable RDNA backward](../sources/prs/flash-attention/PR-184.md) conf:source-reported arch:cdna3, rdna3, rdna4
 - [Ck tile/flash attention](../sources/prs/flash-attention/PR-61.md) conf:source-reported arch:cdna2, cdna3
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md) conf:source-reported arch:cdna2, cdna3
@@ -221,7 +219,7 @@
 - [Memory-Bound Optimization Patterns](../wiki/patterns/memory-bound-optimization.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Scatter/Gather Memory Access Patterns](../wiki/patterns/scatter-gather.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## flash-attention (28 pages)
+## flash-attention (32 pages)
 
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Flash Decoding on ROCm](../wiki/kernels/flash-decoding-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
@@ -244,12 +242,16 @@
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md) conf:source-reported arch:cdna2, cdna3
 - [Improve FMHA bwd](../sources/prs/flash-attention/PR-70.md) conf:source-reported arch:cdna2, cdna3
 - [Ck tile/kvcache](../sources/prs/flash-attention/PR-74.md) conf:source-reported arch:cdna2, cdna3
+- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) conf:? arch:cdna3
+- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) conf:? arch:cdna3
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md) conf:source-reported arch:rdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) conf:source-reported arch:cdna3
 - [Non-Temporal Store (L2 Cache Bypass)](../wiki/techniques/buffer-store-nt.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
+- [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md) conf:verified arch:cdna3
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) conf:source-reported arch:cdna3, cdna4
 - [PR Insight: triton #475 - FP8 QK Flash Attention Integration](../wiki/techniques/pr-triton-475.md) conf:inferred arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
+- [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md) conf:verified arch:cdna3
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
 ## gemm (237 pages)

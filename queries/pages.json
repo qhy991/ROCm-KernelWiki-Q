@@ -7010,59 +7010,6 @@
   "summary": ""
  },
  {
-  "id": "pr-flash-attention-182",
-  "type": "source-pr",
-  "title": "[CK_TILE] Use Unified Workspace for FMHA BWD",
-  "path": "sources/prs/flash-attention/PR-182.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "attention",
-   "flash-attention",
-   "rocm",
-   "ck-tile"
-  ],
-  "kernel_types": [
-   "attention"
-  ],
-  "languages": [
-   "ck-dsl"
-  ],
-  "confidence": "source-reported",
-  "summary": ""
- },
- {
-  "id": "pr-flash-attention-183",
-  "type": "source-pr",
-  "title": "[CK_TILE] FMHA BWD: stream-async workspace prepare",
-  "path": "sources/prs/flash-attention/PR-183.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "attention",
-   "ck-tile",
-   "rocm",
-   "flash-attention",
-   "optimization",
-   "synchronization"
-  ],
-  "kernel_types": [
-   "attention"
-  ],
-  "languages": [
-   "hip-cpp",
-   "ck-dsl"
-  ],
-  "confidence": "source-reported",
-  "summary": "Converts FMHA backward workspace preparation to a stream-async path, avoiding host-blocking D2H synchronization from cu_seqlens.cpu() in group-mode backward."
- },
- {
   "id": "pr-flash-attention-184",
   "type": "source-pr",
   "title": "[CK_TILE] Update CK and enable RDNA backward",
@@ -7310,6 +7257,49 @@
    "ck-dsl"
   ],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-flash-attention-rocm-182",
+  "type": "source-pr",
+  "title": "[CK_TILE] Use Unified Workspace for FMHA BWD",
+  "path": "sources/prs/flash-attention/PR-182.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "workspace-optimization"
+  ],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "cpp"
+  ],
+  "confidence": null,
+  "summary": ""
+ },
+ {
+  "id": "pr-flash-attention-rocm-183",
+  "type": "source-pr",
+  "title": "[CK_TILE] FMHA BWD: stream-async workspace prepare",
+  "path": "sources/prs/flash-attention/PR-183.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "asynchronous-execution",
+   "stream-tail-callback",
+   "pinned-memory",
+   "gfx950"
+  ],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "cpp"
+  ],
+  "confidence": null,
   "summary": ""
  },
  {
@@ -14075,6 +14065,24 @@
   ],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-fmha-bwd-unified-workspace",
+  "type": "wiki-technique",
+  "title": "Unified Workspace Allocation for Flash Attention Backward",
+  "path": "wiki/techniques/pr-flash-attention-rocm-182.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "workspace-optimization"
+  ],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [],
+  "confidence": "verified",
   "summary": ""
  },
  {
@@ -23134,6 +23142,26 @@
   ],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-stream-async-bwd-prepare",
+  "type": "wiki-technique",
+  "title": "Stream-Async Workspace Preparation via Host Callbacks",
+  "path": "wiki/techniques/pr-flash-attention-rocm-183.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "asynchronous-execution",
+   "stream-tail-callback",
+   "pinned-memory"
+  ],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [],
+  "confidence": "verified",
   "summary": ""
  },
  {

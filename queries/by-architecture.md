@@ -40,7 +40,7 @@
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna2 (927 pages)
+## cdna2 (925 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -300,8 +300,6 @@
 - [[CK_TILE] Use more reasonable splitkv heuristic](../sources/prs/flash-attention/PR-147.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Update CK and add RDNA build support](../sources/prs/flash-attention/PR-178.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Fix NaN for FMHA BWD When seq_q=0](../sources/prs/flash-attention/PR-179.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Ck tile/flash attention](../sources/prs/flash-attention/PR-61.md) `[source-pr]` arch:cdna2, cdna3
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md) `[source-pr]` arch:cdna2, cdna3
 - [Use same python as build flash-attn to generate ck kernel](../sources/prs/flash-attention/PR-66.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -970,7 +968,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna3 (969 pages)
+## cdna3 (971 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -1246,8 +1244,6 @@
 - [[CK_TILE] Use more reasonable splitkv heuristic](../sources/prs/flash-attention/PR-147.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Update CK and add RDNA build support](../sources/prs/flash-attention/PR-178.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Fix NaN for FMHA BWD When seq_q=0](../sources/prs/flash-attention/PR-179.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Update CK and enable RDNA backward](../sources/prs/flash-attention/PR-184.md) `[source-pr]` arch:cdna3, rdna3, rdna4
 - [Ck tile/flash attention](../sources/prs/flash-attention/PR-61.md) `[source-pr]` arch:cdna2, cdna3
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md) `[source-pr]` arch:cdna2, cdna3
@@ -1258,6 +1254,8 @@
 - [Update Triton Version](../sources/prs/flash-attention/PR-91.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [update Triton commit readme](../sources/prs/flash-attention/PR-92.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Fix fmha fwd splitkv block table read out-of-bound](../sources/prs/flash-attention/PR-98.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) `[source-pr]` arch:cdna3
+- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) `[source-pr]` arch:cdna3
 - [feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)](../sources/prs/hipblaslt/PR-3413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[WIP] test: cut unit-test CI wall time](../sources/prs/hipblaslt/PR-3601.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [enable UseScaleAB for fp8 gemm with gelu aux](../sources/prs/hipblaslt/PR-1958.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -1466,6 +1464,7 @@
 - [合并内存访问模式 (Coalesced Memory Access Patterns)](../wiki/techniques/coalesced-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md) `[wiki-technique]` arch:cdna3
 - [HIP Graph Capture and Replay](../wiki/techniques/hip-graph-capture.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) `[wiki-technique]` arch:cdna3, cdna4
@@ -1931,6 +1930,7 @@
 - [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md) `[wiki-technique]` arch:cdna3
 - [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
@@ -1942,7 +1942,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna4 (992 pages)
+## cdna4 (990 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -2219,8 +2219,6 @@
 - [[CK_TILE] Use more reasonable splitkv heuristic](../sources/prs/flash-attention/PR-147.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Update CK and add RDNA build support](../sources/prs/flash-attention/PR-178.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Fix NaN for FMHA BWD When seq_q=0](../sources/prs/flash-attention/PR-179.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Use same python as build flash-attn to generate ck kernel](../sources/prs/flash-attention/PR-66.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Sync Ck tile compile flag with rocm6.2](../sources/prs/flash-attention/PR-77.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Update Triton Version](../sources/prs/flash-attention/PR-91.md) `[source-pr]` arch:cdna2, cdna3, cdna4

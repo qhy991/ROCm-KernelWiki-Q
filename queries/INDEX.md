@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-1061 pages. Machine-readable form: [pages.json](pages.json).
+1063 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -229,8 +229,6 @@
 - `pr-flash-attention-147` — [[CK_TILE] Use more reasonable splitkv heuristic](../sources/prs/flash-attention/PR-147.md)
 - `pr-flash-attention-178` — [[CK_TILE] Update CK and add RDNA build support](../sources/prs/flash-attention/PR-178.md)
 - `pr-flash-attention-179` — [[CK_TILE] Fix NaN for FMHA BWD When seq_q=0](../sources/prs/flash-attention/PR-179.md)
-- `pr-flash-attention-182` — [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
-- `pr-flash-attention-183` — [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - `pr-flash-attention-184` — [[CK_TILE] Update CK and enable RDNA backward](../sources/prs/flash-attention/PR-184.md)
 - `pr-flash-attention-61` — [Ck tile/flash attention](../sources/prs/flash-attention/PR-61.md)
 - `pr-flash-attention-65` — [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md)
@@ -241,6 +239,8 @@
 - `pr-flash-attention-91` — [Update Triton Version](../sources/prs/flash-attention/PR-91.md)
 - `pr-flash-attention-92` — [update Triton commit readme](../sources/prs/flash-attention/PR-92.md)
 - `pr-flash-attention-98` — [[CK_TILE] Fix fmha fwd splitkv block table read out-of-bound](../sources/prs/flash-attention/PR-98.md)
+- `pr-flash-attention-rocm-182` — [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
+- `pr-flash-attention-rocm-183` — [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
 - `pr-flashinfer-3413` — [feat(cutile): add cutile backend to bmm_bf16 (BF16 batched GEMM)](../sources/prs/hipblaslt/PR-3413.md)
 - `pr-flashinfer-3601` — [[WIP] test: cut unit-test CI wall time](../sources/prs/hipblaslt/PR-3601.md)
 - `pr-hipBLASLt-1958` — [enable UseScaleAB for fp8 gemm with gelu aux](../sources/prs/hipblaslt/PR-1958.md)
@@ -603,7 +603,7 @@
 - `pattern-tile-quantize-dequant` — [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md)
 - `pattern-warp-specialization` — [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 
-## wiki-technique (486)
+## wiki-technique (488)
 
 - `technique-async-copy-lds` — [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - `technique-atomic-operations-hip` — [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md)
@@ -613,6 +613,7 @@
 - `technique-coalesced-memory` — [合并内存访问模式 (Coalesced Memory Access Patterns)](../wiki/techniques/coalesced-memory.md)
 - `technique-double-buffering` — [LDS Double Buffering](../wiki/techniques/double-buffering.md)
 - `technique-flat-vs-buffer` — [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md)
+- `technique-fmha-bwd-unified-workspace` — [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md)
 - `technique-gfx11x-4096b-cache-cliff` — [Evading the RDNA3 4096B Cache Cliff via Stride Padding](../wiki/techniques/pr-vllm-rocm-998.md)
 - `technique-hip-graph-capture` — [HIP Graph Capture and Replay](../wiki/techniques/hip-graph-capture.md)
 - `technique-kernel-launch-overhead` — [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md)
@@ -1081,6 +1082,7 @@
 - `technique-rocm-profiling` — [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md)
 - `technique-scratch-memory` — [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md)
 - `technique-sgpr-scalar-unit` — [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md)
+- `technique-stream-async-bwd-prepare` — [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md)
 - `technique-swizzling` — [LDS Address Swizzling](../wiki/techniques/swizzling.md)
 - `technique-triton-627` — [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md)
 - `technique-triton-gemm-tuning` — [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md)

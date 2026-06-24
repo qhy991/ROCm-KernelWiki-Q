@@ -321,3 +321,8 @@ aux_tags:
   - stride-padding
   - openvla
   - gfx1151
+  - workspace-optimization
+  - asynchronous-execution
+  - stream-tail-callback
+  - pinned-memory
+  - gfx950
