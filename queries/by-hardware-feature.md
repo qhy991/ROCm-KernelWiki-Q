@@ -48,6 +48,19 @@
 - [Reduction Tree](../wiki/patterns/reduction-tree.md) `[wiki-pattern]` arch:cdna1, cdna2, cdna3, cdna4
 - [Triton Layer Normalization Optimization on AMD CDNA](../wiki/techniques/pr-triton-641.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
+## buffer-resource-descriptor (1 pages)
+
+- [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+
+## cache-line (1 pages)
+
+- [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md) `[source-pr]` arch:rdna4
+
+## cluster-barrier (2 pages)
+
+- [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/hipblaslt/PR-8523.md) `[source-pr]` arch:rdna4
+- [[hipblaslt][tensilelite] Add multicast tdm for subtile kernel](../sources/prs/hipblaslt/PR-8524.md) `[source-pr]` arch:rdna4
+
 ## compute-unit (7 pages)
 
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -72,6 +85,10 @@
 - [Cross-Lane Communication with DPP (Warp Shuffle Equivalent)](../wiki/techniques/warp-shuffle-dpp.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
+## ds-swizzle (1 pages)
+
+- [Full MXFP4 Training Recipe](../sources/prs/transformerengine/PR-537.md) `[source-pr]` arch:cdna4
+
 ## dual-cma (8 pages)
 
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -89,6 +106,14 @@
 - [Stream-K and Split-K GEMM on ROCm](../wiki/kernels/streamk-splitk-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+
+## infinity-fabric (1 pages)
+
+- [RCCL Multi-GPU Communication](../wiki/techniques/multi-gpu-rccl.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+
+## int8-dot (1 pages)
+
+- [[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216](../sources/prs/hipblaslt/PR-8579.md) `[source-pr]` arch:cdna3, cdna4
 
 ## lds (64 pages)
 
@@ -118,9 +143,9 @@
 - [Cooperative Loading](../wiki/patterns/cooperative-loading.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
 - [Reduction Tree](../wiki/patterns/reduction-tree.md) `[wiki-pattern]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
-- [[CK TILE] Fix grouped conv kernels splitk and double lds](../sources/prs/composable_kernel/PR-3527.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK TILE] Fix grouped conv kernels splitk and double lds](../sources/prs/composable_kernel/PR-3527.md) `[source-pr]` arch:cdna3
 - [[CK] Add FP8 KV_BLOCKSCALE support for batch prefill](../sources/prs/composable_kernel/PR-3696.md) `[source-pr]` arch:cdna3, cdna4
-- [[CK_TILE] Add support and tests for V6 pipeline in conv fwd](../sources/prs/composable_kernel/PR-3708.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_TILE] Add support and tests for V6 pipeline in conv fwd](../sources/prs/composable_kernel/PR-3708.md) `[source-pr]` arch:cdna3
 - [[CK_TILE] MX GEMM, non-preshuffled and RCR layout](../sources/prs/composable_kernel/PR-3709.md) `[source-pr]` arch:cdna4
 - [[CK_TILE] Sparge attention](../sources/prs/composable_kernel/PR-3727.md) `[source-pr]` arch:cdna3, cdna4
 - [[CK_TILE] async trload for fmha 192/128 in mi355](../sources/prs/composable_kernel/PR-3729.md) `[source-pr]` arch:cdna4
@@ -135,14 +160,14 @@
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 - [# [TensileLite] Decouple MXFP8 scale DepthU from data DepthU (`ScaleDepthURatio`)](../sources/prs/hipblaslt/PR-7767.md) `[source-pr]` arch:cdna4
 - [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md) `[source-pr]` arch:cdna4, rdna4
-- [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md) `[source-pr]` arch:cdna3
 - [[AIROCMLIR-798] Add LDS usage estimate CAPI function](../sources/prs/hipblaslt/PR-2400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md) `[source-pr]` arch:cdna3, cdna4
 - [[AMD][Perf] Fuse QK RMSNorm + 3D mRoPE + KV-cache store into single aiter op for Qwen3.5-397B-A17B-MXFP4 (TP=2, ROCm/aiter) on HIP](../sources/prs/sglang/PR-28700.md) `[source-pr]` arch:cdna4
 - [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md) `[source-pr]` arch:cdna4
 - [[AMD] Optimize o_proj gemm and attn output rope performance](../sources/prs/sglang/PR-28722.md) `[source-pr]` arch:cdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) `[source-pr]` arch:cdna3
-- [MoE wvSplitK_int4: CU-count grid + skip duplicate MatA to LDS + gfx1151 N=1 K<1024 retune](../sources/prs/vllm/PR-920.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [MoE wvSplitK_int4: CU-count grid + skip duplicate MatA to LDS + gfx1151 N=1 K<1024 retune](../sources/prs/vllm/PR-920.md) `[source-pr]` arch:cdna3
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
@@ -167,7 +192,11 @@
 - [[CK_TILE] async trload for fmha 192/128 in mi355](../sources/prs/composable_kernel/PR-3729.md) `[source-pr]` arch:cdna4
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 
-## mfma (87 pages)
+## memory-bandwidth (1 pages)
+
+- [[hipblaslt][origami] Model changes for mi350P](../sources/prs/hipblaslt/PR-8600.md) `[source-pr]` arch:cdna4
+
+## mfma (86 pages)
 
 - [ROCm FlashAttention Performance Notes](../sources/blogs/flash-attention-rocm.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -199,7 +228,7 @@
 - [Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions](../sources/prs/composable_kernel/PR-3598.md) `[source-pr]` arch:rdna3, rdna4
 - [Implement device grouped gemm fixed nk multi abd for rdna4](../sources/prs/composable_kernel/PR-3619.md) `[source-pr]` arch:rdna4
 - [[CK] Add FP8 KV_BLOCKSCALE support for batch prefill](../sources/prs/composable_kernel/PR-3696.md) `[source-pr]` arch:cdna3, cdna4
-- [[CK_TILE] Add support and tests for V6 pipeline in conv fwd](../sources/prs/composable_kernel/PR-3708.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_TILE] Add support and tests for V6 pipeline in conv fwd](../sources/prs/composable_kernel/PR-3708.md) `[source-pr]` arch:cdna3
 - [[CK_TILE] MX GEMM, non-preshuffled and RCR layout](../sources/prs/composable_kernel/PR-3709.md) `[source-pr]` arch:cdna4
 - [[CK_TILE] Sparge attention](../sources/prs/composable_kernel/PR-3727.md) `[source-pr]` arch:cdna3, cdna4
 - [[CK_TILE] async trload for fmha 192/128 in mi355](../sources/prs/composable_kernel/PR-3729.md) `[source-pr]` arch:cdna4
@@ -221,7 +250,7 @@
 - [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md) `[source-pr]` arch:cdna4, rdna4
 - [[origami] Subtile-aware heuristic: reject gfx950 BF16 TN subtile kernels for K<512 with large free dim](../sources/prs/hipblaslt/PR-8604.md) `[source-pr]` arch:cdna4
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md) `[source-pr]` arch:cdna4
-- [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md) `[source-pr]` arch:cdna3
 - [[Fix] compressed-tensors block FP8: requantize weight scales to UE8M0 for DeepGEMM on Blackwell](../sources/prs/sglang/PR-28662.md) `[source-pr]` arch:cdna3, cdna4
 - [[RL] MXFP8 flashinfer_trtllm_routed MoE for V4](../sources/prs/sglang/PR-28676.md) `[source-pr]` arch:cdna3, cdna4
 - [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md) `[source-pr]` arch:cdna4
@@ -238,7 +267,6 @@
 - [[Attention][DSA] support dcp for FLASHINFER_MLA_SPARSE](../sources/prs/vllm/PR-46076.md) `[source-pr]` arch:cdna3, cdna4
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md) `[source-pr]` arch:cdna4
 - [[ROCm][Perf] Optional FlyDSL BF16 MoE for the MXFP8-emulation path on MiniMax-M3](../sources/prs/vllm/PR-46123.md) `[source-pr]` arch:cdna3
-- [[AMD][OCP MX][CI] Fix tests to not dispatch on UNFUSED_TRITON backend on MI300, improve w_mxfp4_a_fp8 emulation support](../sources/prs/vllm/PR-46142.md) `[source-pr]` arch:cdna2, cdna3
 - [[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention](../sources/prs/vllm/PR-46148.md) `[source-pr]` arch:cdna3, cdna4
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
@@ -256,6 +284,35 @@
 - [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
+
+## microscaling (1 pages)
+
+- [[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests](../sources/prs/hipblaslt/PR-8622.md) `[source-pr]` arch:rdna4
+
+## mubuf (1 pages)
+
+- [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+
+## multicast (1 pages)
+
+- [[hipblaslt][tensilelite] Add multicast tdm for subtile kernel](../sources/prs/hipblaslt/PR-8524.md) `[source-pr]` arch:rdna4
+
+## packed-fp8 (1 pages)
+
+- [[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests](../sources/prs/hipblaslt/PR-8622.md) `[source-pr]` arch:rdna4
+
+## pci-id (1 pages)
+
+- [[hipblaslt][origami] Model changes for mi350P](../sources/prs/hipblaslt/PR-8600.md) `[source-pr]` arch:cdna4
+
+## rdna3-wmma (1 pages)
+
+- [Tune gfx1100 BBS GEMM kernels for Llama-3.1-8b-Instruct](../sources/prs/hipblaslt/PR-8631.md) `[source-pr]` arch:rdna3
+
+## scalar-alu (2 pages)
+
+- [[tensilelite] Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/hipblaslt/PR-8586.md) `[source-pr]` arch:rdna4
+- [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 
 ## scaled-mfma (39 pages)
 
@@ -302,6 +359,38 @@
 ## scratch-memory (1 pages)
 
 - [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+
+## transpose-load (1 pages)
+
+- [[tensilelite] Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/hipblaslt/PR-8586.md) `[source-pr]` arch:rdna4
+
+## vector-memory (2 pages)
+
+- [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md) `[source-pr]` arch:rdna4
+- [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/hipblaslt/PR-8624.md) `[source-pr]` arch:rdna3, rdna4, cdna3, cdna4
+
+## vgpr (12 pages)
+
+- [Compute-Bound Optimization Patterns (算力密集优化模式)](../wiki/patterns/compute-bound-optimization.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
+- [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
+- [LDS Direct Read](../wiki/techniques/lds-direct-read.md) `[wiki-technique]` arch:cdna3, cdna4
+- [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [Explicit Multiply-Reduce GEMM for Small Block Sizes in Triton](../wiki/techniques/pr-triton-621.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [PR Insight: triton #633 - Add rmsnorm kernel](../wiki/techniques/pr-triton-633.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [Online Softmax Implementation in Triton](../wiki/techniques/pr-triton-639.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
+
+## wave32 (1 pages)
+
+- [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/hipblaslt/PR-8531.md) `[source-pr]` arch:rdna4, cdna4
+
+## wave64 (1 pages)
+
+- [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/hipblaslt/PR-8531.md) `[source-pr]` arch:rdna4, cdna4
 
 ## wavefront (44 pages)
 
@@ -367,3 +456,7 @@
 - [gfx1250 mxfp8 gemm: loosen restrictions on K](../sources/prs/transformerengine/PR-627.md) `[source-pr]` arch:rdna4
 - [gfx1250 mxfp8 gemm: add NN/NT transpose workaround](../sources/prs/transformerengine/PR-630.md) `[source-pr]` arch:rdna4
 - [add dsv4 production mxfp8 gemm shapes](../sources/prs/transformerengine/PR-636.md) `[source-pr]` arch:rdna4
+
+## xgmi (1 pages)
+
+- [RCCL Multi-GPU Communication](../wiki/techniques/multi-gpu-rccl.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4

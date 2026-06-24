@@ -2190,9 +2190,7 @@
   "title": "Softmax log backward : Increase precision of fp16's accumulator to fp32",
   "path": "sources/prs/MIOpen/PR-3427.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2213,9 +2211,7 @@
   "title": "Convert softmax from CTest to GTest",
   "path": "sources/prs/MIOpen/PR-3479.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2235,9 +2231,7 @@
   "title": "[tests] Unit tests non-tunable conv asm solvers",
   "path": "sources/prs/MIOpen/PR-3494.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2257,9 +2251,7 @@
   "title": "Add unit tests for implicit gemm bwd/fwd xdlops solver",
   "path": "sources/prs/MIOpen/PR-3521.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2279,9 +2271,7 @@
   "title": "[BN] Finalize batch norm OpenCL kernel optimization",
   "path": "sources/prs/MIOpen/PR-3564.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2301,9 +2291,7 @@
   "title": "remove variant calculation in batch norm's network config",
   "path": "sources/prs/MIOpen/PR-3636.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2323,9 +2311,7 @@
   "title": "Fused batch norm and activation",
   "path": "sources/prs/MIOpen/PR-3695.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "fused-kernel",
@@ -2346,9 +2332,7 @@
   "title": "[BUG][TESTS] Add unit tests for conv asm 1x1u bwdwrw3x3 3x3u 1x1uv2",
   "path": "sources/prs/MIOpen/PR-3716.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2368,9 +2352,7 @@
   "title": "Remove CK's gemm and reduction libraries from MIOpen",
   "path": "sources/prs/MIOpen/PR-3739.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2390,9 +2372,7 @@
   "title": "Switch to using CK header-only for layernorm",
   "path": "sources/prs/MIOpen/PR-3751.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2412,9 +2392,7 @@
   "title": "[Conv] group conv bias active ",
   "path": "sources/prs/MIOpen/PR-3775.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2434,9 +2412,7 @@
   "title": "[BUG] [CONV] Fix incorrect stride calculation when w=1/h=1 in MISA solvers",
   "path": "sources/prs/MIOpen/PR-3786.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2456,9 +2432,7 @@
   "title": "[GCBA] grouped conv + bias + activ NHWC/NDHWC 3d",
   "path": "sources/prs/MIOpen/PR-3802.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2478,9 +2452,7 @@
   "title": "Add support for 2D group conv+activ fusion",
   "path": "sources/prs/MIOpen/PR-3807.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2500,9 +2472,7 @@
   "title": "Add 3d support to group conv activ",
   "path": "sources/prs/MIOpen/PR-3812.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2522,9 +2492,7 @@
   "title": "Create samples directory with inital grouped conv + bias +activ sample",
   "path": "sources/prs/MIOpen/PR-3820.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2544,9 +2512,7 @@
   "title": "Revert \"[BUG] [CONV] Fix incorrect stride calculation when w=1/h=1 in\u2026",
   "path": "sources/prs/MIOpen/PR-3836.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2566,9 +2532,7 @@
   "title": "[DRIVER] Fix inconsistent and incorrect conv stats prints",
   "path": "sources/prs/MIOpen/PR-3854.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2588,9 +2552,7 @@
   "title": "[BUG] [CONV] Fix incorrect stride calculation in MISA solvers",
   "path": "sources/prs/MIOpen/PR-3867.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2610,9 +2572,7 @@
   "title": "3D conv heuristics (KTN part)",
   "path": "sources/prs/MIOpen/PR-3918.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "MIOpen",
@@ -2996,9 +2956,7 @@
   "title": "test: use l1/l2 norm as softmax_scale",
   "path": "sources/prs/aotriton/PR-105.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3018,9 +2976,7 @@
   "title": "Add CI Script to Test Triton Upstream",
   "path": "sources/prs/aotriton/PR-127.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3040,9 +2996,7 @@
   "title": "Add deterministic algorithm support to v3::flash::attn_options",
   "path": "sources/prs/aotriton/PR-134.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3063,9 +3017,7 @@
   "title": "Sunset Git Submodules Other Than Triton",
   "path": "sources/prs/aotriton/PR-152.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3085,9 +3037,7 @@
   "title": "Add new triton kernel debug_fill_dropout_rng",
   "path": "sources/prs/aotriton/PR-19.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3107,9 +3057,7 @@
   "title": "Add FP32 and Bias to fulfill the functionalities required by `torch.nn.attention.SDPBackend.EFFICIENT_ATTENTION`",
   "path": "sources/prs/aotriton/PR-22.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3130,9 +3078,7 @@
   "title": "Add varlen support to AOTriton's Flash Attention",
   "path": "sources/prs/aotriton/PR-31.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3153,9 +3099,7 @@
   "title": "Switch to upstream Triton compiler, and related changes",
   "path": "sources/prs/aotriton/PR-36.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3175,9 +3119,7 @@
   "title": "CMakeLists.txt: don't build Triton's Proton profiler",
   "path": "sources/prs/aotriton/PR-90.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3197,9 +3139,7 @@
   "title": "Re-implement Causal Masks with Windowed Attention",
   "path": "sources/prs/aotriton/PR-96.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3220,9 +3160,7 @@
   "title": "Misc Changes and Triton Kernel Performance Tuning for 0.10b release ",
   "path": "sources/prs/aotriton/PR-97.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "aotriton",
@@ -3266,9 +3204,7 @@
   "title": "[CK_Tile] Enable PreshuffleB for 2d block scale Gemm",
   "path": "sources/prs/composable_kernel/PR-3298.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -3292,9 +3228,7 @@
   "title": "[CK_TILE] Port hw independent changes from internal repo to develop branch",
   "path": "sources/prs/composable_kernel/PR-3301.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3314,9 +3248,7 @@
   "title": "Implement grouped gemm fastgelu for RDNA4",
   "path": "sources/prs/composable_kernel/PR-3303.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -3338,9 +3270,7 @@
   "title": "Implement grouped gemm tile loop for RDNA4",
   "path": "sources/prs/composable_kernel/PR-3304.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -3362,9 +3292,7 @@
   "title": "[CK_TILE] Fix for comp pipeline v4",
   "path": "sources/prs/composable_kernel/PR-3307.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3384,9 +3312,7 @@
   "title": "[CK_TILE] Add indexing optimizations for conv bwd data",
   "path": "sources/prs/composable_kernel/PR-3309.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3409,9 +3335,7 @@
   "title": "[ck_tile] remove duplicate functions in ck_tile",
   "path": "sources/prs/composable_kernel/PR-3311.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3431,9 +3355,7 @@
   "title": "[CK_TILE] Fix Quant GEMM build",
   "path": "sources/prs/composable_kernel/PR-3320.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -3457,9 +3379,7 @@
   "title": "[CK_TILE] Add indexing optimizations for conv bwd weight",
   "path": "sources/prs/composable_kernel/PR-3321.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3482,9 +3402,7 @@
   "title": "[CK_TILE] Generate random tensor values with multiple threads",
   "path": "sources/prs/composable_kernel/PR-3324.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3504,9 +3422,7 @@
   "title": "Make CK TILE GEMM Aquant support block tile 128x128x128",
   "path": "sources/prs/composable_kernel/PR-3325.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3529,9 +3445,7 @@
   "title": "[CK Tile] Fix FMHA LSE calculation and potential division by zero",
   "path": "sources/prs/composable_kernel/PR-3326.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -3555,9 +3469,7 @@
   "title": "[CK_TILE] Disable cast_tile_pk_fp16bf16_fp32 as It Causes Extra spills on Recent Compilers",
   "path": "sources/prs/composable_kernel/PR-3327.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3577,9 +3489,7 @@
   "title": " Fp8 block scale quantization for fmha  fwd",
   "path": "sources/prs/composable_kernel/PR-3330.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -3602,9 +3512,7 @@
   "title": "[CK_TILE] Fix for Moving DataTypeTraits into a Common File",
   "path": "sources/prs/composable_kernel/PR-3335.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3649,9 +3557,7 @@
   "title": "[CK Tile] Grouped GEMM aquant mode and non-persistent kernel",
   "path": "sources/prs/composable_kernel/PR-3337.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -3676,9 +3582,7 @@
   "title": "fp8 fmha async pipeline",
   "path": "sources/prs/composable_kernel/PR-3339.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -3700,9 +3604,7 @@
   "title": "[CK_TILE][FMHA] Add sparse attention VSA",
   "path": "sources/prs/composable_kernel/PR-3341.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -3726,9 +3628,7 @@
   "title": "Merge some updates for ck_tile headers",
   "path": "sources/prs/composable_kernel/PR-3342.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3748,9 +3648,7 @@
   "title": "Support A/B Quantization in Blockscale GEMM",
   "path": "sources/prs/composable_kernel/PR-3343.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3770,9 +3668,7 @@
   "title": "[CK_TILE] fix enforcing fixed vectorsizes for ck tile conv",
   "path": "sources/prs/composable_kernel/PR-3344.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3795,9 +3691,7 @@
   "title": "[CK Tile] Aquant mem pipeline bugfixes",
   "path": "sources/prs/composable_kernel/PR-3346.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3817,9 +3711,7 @@
   "title": "[CK TILE GEMM STREAMK] update identifier names according to the new code style",
   "path": "sources/prs/composable_kernel/PR-3348.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3842,9 +3734,7 @@
   "title": "[CK_TILE] Support more layouts for BQuant GEMM",
   "path": "sources/prs/composable_kernel/PR-3349.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3867,9 +3757,7 @@
   "title": "Add the gfx1011 support on CK Tile with the SGPR builtin reading protection",
   "path": "sources/prs/composable_kernel/PR-3350.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3889,9 +3777,7 @@
   "title": "[CK_TILE] Split-K autodeduction",
   "path": "sources/prs/composable_kernel/PR-3351.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3911,9 +3797,7 @@
   "title": "[CK_BUILDER] Ck Tile Grouped convolution factory",
   "path": "sources/prs/composable_kernel/PR-3352.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3934,9 +3818,7 @@
   "title": "[CK_TILE] Add splitk support to ck tile conv bwd data",
   "path": "sources/prs/composable_kernel/PR-3353.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -3959,9 +3841,7 @@
   "title": "[CK_TILE][FMHA] Add logits soft-capping support for FAv3 (WIP)",
   "path": "sources/prs/composable_kernel/PR-3355.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -3985,9 +3865,7 @@
   "title": "[CK-Tile] move out memory operation from cshuffle epilogue class",
   "path": "sources/prs/composable_kernel/PR-3359.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4007,9 +3885,7 @@
   "title": "[composable_kernel] initial draft of the ck tile conceptual doc (#3242)",
   "path": "sources/prs/composable_kernel/PR-3361.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4029,9 +3905,7 @@
   "title": "[CK TILE][AICK-439] Fix cshuffle epilogue wave per shuffle",
   "path": "sources/prs/composable_kernel/PR-3364.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4051,9 +3925,7 @@
   "title": "Add attention sink support for FMHA FWD",
   "path": "sources/prs/composable_kernel/PR-3368.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4074,9 +3946,7 @@
   "title": "[CK_TILE] Stream-K Tree Reduction and Cache Skipping Integration",
   "path": "sources/prs/composable_kernel/PR-3371.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4096,9 +3966,7 @@
   "title": "fix a16w4 moe bugs",
   "path": "sources/prs/composable_kernel/PR-3373.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -4119,9 +3987,7 @@
   "title": "[CK_TILE MOE] add NT & preshuffle permute to cktile MOE",
   "path": "sources/prs/composable_kernel/PR-3377.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "moe",
@@ -4145,9 +4011,7 @@
   "title": "[CK-Tile] fixup codegen for tile engine ops gemm multid and gemm preshuffle",
   "path": "sources/prs/composable_kernel/PR-3383.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4170,9 +4034,7 @@
   "title": "[CK_TILE] Minor splitk bugfix for gemms and conv",
   "path": "sources/prs/composable_kernel/PR-3387.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4195,9 +4057,7 @@
   "title": "[CK_TILE][FMHA] Fix Python 3.8 compatibility in fmha codegen",
   "path": "sources/prs/composable_kernel/PR-3388.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -4221,9 +4081,7 @@
   "title": "[CK_TILE] support split-k a16w4 gemm1 ",
   "path": "sources/prs/composable_kernel/PR-3389.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4243,9 +4101,7 @@
   "title": "Implement batched gemm add relu gemm add for rdna4",
   "path": "sources/prs/composable_kernel/PR-3391.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4265,9 +4121,7 @@
   "title": "[CK_TILE] Fix some inconsistencies with OverrideBDatatype in BQuant GEMM",
   "path": "sources/prs/composable_kernel/PR-3394.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4290,9 +4144,7 @@
   "title": "[CK_TILE] Add FP8xF4 Flatmm",
   "path": "sources/prs/composable_kernel/PR-3401.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4312,9 +4164,7 @@
   "title": "[CK Grouped Gemm] Disable split-k kernel for split-k > 1 with non-contiguous strides",
   "path": "sources/prs/composable_kernel/PR-3405.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -4336,9 +4186,7 @@
   "title": "[CK Grouped Gemm] Fix workspace stride in two stage kernel",
   "path": "sources/prs/composable_kernel/PR-3412.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -4360,9 +4208,7 @@
   "title": "[CK_TILE] Grouped gemm quant tensor layouts",
   "path": "sources/prs/composable_kernel/PR-3414.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -4388,9 +4234,7 @@
   "title": "CK Tile: Enable padding blockscale example",
   "path": "sources/prs/composable_kernel/PR-3417.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4410,9 +4254,7 @@
   "title": "[CK_BUILDER] CK Tile header installation for builder, algorithm concept improvements",
   "path": "sources/prs/composable_kernel/PR-3419.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4432,9 +4274,7 @@
   "title": "Fix FMHA fp8 hdim=64 incorrect result in MI200",
   "path": "sources/prs/composable_kernel/PR-3423.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -4456,9 +4296,7 @@
   "title": "[CK_TILE][FMHA] Add FP8 support for batch_prefill kernel",
   "path": "sources/prs/composable_kernel/PR-3425.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -4483,9 +4321,7 @@
   "title": "[TILE ENGINE] Restructure to Base class of GEMM",
   "path": "sources/prs/composable_kernel/PR-3434.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4505,9 +4341,7 @@
   "title": "Added large tensor support for grouped conv fwd wmma",
   "path": "sources/prs/composable_kernel/PR-3437.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4527,9 +4361,7 @@
   "title": "Ck moe bs splitk pr",
   "path": "sources/prs/composable_kernel/PR-3440.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -4550,9 +4382,7 @@
   "title": "Zan/moe a8w4",
   "path": "sources/prs/composable_kernel/PR-3441.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -4573,9 +4403,7 @@
   "title": "[FMHA] Batch Prefill Support Improvements:  Change KV Cache Layout & Large Page Size Support",
   "path": "sources/prs/composable_kernel/PR-3442.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4596,9 +4424,7 @@
   "title": "[CK-TILE] Guard against compiler lexer diagnostic",
   "path": "sources/prs/composable_kernel/PR-3444.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4618,9 +4444,7 @@
   "title": "[CK_Tile] Support for various group sizes Preshuffle quant for 2d block scale gemm",
   "path": "sources/prs/composable_kernel/PR-3445.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -4644,9 +4468,7 @@
   "title": "[CK_TILE] MX Flatmm Use Byte Pointer Arithmetic for A Tensor",
   "path": "sources/prs/composable_kernel/PR-3446.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4666,9 +4488,7 @@
   "title": "Split grouped conv fwd instances",
   "path": "sources/prs/composable_kernel/PR-3449.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4688,9 +4508,7 @@
   "title": "Adding support for scale and bilinear ops for WMMA grouped conv fwd ",
   "path": "sources/prs/composable_kernel/PR-3450.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4711,9 +4529,7 @@
   "title": "[CKTILE] Support A/B Quantization in Blockscale Grouped Gemm",
   "path": "sources/prs/composable_kernel/PR-3452.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -4735,9 +4551,7 @@
   "title": "Improve XDL to WMMA porting for grouped conv fwd",
   "path": "sources/prs/composable_kernel/PR-3456.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4757,9 +4571,7 @@
   "title": "[CK_Tile]  Support for group size 128 for Preshuffle quant for 2d block scale gemm",
   "path": "sources/prs/composable_kernel/PR-3462.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -4783,9 +4595,7 @@
   "title": "[CK grouped gemm] Fix grouped gemm two stage HasMainK0BlockLoop",
   "path": "sources/prs/composable_kernel/PR-3466.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -4807,9 +4617,7 @@
   "title": "Post-merge cleanup for WMMA grouped conv fwd",
   "path": "sources/prs/composable_kernel/PR-3468.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4829,9 +4637,7 @@
   "title": "Replace grouped conv bwd wei wmmaV3 bilin/scale bf16f32bf16 support with bf16bf16bf16",
   "path": "sources/prs/composable_kernel/PR-3470.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4852,9 +4658,7 @@
   "title": "[CK TILE ENGINE] CI configuration with basic cases",
   "path": "sources/prs/composable_kernel/PR-3475.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4874,9 +4678,7 @@
   "title": "Fix jenkinsfile for large tensor conv test",
   "path": "sources/prs/composable_kernel/PR-3478.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4896,9 +4698,7 @@
   "title": "Fix grouped conv fwd wmma porting",
   "path": "sources/prs/composable_kernel/PR-3479.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4918,9 +4718,7 @@
   "title": "[CK_TILE] FMHA Ignore BWD Failed Cases in Smoke Test",
   "path": "sources/prs/composable_kernel/PR-3480.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -4944,9 +4742,7 @@
   "title": "[CK_TILE] Align FMHA BWD Reference with Kernel Implementation",
   "path": "sources/prs/composable_kernel/PR-3486.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -4970,9 +4766,7 @@
   "title": "[CK_TILE] MX FLATMM Fix M Padding",
   "path": "sources/prs/composable_kernel/PR-3489.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -4992,9 +4786,7 @@
   "title": "[CK_TILE][FMHA] Enable gpt-oss sink",
   "path": "sources/prs/composable_kernel/PR-3490.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -5018,9 +4810,7 @@
   "title": "Fix grouped conv wrw kernels names",
   "path": "sources/prs/composable_kernel/PR-3494.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5040,9 +4830,7 @@
   "title": "[CK_TILE] add preshuffleB mode for ABQuant GEMM",
   "path": "sources/prs/composable_kernel/PR-3495.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5065,9 +4853,7 @@
   "title": "[CK_BUILDER] Instance traits for conv bwd weight algorithms ",
   "path": "sources/prs/composable_kernel/PR-3498.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5087,9 +4873,7 @@
   "title": "[CK_BUILDER] Integrate reference conv with testing",
   "path": "sources/prs/composable_kernel/PR-3511.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5109,9 +4893,7 @@
   "title": "[CK TILE] Refactor function amd_buffer_load_invalid_element_return_zero",
   "path": "sources/prs/composable_kernel/PR-3512.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5131,9 +4913,7 @@
   "title": "Fix large tensor grouped conv bwd data test",
   "path": "sources/prs/composable_kernel/PR-3513.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5153,9 +4933,7 @@
   "title": "[CK_BUILDER] Add grouped conv fwd ck tile profiler",
   "path": "sources/prs/composable_kernel/PR-3518.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5178,9 +4956,7 @@
   "title": "[CK-Tile] add persistent async input scheduler parameters to kernel device-side and host-side args",
   "path": "sources/prs/composable_kernel/PR-3520.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5200,9 +4976,7 @@
   "title": "moe fp8 blockscale use nt",
   "path": "sources/prs/composable_kernel/PR-3524.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "moe",
@@ -5224,9 +4998,7 @@
   "title": "[CK TILE] Fix grouped conv kernels splitk and double lds",
   "path": "sources/prs/composable_kernel/PR-3527.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "conv",
@@ -5250,9 +5022,7 @@
   "title": "Adding remaining conv, dynamic_op, and scaleadd_scaleadd_relu flavors for grouped conv fwd",
   "path": "sources/prs/composable_kernel/PR-3529.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5272,9 +5042,7 @@
   "title": "[CK TILE ENGINE] Removing memory operation from Cshuffle ",
   "path": "sources/prs/composable_kernel/PR-3530.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5294,9 +5062,7 @@
   "title": "fix mxfp8-gemm example failure",
   "path": "sources/prs/composable_kernel/PR-3531.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5316,9 +5082,7 @@
   "title": "Implement batched gemm bias permute for RDNA4",
   "path": "sources/prs/composable_kernel/PR-3534.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5338,9 +5102,7 @@
   "title": "[CK tests] Extend conv GPU reference",
   "path": "sources/prs/composable_kernel/PR-3539.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5360,9 +5122,7 @@
   "title": "[CK TILE GEMM] Add bf8 support to tile engine streamk generator",
   "path": "sources/prs/composable_kernel/PR-3543.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -5386,9 +5146,7 @@
   "title": "[FMHA] Support page_size=1 (linear layout) in batch prefill pipeline",
   "path": "sources/prs/composable_kernel/PR-3545.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5409,9 +5167,7 @@
   "title": "[CK TILE ENGINE] CI fix for Basic Tile Engine",
   "path": "sources/prs/composable_kernel/PR-3554.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5431,9 +5187,7 @@
   "title": "[CK_TILE ENGINE] Fix incorrect List import in reduce_parameter.py",
   "path": "sources/prs/composable_kernel/PR-3555.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5453,9 +5207,7 @@
   "title": "[CK TILE] Add grouped convolution forward tests",
   "path": "sources/prs/composable_kernel/PR-3556.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5476,9 +5228,7 @@
   "title": "CK Tile: fix some issues",
   "path": "sources/prs/composable_kernel/PR-3557.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5498,9 +5248,7 @@
   "title": "[CK_TILE] Temporarily disable CK Tile Stream-K reduction tests",
   "path": "sources/prs/composable_kernel/PR-3559.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5520,9 +5268,7 @@
   "title": "Fix grouped conv bwd data wmma check",
   "path": "sources/prs/composable_kernel/PR-3562.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5542,9 +5288,7 @@
   "title": "Batched gemm softmax gemm descriptor fix",
   "path": "sources/prs/composable_kernel/PR-3564.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5566,9 +5310,7 @@
   "title": "[FMHA] Enable page size 16 for batch prefill kernel",
   "path": "sources/prs/composable_kernel/PR-3568.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5589,9 +5331,7 @@
   "title": "Remove code duplications in batched gemm wmma",
   "path": "sources/prs/composable_kernel/PR-3580.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5611,9 +5351,7 @@
   "title": "WMMA grouped conv fwd large tensor extra flavors",
   "path": "sources/prs/composable_kernel/PR-3582.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5633,9 +5371,7 @@
   "title": "Fixing GEMM Multi D on Tile Engine",
   "path": "sources/prs/composable_kernel/PR-3583.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5655,9 +5391,7 @@
   "title": "[CK TILE QUANT GEMM] use OverrideADataType in aquant pipeline",
   "path": "sources/prs/composable_kernel/PR-3584.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -5681,9 +5415,7 @@
   "title": "[CK_TILE][FMHA] Add new tile size for async",
   "path": "sources/prs/composable_kernel/PR-3586.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -5707,9 +5439,7 @@
   "title": "WMMA grouped conv fwd large tensor bias bnorm clamp",
   "path": "sources/prs/composable_kernel/PR-3595.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5755,9 +5485,7 @@
   "title": "[CK TILE] remove dependency on std chrono",
   "path": "sources/prs/composable_kernel/PR-3599.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5777,9 +5505,7 @@
   "title": "[CK_Tile] Support for a4w4 (fp4) in block scale gemm AB quant",
   "path": "sources/prs/composable_kernel/PR-3603.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -5804,9 +5530,7 @@
   "title": "[CK_BUILDER] Replace reference conv with old ck implementation",
   "path": "sources/prs/composable_kernel/PR-3604.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5826,9 +5550,7 @@
   "title": "[CK Tile] multi reduce improvements",
   "path": "sources/prs/composable_kernel/PR-3607.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5848,9 +5570,7 @@
   "title": "[CK TILE] Fix basic gemm pipelines add v1 interwave pipeline",
   "path": "sources/prs/composable_kernel/PR-3611.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5873,9 +5593,7 @@
   "title": "[CK_TILE][FMHA] Revert new tile size for async (#3586)\"",
   "path": "sources/prs/composable_kernel/PR-3613.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -5899,9 +5617,7 @@
   "title": "[CK_TILE] Fix Int32 Overflow in Deterministic FMHA BWD",
   "path": "sources/prs/composable_kernel/PR-3615.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -5925,9 +5641,7 @@
   "title": "Remove code duplications in batched gemm (multi D) gemm (multi D) wmma",
   "path": "sources/prs/composable_kernel/PR-3617.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5947,9 +5661,7 @@
   "title": "[CK_BUILDER] conv bwd weight testing",
   "path": "sources/prs/composable_kernel/PR-3618.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -5995,9 +5707,7 @@
   "title": "GEMM Blockscale ABQuant Optimization",
   "path": "sources/prs/composable_kernel/PR-3620.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6017,9 +5727,7 @@
   "title": "[CK] Adding CK Tile to the doc",
   "path": "sources/prs/composable_kernel/PR-3621.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6039,9 +5747,7 @@
   "title": "[CK_TILE][FMHA]Add new tile size for async",
   "path": "sources/prs/composable_kernel/PR-3623.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6065,9 +5771,7 @@
   "title": "[CK TILE] Enable CK TILE Conv Fwd tests in CI and fix check_err",
   "path": "sources/prs/composable_kernel/PR-3624.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6090,9 +5794,7 @@
   "title": "[CK_TILE] Fix alignment in Stream-K workspace buffer",
   "path": "sources/prs/composable_kernel/PR-3625.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6112,9 +5814,7 @@
   "title": "[CK_Tile] Adding support for preshuffleQuant in AB quant Block Scale Gemm",
   "path": "sources/prs/composable_kernel/PR-3629.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -6138,9 +5838,7 @@
   "title": "Grouped conv fwd direct load vector=2",
   "path": "sources/prs/composable_kernel/PR-3632.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6160,9 +5858,7 @@
   "title": "Revert \" Fp8 block scale quantization for fmha  fwd\"",
   "path": "sources/prs/composable_kernel/PR-3633.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6185,9 +5881,7 @@
   "title": "Revert \"Revert \" Fp8 block scale quantization for fmha  fwd\"\"",
   "path": "sources/prs/composable_kernel/PR-3635.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6210,9 +5904,7 @@
   "title": "[CK_TILE] ABQuant New Preshuffle",
   "path": "sources/prs/composable_kernel/PR-3638.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6232,9 +5924,7 @@
   "title": "[CK] Add new instances for merging multiple fwd conv groups into a single GEMM batch",
   "path": "sources/prs/composable_kernel/PR-3639.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6256,9 +5946,7 @@
   "title": "[CK TILE ENGINE] Updating supported warp tile in Tile Engine",
   "path": "sources/prs/composable_kernel/PR-3643.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6278,9 +5966,7 @@
   "title": "Grouped Conv Bwd Weight Direct Load",
   "path": "sources/prs/composable_kernel/PR-3648.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6300,9 +5986,7 @@
   "title": "feat: add split_k support for block scale gemm bquant mode.",
   "path": "sources/prs/composable_kernel/PR-3653.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6323,9 +6007,7 @@
   "title": "[Conv] Enable bwd weight splitk autodeduction with cap",
   "path": "sources/prs/composable_kernel/PR-3656.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6345,9 +6027,7 @@
   "title": "[CK_TILE] Stream-K Tile Engine Test Config File Generation",
   "path": "sources/prs/composable_kernel/PR-3662.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6367,9 +6047,7 @@
   "title": "[CK_TILE] Fix incompatible vector type arguments for the intrinsic calls",
   "path": "sources/prs/composable_kernel/PR-3672.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6389,9 +6067,7 @@
   "title": "Enable Grouped Conv Tile Fwd Tests daily",
   "path": "sources/prs/composable_kernel/PR-3680.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6411,9 +6087,7 @@
   "title": "Fix redundant cast in model sensitive rmsnorm",
   "path": "sources/prs/composable_kernel/PR-3681.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6433,9 +6107,7 @@
   "title": "Fix softmax unit test",
   "path": "sources/prs/composable_kernel/PR-3683.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6486,9 +6158,7 @@
   "title": "Fix path to ck tile conv fwd instance generator",
   "path": "sources/prs/composable_kernel/PR-3699.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable_kernel",
@@ -6511,9 +6181,7 @@
   "title": "Revert \"Implement device grouped gemm fixed nk multi abd for rdna4\"",
   "path": "sources/prs/composable_kernel/PR-3705.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -6535,9 +6203,7 @@
   "title": "[CK_TILE] Add support and tests for V6 pipeline in conv fwd",
   "path": "sources/prs/composable_kernel/PR-3708.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "composable-kernel",
@@ -6766,9 +6432,7 @@
   "title": "Support page attention in mha_varlen_fwd",
   "path": "sources/prs/flash-attention/PR-103.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "attention",
@@ -6788,9 +6452,7 @@
   "title": "[CK_TILE] FAv3 bwd test case & api usage update",
   "path": "sources/prs/flash-attention/PR-112.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6810,9 +6472,7 @@
   "title": "[CK_TILE] FAv3 bwd minor changes",
   "path": "sources/prs/flash-attention/PR-113.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6832,9 +6492,7 @@
   "title": "[CK_TILE] Enable FAv3 bwd for head_size=64 dtype=bf16 atomic32",
   "path": "sources/prs/flash-attention/PR-114.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6855,9 +6513,7 @@
   "title": "Performant backward Triton implementation with separated dkdv and dq kernels",
   "path": "sources/prs/flash-attention/PR-122.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "triton-rocm",
@@ -6877,9 +6533,7 @@
   "title": "update triton commit",
   "path": "sources/prs/flash-attention/PR-128.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "triton-rocm",
@@ -6899,9 +6553,7 @@
   "title": "use triton==3.2.0",
   "path": "sources/prs/flash-attention/PR-132.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "triton-rocm",
@@ -6921,9 +6573,7 @@
   "title": "head, seq, batch grid order for triton flash attention bwd.",
   "path": "sources/prs/flash-attention/PR-141.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "triton-rocm",
@@ -6946,9 +6596,7 @@
   "title": "[CK_TILE] Use more reasonable splitkv heuristic",
   "path": "sources/prs/flash-attention/PR-147.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6968,9 +6616,7 @@
   "title": "[CK_TILE] Update CK and add RDNA build support",
   "path": "sources/prs/flash-attention/PR-178.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -6990,9 +6636,7 @@
   "title": "[CK_TILE] Fix NaN for FMHA BWD When seq_q=0",
   "path": "sources/prs/flash-attention/PR-179.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "attention",
@@ -7097,9 +6741,7 @@
   "title": "Use same python as build flash-attn to generate ck kernel",
   "path": "sources/prs/flash-attention/PR-66.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "attention",
@@ -7174,9 +6816,7 @@
   "title": "Sync Ck tile compile flag with rocm6.2",
   "path": "sources/prs/flash-attention/PR-77.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
@@ -7196,9 +6836,7 @@
   "title": "Update Triton Version",
   "path": "sources/prs/flash-attention/PR-91.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "triton-rocm",
@@ -7218,9 +6856,7 @@
   "title": "update Triton commit readme",
   "path": "sources/prs/flash-attention/PR-92.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "triton-rocm",
@@ -7240,9 +6876,7 @@
   "title": "[CK_TILE] Fix fmha fwd splitkv block table read out-of-bound",
   "path": "sources/prs/flash-attention/PR-98.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "attention",
@@ -7360,9 +6994,7 @@
   "title": "enable UseScaleAB for fp8 gemm with gelu aux",
   "path": "sources/prs/hipblaslt/PR-1958.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -7383,9 +7015,7 @@
   "title": "enable scaleCD/amaxD for fp8 gemm with f16 gelu aux",
   "path": "sources/prs/hipblaslt/PR-2000.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "hipBLASLt",
@@ -8379,9 +8009,7 @@
   "title": "build gemm-tune only in tensile builds",
   "path": "sources/prs/rocBLAS/PR-1317.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -8403,9 +8031,7 @@
   "title": "[hotfix] Tune aquavanjaram942X SGEMM NN GEMM sizes",
   "path": "sources/prs/rocBLAS/PR-1446.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -8426,9 +8052,7 @@
   "title": "[hotfix] Tune aquavanjaram942X SGEMM NN GEMM sizes",
   "path": "sources/prs/rocBLAS/PR-1465.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -8449,9 +8073,7 @@
   "title": "Move gemm repeatability test to stress category (#2800)",
   "path": "sources/prs/rocBLAS/PR-1533.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -8471,9 +8093,7 @@
   "title": "Fallback to rocBLAS GEMM for complex types when others fail.",
   "path": "sources/prs/rocBLAS/PR-1570.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -8493,9 +8113,7 @@
   "title": "stress tests fix gemm bad strides and misc cleanup",
   "path": "sources/prs/rocBLAS/PR-1575.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -8515,9 +8133,7 @@
   "title": "Validation of float8 and bfloat8 gemm tests",
   "path": "sources/prs/rocWMMA/PR-222.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -8537,9 +8153,7 @@
   "title": "Refactor gemm kernel base",
   "path": "sources/prs/rocWMMA/PR-390.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -8559,9 +8173,7 @@
   "title": "add fp8e4m3fnuz&&int8 gemm sample",
   "path": "sources/prs/rocWMMA/PR-582.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -8581,9 +8193,7 @@
   "title": "Fix bug in i8 gemm sample and remove compilation warning",
   "path": "sources/prs/rocWMMA/PR-586.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -9669,9 +9279,7 @@
   "title": "[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features",
   "path": "sources/prs/hipblaslt/PR-8620.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "cross-repo",
@@ -10635,9 +10243,7 @@
   "title": "[TUTORIAL] Enable all types in gemm tutorial",
   "path": "sources/prs/triton/PR-456.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10657,9 +10263,7 @@
   "title": "[Tuning] Gemm tuning v3",
   "path": "sources/prs/triton/PR-457.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "optimization",
@@ -10680,9 +10284,7 @@
   "title": "[GEMM][Tutorial] Refine test_correctness",
   "path": "sources/prs/triton/PR-463.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10702,9 +10304,7 @@
   "title": "[FA-qk-fp8] Add fp8 FA to 06-fused-attention-fwd-transV.py",
   "path": "sources/prs/triton/PR-475.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "fused-kernel",
@@ -10727,9 +10327,7 @@
   "title": "refine tolerance in checking GEMM correctness",
   "path": "sources/prs/triton/PR-478.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10749,9 +10347,7 @@
   "title": "[GEMM] [Tuning] Add an option to disable warmup compilation",
   "path": "sources/prs/triton/PR-495.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "optimization",
@@ -10772,9 +10368,7 @@
   "title": "Add rotating tensor, icache flush, and bias to GEMM tuning script",
   "path": "sources/prs/triton/PR-588.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "optimization",
@@ -10795,9 +10389,7 @@
   "title": "[tuning] gemm tuning script v3.3",
   "path": "sources/prs/triton/PR-606.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "optimization",
@@ -10818,9 +10410,7 @@
   "title": "Copy *tune_gemm* from `triton-mlir` branch to `main_perf` branch",
   "path": "sources/prs/triton/PR-614.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10840,9 +10430,7 @@
   "title": "Add explicit multiply-reduce GEMM kernel",
   "path": "sources/prs/triton/PR-621.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10862,9 +10450,7 @@
   "title": "CFG generator for amdgcn assembly files",
   "path": "sources/prs/triton/PR-627.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10884,9 +10470,7 @@
   "title": "[tune gemm v3.4] Add xcd-based pid remapping and change back to rocprofv1",
   "path": "sources/prs/triton/PR-630.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "optimization",
@@ -10907,9 +10491,7 @@
   "title": "Add rmsnorm kernel",
   "path": "sources/prs/triton/PR-633.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10929,9 +10511,7 @@
   "title": "Softmax kernel",
   "path": "sources/prs/triton/PR-634.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10951,9 +10531,7 @@
   "title": "Move utility tools from triton-mlir to main_perf branch",
   "path": "sources/prs/triton/PR-635.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10973,9 +10551,7 @@
   "title": "Online softmax implementation",
   "path": "sources/prs/triton/PR-639.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -10995,9 +10571,7 @@
   "title": "Add Layernorm kernel",
   "path": "sources/prs/triton/PR-641.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11017,9 +10591,7 @@
   "title": "Add gemm tuning configs for weekly tuning CI",
   "path": "sources/prs/triton/PR-662.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "optimization",
@@ -11040,9 +10612,7 @@
   "title": "implement persistent loop based rmsnorm kernel",
   "path": "sources/prs/triton/PR-676.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11062,9 +10632,7 @@
   "title": "Vinayak/gemm kernel",
   "path": "sources/prs/triton/PR-677.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11084,9 +10652,7 @@
   "title": "Triton bypassLDS changes",
   "path": "sources/prs/triton/PR-695.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11106,9 +10672,7 @@
   "title": "add layernorm backward pass",
   "path": "sources/prs/triton/PR-697.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11128,9 +10692,7 @@
   "title": "moe quantization support int8 and fp8",
   "path": "sources/prs/triton/PR-702.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11152,9 +10714,7 @@
   "title": "Rmsnnorm zero centered gamma",
   "path": "sources/prs/triton/PR-703.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11174,9 +10734,7 @@
   "title": "rmsnorm multiple datatype tests",
   "path": "sources/prs/triton/PR-705.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11196,9 +10754,7 @@
   "title": "RMSNorm backward kernel implementaton",
   "path": "sources/prs/triton/PR-709.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11218,9 +10774,7 @@
   "title": "Add Paged Attention Decode Kernel",
   "path": "sources/prs/triton/PR-718.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11241,9 +10795,7 @@
   "title": "Clean up GEMM kernel",
   "path": "sources/prs/triton/PR-730.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11263,9 +10815,7 @@
   "title": "Tianxing/rope latent attention",
   "path": "sources/prs/triton/PR-731.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11286,9 +10836,7 @@
   "title": "Change grouping calculation in gemm.py",
   "path": "sources/prs/triton/PR-732.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11308,9 +10856,7 @@
   "title": "rmsnorm backward optimizations",
   "path": "sources/prs/triton/PR-733.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11330,9 +10876,7 @@
   "title": "Vinayak/gemm benchmarking",
   "path": "sources/prs/triton/PR-746.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11352,9 +10896,7 @@
   "title": "Fix flash attention ops calculation",
   "path": "sources/prs/triton/PR-758.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11375,9 +10917,7 @@
   "title": "Modify gemm to support block scaling with fp8",
   "path": "sources/prs/triton/PR-761.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11398,9 +10938,7 @@
   "title": "Tianxing/moe int8 w8a8",
   "path": "sources/prs/triton/PR-765.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11421,9 +10959,7 @@
   "title": "Optimize RMSNorm backward pass",
   "path": "sources/prs/triton/PR-769.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11443,9 +10979,7 @@
   "title": "Fix the bwd Mode in flash-attention.py",
   "path": "sources/prs/triton/PR-772.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11486,9 +11020,7 @@
   "title": "[AMD] Improve Scheduling for Async BF16 GEMM",
   "path": "sources/prs/triton/PR-812.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11509,9 +11041,7 @@
   "title": "fp8 support for Navi4 in triton 3.3.x",
   "path": "sources/prs/triton/PR-828.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11552,9 +11082,7 @@
   "title": "Use the MoE kernel in commit 7f341eb95 to avoid regression",
   "path": "sources/prs/triton/PR-849.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11575,9 +11103,7 @@
   "title": "Bf16mx4 moe launch",
   "path": "sources/prs/triton/PR-851.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11598,9 +11124,7 @@
   "title": "[moe] Improved tile size and ping pong strategy for NW=4",
   "path": "sources/prs/triton/PR-867.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11621,9 +11145,7 @@
   "title": "[moe] Revert old strategy for compute bound case ",
   "path": "sources/prs/triton/PR-868.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11644,9 +11166,7 @@
   "title": "Shared/oai oss bf16mx4 moe launch",
   "path": "sources/prs/triton/PR-872.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11667,9 +11187,7 @@
   "title": "fix some syntax errors of the kernel in 06-fused-attention-transV.py",
   "path": "sources/prs/triton/PR-876.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "fused-kernel",
@@ -11691,9 +11209,7 @@
   "title": "[triton_kernels] MoE env. variable update",
   "path": "sources/prs/triton/PR-878.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11739,9 +11255,7 @@
   "title": "[AMD] Use v_dot for bf16 multiplication on gfx11/gfx12 (triton-lang#8444)",
   "path": "sources/prs/triton/PR-891.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11762,9 +11276,7 @@
   "title": "[AMD] Add Gluon GEMM tutorial",
   "path": "sources/prs/triton/PR-930.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11784,9 +11296,7 @@
   "title": "Add MoE Gluon Kernel for GFX1250",
   "path": "sources/prs/triton/PR-933.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -11851,9 +11361,7 @@
   "title": "[ROCm][Kernel] ViT prefill attention: split-D head_dim + re-tuned tile on gfx1151",
   "path": "sources/prs/vllm/PR-1000.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -11874,9 +11382,7 @@
   "title": "[ROCm][MoE] Skip redundant buffer zero-init in W4A16 prefill",
   "path": "sources/prs/vllm/PR-1005.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -12221,35 +11727,6 @@
   "summary": "Adds a guarded `VLLM_MINIMAX_M3_FLYDSL_MOE=1` path that routes compatible MiniMax-M3 MXFP8-emulation MoE work through AITER vendored FlyDSL two-stage BF16 MoE k"
  },
  {
-  "id": "pr-vllm-46142",
-  "type": "source-pr",
-  "title": "[AMD][OCP MX][CI] Fix tests to not dispatch on UNFUSED_TRITON backend on MI300, improve w_mxfp4_a_fp8 emulation support",
-  "path": "sources/prs/vllm/PR-46142.md",
-  "architectures": [
-   "cdna2",
-   "cdna3"
-  ],
-  "tags": [
-   "rocm",
-   "mxfp4",
-   "fp8",
-   "ocp-mx",
-   "moe",
-   "quantization",
-   "ci"
-  ],
-  "kernel_types": [
-   "moe",
-   "quantization",
-   "grouped-gemm"
-  ],
-  "languages": [
-   "python"
-  ],
-  "confidence": "source-reported",
-  "summary": "Forces relevant ROCm OCP MX tests onto the MoE emulation path for MI250/MI300/MI325, improves W-MXFP4-A-FP8 emulation coverage, and removes a duplicate quantize"
- },
- {
   "id": "pr-vllm-46148",
   "type": "source-pr",
   "title": "[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention",
@@ -12283,9 +11760,7 @@
   "title": "Fix attention fp8 output fusion for split attention path in v1",
   "path": "sources/prs/vllm/PR-569.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12307,9 +11782,7 @@
   "title": "Add PTPC Fused MoE and PTPC Gemm Support; AITER upgrade to `916bf3c`",
   "path": "sources/prs/vllm/PR-596.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12333,9 +11806,7 @@
   "title": "[FEAT] Replace `apply_rotary_emb_torch` and `from flash_attn.ops.triton.rotary import apply_rotary`",
   "path": "sources/prs/vllm/PR-608.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12355,9 +11826,7 @@
   "title": "[FEAT] Use `flash-attn` in ViT instead of `torch.sdpa`",
   "path": "sources/prs/vllm/PR-610.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12378,9 +11847,7 @@
   "title": "[Bugfix] PTPC gemm invocation and general gemm ",
   "path": "sources/prs/vllm/PR-612.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12400,9 +11867,7 @@
   "title": "[FEAT] Support Triton MRoPE kernel",
   "path": "sources/prs/vllm/PR-621.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12422,9 +11887,7 @@
   "title": "Support overlap feature by creating kv indices in triton",
   "path": "sources/prs/vllm/PR-624.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12444,9 +11907,7 @@
   "title": "[gpt-oss] add triton-kernels build for gpt-oss in ROCm base Dockerfile",
   "path": "sources/prs/vllm/PR-637.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12466,9 +11927,7 @@
   "title": "[FP4][Pad][Quant] Refine the FP4 gemm caller for padding and quant method",
   "path": "sources/prs/vllm/PR-639.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12490,9 +11949,7 @@
   "title": "support ck-tile blockquant gemm in vllm",
   "path": "sources/prs/vllm/PR-642.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12515,9 +11972,7 @@
   "title": "[Triton] add triton fp8 gemm support",
   "path": "sources/prs/vllm/PR-651.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12541,9 +11996,7 @@
   "title": "[Triton] add fused_kv_cache support for llama fp8",
   "path": "sources/prs/vllm/PR-652.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12564,9 +12017,7 @@
   "title": "Fix Qwen accuracy fix by not sending quant_config to MOE self.gate RLU",
   "path": "sources/prs/vllm/PR-657.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -12587,9 +12038,7 @@
   "title": "[Triton] 355 wip fused triton",
   "path": "sources/prs/vllm/PR-666.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12610,9 +12059,7 @@
   "title": "uninstall triton kernels before install",
   "path": "sources/prs/vllm/PR-676.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12632,9 +12079,7 @@
   "title": "[FEAT] Enhance bpreshuffle gemm selection criteria",
   "path": "sources/prs/vllm/PR-679.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12654,9 +12099,7 @@
   "title": "[Triton] Shaoclee/085 triton fusion",
   "path": "sources/prs/vllm/PR-682.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12676,9 +12119,7 @@
   "title": "change gemm api for the router gemm in gpt-oss",
   "path": "sources/prs/vllm/PR-687.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12698,9 +12139,7 @@
   "title": "Revert \"[Triton] Shaoclee/085 triton fusion\"",
   "path": "sources/prs/vllm/PR-689.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12720,9 +12159,7 @@
   "title": "[Triton] Shaoclee/085 triton fusion",
   "path": "sources/prs/vllm/PR-690.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12742,9 +12179,7 @@
   "title": "add aiter moe a16w4",
   "path": "sources/prs/vllm/PR-692.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -12789,9 +12224,7 @@
   "title": "Use fusion pass to select AITER group quant RMSNorm and w8a8 gemm",
   "path": "sources/prs/vllm/PR-707.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12814,9 +12247,7 @@
   "title": "[Rocm] [quantization] Fix quark ptpc moe and add test case (#24649)",
   "path": "sources/prs/vllm/PR-714.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -12837,9 +12268,7 @@
   "title": "[Triton] Shaoclee/355 wip mha rope kv cache",
   "path": "sources/prs/vllm/PR-723.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12859,9 +12288,7 @@
   "title": "[moe](feat): fuse shared expert to moe ops",
   "path": "sources/prs/vllm/PR-734.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12883,9 +12310,7 @@
   "title": "[Feat][aiter][ROCm] Add aiter rmsnorm and quant fusion",
   "path": "sources/prs/vllm/PR-735.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12906,9 +12331,7 @@
   "title": "Enable Triton MLA for prefill",
   "path": "sources/prs/vllm/PR-738.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12928,9 +12351,7 @@
   "title": "[355_wip] triton fusion optimized fused_shared_experts",
   "path": "sources/prs/vllm/PR-741.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -12950,9 +12371,7 @@
   "title": "[perf](moe): set fused_shared_expert to false",
   "path": "sources/prs/vllm/PR-748.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -12974,9 +12393,7 @@
   "title": "[355_wip] [Triton] use triton fp4 gemm weight preshuffle for M <= 64",
   "path": "sources/prs/vllm/PR-750.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13000,9 +12417,7 @@
   "title": "[Perf] Update the condition to use bpreshuffle ptpc gemm",
   "path": "sources/prs/vllm/PR-755.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13023,9 +12438,7 @@
   "title": "[ROCM][MOE] view moe weight to float4_e2m1fn_x2",
   "path": "sources/prs/vllm/PR-761.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -13046,9 +12459,7 @@
   "title": "[Triton] [355_wip] add shape checking for aiter triton fp4 gemm",
   "path": "sources/prs/vllm/PR-764.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13072,9 +12483,7 @@
   "title": "update README and update fp8 gemm dispatch for gfx95",
   "path": "sources/prs/vllm/PR-772.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13096,9 +12505,7 @@
   "title": "Add CK MOE for Deepseek FP4",
   "path": "sources/prs/vllm/PR-779.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13120,9 +12527,7 @@
   "title": "Add Fused RMSNorm + FP8 Per-tensor Static Quantization to Llama 3 Models",
   "path": "sources/prs/vllm/PR-789.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13144,9 +12549,7 @@
   "title": "Shaoclee/dllehr fp4 temp ds fp4 triton fusion",
   "path": "sources/prs/vllm/PR-804.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "fp4",
@@ -13167,9 +12570,7 @@
   "title": "Fix moe for deepseek",
   "path": "sources/prs/vllm/PR-812.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -13190,9 +12591,7 @@
   "title": "Use 0/1 expert mask in quark fused moe",
   "path": "sources/prs/vllm/PR-826.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13214,9 +12613,7 @@
   "title": "[Triton] add VLLM_ROCM_USE_AITER_TRITON_FUSED_GEMM_FP4_SPLIT_CAT",
   "path": "sources/prs/vllm/PR-827.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -13236,9 +12633,7 @@
   "title": "[ROCm] Add hipblaslt swizzle gemm kernel",
   "path": "sources/prs/vllm/PR-830.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13258,9 +12653,7 @@
   "title": "[FP4][Fused Moe] Enable wmxfp4&amxfp4 in quark_moe",
   "path": "sources/prs/vllm/PR-834.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13283,9 +12676,7 @@
   "title": "Add allreduce and rmsnorm fusion",
   "path": "sources/prs/vllm/PR-835.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13305,9 +12696,7 @@
   "title": "[ROCm][Perf] Enable shuffle kv cache layout and assembly paged attention kernel for AiterFlashAttentionBackend",
   "path": "sources/prs/vllm/PR-836.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13331,9 +12720,7 @@
   "title": "Revert \"[ROCm] Add hipblaslt swizzle gemm kernel\"",
   "path": "sources/prs/vllm/PR-837.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13353,9 +12740,7 @@
   "title": "[ROCm][fusion] enable ROCm rms_norm pattern matching in qk_norm_rope fusion",
   "path": "sources/prs/vllm/PR-838.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13375,9 +12760,7 @@
   "title": "Fix gpt oss triton moe",
   "path": "sources/prs/vllm/PR-839.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13401,9 +12784,7 @@
   "title": "Pass positions to attention function in llama.py",
   "path": "sources/prs/vllm/PR-854.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13424,9 +12805,7 @@
   "title": "Always enable rms_norm custom op on ROCm",
   "path": "sources/prs/vllm/PR-867.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13446,9 +12825,7 @@
   "title": "Add gfx12 (RDNA4) Triton tile-size heuristic for W4A16 prefill kernel",
   "path": "sources/prs/vllm/PR-870.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -13468,9 +12845,7 @@
   "title": "Add hybrid MoE kernel with wvSplitK int4 GEMM",
   "path": "sources/prs/vllm/PR-876.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13493,9 +12868,7 @@
   "title": "CI test for automated attention benchmarking suite",
   "path": "sources/prs/vllm/PR-897.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13516,9 +12889,7 @@
   "title": "Fix Triton kernel compilation for large head_size on navi (RDNA 3.5)",
   "path": "sources/prs/vllm/PR-911.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -13538,9 +12909,7 @@
   "title": "Replace torch.cuda.manual_seed with set_random_seed in hybrid MoE test",
   "path": "sources/prs/vllm/PR-912.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -13561,9 +12930,7 @@
   "title": "Fix Triton attention shared memory overflow on Navi for head_size > 256",
   "path": "sources/prs/vllm/PR-919.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13587,9 +12954,7 @@
   "title": "MoE wvSplitK_int4: CU-count grid + skip duplicate MatA to LDS + gfx1151 N=1 K<1024 retune",
   "path": "sources/prs/vllm/PR-920.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13611,9 +12976,7 @@
   "title": "Add bf16 wvSplitK skinny GEMM benchmark",
   "path": "sources/prs/vllm/PR-922.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "gemm",
@@ -13634,9 +12997,7 @@
   "title": "w4a16 Triton prefill tuning",
   "path": "sources/prs/vllm/PR-923.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -13657,9 +13018,7 @@
   "title": "[ROCm][MoE] HybridW4A16: skip topk_ids -> cached_buf copy on decode",
   "path": "sources/prs/vllm/PR-939.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -13680,9 +13039,7 @@
   "title": "[ROCm][Qwen3-MoE] Use aiter fused_qk_norm_mrope kernel on the decode path",
   "path": "sources/prs/vllm/PR-941.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -13703,9 +13060,7 @@
   "title": "[ROCm][gfx11] hybrid_w4a16_moe: shape-tune Triton MoE for Qwen3.5-A3B (4\u00d7 workspace shrink, ~2\u00d7 / ~5\u00d7 kernel)",
   "path": "sources/prs/vllm/PR-946.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13730,9 +13085,7 @@
   "title": "[ROCm] linear utils: Triton fast path for tiny-dot scalar projection (1.14\u00d7 vs eager fused, 18\u00d7 vs BLAS)",
   "path": "sources/prs/vllm/PR-947.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -13753,9 +13106,7 @@
   "title": "[ROCm][gfx11] int4 wvSplitK + MoE int4: per-shape dispatch tunes for Qwen3.5-A3B",
   "path": "sources/prs/vllm/PR-951.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "grouped-gemm",
@@ -13776,9 +13127,7 @@
   "title": "linear utils: fold output cast + sigmoid into tiny-dot Triton kernel",
   "path": "sources/prs/vllm/PR-956.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "rocm",
@@ -13798,9 +13147,7 @@
   "title": "TritonAttention: fix gfx1151 softmax segment buffer undersize",
   "path": "sources/prs/vllm/PR-961.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "softmax",
@@ -13820,9 +13167,7 @@
   "title": "fix(moe): tune fused_moe per-M config for gfx1151 Qwen3-30B FP16 deco\u2026",
   "path": "sources/prs/vllm/PR-972.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13845,9 +13190,7 @@
   "title": "[profiling] Capture attention call shapes with torch.profile",
   "path": "sources/prs/vllm/PR-996.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "vllm",
@@ -13898,6 +13241,28 @@
    "fse",
    "qwen3.5",
    "aiter"
+  ],
+  "kernel_types": [
+   "moe"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": null,
+  "summary": ""
+ },
+ {
+  "id": "pr-vllm-rocm-46142",
+  "type": "source-pr",
+  "title": "[AMD][OCP MX] Improve w_mxfp4_a_fp8 emulation support on MI300",
+  "path": "sources/prs/vllm/PR-46142.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "ocp-mx",
+   "w-mxfp4-a-fp8",
+   "moe-emulation"
   ],
   "kernel_types": [
    "moe"
@@ -14420,6 +13785,26 @@
   "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "technique-ocp-mx-emulation-mi300",
+  "type": "wiki-technique",
+  "title": "OCP MX Microscaling (W-MXFP4-A-FP8) Emulation on MI300",
+  "path": "wiki/techniques/pr-vllm-rocm-46142.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "ocp-mx",
+   "w-mxfp4-a-fp8",
+   "moe-emulation"
+  ],
+  "kernel_types": [
+   "moe"
+  ],
+  "languages": [],
+  "confidence": "verified",
   "summary": ""
  },
  {

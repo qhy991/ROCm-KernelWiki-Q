@@ -398,9 +398,9 @@
 - [[Attention][DSA] support dcp for FLASHINFER_MLA_SPARSE](../sources/prs/vllm/PR-46076.md)
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - [[ROCm][Perf] Optional FlyDSL BF16 MoE for the MXFP8-emulation path on MiniMax-M3](../sources/prs/vllm/PR-46123.md)
-- [[AMD][OCP MX][CI] Fix tests to not dispatch on UNFUSED_TRITON backend on MI300, improve w_mxfp4_a_fp8 emulation support](../sources/prs/vllm/PR-46142.md)
 - [[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention](../sources/prs/vllm/PR-46148.md)
 - [[ROCm][Bugfix][Perf] enable shared expert fusion for Qwen3.5](../sources/prs/vllm/PR-44434.md)
+- [[AMD][OCP MX] Improve w_mxfp4_a_fp8 emulation support on MI300](../sources/prs/vllm/PR-46142.md)
 - [PR Insight: triton #457 - [Tuning] Gemm tuning v3](../wiki/techniques/pr-triton-457.md)
 
 ## triton (3 pages)

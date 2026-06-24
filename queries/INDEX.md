@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-1069 pages. Machine-readable form: [pages.json](pages.json).
+1070 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -441,7 +441,6 @@
 - `pr-vllm-46076` — [[Attention][DSA] support dcp for FLASHINFER_MLA_SPARSE](../sources/prs/vllm/PR-46076.md)
 - `pr-vllm-46117` — [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - `pr-vllm-46123` — [[ROCm][Perf] Optional FlyDSL BF16 MoE for the MXFP8-emulation path on MiniMax-M3](../sources/prs/vllm/PR-46123.md)
-- `pr-vllm-46142` — [[AMD][OCP MX][CI] Fix tests to not dispatch on UNFUSED_TRITON backend on MI300, improve w_mxfp4_a_fp8 emulation support](../sources/prs/vllm/PR-46142.md)
 - `pr-vllm-46148` — [[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention](../sources/prs/vllm/PR-46148.md)
 - `pr-vllm-569` — [Fix attention fp8 output fusion for split attention path in v1](../sources/prs/vllm/PR-569.md)
 - `pr-vllm-596` — [Add PTPC Fused MoE and PTPC Gemm Support; AITER upgrade to `916bf3c`](../sources/prs/vllm/PR-596.md)
@@ -513,6 +512,7 @@
 - `pr-vllm-996` — [[profiling] Capture attention call shapes with torch.profile](../sources/prs/vllm/PR-996.md)
 - `pr-vllm-rocm-1003` — [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md)
 - `pr-vllm-rocm-44434` — [[ROCm][Bugfix][Perf] enable shared expert fusion for Qwen3.5](../sources/prs/vllm/PR-44434.md)
+- `pr-vllm-rocm-46142` — [[AMD][OCP MX] Improve w_mxfp4_a_fp8 emulation support on MI300](../sources/prs/vllm/PR-46142.md)
 - `pr-vllm-rocm-998` — [[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff](../sources/prs/vllm/PR-998.md)
 
 ## wiki-hardware (15)
@@ -606,7 +606,7 @@
 - `pattern-tile-quantize-dequant` — [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md)
 - `pattern-warp-specialization` — [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 
-## wiki-technique (491)
+## wiki-technique (492)
 
 - `technique-async-copy-lds` — [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - `technique-atomic-operations-hip` — [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md)
@@ -629,6 +629,7 @@
 - `technique-moe-stride-padding-gfx11x` — [Applying Cache Cliff Stride Padding to W4A16 MoE Experts](../wiki/techniques/pr-vllm-rocm-1003.md)
 - `technique-multi-gpu-rccl` — [RCCL Multi-GPU Communication](../wiki/techniques/multi-gpu-rccl.md)
 - `technique-occupancy-tuning` — [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md)
+- `technique-ocp-mx-emulation-mi300` — [OCP MX Microscaling (W-MXFP4-A-FP8) Emulation on MI300](../wiki/techniques/pr-vllm-rocm-46142.md)
 - `technique-persistent-kernel` — [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md)
 - `technique-pr-MIOpen-3427` — [PR Insight: MIOpen #3427 - PR Insight](../wiki/techniques/pr-MIOpen-3427.md)
 - `technique-pr-MIOpen-3479` — [PR Insight: MIOpen #3479 - PR Insight](../wiki/techniques/pr-MIOpen-3479.md)

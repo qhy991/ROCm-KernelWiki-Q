@@ -106,6 +106,26 @@ hardware_features:
     description: Per-thread private memory
     min_arch: cdna1
     cuda_equivalent: local_memory
+  transpose-load: null
+  buffer-resource-descriptor: null
+  memory-bandwidth: null
+  ds-swizzle: null
+  packed-fp8: null
+  cache-line: null
+  vgpr: null
+  wave64: null
+  int8-dot: null
+  cluster-barrier: null
+  rdna3-wmma: null
+  infinity-fabric: null
+  scalar-alu: null
+  wave32: null
+  xgmi: null
+  microscaling: null
+  pci-id: null
+  multicast: null
+  vector-memory: null
+  mubuf: null
 techniques:
   ck-tile-programming:
     description: Composable Kernel tile-based programming model
@@ -173,6 +193,84 @@ techniques:
   scale-preshuffle:
     description: Preshuffling data prior to scaling
     related_hw: []
+  index-localization: null
+  staged-gemm: null
+  quantization: null
+  runtime-guard: null
+  code-generation: null
+  regression-test: null
+  stream-overlap: null
+  host-problem-construction: null
+  split-kv: null
+  scale-requantization: null
+  masking: null
+  operator-builder: null
+  transpose-workaround: null
+  hazard-avoidance: null
+  llm-inference: null
+  ds-swizzle: null
+  gemm-pipeline: null
+  fp8-quantization: null
+  coalesced-load: null
+  runtime-arch-dispatch: null
+  large-indexing: null
+  instruction-selection: null
+  assembly-emission: null
+  scalar-type-dispatch: null
+  tdm: null
+  production-shape-testing: null
+  backend-capability-gating: null
+  shape-aware-heuristic: null
+  codegen: null
+  bbs: null
+  overlap-compute-transfer: null
+  backward-kernel: null
+  vgpr-reduction: null
+  launch-configuration: null
+  wmma-scheduling: null
+  test-matrix: null
+  cache-invalidation: null
+  paged-attention: null
+  quantizer-copy: null
+  instruction-compatibility: null
+  backend-dispatch: null
+  cluster-barrier: null
+  hardware-bounds-checking: null
+  shape-tuning: null
+  temporary-buffering: null
+  global-read-emission: null
+  occupancy-query: null
+  hardware-modeling: null
+  solution-selection: null
+  pipeline-unification: null
+  kv-cache: null
+  autotuning: null
+  convolution: null
+  communication-computation-overlap: null
+  collective-fusion: null
+  fused-cast-transpose: null
+  hadamard-transform: null
+  csv-tuning: null
+  weight-caching: null
+  sampling: null
+  wmma: null
+  correctness-guard: null
+  shape-constraint-relaxation: null
+  model-selection: null
+  grouped-convolution: null
+  stream-k: null
+  logical-scheduling: null
+  wait-state-insertion: null
+  memory-mapping: null
+  wave-synchronization: null
+  multicast: null
+  manifest-runner: null
+  solution-library: null
+  jit-compilation: null
+  aiter-dispatch: null
+  sparse-attention: null
+  grouped-gemm: null
+  scale-layout-transform: null
 kernel_types:
 - gemm
 - attention
@@ -192,6 +290,16 @@ kernel_types:
 - quantization
 - sparse-attention
 - convolution
+- paged-attention
+- elementwise
+- custom-fusion
+- rope
+- histogram
+- cast-transpose
+- kv-cache
+- normalization
+- communication
+- collective
 languages:
 - hip-cpp
 - ck-dsl
@@ -199,6 +307,10 @@ languages:
 - iree-mlir
 - assembly
 - python
+- cpp
+- triton
+- llvm-ir
+- yaml
 tracked_repos:
 - org: ROCm
   name: composable_kernel
@@ -342,8 +454,71 @@ aux_tags:
 - vgpr-optimization
 - salu
 - valu
+- v-perm-b32 - fused-shared-expert - fse - qwen3.5 - aiter
+- ocp-mx
+- ci
+- dcp
+- glm-5-2
+- flydsl
+- mxfp8-emulation
+- compatibility
+- testing
+- gfx1250
+- communication-overlap
+- mx
+- blackwell
+- deepgemm
+- split-kv
+- llm-inference
+- alpha-beta
+- communication
+- hunyuan
+- multi-gpu
+- fse
+- qwen
+- qwen2-moe
+- all-reduce
+- deepseek-v4
+- flashinfer
+- jit-kernel
+- bbs
+- sparge
+- shape-constraints
+- prefill
+- hpc-ops
+- mla
+- streamk
+- trtllm
+- qwen3.5
+- symmetric-memory
+- batch-prefill
+- implicit-gemm
+- fused-shared-expert
+- backend
+- workaround
+- correctness
+- origami
+- vl
+- compressed-tensors
+- ck-tile-engine
+- rl
+- hardware-model
+- memory-management
+- backward
+- large-tensor
+- block-fp8
+- qwen3-5
+- rope
+- transpose
+- tuning
+- grouped-convolution
+- heuristic
+- shared-expert
+- precision
+- multicast
+- pipeline-parallel
+- tensor-parallel
 - v-perm-b32
-  - fused-shared-expert
-  - fse
-  - qwen3.5
-  - aiter
+- rocisa
+- w-mxfp4-a-fp8
+- moe-emulation
