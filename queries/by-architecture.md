@@ -1942,7 +1942,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna4 (990 pages)
+## cdna4 (994 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -2376,6 +2376,8 @@
 - [[AMD] Use v_dot for bf16 multiplication on gfx11/gfx12 (triton-lang#8444)](../sources/prs/triton/PR-891.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[AMD] Add Gluon GEMM tutorial](../sources/prs/triton/PR-930.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add MoE Gluon Kernel for GFX1250](../sources/prs/triton/PR-933.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md) `[source-pr]` arch:cdna4
+- [[AMD][gfx1250] TDM gather/scatter: reuse one descriptor across chunks to cut in-loop SALU](../sources/prs/triton/PR-10686.md) `[source-pr]` arch:cdna4
 - [[ROCm][Kernel] ViT prefill attention: split-D head_dim + re-tuned tile on gfx1151](../sources/prs/vllm/PR-1000.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[ROCm][MoE] Skip redundant buffer zero-init in W4A16 prefill](../sources/prs/vllm/PR-1005.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Bugfix][ROCm] Fix OOB query read in paged_attention_rocm for head_size < 128](../sources/prs/vllm/PR-40745.md) `[source-pr]` arch:cdna3, cdna4
@@ -2927,11 +2929,13 @@
 - [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
+- [TDM Descriptor SGPR Sharing for Gather/Scatter Loops](../wiki/techniques/pr-triton-amd-10686.md) `[wiki-technique]` arch:cdna4
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [VGPR Spilling Avoidance via v_perm_b32 FP32-to-BF16 Packing](../wiki/techniques/pr-triton-amd-10592.md) `[wiki-technique]` arch:cdna4
 - [Cross-Lane Communication with DPP (Warp Shuffle Equivalent)](../wiki/techniques/warp-shuffle-dpp.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 

@@ -212,6 +212,11 @@
 - [Mixed Precision Computing in HIP](../wiki/techniques/mixed-precision-hip.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
+## elementwise (2 pages)
+
+- [[AMD][gfx1250] TDM gather/scatter: reuse one descriptor across chunks to cut in-loop SALU](../sources/prs/triton/PR-10686.md) conf:? arch:cdna4
+- [TDM Descriptor SGPR Sharing for Gather/Scatter Loops](../wiki/techniques/pr-triton-amd-10686.md) conf:verified arch:cdna4
+
 ## embedding (4 pages)
 
 - [Embedding Lookup Kernel Optimization](../wiki/kernels/embedding-lookup.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
@@ -219,7 +224,7 @@
 - [Memory-Bound Optimization Patterns](../wiki/patterns/memory-bound-optimization.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Scatter/Gather Memory Access Patterns](../wiki/patterns/scatter-gather.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## flash-attention (32 pages)
+## flash-attention (34 pages)
 
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Flash Decoding on ROCm](../wiki/kernels/flash-decoding-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
@@ -245,6 +250,7 @@
 - [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) conf:? arch:cdna3
 - [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) conf:? arch:cdna3
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md) conf:source-reported arch:rdna4
+- [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md) conf:? arch:cdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) conf:source-reported arch:cdna3
 - [Non-Temporal Store (L2 Cache Bypass)](../wiki/techniques/buffer-store-nt.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md) conf:verified arch:cdna3
@@ -252,6 +258,7 @@
 - [PR Insight: triton #475 - FP8 QK Flash Attention Integration](../wiki/techniques/pr-triton-475.md) conf:inferred arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md) conf:verified arch:cdna3
+- [VGPR Spilling Avoidance via v_perm_b32 FP32-to-BF16 Packing](../wiki/techniques/pr-triton-amd-10592.md) conf:verified arch:cdna4
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
 ## gemm (237 pages)

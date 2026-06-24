@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-1063 pages. Machine-readable form: [pages.json](pages.json).
+1067 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -23,7 +23,7 @@
 - `doc-hip-programming-guide` — [HIP Programming Guide](../sources/docs/hip-programming-guide.md)
 - `doc-mi300x-workload` — [MI300X Workload Optimization Guide](../sources/docs/mi300x-workload.md)
 
-## source-pr (486)
+## source-pr (488)
 
 - `pr-MIOpen-3427` — [Softmax log backward : Increase precision of fp16's accumulator to fp32](../sources/prs/MIOpen/PR-3427.md)
 - `pr-MIOpen-3479` — [Convert softmax from CTest to GTest](../sources/prs/MIOpen/PR-3479.md)
@@ -425,6 +425,8 @@
 - `pr-triton-891` — [[AMD] Use v_dot for bf16 multiplication on gfx11/gfx12 (triton-lang#8444)](../sources/prs/triton/PR-891.md)
 - `pr-triton-930` — [[AMD] Add Gluon GEMM tutorial](../sources/prs/triton/PR-930.md)
 - `pr-triton-933` — [Add MoE Gluon Kernel for GFX1250](../sources/prs/triton/PR-933.md)
+- `pr-triton-amd-10592` — [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md)
+- `pr-triton-amd-10686` — [[AMD][gfx1250] TDM gather/scatter: reuse one descriptor across chunks to cut in-loop SALU](../sources/prs/triton/PR-10686.md)
 - `pr-vllm-1000` — [[ROCm][Kernel] ViT prefill attention: split-D head_dim + re-tuned tile on gfx1151](../sources/prs/vllm/PR-1000.md)
 - `pr-vllm-1005` — [[ROCm][MoE] Skip redundant buffer zero-init in W4A16 prefill](../sources/prs/vllm/PR-1005.md)
 - `pr-vllm-12348` — [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md)
@@ -603,7 +605,7 @@
 - `pattern-tile-quantize-dequant` — [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md)
 - `pattern-warp-specialization` — [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 
-## wiki-technique (488)
+## wiki-technique (490)
 
 - `technique-async-copy-lds` — [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - `technique-atomic-operations-hip` — [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md)
@@ -1084,11 +1086,13 @@
 - `technique-sgpr-scalar-unit` — [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md)
 - `technique-stream-async-bwd-prepare` — [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md)
 - `technique-swizzling` — [LDS Address Swizzling](../wiki/techniques/swizzling.md)
+- `technique-tdm-descriptor-sharing` — [TDM Descriptor SGPR Sharing for Gather/Scatter Loops](../wiki/techniques/pr-triton-amd-10686.md)
 - `technique-triton-627` — [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md)
 - `technique-triton-gemm-tuning` — [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md)
 - `technique-triton-persistent-rmsnorm` — [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md)
 - `technique-vectorized-load` — [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md)
 - `technique-vgpr-pressure` — [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md)
+- `technique-vperm-bf16-packing` — [VGPR Spilling Avoidance via v_perm_b32 FP32-to-BF16 Packing](../wiki/techniques/pr-triton-amd-10592.md)
 - `technique-warp-shuffle-dpp` — [Cross-Lane Communication with DPP (Warp Shuffle Equivalent)](../wiki/techniques/warp-shuffle-dpp.md)
 - `technique-wave-reduction` — [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md)
 - `technique-wavefront-scheduling` — [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md)

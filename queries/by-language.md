@@ -138,10 +138,12 @@
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md)
 - [support ck-tile blockquant gemm in vllm](../sources/prs/vllm/PR-642.md)
 
-## cpp (4 pages)
+## cpp (6 pages)
 
 - [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
 - [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
+- [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md)
+- [[AMD][gfx1250] TDM gather/scatter: reuse one descriptor across chunks to cut in-loop SALU](../sources/prs/triton/PR-10686.md)
 - [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md)
 - [[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff](../sources/prs/vllm/PR-998.md)
 
