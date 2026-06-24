@@ -725,7 +725,9 @@
   ],
   "languages": [
    "hip-cpp",
-   "ck-dsl"
+   "ck-dsl",
+   "assembly",
+   "python"
   ],
   "confidence": "source-reported",
   "summary": ""
@@ -779,7 +781,9 @@
   ],
   "languages": [
    "hip-cpp",
-   "ck-dsl"
+   "ck-dsl",
+   "triton-rocm",
+   "python"
   ],
   "confidence": "source-reported",
   "summary": ""
@@ -963,7 +967,9 @@
   "architectures": [
    "cdna1",
    "cdna2",
-   "cdna3"
+   "cdna3",
+   "rdna3",
+   "rdna4"
   ],
   "tags": [
    "gemm",
@@ -1255,6 +1261,38 @@
   "summary": ""
  },
  {
+  "id": "kernel-rdna-rocm",
+  "type": "wiki-kernel",
+  "title": "RDNA ROCm Kernels (gfx11/gfx12)",
+  "path": "wiki/kernels/rdna-rocm.md",
+  "architectures": [
+   "rdna3",
+   "rdna4"
+  ],
+  "tags": [
+   "rdna",
+   "rocm",
+   "gemm",
+   "attention",
+   "inference",
+   "optimization"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "flash-attention",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "triton-rocm",
+   "python",
+   "assembly"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
   "id": "kernel-reduction-rocm",
   "type": "wiki-kernel",
   "title": "Reduction Kernels on ROCm",
@@ -1331,6 +1369,36 @@
   "languages": [
    "hip-cpp",
    "triton"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "kernel-rmsnorm-rocm",
+  "type": "wiki-kernel",
+  "title": "RMSNorm and Normalization Kernels on ROCm",
+  "path": "wiki/kernels/rmsnorm-rocm.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rmsnorm",
+   "reduction",
+   "memory",
+   "fused-kernel",
+   "triton-rocm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "rmsnorm",
+   "reduction"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python",
+   "hip-cpp"
   ],
   "confidence": "source-reported",
   "summary": ""
@@ -1523,6 +1591,32 @@
   "summary": ""
  },
  {
+  "id": "lang-amd-assembly",
+  "type": "wiki-language",
+  "title": "AMDGPU Assembly for ROCm Kernels",
+  "path": "wiki/languages/amd-assembly.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "assembly",
+   "isa",
+   "rocm",
+   "programming",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "assembly",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
   "id": "lang-ck-dsl",
   "type": "wiki-language",
   "title": "Composable Kernel (CK) DSL",
@@ -1544,6 +1638,44 @@
    "hip-cpp"
   ],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "lang-hip-cpp",
+  "type": "wiki-language",
+  "title": "HIP C++ Programming Guide",
+  "path": "wiki/languages/hip-cpp.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "hip-cpp"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "lang-python-rocm",
+  "type": "wiki-language",
+  "title": "Python Ecosystem for ROCm",
+  "path": "wiki/languages/python.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3"
+  ],
+  "tags": [
+   "python",
+   "triton-rocm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
   "summary": ""
  },
  {
@@ -1629,6 +1761,24 @@
    "cuda",
    "hip",
    "porting"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "migration-cudnn-to-miopen",
+  "type": "wiki-migration",
+  "title": "cuDNN to MIOpen Migration Guide",
+  "path": "wiki/migration/cudnn-to-miopen.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3"
+  ],
+  "tags": [
+   "miopen"
   ],
   "kernel_types": [],
   "languages": [],
@@ -1742,6 +1892,30 @@
    "gemm",
    "conv"
   ],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pattern-compute-bound-mfma-amd",
+  "type": "wiki-pattern",
+  "title": "Compute-Bound MFMA Pattern on AMD GPUs",
+  "path": "wiki/patterns/compute-bound-mfma-amd.md",
+  "architectures": [
+   "cdna1",
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "mfma",
+   "compute",
+   "optimization",
+   "scheduling",
+   "occupancy",
+   "rocm"
+  ],
+  "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
   "summary": ""
@@ -15796,20 +15970,25 @@
   "title": "Add support to fp16 + compute fp16 and bf16 + compute bf16 contractions",
   "path": "sources/prs/composable_kernel/PR-3598.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna3",
+   "rdna4"
   ],
   "tags": [
    "composable_kernel",
+   "rdna",
+   "rocm",
+   "programming",
    "fp16",
-   "bf16",
-   "rocm"
+   "bf16"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
   "confidence": "source-reported",
-  "summary": ""
+  "summary": "Enables hipTensor to access WMMA hardware functionality for FP16+FP16 compute and BF16+BF16 compute contractions on gfx11 and gfx12."
  },
  {
   "id": "pr-composable_kernel-3599",
@@ -16111,23 +16290,25 @@
   "title": "Implement device grouped gemm fixed nk multi abd for rdna4",
   "path": "sources/prs/composable_kernel/PR-3619.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna4"
   ],
   "tags": [
-   "grouped-gemm",
    "composable_kernel",
-   "rocm",
-   "gemm"
+   "rdna",
+   "grouped-gemm",
+   "gemm",
+   "fused-kernel",
+   "rocm"
   ],
   "kernel_types": [
-   "gemm",
-   "grouped-gemm"
+   "grouped-gemm",
+   "gemm"
   ],
-  "languages": [],
+  "languages": [
+   "hip-cpp"
+  ],
   "confidence": "source-reported",
-  "summary": ""
+  "summary": "Adds DeviceGroupedGemm_Wmma_Multi_ABD_Fixed_NK, RDNA4 WMMA examples for grouped GEMM with bias/GELU, profiler support, reference calculations, and grouped GEMM "
  },
  {
   "id": "pr-composable_kernel-3620",
@@ -17028,6 +17209,37 @@
   "summary": ""
  },
  {
+  "id": "pr-composable_kernel-3696",
+  "type": "source-pr",
+  "title": "[CK] Add FP8 KV_BLOCKSCALE support for batch prefill",
+  "path": "sources/prs/composable_kernel/PR-3696.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable-kernel",
+   "ck-tile",
+   "attention",
+   "flash-attention",
+   "fp8",
+   "kv-cache",
+   "batch-prefill",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "Closed without merge; proposed KV_BLOCKSCALE quantization mode, per-page K/V scaling, physical-page prefetching, and batch-prefill pipeline changes."
+ },
+ {
   "id": "pr-composable_kernel-3699",
   "type": "source-pr",
   "title": "Fix path to ck tile conv fwd instance generator",
@@ -17115,6 +17327,237 @@
   "languages": [],
   "confidence": "source-reported",
   "summary": ""
+ },
+ {
+  "id": "pr-composable_kernel-3708",
+  "type": "source-pr",
+  "title": "[CK_TILE] Add support and tests for V6 pipeline in conv fwd",
+  "path": "sources/prs/composable_kernel/PR-3708.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable-kernel",
+   "ck-tile",
+   "convolution",
+   "grouped-convolution",
+   "rocm"
+  ],
+  "kernel_types": [
+   "convolution"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "Closed without merge; proposed adding a V6 GEMM pipeline to CK Tile grouped convolution forward, described as the CK Tile equivalent of classic CK V5 for select"
+ },
+ {
+  "id": "pr-composable_kernel-3709",
+  "type": "source-pr",
+  "title": "[CK_TILE] MX GEMM, non-preshuffled and RCR layout",
+  "path": "sources/prs/composable_kernel/PR-3709.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "ck-tile",
+   "gemm",
+   "quantization",
+   "fp8",
+   "fp4",
+   "block-scale",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds an MX GEMM example and CK Tile GEMM-MX implementation files, including scale-pointer handling, async compute pipeline policy, non-preshuffled/RCR layout su"
+ },
+ {
+  "id": "pr-composable_kernel-3727",
+  "type": "source-pr",
+  "title": "[CK_TILE] Sparge attention",
+  "path": "sources/prs/composable_kernel/PR-3727.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable-kernel",
+   "ck-tile",
+   "attention",
+   "sparse-attention",
+   "sparge",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "sparse-attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "Closed without merge; proposed CK Tile sparse-attention infrastructure, generated kernel families, block-map and k-stat pipelines, tests, and perf documentation"
+ },
+ {
+  "id": "pr-composable_kernel-3729",
+  "type": "source-pr",
+  "title": "[CK_TILE] async trload for fmha 192/128 in mi355",
+  "path": "sources/prs/composable_kernel/PR-3729.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "ck-tile",
+   "attention",
+   "flash-attention",
+   "optimization",
+   "pipeline",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adjusts FMHA code generation and architecture feature handling for async transpose-load paths targeting 192/128 attention shapes on MI355-class hardware."
+ },
+ {
+  "id": "pr-composable_kernel-3732",
+  "type": "source-pr",
+  "title": "[ck_tile/fmha] Fix sink un-mask under right-window and emit fp8bf16 batch_prefill sink kernels",
+  "path": "sources/prs/composable_kernel/PR-3732.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable-kernel",
+   "ck-tile",
+   "attention",
+   "flash-attention",
+   "fp8",
+   "batch-prefill",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "python",
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Closed without merge; proposed emitting fp8bf16 batch-prefill sink kernels and fixing StreamLLM sink unmasking when a right sliding-window boundary is active."
+ },
+ {
+  "id": "pr-composable_kernel-3733",
+  "type": "source-pr",
+  "title": "[CK_TILE] fix(fmha): clamp paged KV lookups in batch prefill",
+  "path": "sources/prs/composable_kernel/PR-3733.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "ck-tile",
+   "attention",
+   "flash-attention",
+   "memory",
+   "inference",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Clamps paged KV lookups in CK Tile FMHA batch prefill by exposing KV sequence length through masking and passing it to physical page loading."
+ },
+ {
+  "id": "pr-composable_kernel-3735",
+  "type": "source-pr",
+  "title": "Support biased SwiGLU in MXFP4 MoE",
+  "path": "sources/prs/composable_kernel/PR-3735.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "moe",
+   "grouped-gemm",
+   "gemm",
+   "fp4",
+   "quantization",
+   "fused-kernel",
+   "rocm"
+  ],
+  "kernel_types": [
+   "moe",
+   "grouped-gemm",
+   "gemm",
+   "activation"
+  ],
+  "languages": [
+   "ck-dsl",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds bias-aware SwiGLU handling to MXFP4 MoE BNS/BPreShuffle gridwise paths and fixes CK Tile MoE GEMM1 split-K epilogue behavior for k_batch == 1."
+ },
+ {
+  "id": "pr-composable_kernel-3745",
+  "type": "source-pr",
+  "title": "[CK Tile] Prepare mixed batch-prefill FP8 KV contract",
+  "path": "sources/prs/composable_kernel/PR-3745.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "composable_kernel",
+   "ck-tile",
+   "attention",
+   "flash-attention",
+   "fp8",
+   "inference",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "python",
+   "ck-dsl"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a reusable FMHA dtype-contract classifier for dispatcher and AOT validation, explicitly marking BF16/FP16 Q with FP8 K/V as unsupported mixed_q_fp8_kv whil"
  },
  {
   "id": "pr-flash-attention-10",
@@ -18284,18 +18727,50 @@
   ],
   "tags": [
    "attention",
-   "flash-attention",
+   "ck-tile",
    "rocm",
-   "ck-tile"
+   "flash-attention",
+   "optimization",
+   "synchronization"
   ],
   "kernel_types": [
    "attention"
   ],
   "languages": [
+   "hip-cpp",
    "ck-dsl"
   ],
   "confidence": "source-reported",
-  "summary": ""
+  "summary": "Converts FMHA backward workspace preparation to a stream-async path, avoiding host-blocking D2H synchronization from cu_seqlens.cpu() in group-mode backward."
+ },
+ {
+  "id": "pr-flash-attention-184",
+  "type": "source-pr",
+  "title": "[CK_TILE] Update CK and enable RDNA backward",
+  "path": "sources/prs/flash-attention/PR-184.md",
+  "architectures": [
+   "cdna3",
+   "rdna3",
+   "rdna4"
+  ],
+  "tags": [
+   "attention",
+   "flash-attention",
+   "ck-tile",
+   "rdna",
+   "rocm"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "ck-dsl",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Updates the composable_kernel submodule, removes gfx11/gfx12 CK backward guards and RDNA backward test skips, and selects an RDNA-compatible BF16 conversion mod"
  },
  {
   "id": "pr-flash-attention-19",
@@ -18504,23 +18979,24 @@
   "path": "sources/prs/flash-attention/PR-61.md",
   "architectures": [
    "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
-   "attention",
    "flash-attention",
-   "rocm",
-   "ck-tile"
+   "ck-tile",
+   "composable-kernel",
+   "rocm"
   ],
   "kernel_types": [
-   "attention"
+   "attention",
+   "flash-attention"
   ],
   "languages": [
-   "ck-dsl"
+   "hip-cpp",
+   "python"
   ],
   "confidence": "source-reported",
-  "summary": ""
+  "summary": "Merged initial CK Tile FlashAttention forward path, adding the composable_kernel submodule and CK-backed batch/group-mode forward wrappers and tests."
  },
  {
   "id": "pr-flash-attention-63",
@@ -18549,20 +19025,25 @@
   "path": "sources/prs/flash-attention/PR-65.md",
   "architectures": [
    "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
-   "rocm",
-   "ck-tile"
+   "ck-tile",
+   "composable-kernel",
+   "backward",
+   "rocm"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
   "languages": [
-   "ck-dsl"
+   "hip-cpp",
+   "python"
   ],
   "confidence": "source-reported",
-  "summary": ""
+  "summary": "Added CK Tile FlashAttention backward wrappers for fixed-length and variable-length attention, updating tests, setup, README, and the CK submodule."
  },
  {
   "id": "pr-flash-attention-66",
@@ -18653,20 +19134,25 @@
   "path": "sources/prs/flash-attention/PR-70.md",
   "architectures": [
    "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
-   "attention",
    "flash-attention",
+   "ck-tile",
+   "composable-kernel",
+   "backward",
    "rocm"
   ],
   "kernel_types": [
-   "attention"
+   "attention",
+   "flash-attention"
   ],
-  "languages": [],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
   "confidence": "source-reported",
-  "summary": ""
+  "summary": "Integrated an FMHA backward optimization from composable_kernel into ROCm/flash-attention CK wrappers and tests."
  },
  {
   "id": "pr-flash-attention-72",
@@ -18695,20 +19181,26 @@
   "path": "sources/prs/flash-attention/PR-74.md",
   "architectures": [
    "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
    "flash-attention",
-   "rocm",
-   "ck-tile"
+   "ck-tile",
+   "composable-kernel",
+   "kv-cache",
+   "split-kv",
+   "rocm"
   ],
-  "kernel_types": [],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
   "languages": [
-   "ck-dsl"
+   "hip-cpp",
+   "python"
   ],
   "confidence": "source-reported",
-  "summary": ""
+  "summary": "Integrated CK append-KV and split-KV kernels into ROCm/flash-attention, adding `mha_fwd_kvcache.cpp` and associated CK API/setup/test changes."
  },
  {
   "id": "pr-flash-attention-77",
@@ -38723,6 +39215,520 @@
   "summary": "# Rename SwPrefetchInsertionPass \u2192 SwInstructionPrefetchRelStaticPass, remove scratch SGPR, add FileCheck"
  },
  {
+  "id": "pr-rocm_libraries-8442",
+  "type": "source-pr",
+  "title": "[hipblaslt][tensilelite] Single-hop next-neighbor StreamK work stealing",
+  "path": "sources/prs/hipblaslt/PR-8442.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "tensilelite",
+   "scheduling",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds single-hop next-neighbor work stealing to dynamic-queue StreamK fetch, controlled by the codegen-time Tensile parameter StreamKWorkStealing."
+ },
+ {
+  "id": "pr-rocm_libraries-8518",
+  "type": "source-pr",
+  "title": "[CK] Add support for large tensor index handling into conv bwd data WMMA",
+  "path": "sources/prs/hipblaslt/PR-8518.md",
+  "architectures": [
+   "rdna3",
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "composable-kernel",
+   "convolution",
+   "wmma",
+   "large-tensor",
+   "correctness",
+   "rocm"
+  ],
+  "kernel_types": [
+   "convolution"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Updates grouped convolution WMMA implementations and large-case tests so large tensor indices are handled in CK convolution forward/backward paths."
+ },
+ {
+  "id": "pr-rocm_libraries-8519",
+  "type": "source-pr",
+  "title": "[CK Tile Engine] Add block-scale GEMM operators: gemm_aquant, gemm_bquant, gemm_abquant",
+  "path": "sources/prs/hipblaslt/PR-8519.md",
+  "architectures": [
+   "cdna4",
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "ck-tile-engine",
+   "gemm",
+   "quantization",
+   "fp8",
+   "bf8",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds Tile Engine block-scale GEMM operator families with instance builders, benchmark/profiler code, config JSONs, validation utilities, sampling support, and s"
+ },
+ {
+  "id": "pr-rocm_libraries-8523",
+  "type": "source-pr",
+  "title": "[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels",
+  "path": "sources/prs/hipblaslt/PR-8523.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "tensilelite",
+   "subtile",
+   "gemm",
+   "synchronization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Teaches Subtile scheduling and rocISA instruction emission about cluster barriers for gfx1250 kernels, with a gfx12 BF16 cluster YAML test that passed on A0 har"
+ },
+ {
+  "id": "pr-rocm_libraries-8524",
+  "type": "source-pr",
+  "title": "[hipblaslt][tensilelite] Add multicast tdm for subtile kernel",
+  "path": "sources/prs/hipblaslt/PR-8524.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "tensilelite",
+   "subtile",
+   "tdm",
+   "multicast",
+   "gemm",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds multicast TDM load support to TensileLite Subtile emission and kernel-writer paths, validated by the gfx1250 BF16 cluster YAML on B0 hardware per PR body."
+ },
+ {
+  "id": "pr-rocm_libraries-8531",
+  "type": "source-pr",
+  "title": "[CK_TILE] Use launched block size for GEMM occupancy query",
+  "path": "sources/prs/hipblaslt/PR-8531.md",
+  "architectures": [
+   "rdna4",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "ck-tile",
+   "gemm",
+   "streamk",
+   "grouped-gemm",
+   "occupancy",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Replaces compile-time kBlockSize occupancy inputs with launched BlockSize().x so wave32 kernels that launch kBlockSize/2 do not undersize persistent or Stream-K"
+ },
+ {
+  "id": "pr-rocm_libraries-8554",
+  "type": "source-pr",
+  "title": "[CK Tile] MX GEMM kernel unification",
+  "path": "sources/prs/hipblaslt/PR-8554.md",
+  "architectures": [
+   "cdna4",
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "ck-tile",
+   "gemm",
+   "quantization",
+   "mx",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Moves separate MX GEMM implementations toward a unified CK Tile GEMM path, adding gfx950 support to the newer MX kernel and consolidating pipelines/tests."
+ },
+ {
+  "id": "pr-rocm_libraries-8566",
+  "type": "source-pr",
+  "title": "[GFX1250][CK_TILE] Coalesce MX scale16 scale load",
+  "path": "sources/prs/hipblaslt/PR-8566.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "ck-tile",
+   "gemm",
+   "quantization",
+   "gfx1250",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Changes the gfx1250 MX scale16 descriptor and host pre-shuffle to make per-lane scale loads contiguous, matching the coalescing pattern already used by scale32."
+ },
+ {
+  "id": "pr-rocm_libraries-8579",
+  "type": "source-pr",
+  "title": "[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216",
+  "path": "sources/prs/hipblaslt/PR-8579.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "gemm",
+   "int8",
+   "correctness",
+   "alpha-beta",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "yaml"
+  ],
+  "confidence": "source-reported",
+  "summary": "Shares alpha/beta scalar extraction between Tensile problem construction/update paths so int8 GEMM accepts an int32 bit pattern representing float 1.0 without I"
+ },
+ {
+  "id": "pr-rocm_libraries-8586",
+  "type": "source-pr",
+  "title": "[tensilelite] Fix rocisa instruction mnemonics and add gfx12+ scalar ops",
+  "path": "sources/prs/hipblaslt/PR-8586.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "tensilelite",
+   "rocisa",
+   "assembly",
+   "gfx1250",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "assembly",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixes rocisa mnemonic/version issues for transpose loads, removes an invalid scalar multiply mnemonic path, and adds wrappers for gfx12 scalar floating-point an"
+ },
+ {
+  "id": "pr-rocm_libraries-8600",
+  "type": "source-pr",
+  "title": "[hipblaslt][origami] Model changes for mi350P",
+  "path": "sources/prs/hipblaslt/PR-8600.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "origami",
+   "gemm",
+   "hardware-model",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds MI350P-specific bandwidth constants and PCI chip-ID differentiation so Origami and TensileLite can route hipBLASLt solutions using the correct hardware mod"
+ },
+ {
+  "id": "pr-rocm_libraries-8603",
+  "type": "source-pr",
+  "title": "[tensilelite] Fix subtile PGR=0 WMMA-source WAR hazard on gfx1250",
+  "path": "sources/prs/hipblaslt/PR-8603.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "tensilelite",
+   "subtile",
+   "gemm",
+   "correctness",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adjusts Subtile logical scheduling and wait-ALU insertion so expert scheduling no longer creates a WMMA-source WAR hazard in PGR=0 cases."
+ },
+ {
+  "id": "pr-rocm_libraries-8604",
+  "type": "source-pr",
+  "title": "[origami] Subtile-aware heuristic: reject gfx950 BF16 TN subtile kernels for K<512 with large free dim",
+  "path": "sources/prs/hipblaslt/PR-8604.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "tensilelite",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Plumbs UseSubtileImpl into hipBLASLt prediction-library integration and Origami heuristic keys, then rejects uncompetitive gfx950 BF16 TN subtile kernels for K<"
+ },
+ {
+  "id": "pr-rocm_libraries-8609",
+  "type": "source-pr",
+  "title": "[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.",
+  "path": "sources/prs/hipblaslt/PR-8609.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "ck-dsl",
+   "attention",
+   "moe",
+   "gemm",
+   "rocm",
+   "inference"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention",
+   "grouped-gemm",
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp",
+   "llvm-ir"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds gfx1250 CK DSL architecture plumbing plus examples and instances for unified attention, fused MoE, block-scaled GEMM, KV-cache/RoPE, and model-glue kernels"
+ },
+ {
+  "id": "pr-rocm_libraries-8615",
+  "type": "source-pr",
+  "title": "[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths",
+  "path": "sources/prs/hipblaslt/PR-8615.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "gemm",
+   "hipblaslt",
+   "tensilelite",
+   "pipeline",
+   "optimization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Emits initD in the Subtile preloop to overlap accumulator VGPR initialization with global reads, with special handling for PGR=0 and tail-only K<DepthU paths."
+ },
+ {
+  "id": "pr-rocm_libraries-8620",
+  "type": "source-pr",
+  "title": "[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features",
+  "path": "sources/prs/hipblaslt/PR-8620.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "ck-dsl",
+   "convolution",
+   "heuristic",
+   "rocm",
+   "optimization"
+  ],
+  "kernel_types": [
+   "convolution"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Corrects the grouped-conv feature extractor's gemm_k_per_block mapping, adds K_per_C and log-ratio features, and updates heuristic model artifacts to a 101-feat"
+ },
+ {
+  "id": "pr-rocm_libraries-8622",
+  "type": "source-pr",
+  "title": "[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests",
+  "path": "sources/prs/hipblaslt/PR-8622.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "tensilelite",
+   "streamk",
+   "gemm",
+   "testing",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "yaml"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds and reshapes gfx1250 Stream-K YAML suites so RDNA4 GEMM coverage includes quick, explicit, TDM, PAP, and extended cases for several data-type families."
+ },
+ {
+  "id": "pr-rocm_libraries-8624",
+  "type": "source-pr",
+  "title": "[CK][CK DSL] Pass vector sizes as arguments for implicit gemm",
+  "path": "sources/prs/hipblaslt/PR-8624.md",
+  "architectures": [
+   "rdna3",
+   "rdna4",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "cross-repo",
+   "ck-dsl",
+   "implicit-gemm",
+   "convolution",
+   "vectorization",
+   "rocm"
+  ],
+  "kernel_types": [
+   "convolution",
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Passes vector sizes into CK DSL implicit-GEMM and manifest-runner paths instead of relying on unsafe fixed assumptions that could create too-large vectorization"
+ },
+ {
+  "id": "pr-rocm_libraries-8631",
+  "type": "source-pr",
+  "title": "Tune gfx1100 BBS GEMM kernels for Llama-3.1-8b-Instruct",
+  "path": "sources/prs/hipblaslt/PR-8631.md",
+  "architectures": [
+   "rdna3"
+  ],
+  "tags": [
+   "cross-repo",
+   "hipblaslt",
+   "tensilelite",
+   "gemm",
+   "bbs",
+   "llm-inference",
+   "tuning",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "yaml"
+  ],
+  "confidence": "source-reported",
+  "summary": "Replaces a large Navi31 BBS Tensile logic YAML region to improve TN GEMM performance for Llama-3.1-8B-Instruct problem sizes."
+ },
+ {
   "id": "pr-rocmlir-2400",
   "type": "source-pr",
   "title": "[AIROCMLIR-798] Add LDS usage estimate CAPI function",
@@ -38772,6 +39778,296 @@
   "summary": "# [AMD/gfx950] FlyDSL kgather diagnostic backend for DSv4 sparse FP8 MLA decode"
  },
  {
+  "id": "pr-sglang-27745",
+  "type": "source-pr",
+  "title": "[PR 4/7] Multi-arch ROCm kernel support with runtime optimization",
+  "path": "sources/prs/sglang/PR-27745.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "inference",
+   "optimization"
+  ],
+  "kernel_types": [
+   "activation"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds multi-architecture ROCm runtime dispatch for gfx942/gfx950, using FP8 format max differences and shared-memory-size differences to specialize quantization "
+ },
+ {
+  "id": "pr-sglang-28619",
+  "type": "source-pr",
+  "title": "Fix Qwen MoE precision issue with PP and all-reduce fusion",
+  "path": "sources/prs/sglang/PR-28619.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "qwen",
+   "moe",
+   "all-reduce",
+   "pipeline-parallel",
+   "tensor-parallel",
+   "precision"
+  ],
+  "kernel_types": [
+   "moe",
+   "collective"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Flushes pending MoE/EP all-reduce fusion before Qwen PP tensors cross a pipeline boundary, preventing skipped post-expert reduction in PP+TP configurations."
+ },
+ {
+  "id": "pr-sglang-28639",
+  "type": "source-pr",
+  "title": "[feat] add ag_gemm and moe_rs overlap kernels for dsv4 prefill",
+  "path": "sources/prs/sglang/PR-28639.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "deepseek-v4",
+   "prefill",
+   "moe",
+   "fp8",
+   "triton",
+   "communication-overlap",
+   "symmetric-memory"
+  ],
+  "kernel_types": [
+   "moe",
+   "grouped-gemm",
+   "quantization"
+  ],
+  "languages": [
+   "python",
+   "triton"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds opt-in torch symmetric-memory kernels that overlap CP AllGather with FP8 shared-expert GEMM and fuse MoE topk-reduce/shared-expert-add with ReduceScatter f"
+ },
+ {
+  "id": "pr-sglang-28658",
+  "type": "source-pr",
+  "title": "[AMD] Fuse shared-expert sigmoid + bf16->fp32 cast into the MoE append kernel (3 kernels -> 1)",
+  "path": "sources/prs/sglang/PR-28658.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "aiter",
+   "moe",
+   "shared-expert",
+   "kernel-fusion",
+   "qwen2-moe",
+   "inference"
+  ],
+  "kernel_types": [
+   "moe",
+   "activation"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Replaces three tiny decode-step kernels on the AITER shared-expert-fusion path with one fused append kernel that computes sigmoid and bf16-to-fp32 conversion in"
+ },
+ {
+  "id": "pr-sglang-28662",
+  "type": "source-pr",
+  "title": "[Fix] compressed-tensors block FP8: requantize weight scales to UE8M0 for DeepGEMM on Blackwell",
+  "path": "sources/prs/sglang/PR-28662.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "fp8",
+   "quantization",
+   "deepgemm",
+   "compressed-tensors",
+   "block-fp8",
+   "blackwell"
+  ],
+  "kernel_types": [
+   "quantization",
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Requantizes compressed-tensors block-FP8 weight scales to UE8M0 when the active Blackwell DeepGEMM W8A8 block-FP8 runner expects packed UE8M0 scales."
+ },
+ {
+  "id": "pr-sglang-28676",
+  "type": "source-pr",
+  "title": "[RL] MXFP8 flashinfer_trtllm_routed MoE for V4",
+  "path": "sources/prs/sglang/PR-28676.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "mxfp8",
+   "moe",
+   "deepseek-v4",
+   "flashinfer",
+   "trtllm",
+   "rl",
+   "inference"
+  ],
+  "kernel_types": [
+   "moe",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixes MXFP8 flashinfer_trtllm_routed MoE after RL weight updates by preventing GPU-resident row-permutation index caches from being clobbered/reused incorrectly"
+ },
+ {
+  "id": "pr-sglang-28700",
+  "type": "source-pr",
+  "title": "[AMD][Perf] Fuse QK RMSNorm + 3D mRoPE + KV-cache store into single aiter op for Qwen3.5-397B-A17B-MXFP4 (TP=2, ROCm/aiter) on HIP",
+  "path": "sources/prs/sglang/PR-28700.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "aiter",
+   "rmsnorm",
+   "rope",
+   "kv-cache",
+   "qwen3-5",
+   "mxfp4",
+   "inference"
+  ],
+  "kernel_types": [
+   "rmsnorm",
+   "rope",
+   "kv-cache"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Dispatches Qwen3.5 full-attention decode preparation to AITER fused_qk_norm_mrope_3d_cache_pts_quant_shuffle, replacing three small ROCm kernels with one fused "
+ },
+ {
+  "id": "pr-sglang-28712",
+  "type": "source-pr",
+  "title": "[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation",
+  "path": "sources/prs/sglang/PR-28712.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "minimax-m3",
+   "sparse-attention",
+   "mxfp8",
+   "moe",
+   "jit-kernel",
+   "inference"
+  ],
+  "kernel_types": [
+   "attention",
+   "sparse-attention",
+   "moe",
+   "rmsnorm",
+   "quantization"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds dead-on-main MiniMax-M3 sparse attention and JIT kernel infrastructure, including decode/prefill sparse attention, QK-norm/RoPE/store helpers, MXFP8 quanti"
+ },
+ {
+  "id": "pr-sglang-28715",
+  "type": "source-pr",
+  "title": "[minimax-m3] Split 4/4: model + VL + glue + function-call + fp8 quant + generic infra",
+  "path": "sources/prs/sglang/PR-28715.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "minimax-m3",
+   "fp8",
+   "mxfp8",
+   "moe",
+   "sparse-attention",
+   "quantization",
+   "vl"
+  ],
+  "kernel_types": [
+   "attention",
+   "sparse-attention",
+   "moe",
+   "quantization",
+   "rmsnorm"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Integrates MiniMax-M3/M3-VL model glue, sparse attention backend registration, FP8/MXFP8 quantization utilities, and generic MoE infrastructure including per-to"
+ },
+ {
+  "id": "pr-sglang-28722",
+  "type": "source-pr",
+  "title": "[AMD] Optimize o_proj gemm and attn output rope performance",
+  "path": "sources/prs/sglang/PR-28722.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "aiter",
+   "ck-tile",
+   "rope",
+   "gemm",
+   "deepseek-v4",
+   "inference"
+  ],
+  "kernel_types": [
+   "gemm",
+   "rope"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Routes selected DeepSeek-V4 FP8 projection GEMMs toward AITER CK blockscale kernels on gfx950/HIP 7.2+ and adds a specialized ROCm path for attention-output inv"
+ },
+ {
   "id": "pr-tilelang-2326",
   "type": "source-pr",
   "title": "[AMD][ROCm] Fix CI failures on gfx950, gfx1100, gfx1151, and gfx1201",
@@ -38795,6 +40091,473 @@
   ],
   "confidence": "source-reported",
   "summary": "HI @LeiWang1999"
+ },
+ {
+  "id": "pr-transformerengine-535",
+  "type": "source-pr",
+  "title": "MXFP4: Add GEMM kernel tuning and MXFP4Quantizer.copy()",
+  "path": "sources/prs/transformerengine/PR-535.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp4",
+   "gemm",
+   "aiter",
+   "training"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds CSV-based AITER MXFP4 GEMM config selection and fixes MXFP4Quantizer cloning behavior."
+ },
+ {
+  "id": "pr-transformerengine-537",
+  "type": "source-pr",
+  "title": "Full MXFP4 Training Recipe",
+  "path": "sources/prs/transformerengine/PR-537.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp4",
+   "fp4",
+   "training",
+   "aiter",
+   "gemm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "cast-transpose",
+   "quantization"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Introduces MXFP4 training support including fused cast+transpose with optional Hadamard, GEMM layout shuffling, AITER dispatch, and MXFP4 weight caching."
+ },
+ {
+  "id": "pr-transformerengine-544",
+  "type": "source-pr",
+  "title": "[TE] Improve backward performance for CK Tile FP8 Group GEMM",
+  "path": "sources/prs/transformerengine/PR-544.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "fp8",
+   "grouped-gemm",
+   "gemm",
+   "training",
+   "optimization"
+  ],
+  "kernel_types": [
+   "grouped-gemm",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Re-expresses WGRAD FP8 grouped GEMM operands using alternate columnwise storage to avoid an unfavorable CK transposed path."
+ },
+ {
+  "id": "pr-transformerengine-562",
+  "type": "source-pr",
+  "title": "[CI] Add aiter installation to CI image for MXFP4 FP4 GEMM kernels",
+  "path": "sources/prs/transformerengine/PR-562.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp4",
+   "fp4",
+   "gemm",
+   "aiter",
+   "training"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Updates TransformerEngine CI image setup to install AITER, enabling CI coverage for MXFP4/FP4 GEMM integration paths."
+ },
+ {
+  "id": "pr-transformerengine-566",
+  "type": "source-pr",
+  "title": "HipKittens MXFP8 GEMM Support",
+  "path": "sources/prs/transformerengine/PR-566.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "gemm",
+   "fp8",
+   "quantization"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Open PR adding a HipKittens-backed MXFP8 GEMM path that the PR author describes as gfx950-only and shape-constrained."
+ },
+ {
+  "id": "pr-transformerengine-568",
+  "type": "source-pr",
+  "title": "add MXFP8 pre-swizzling for gfx1250 GEMM",
+  "path": "sources/prs/transformerengine/PR-568.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "gemm",
+   "swizzle"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds the original gfx1250 MXFP8 pre-swizzle machinery and extension plumbing before it was later cherry-picked to dev."
+ },
+ {
+  "id": "pr-transformerengine-571",
+  "type": "source-pr",
+  "title": "gfx1250 swizzle_xor changes for FP4",
+  "path": "sources/prs/transformerengine/PR-571.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp4",
+   "fp4",
+   "swizzle",
+   "gfx1250"
+  ],
+  "kernel_types": [
+   "cast-transpose",
+   "quantization"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adjusts FP4 swizzle_xor code so the swizzle instructions build on gfx1250; PR notes no performance difference on gfx950."
+ },
+ {
+  "id": "pr-transformerengine-576",
+  "type": "source-pr",
+  "title": "CK Tile Group GEMM gfx1250",
+  "path": "sources/prs/transformerengine/PR-576.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "grouped-gemm",
+   "gemm",
+   "fp8",
+   "rdna"
+  ],
+  "kernel_types": [
+   "grouped-gemm",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds gfx1250/RDNA4 compatibility for CK Tile grouped GEMM paths and switches dependency plumbing for that branch."
+ },
+ {
+  "id": "pr-transformerengine-578",
+  "type": "source-pr",
+  "title": "CK Tile MXFP8 Group GEMM gfx1250",
+  "path": "sources/prs/transformerengine/PR-578.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "grouped-gemm",
+   "gemm",
+   "fp8",
+   "quantization"
+  ],
+  "kernel_types": [
+   "grouped-gemm",
+   "gemm",
+   "moe"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds CK Tile MXFP8 grouped GEMM backend and tests for gfx1250 context, replacing an AITER dependency path with rocm-libraries for these changes."
+ },
+ {
+  "id": "pr-transformerengine-580",
+  "type": "source-pr",
+  "title": "NVFP4: Work around intermittent incorrect results for backward GEMMs",
+  "path": "sources/prs/transformerengine/PR-580.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "fp4",
+   "gemm",
+   "training"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a workaround for intermittent incorrect NVFP4 backward GEMM results by routing affected cases away from the problematic path."
+ },
+ {
+  "id": "pr-transformerengine-594",
+  "type": "source-pr",
+  "title": "Fix CK FP8 grouped GEMM dtype gating for columnwise operands",
+  "path": "sources/prs/transformerengine/PR-594.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "fp8",
+   "grouped-gemm",
+   "gemm",
+   "training"
+  ],
+  "kernel_types": [
+   "grouped-gemm",
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Corrects FP8 grouped-GEMM dtype gating after operand canonicalization and adds padding/specialization support."
+ },
+ {
+  "id": "pr-transformerengine-598",
+  "type": "source-pr",
+  "title": "Mxfp8 grouped and multi quantize",
+  "path": "sources/prs/transformerengine/PR-598.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "fp8",
+   "quantization",
+   "fused-kernel"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Open PR adding grouped and multi MXFP8 quantize kernels, benchmark coverage, and refactoring of the ROCm quantize body."
+ },
+ {
+  "id": "pr-transformerengine-605",
+  "type": "source-pr",
+  "title": "add MXFP8 pre-swizzling for gfx1250 GEMM (#568)",
+  "path": "sources/prs/transformerengine/PR-605.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "gemm",
+   "swizzle",
+   "quantization"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds gfx1250 MXFP8 GEMM scale pre-swizzling and production-like GEMM tests in ROCm TransformerEngine."
+ },
+ {
+  "id": "pr-transformerengine-613",
+  "type": "source-pr",
+  "title": "CK MXFP8 Group Gemm gfx1250 Enablement",
+  "path": "sources/prs/transformerengine/PR-613.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "grouped-gemm",
+   "gemm",
+   "composable-kernel"
+  ],
+  "kernel_types": [
+   "grouped-gemm",
+   "gemm",
+   "moe"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds CK MXFP8 grouped GEMM integration, gfx1250 runtime dispatch, scale preshuffle support, and C++ grouped MXFP8 tests."
+ },
+ {
+  "id": "pr-transformerengine-615",
+  "type": "source-pr",
+  "title": "[Fix] TE RMSNorm Triton Kernel Optimization",
+  "path": "sources/prs/transformerengine/PR-615.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rmsnorm",
+   "triton-rocm",
+   "optimization",
+   "training",
+   "inference"
+  ],
+  "kernel_types": [
+   "rmsnorm"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Optimizes TransformerEngine's ROCm Triton RMSNorm kernel."
+ },
+ {
+  "id": "pr-transformerengine-627",
+  "type": "source-pr",
+  "title": "gfx1250 mxfp8 gemm: loosen restrictions on K",
+  "path": "sources/prs/transformerengine/PR-627.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "gemm",
+   "shape-constraints"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Changes gfx1250 MXFP8 GEMM validation from stricter K assumptions toward K being a multiple of 32, per PR description."
+ },
+ {
+  "id": "pr-transformerengine-630",
+  "type": "source-pr",
+  "title": "gfx1250 mxfp8 gemm: add NN/NT transpose workaround",
+  "path": "sources/prs/transformerengine/PR-630.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "gemm",
+   "transpose",
+   "workaround"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds HIP transpose kernels and MXFP8 scale conversion helpers so NN/NT cases can be routed through supported layouts."
+ },
+ {
+  "id": "pr-transformerengine-636",
+  "type": "source-pr",
+  "title": "add dsv4 production mxfp8 gemm shapes",
+  "path": "sources/prs/transformerengine/PR-636.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "transformerengine",
+   "mxfp8",
+   "gemm",
+   "rdna"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Open PR adding DSV4 production MXFP8 GEMM shapes to C++ GEMM tests for the gfx1250/RDNA4 path."
  },
  {
   "id": "pr-triton-10585",
@@ -39090,6 +40853,32 @@
  {
   "id": "pr-triton-467",
   "type": "source-pr",
+  "title": "Revert Autotuning for Flash Attention due to pre_hook Limitations",
+  "path": "wiki/techniques/pr-triton-467.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "triton",
+   "programming-model"
+  ],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-467",
+  "type": "source-pr",
   "title": "Revert \"Add autotuning for FA (#459)\"",
   "path": "sources/prs/triton/PR-467.md",
   "architectures": [
@@ -39105,6 +40894,29 @@
   "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-468",
+  "type": "wiki-technique",
+  "title": "PR Insight: triton #468 - Add shortcut for creation fp16, bfp16",
+  "path": "wiki/techniques/pr-triton-468.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm-kernel",
+   "fp16",
+   "bf16",
+   "programming-model"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
   "summary": ""
  },
  {
@@ -39164,6 +40976,30 @@
   ],
   "kernel_types": [],
   "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-471",
+  "type": "source-pr",
+  "title": "fix warp size in lowering reduce op",
+  "path": "wiki/techniques/pr-triton-471.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "optimization"
+  ],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "source-reported",
   "summary": ""
  },
@@ -39412,6 +41248,29 @@
   "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-486",
+  "type": null,
+  "title": "Option to try different initialization strategies in GEMM Tuning",
+  "path": "wiki/techniques/pr-triton-486.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "optimization",
+   "rocm",
+   "gemm",
+   "triton"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": null,
   "summary": ""
  },
  {
@@ -39682,6 +41541,29 @@
  },
  {
   "id": "pr-triton-510",
+  "type": "wiki-technique",
+  "title": "Fixing Triton ROCm Library Import Errors with Linker RUNPATH",
+  "path": "wiki/techniques/pr-triton-510.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton",
+   "hip",
+   "runtime-api"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-510",
   "type": "source-pr",
   "title": "HIP: Add RUNPATH to compiled so files.",
   "path": "sources/prs/triton/PR-510.md",
@@ -39895,6 +41777,29 @@
    "rocm",
    "rocm-kernel",
    "triton"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-532",
+  "type": "source-pr",
+  "title": "Triton DotSlicing: Support for Multiple Load Operands",
+  "path": "wiki/techniques/pr-triton-532.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "triton",
+   "mfma",
+   "memory",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
@@ -40265,6 +42170,35 @@
   "id": "pr-triton-566",
   "type": "source-pr",
   "title": "Fix varlen mqa test",
+  "path": "wiki/techniques/pr-triton-566.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton",
+   "flash-attention",
+   "mqa",
+   "varlen",
+   "testing"
+  ],
+  "kernel_types": [
+   "flash-attention",
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-566",
+  "type": "source-pr",
+  "title": "Fix varlen mqa test",
   "path": "sources/prs/triton/PR-566.md",
   "architectures": [
    "cdna2",
@@ -40299,6 +42233,38 @@
   "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-571",
+  "type": "source-pr",
+  "title": "Deep Analysis of Triton Perf Kernels Suite (PR #571)",
+  "path": "wiki/techniques/pr-triton-571.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "optimization",
+   "triton",
+   "rocm",
+   "memory-bound",
+   "bandwidth",
+   "hbm",
+   "library",
+   "scheduling"
+  ],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "inferred",
   "summary": ""
  },
  {
@@ -40379,6 +42345,31 @@
   "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "pr-triton-579",
+  "type": null,
+  "title": "Deep Analysis: Stream-K Kernel Implementations in ROCm Triton",
+  "path": "wiki/techniques/pr-triton-579.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm-kernel",
+   "scheduling",
+   "optimization",
+   "compute"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": null,
   "summary": ""
  },
  {
@@ -45059,6 +47050,84 @@
   "summary": ""
  },
  {
+  "id": "pr-vllm-12348",
+  "type": "source-pr",
+  "title": "[ROCm] Faster Custom Paged Attention kernels",
+  "path": "sources/prs/vllm/PR-12348.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "rocm",
+   "attention",
+   "fp8",
+   "mi300x",
+   "optimization"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Implements a faster custom paged attention kernel in vLLM ROCm using mfma16x16x16, updates benchmarks/tests, and reports Llama-3.1-70B MI300X performance with F"
+ },
+ {
+  "id": "pr-vllm-40745",
+  "type": "source-pr",
+  "title": "[Bugfix][ROCm] Fix OOB query read in paged_attention_rocm for head_size < 128",
+  "path": "sources/prs/vllm/PR-40745.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "attention",
+   "memory",
+   "inference"
+  ],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Fixes ROCm paged_attention kernels that assumed 16 chunks per head for HEAD_SIZE=128, causing lanes 32-63 to read past query allocation for head_size=64 models "
+ },
+ {
+  "id": "pr-vllm-40977",
+  "type": "source-pr",
+  "title": "[ROCm][Kernel] Add HybridW4A16LinearKernel: Triton prefill + HIP skinny decode",
+  "path": "sources/prs/vllm/PR-40977.md",
+  "architectures": [
+   "rdna3",
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rdna",
+   "int8",
+   "quantization",
+   "inference",
+   "triton-rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Routes M<=5 decode through HIP wvSplitK_int4_g skinny GEMM and M>5 prefill/batched inference through Triton fused dequant GEMM for gfx11/gfx12 AWQ-style W4A16 w"
+ },
+ {
   "id": "pr-vllm-41446",
   "type": "source-pr",
   "title": "[Kernel][AMD] Optimize GatedDeltaNet FLA prefill kernels on MI300X",
@@ -45109,6 +47178,262 @@
   ],
   "confidence": "source-reported",
   "summary": "On ROCm with AITER enabled, FP8-quantized attention projections produced by"
+ },
+ {
+  "id": "pr-vllm-44976",
+  "type": "source-pr",
+  "title": "[ROCm][Kernel][AITER] BlockScale FP8 SplitK zero-init fusion",
+  "path": "sources/prs/vllm/PR-44976.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "fp8",
+   "fused-kernel",
+   "quantization",
+   "optimization",
+   "inference",
+   "rmsnorm"
+  ],
+  "kernel_types": [
+   "gemm",
+   "rmsnorm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a torch.compile post-grad fusion pass that folds Split-K output zero-init for ROCm AITER block-scale FP8 GEMM into upstream FP8 quant/RMSNorm producers."
+ },
+ {
+  "id": "pr-vllm-45559",
+  "type": "source-pr",
+  "title": "[ROCm][Kernel] Extend skinny gemm N=5 to N=8 cases on GFX12 (RDNA4) using SWMMAC optimization",
+  "path": "sources/prs/vllm/PR-45559.md",
+  "architectures": [
+   "rdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rdna",
+   "gemm",
+   "inference",
+   "optimization"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "hip-cpp",
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds an optimized GFX12 SWMMAC-based skinny GEMM path for N=5 to N=8 decode cases, with fallback for unsupported cases."
+ },
+ {
+  "id": "pr-vllm-46020",
+  "type": "source-pr",
+  "title": "[Attention Backend] add HPC-Ops Attention backend",
+  "path": "sources/prs/vllm/PR-46020.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "hpc-ops",
+   "rope",
+   "rmsnorm",
+   "fp8",
+   "hunyuan",
+   "backend"
+  ],
+  "kernel_types": [
+   "attention",
+   "rope",
+   "rmsnorm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds an optional HPC-Ops attention backend, registers it in vLLM's attention backend registry, and adds HPC helper modules including RoPE/norm support for Hy V3"
+ },
+ {
+  "id": "pr-vllm-46063",
+  "type": "source-pr",
+  "title": "[ROCm][Perf] MiniMax-M3 MXFP8 gemm/group gemm dispatch AITER",
+  "path": "sources/prs/vllm/PR-46063.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "aiter",
+   "mxfp8",
+   "minimax-m3",
+   "moe",
+   "grouped-gemm",
+   "inference"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm",
+   "moe"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a guarded AITER small-M dispatch for native MXFP8 dense linear and grouped-MoE GEMM, with Triton kept as the fallback path."
+ },
+ {
+  "id": "pr-vllm-46076",
+  "type": "source-pr",
+  "title": "[Attention][DSA] support dcp for FLASHINFER_MLA_SPARSE",
+  "path": "sources/prs/vllm/PR-46076.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "attention",
+   "mla",
+   "sparse-attention",
+   "dcp",
+   "fp8",
+   "glm-5-2",
+   "kv-cache"
+  ],
+  "kernel_types": [
+   "attention",
+   "sparse-attention",
+   "paged-attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds DCP localization and metadata handling for FLASHINFER_MLA_SPARSE, with GLM-5.2-FP8 serving validation using TP=8 and decode-context-parallel-size=4."
+ },
+ {
+  "id": "pr-vllm-46117",
+  "type": "source-pr",
+  "title": "[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3",
+  "path": "sources/prs/vllm/PR-46117.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "mxfp8",
+   "minimax-m3",
+   "moe",
+   "grouped-gemm",
+   "triton-rocm",
+   "inference"
+  ],
+  "kernel_types": [
+   "gemm",
+   "grouped-gemm",
+   "moe"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds decode-regime Triton tile choices for MXFP8 dense linear and a larger grouped-MoE rewrite for MiniMax-M3, keeping dot_scaled/fp32 accumulation semantics wh"
+ },
+ {
+  "id": "pr-vllm-46123",
+  "type": "source-pr",
+  "title": "[ROCm][Perf] Optional FlyDSL BF16 MoE for the MXFP8-emulation path on MiniMax-M3",
+  "path": "sources/prs/vllm/PR-46123.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "rocm",
+   "aiter",
+   "flydsl",
+   "minimax-m3",
+   "moe",
+   "bf16",
+   "mxfp8-emulation",
+   "inference"
+  ],
+  "kernel_types": [
+   "moe",
+   "grouped-gemm",
+   "gemm"
+  ],
+  "languages": [
+   "python",
+   "hip-cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Adds a guarded `VLLM_MINIMAX_M3_FLYDSL_MOE=1` path that routes compatible MiniMax-M3 MXFP8-emulation MoE work through AITER vendored FlyDSL two-stage BF16 MoE k"
+ },
+ {
+  "id": "pr-vllm-46142",
+  "type": "source-pr",
+  "title": "[AMD][OCP MX][CI] Fix tests to not dispatch on UNFUSED_TRITON backend on MI300, improve w_mxfp4_a_fp8 emulation support",
+  "path": "sources/prs/vllm/PR-46142.md",
+  "architectures": [
+   "cdna2",
+   "cdna3"
+  ],
+  "tags": [
+   "rocm",
+   "mxfp4",
+   "fp8",
+   "ocp-mx",
+   "moe",
+   "quantization",
+   "ci"
+  ],
+  "kernel_types": [
+   "moe",
+   "quantization",
+   "grouped-gemm"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Forces relevant ROCm OCP MX tests onto the MoE emulation path for MI250/MI300/MI325, improves W-MXFP4-A-FP8 emulation coverage, and removes a duplicate quantize"
+ },
+ {
+  "id": "pr-vllm-46148",
+  "type": "source-pr",
+  "title": "[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention",
+  "path": "sources/prs/vllm/PR-46148.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "attention",
+   "fp8",
+   "kv-cache",
+   "quantization",
+   "compatibility"
+  ],
+  "kernel_types": [
+   "attention",
+   "paged-attention",
+   "quantization"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Narrows the ROCm attention q_scale assertion so non-1.0 q_scale is rejected only when the query tensor itself is FP8, avoiding false failures for BF16-query att"
  },
  {
   "id": "pr-vllm-565",
@@ -51650,29 +53975,24 @@
  {
   "id": "technique-occupancy-tuning",
   "type": "wiki-technique",
-  "title": "Wavefront Occupancy Tuning",
+  "title": "Occupancy Tuning on ROCm",
   "path": "wiki/techniques/occupancy-tuning.md",
   "architectures": [
+   "cdna1",
    "cdna2",
    "cdna3",
    "cdna4"
   ],
   "tags": [
+   "occupancy-tuning",
    "occupancy",
    "vgpr",
-   "memory",
-   "memory-bound",
+   "lds",
+   "wavefront",
    "optimization",
-   "bandwidth",
-   "mi300x",
-   "compute"
+   "rocm"
   ],
-  "kernel_types": [
-   "gemm",
-   "attention",
-   "flash-attention",
-   "reduction"
-  ],
+  "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
   "summary": ""
@@ -85906,7 +88226,7 @@
  {
   "id": "technique-pr-triton-450",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #450 - PR Insight",
+  "title": "PR Insight: Triton #450 - Occupancy Info Script",
   "path": "wiki/techniques/pr-triton-450.md",
   "architectures": [
    "cdna2",
@@ -85914,27 +88234,37 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "occupancy",
+   "vgpr",
+   "memory",
+   "memory-bound"
   ],
   "kernel_types": [],
-  "languages": [],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-451",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #451 - PR Insight",
+  "title": "PR Insight: Triton #451 - Disabling BlockedToWMMA for RDNA3",
   "path": "wiki/techniques/pr-triton-451.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "rdna3"
   ],
   "tags": [
+   "rdna",
+   "hardware",
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "gemm",
+   "triton-rocm"
   ],
   "kernel_types": [],
   "languages": [],
@@ -85944,7 +88274,7 @@
  {
   "id": "technique-pr-triton-453",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #453 - PR Insight",
+  "title": "Direct Register Layout Conversion for MFMA16 to Dot Operand in Triton",
   "path": "wiki/techniques/pr-triton-453.md",
   "architectures": [
    "cdna2",
@@ -85953,7 +88283,10 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "triton",
+   "fp16",
+   "bf16"
   ],
   "kernel_types": [],
   "languages": [],
@@ -85963,7 +88296,7 @@
  {
   "id": "technique-pr-triton-455",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #455 - PR Insight",
+  "title": "Decoupling AMDGPU Backend from NVIDIA TMA Dialects in Triton",
   "path": "wiki/techniques/pr-triton-455.md",
   "architectures": [
    "cdna2",
@@ -85971,18 +88304,20 @@
    "cdna4"
   ],
   "tags": [
+   "triton-rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "hardware"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-456",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #456 - PR Insight",
+  "title": "Triton PR 456: Enable All Types in GEMM Tutorial",
   "path": "wiki/techniques/pr-triton-456.md",
   "architectures": [
    "cdna2",
@@ -85990,8 +88325,16 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "gemm",
+   "triton-rocm",
+   "fp16",
+   "bf16",
+   "fp8",
+   "programming",
    "optimization",
-   "rocm-kernel"
+   "compute",
+   "memory-bound"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86001,7 +88344,7 @@
  {
   "id": "technique-pr-triton-457",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #457 - PR Insight",
+  "title": "PR Insight: triton #457 - [Tuning] Gemm tuning v3",
   "path": "wiki/techniques/pr-triton-457.md",
   "architectures": [
    "cdna2",
@@ -86010,17 +88353,26 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "gemm",
+   "triton",
+   "occupancy-tuning",
+   "mfma"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-458",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #458 - PR Insight",
+  "title": "Triton Testing Infrastructure and Dockerization on AMD Nodes",
   "path": "wiki/techniques/pr-triton-458.md",
   "architectures": [
    "cdna2",
@@ -86028,18 +88380,19 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "rocm-kernel",
+   "programming-model"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
+  "confidence": "source-reported",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-459",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #459 - PR Insight",
+  "title": "Autotuning Flash Attention in ROCm Triton",
   "path": "wiki/techniques/pr-triton-459.md",
   "architectures": [
    "cdna2",
@@ -86047,18 +88400,25 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "scheduling"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-460",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #460 - PR Insight",
+  "title": "Merge AOT Features: Asymmetric SeqLen & Dropout in Triton Flash Attention",
   "path": "wiki/techniques/pr-triton-460.md",
   "architectures": [
    "cdna2",
@@ -86067,7 +88427,11 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "flash-attention",
+   "triton-rocm",
+   "attention",
+   "memory"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86077,7 +88441,7 @@
  {
   "id": "technique-pr-triton-463",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #463 - PR Insight",
+  "title": "PR Insight: triton #463 - Refine GEMM test_correctness",
   "path": "wiki/techniques/pr-triton-463.md",
   "architectures": [
    "cdna2",
@@ -86085,18 +88449,22 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "optimization"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-464",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #464 - PR Insight",
+  "title": "PR Insight: triton #464 - Treat metadata as a tuple instead of a dict",
   "path": "wiki/techniques/pr-triton-464.md",
   "architectures": [
    "cdna2",
@@ -86104,8 +88472,10 @@
    "cdna4"
   ],
   "tags": [
+   "triton-rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "runtime-api"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86115,7 +88485,7 @@
  {
   "id": "technique-pr-triton-465",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #465 - PR Insight",
+  "title": "PR Insight: Triton #465 - Infrastructure Optimization via Tree-sitter Submodule Removal",
   "path": "wiki/techniques/pr-triton-465.md",
   "architectures": [
    "cdna2",
@@ -86123,8 +88493,10 @@
    "cdna4"
   ],
   "tags": [
+   "triton-rocm",
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "hardware"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86134,54 +88506,19 @@
  {
   "id": "technique-pr-triton-466",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #466 - PR Insight",
+  "title": "Fix vecSize for fp8 and int8 on MI300",
   "path": "wiki/techniques/pr-triton-466.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-467",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #467 - PR Insight",
-  "path": "wiki/techniques/pr-triton-467.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-468",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #468 - PR Insight",
-  "path": "wiki/techniques/pr-triton-468.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "vectorized-load",
+   "triton-rocm",
+   "fp8",
+   "int8",
+   "bandwidth",
+   "memory-bound",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86191,7 +88528,7 @@
  {
   "id": "technique-pr-triton-469",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #469 - PR Insight",
+  "title": "Triton ROCm: 64x4 and 4x64 Tile Sizes via MFMA 4x4",
   "path": "wiki/techniques/pr-triton-469.md",
   "architectures": [
    "cdna2",
@@ -86199,8 +88536,10 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "mfma",
+   "tiling",
+   "triton-rocm",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86210,7 +88549,7 @@
  {
   "id": "technique-pr-triton-470",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #470 - PR Insight",
+  "title": "PR Insight: triton #470 - Add matrix_instr_nonkdim to Tuning Space",
   "path": "wiki/techniques/pr-triton-470.md",
   "architectures": [
    "cdna2",
@@ -86219,55 +88558,51 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "compute",
+   "vgpr",
+   "occupancy",
+   "tiling"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-471",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #471 - PR Insight",
-  "path": "wiki/techniques/pr-triton-471.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "kernel_types": [
+   "gemm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+  "languages": [
+   "triton-rocm"
   ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-472",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #472 - PR Insight",
+  "title": "Testing Infrastructure and MFMA Configurations in Triton (PR #472)",
   "path": "wiki/techniques/pr-triton-472.md",
   "architectures": [
+   "cdna1",
    "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "hardware",
+   "fp8",
+   "bf16"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-474",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #474 - PR Insight",
+  "title": "LDS Swizzling for Transposed Dot Operands in Triton",
   "path": "wiki/techniques/pr-triton-474.md",
   "architectures": [
    "cdna2",
@@ -86275,8 +88610,12 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "swizzling",
+   "lds",
+   "gemm",
+   "triton-rocm",
+   "memory-bound",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86286,7 +88625,7 @@
  {
   "id": "technique-pr-triton-475",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #475 - PR Insight",
+  "title": "PR Insight: triton #475 - FP8 QK Flash Attention Integration",
   "path": "wiki/techniques/pr-triton-475.md",
   "architectures": [
    "cdna2",
@@ -86295,17 +88634,26 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "fp8",
+   "rocm-kernel",
+   "fused-kernel",
+   "flash-attention"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "flash-attention",
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-476",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #476 - PR Insight",
+  "title": "PR Insight: triton #476 - Add option for larger LDS vecSize",
   "path": "wiki/techniques/pr-triton-476.md",
   "architectures": [
    "cdna2",
@@ -86314,17 +88662,24 @@
   ],
   "tags": [
    "optimization",
+   "memory-bound",
+   "bandwidth",
+   "vectorization",
    "rocm-kernel"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-477",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #477 - PR Insight",
+  "title": "Compiler Optimization: Moving Operand Casts to AccelerateAMDMatmul in Triton",
   "path": "wiki/techniques/pr-triton-477.md",
   "architectures": [
    "cdna2",
@@ -86333,55 +88688,67 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "programming-model"
   ],
   "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-478",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #478 - PR Insight",
+  "title": "Refining Tolerance in Checking GEMM Correctness for FP8",
   "path": "wiki/techniques/pr-triton-478.md",
   "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "fp8",
+   "rocm",
+   "quantization",
+   "programming"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-479",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #479 - PR Insight",
+  "title": "Triton Compiler: MFMA Pipeline Layout Cleanup",
   "path": "wiki/techniques/pr-triton-479.md",
   "architectures": [
+   "cdna1",
    "cdna2",
-   "cdna3",
-   "cdna4"
+   "cdna3"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "pipeline",
+   "optimization"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-480",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #480 - PR Insight",
+  "title": "Triton PR-480: Improve Chain Dot Checking",
   "path": "wiki/techniques/pr-triton-480.md",
   "architectures": [
    "cdna2",
@@ -86390,7 +88757,12 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "fused-kernel",
+   "rocm-kernel",
+   "rocm",
+   "triton-rocm",
+   "mfma",
+   "flash-attention"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86400,7 +88772,7 @@
  {
   "id": "technique-pr-triton-482",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #482 - PR Insight",
+  "title": "Triton Compiler: Fixing fastPath Offset Calculation Conditions",
   "path": "wiki/techniques/pr-triton-482.md",
   "architectures": [
    "cdna2",
@@ -86408,8 +88780,11 @@
    "cdna4"
   ],
   "tags": [
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "vectorized-load",
+   "occupancy"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86419,7 +88794,7 @@
  {
   "id": "technique-pr-triton-483",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #483 - PR Insight",
+  "title": "AMD-Specific TTGIR Scheduling Pass for Flash Attention and Dot Slicing",
   "path": "wiki/techniques/pr-triton-483.md",
   "architectures": [
    "cdna2",
@@ -86427,18 +88802,26 @@
    "cdna4"
   ],
   "tags": [
+   "mfma-scheduling",
+   "scheduling",
    "optimization",
-   "rocm-kernel"
+   "pipeline",
+   "rocm-kernel",
+   "flash-attention"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-485",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #485 - PR Insight",
+  "title": "PR Insight: Triton Flash Attention FP8 Correctness Check",
   "path": "wiki/techniques/pr-triton-485.md",
   "architectures": [
    "cdna2",
@@ -86446,30 +88829,19 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "rocm-kernel",
+   "fp8",
+   "flash-attention",
+   "programming"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-486",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #486 - PR Insight",
-  "path": "wiki/techniques/pr-triton-486.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "kernel_types": [
+   "flash-attention"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+  "languages": [
+   "triton-rocm",
+   "python"
   ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
@@ -86571,7 +88943,7 @@
  {
   "id": "technique-pr-triton-497",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #497 - PR Insight",
+  "title": "Variable Length (Varlen) Flash Attention v2 API in Triton",
   "path": "wiki/techniques/pr-triton-497.md",
   "architectures": [
    "cdna2",
@@ -86579,6 +88951,10 @@
    "cdna4"
   ],
   "tags": [
+   "flash-attention",
+   "triton-rocm",
+   "inference",
+   "memory-bound",
    "optimization",
    "rocm-kernel"
   ],
@@ -86590,7 +88966,7 @@
  {
   "id": "technique-pr-triton-498",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #498 - PR Insight",
+  "title": "Triton Compilation Pipeline Debugging and IR Parsing",
   "path": "wiki/techniques/pr-triton-498.md",
   "architectures": [
    "cdna2",
@@ -86598,8 +88974,10 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "triton-rocm",
    "optimization",
-   "rocm-kernel"
+   "programming"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86609,7 +88987,7 @@
  {
   "id": "technique-pr-triton-500",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #500 - PR Insight",
+  "title": "Triton Compiler: Reverting Late Operand Casting for FP8 MFMA",
   "path": "wiki/techniques/pr-triton-500.md",
   "architectures": [
    "cdna2",
@@ -86617,8 +88995,11 @@
    "cdna4"
   ],
   "tags": [
+   "mfma",
+   "triton-rocm",
+   "fp8",
    "optimization",
-   "rocm-kernel"
+   "rocm"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86628,7 +89009,7 @@
  {
   "id": "technique-pr-triton-501",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #501 - PR Insight",
+  "title": "Stream Pipelining with Transpose in ROCm Triton",
   "path": "wiki/techniques/pr-triton-501.md",
   "architectures": [
    "cdna2",
@@ -86636,18 +89017,28 @@
    "cdna4"
   ],
   "tags": [
+   "swizzling",
+   "double-buffering",
+   "pipeline",
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "memory-bound"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-506",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #506 - PR Insight",
+  "title": "PR Insight: Triton #506 - Eliminate Ternary If Statement",
   "path": "wiki/techniques/pr-triton-506.md",
   "architectures": [
    "cdna2",
@@ -86655,18 +89046,30 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "triton-rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "vgpr",
+   "occupancy",
+   "memory-bound",
+   "compute"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm",
+   "attention",
+   "softmax"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-508",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #508 - PR Insight",
+  "title": "Triton Flash Attention: Head Padding for Non-Power-of-2 Head Sizes",
   "path": "wiki/techniques/pr-triton-508.md",
   "architectures": [
    "cdna2",
@@ -86674,18 +89077,27 @@
    "cdna4"
   ],
   "tags": [
+   "triton-rocm",
+   "rocm-kernel",
+   "flash-attention",
    "optimization",
-   "rocm-kernel"
+   "tiling",
+   "memory"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
+  "kernel_types": [
+   "flash-attention",
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-509",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #509 - PR Insight",
+  "title": "Implementing Causal Masking for Non-Variable Length Inputs in Triton Tests",
   "path": "wiki/techniques/pr-triton-509.md",
   "architectures": [
    "cdna2",
@@ -86694,26 +89106,9 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-510",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #510 - PR Insight",
-  "path": "wiki/techniques/pr-triton-510.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "flash-attention",
+   "rocm"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86723,7 +89118,7 @@
  {
   "id": "technique-pr-triton-511",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #511 - PR Insight",
+  "title": "Isolated Execution for Triton Core Tests on ROCm",
   "path": "wiki/techniques/pr-triton-511.md",
   "architectures": [
    "cdna2",
@@ -86731,18 +89126,24 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
    "optimization",
-   "rocm-kernel"
+   "memory",
+   "runtime-api",
+   "programming"
   ],
   "kernel_types": [],
-  "languages": [],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-512",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #512 - PR Insight",
+  "title": "PR Insight: triton #512 - Unify hasConvertToMMATransisitiveUse in Triton MLIR",
   "path": "wiki/techniques/pr-triton-512.md",
   "architectures": [
    "cdna2",
@@ -86750,18 +89151,25 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "triton-rocm",
+   "mfma"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-513",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #513 - PR Insight",
+  "title": "Bfloat16 Support for Fused Attention (Transposed V) in Triton",
   "path": "wiki/techniques/pr-triton-513.md",
   "architectures": [
    "cdna2",
@@ -86770,7 +89178,11 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "bf16",
+   "triton-rocm",
+   "mfma",
+   "memory-bound",
+   "flash-attention"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86780,7 +89192,7 @@
  {
   "id": "technique-pr-triton-520",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #520 - PR Insight",
+  "title": "FP32 to BF16 Conversion via Truncation in ROCm Triton",
   "path": "wiki/techniques/pr-triton-520.md",
   "architectures": [
    "cdna2",
@@ -86788,8 +89200,12 @@
    "cdna4"
   ],
   "tags": [
+   "triton-rocm",
+   "rocm",
+   "rocm-kernel",
+   "bf16",
    "optimization",
-   "rocm-kernel"
+   "compute"
   ],
   "kernel_types": [],
   "languages": [],
@@ -86799,7 +89215,7 @@
  {
   "id": "technique-pr-triton-524",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #524 - PR Insight",
+  "title": "PR Insight: ROCm/triton #524 - Precise Detection of Chained Dot Operations",
   "path": "wiki/techniques/pr-triton-524.md",
   "architectures": [
    "cdna2",
@@ -86808,17 +89224,24 @@
   ],
   "tags": [
    "optimization",
+   "fused-kernel",
+   "programming",
    "rocm-kernel"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "flash-attention",
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-525",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #525 - PR Insight",
+  "title": "Triton Flash Attention: Causal Masking and Asymmetric Sequence Lengths",
   "path": "wiki/techniques/pr-triton-525.md",
   "architectures": [
    "cdna2",
@@ -86827,17 +89250,19 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "flash-attention",
+   "inference"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-526",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #526 - PR Insight",
+  "title": "Handling Reduction Operations on Asymmetrical MFMA Layouts (64x4)",
   "path": "wiki/techniques/pr-triton-526.md",
   "architectures": [
    "cdna2",
@@ -86845,37 +89270,46 @@
    "cdna4"
   ],
   "tags": [
+   "mfma",
+   "wave-reduction",
    "optimization",
+   "cross-lane",
+   "hardware",
    "rocm-kernel"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "reduction"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-527",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #527 - PR Insight",
+  "title": "FP8 AMAX Normalization and Safety Margins in Triton Fused Attention",
   "path": "wiki/techniques/pr-triton-527.md",
   "architectures": [
-   "cdna2",
    "cdna3",
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "flash-attention",
+   "triton-rocm",
+   "quantization",
+   "fp8"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-529",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #529 - PR Insight",
+  "title": "Compile-Time Constant Resolution for Control Flow in Triton",
   "path": "wiki/techniques/pr-triton-529.md",
   "architectures": [
    "cdna2",
@@ -86884,17 +89318,23 @@
   ],
   "tags": [
    "optimization",
+   "rocm",
    "rocm-kernel"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-530",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #530 - PR Insight",
+  "title": "Custom Kernel Configuration via Command Line in Triton Benchmarks",
   "path": "wiki/techniques/pr-triton-530.md",
   "architectures": [
    "cdna2",
@@ -86903,36 +89343,22 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "rocm-kernel",
+   "programming",
+   "runtime-api"
   ],
   "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-532",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #532 - PR Insight",
-  "path": "wiki/techniques/pr-triton-532.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "languages": [
+   "triton-rocm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-533",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #533 - PR Insight",
+  "title": "Refactoring SharedToDotOperandMFMA in Triton for AMD",
   "path": "wiki/techniques/pr-triton-533.md",
   "architectures": [
    "cdna2",
@@ -86940,18 +89366,23 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "rocm-kernel",
+   "triton-rocm",
+   "swizzling",
+   "mfma",
+   "lds",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-534",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #534 - PR Insight",
+  "title": "Accurate Autotuning via Graph Capture",
   "path": "wiki/techniques/pr-triton-534.md",
   "architectures": [
    "cdna2",
@@ -86960,6 +89391,8 @@
   ],
   "tags": [
    "optimization",
+   "runtime-api",
+   "hip",
    "rocm-kernel"
   ],
   "kernel_types": [],
@@ -86970,7 +89403,7 @@
  {
   "id": "technique-pr-triton-536",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #536 - PR Insight",
+  "title": "Triton AMD Backend: Register Usage and Spill Analysis",
   "path": "wiki/techniques/pr-triton-536.md",
   "architectures": [
    "cdna2",
@@ -86979,17 +89412,21 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "occupancy",
+   "vgpr",
+   "memory-bound",
+   "triton-rocm"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-537",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #537 - PR Insight",
+  "title": "Addressing Pointer Overflow in Large Tensors (64-bit Indexing)",
   "path": "wiki/techniques/pr-triton-537.md",
   "architectures": [
    "cdna2",
@@ -86997,8 +89434,11 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
+   "memory",
    "optimization",
-   "rocm-kernel"
+   "programming"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87008,7 +89448,7 @@
  {
   "id": "technique-pr-triton-540",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #540 - PR Insight",
+  "title": "Build Infrastructure: Explicit Argument Enforcement in Triton for ROCm",
   "path": "wiki/techniques/pr-triton-540.md",
   "architectures": [
    "cdna2",
@@ -87016,8 +89456,9 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "library",
+   "cross-repo"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87027,7 +89468,7 @@
  {
   "id": "technique-pr-triton-542",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #542 - PR Insight",
+  "title": "Triton Wheel Build Infrastructure for ROCm 6.x",
   "path": "wiki/techniques/pr-triton-542.md",
   "architectures": [
    "cdna2",
@@ -87035,27 +89476,10 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-543",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #543 - PR Insight",
-  "path": "wiki/techniques/pr-triton-543.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "rocm",
+   "triton-rocm",
+   "library",
+   "runtime-api"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87065,7 +89489,7 @@
  {
   "id": "technique-pr-triton-544",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #544 - PR Insight",
+  "title": "ROCm Triton Build Pipeline and Wheel Packaging Validation",
   "path": "wiki/techniques/pr-triton-544.md",
   "architectures": [
    "cdna2",
@@ -87073,8 +89497,9 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "triton-rocm",
+   "rocm",
+   "pipeline"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87084,7 +89509,7 @@
  {
   "id": "technique-pr-triton-546",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #546 - PR Insight",
+  "title": "DotSlicing: AMDReorderInstructionPass Fix in Triton",
   "path": "wiki/techniques/pr-triton-546.md",
   "architectures": [
    "cdna2",
@@ -87093,7 +89518,9 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "scheduling",
+   "pipeline"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87103,7 +89530,7 @@
  {
   "id": "technique-pr-triton-551",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #551 - PR Insight",
+  "title": "On-the-fly ALiBi Generation in Triton Flash Attention",
   "path": "wiki/techniques/pr-triton-551.md",
   "architectures": [
    "cdna2",
@@ -87112,55 +89539,46 @@
   ],
   "tags": [
    "optimization",
+   "memory",
+   "fused-kernel",
    "rocm-kernel"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-554",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #554 - PR Insight",
+  "title": "Accurate Occupancy Modeling on CDNA Architectures",
   "path": "wiki/techniques/pr-triton-554.md",
   "architectures": [
+   "cdna1",
    "cdna2",
    "cdna3",
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
+   "occupancy",
+   "vgpr",
+   "hardware",
+   "rocm-kernel",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-555",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #555 - PR Insight",
-  "path": "wiki/techniques/pr-triton-555.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
+  "confidence": "verified",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-557",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #557 - PR Insight",
+  "title": "Triton: Enabling Atomic Memory Orderings for AMD GPUs",
   "path": "wiki/techniques/pr-triton-557.md",
   "architectures": [
    "cdna2",
@@ -87168,18 +89586,22 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
+   "synchronization",
+   "memory",
+   "rocm",
    "rocm-kernel"
   ],
   "kernel_types": [],
-  "languages": [],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-560",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #560 - PR Insight",
+  "title": "Triton Attention Tuning: Supporting Head Size <= 256 via Autotuning",
   "path": "wiki/techniques/pr-triton-560.md",
   "architectures": [
    "cdna2",
@@ -87187,18 +89609,27 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "occupancy",
+   "lds"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-562",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #562 - PR Insight",
+  "title": "PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation",
   "path": "wiki/techniques/pr-triton-562.md",
   "architectures": [
    "cdna2",
@@ -87206,18 +89637,24 @@
    "cdna4"
   ],
   "tags": [
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "scheduling",
+   "compute"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-563",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #563 - PR Insight",
+  "title": "PR Insight: triton #563 - New Base Backwards Kernel",
   "path": "wiki/techniques/pr-triton-563.md",
   "architectures": [
    "cdna2",
@@ -87225,18 +89662,25 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "training"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-565",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #565 - PR Insight",
+  "title": "Triton Read-Only Benchmark and Command Line Tuning",
   "path": "wiki/techniques/pr-triton-565.md",
   "architectures": [
    "cdna2",
@@ -87244,27 +89688,13 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "triton-rocm",
    "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-566",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #566 - PR Insight",
-  "path": "wiki/techniques/pr-triton-566.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "bandwidth",
+   "hbm",
+   "occupancy"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87274,7 +89704,7 @@
  {
   "id": "technique-pr-triton-567",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #567 - PR Insight",
+  "title": "MQA / GQA KV Head Index Calculation Fix in Triton",
   "path": "wiki/techniques/pr-triton-567.md",
   "architectures": [
    "cdna2",
@@ -87282,27 +89712,13 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-571",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #571 - PR Insight",
-  "path": "wiki/techniques/pr-triton-571.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "triton",
+   "attention",
+   "flash-attention",
+   "memory-bound",
+   "bandwidth",
+   "rocm-kernel",
+   "optimization"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87312,7 +89728,7 @@
  {
   "id": "technique-pr-triton-573",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #573 - PR Insight",
+  "title": "CI Infrastructure for Triton Performance Kernels and Core AMD Tests",
   "path": "wiki/techniques/pr-triton-573.md",
   "architectures": [
    "cdna2",
@@ -87321,7 +89737,9 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "triton-rocm",
+   "rocm",
+   "hardware"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87331,7 +89749,7 @@
  {
   "id": "technique-pr-triton-576",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #576 - PR Insight",
+  "title": "ALiBi Integration in Triton Attention Backward Pass",
   "path": "wiki/techniques/pr-triton-576.md",
   "architectures": [
    "cdna2",
@@ -87339,18 +89757,27 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "fused-kernel",
+   "vgpr"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-578",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #578 - PR Insight",
+  "title": "Absolute Path Adjustments for GEMM Tuning in Triton",
   "path": "wiki/techniques/pr-triton-578.md",
   "architectures": [
    "cdna2",
@@ -87358,56 +89785,24 @@
    "cdna4"
   ],
   "tags": [
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "python"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-579",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #579 - PR Insight",
-  "path": "wiki/techniques/pr-triton-579.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "kernel_types": [
+   "gemm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+  "languages": [
+   "python",
+   "triton-rocm"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-581",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #581 - PR Insight",
-  "path": "wiki/techniques/pr-triton-581.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-585",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #585 - PR Insight",
+  "title": "Block Pointer to Tensor Pointer Migration in ROCm Triton",
   "path": "wiki/techniques/pr-triton-585.md",
   "architectures": [
    "cdna2",
@@ -87415,37 +89810,23 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
+   "programming-model",
    "optimization",
-   "rocm-kernel"
+   "memory"
   ],
   "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-586",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #586 - PR Insight",
-  "path": "wiki/techniques/pr-triton-586.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "languages": [
+   "triton-rocm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-587",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #587 - PR Insight",
+  "title": "Triton: Support for Common Tensor Layouts",
   "path": "wiki/techniques/pr-triton-587.md",
   "architectures": [
    "cdna2",
@@ -87453,37 +89834,23 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory",
+   "programming-model"
   ],
   "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-588",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #588 - PR Insight",
-  "path": "wiki/techniques/pr-triton-588.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "languages": [
+   "triton-rocm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-590",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #590 - PR Insight",
+  "title": "PR Insight: triton #590 - Kernel Instrumentation Passes in Pass Pipeline",
   "path": "wiki/techniques/pr-triton-590.md",
   "architectures": [
    "cdna2",
@@ -87492,7 +89859,8 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "pipeline"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87502,7 +89870,7 @@
  {
   "id": "technique-pr-triton-591",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #591 - PR Insight",
+  "title": "Handling Upstream Local Memory Ops in Triton's Occupancy Calculator",
   "path": "wiki/techniques/pr-triton-591.md",
   "architectures": [
    "cdna2",
@@ -87510,56 +89878,23 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "occupancy",
+   "memory"
   ],
   "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-594",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #594 - PR Insight",
-  "path": "wiki/techniques/pr-triton-594.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "languages": [
+   "triton-rocm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-598",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #598 - PR Insight",
-  "path": "wiki/techniques/pr-triton-598.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-599",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #599 - PR Insight",
+  "title": "Triton Parameter Expansion for Targeted Tuning (one_config.py)",
   "path": "wiki/techniques/pr-triton-599.md",
   "architectures": [
    "cdna2",
@@ -87568,7 +89903,11 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "rocm-kernel",
+   "memory-bound",
+   "occupancy",
+   "profiling"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87578,7 +89917,7 @@
  {
   "id": "technique-pr-triton-600",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #600 - PR Insight",
+  "title": "Pruning LDS Usage in Triton's New Pipeliner",
   "path": "wiki/techniques/pr-triton-600.md",
   "architectures": [
    "cdna2",
@@ -87586,8 +89925,13 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "lds",
+   "triton",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "occupancy",
+   "pipeline"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87597,7 +89941,7 @@
  {
   "id": "technique-pr-triton-606",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #606 - PR Insight",
+  "title": "Triton GEMM Tuning Script v3.3",
   "path": "wiki/techniques/pr-triton-606.md",
   "architectures": [
    "cdna2",
@@ -87606,7 +89950,11 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "gemm",
+   "triton-rocm",
+   "occupancy-tuning",
+   "double-buffering"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87616,7 +89964,7 @@
  {
   "id": "technique-pr-triton-607",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #607 - PR Insight",
+  "title": "Stream-K: Non-Atomic Multiple Buffer Implementation",
   "path": "wiki/techniques/pr-triton-607.md",
   "architectures": [
    "cdna2",
@@ -87625,36 +89973,26 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "triton",
+   "memory",
+   "synchronization",
+   "compute",
+   "memory-bound"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-608",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #608 - PR Insight",
-  "path": "wiki/techniques/pr-triton-608.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "kernel_types": [
+   "gemm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+  "languages": [
+   "triton-rocm"
   ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-612",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #612 - PR Insight",
+  "title": "CI Infrastructure: Upstream Triton Main Post-Merge Testing",
   "path": "wiki/techniques/pr-triton-612.md",
   "architectures": [
    "cdna2",
@@ -87662,27 +90000,10 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-613",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #613 - PR Insight",
-  "path": "wiki/techniques/pr-triton-613.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "cross-repo"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87692,7 +90013,7 @@
  {
   "id": "technique-pr-triton-614",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #614 - PR Insight",
+  "title": "Triton GEMM Autotuning Script (tune_gemm)",
   "path": "wiki/techniques/pr-triton-614.md",
   "architectures": [
    "cdna2",
@@ -87700,8 +90021,11 @@
    "cdna4"
   ],
   "tags": [
+   "triton-rocm",
+   "gemm",
    "optimization",
-   "rocm-kernel"
+   "occupancy",
+   "rocm"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87711,7 +90035,7 @@
  {
   "id": "technique-pr-triton-615",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #615 - PR Insight",
+  "title": "Autotuning Space Expansion for Flash Attention",
   "path": "wiki/techniques/pr-triton-615.md",
   "architectures": [
    "cdna2",
@@ -87720,17 +90044,23 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "memory-bound",
+   "compute"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "flash-attention"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-618",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #618 - PR Insight",
+  "title": "GCC 8 Linker Compatibility and std::filesystem Resolution for Triton",
   "path": "wiki/techniques/pr-triton-618.md",
   "architectures": [
    "cdna2",
@@ -87738,18 +90068,21 @@
    "cdna4"
   ],
   "tags": [
-   "optimization",
+   "porting",
+   "rocm",
    "rocm-kernel"
   ],
   "kernel_types": [],
-  "languages": [],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-619",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #619 - PR Insight",
+  "title": "Stream-K GEMM Work Distribution in Triton",
   "path": "wiki/techniques/pr-triton-619.md",
   "architectures": [
    "cdna2",
@@ -87757,18 +90090,25 @@
    "cdna4"
   ],
   "tags": [
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "scheduling",
+   "occupancy",
+   "compute"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-621",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #621 - PR Insight",
+  "title": "Explicit Multiply-Reduce GEMM for Small Block Sizes in Triton",
   "path": "wiki/techniques/pr-triton-621.md",
   "architectures": [
    "cdna2",
@@ -87777,17 +90117,24 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "compute",
+   "rocm",
+   "vgpr"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-624",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #624 - PR Insight",
+  "title": "Triton Plot Tool: MFMA16 Support Analysis",
   "path": "wiki/techniques/pr-triton-624.md",
   "architectures": [
    "cdna2",
@@ -87795,27 +90142,12 @@
    "cdna4"
   ],
   "tags": [
+   "mfma",
+   "triton-rocm",
+   "python",
    "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-627",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #627 - PR Insight",
-  "path": "wiki/techniques/pr-triton-627.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
-  ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
+   "hardware",
+   "occupancy"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87825,7 +90157,7 @@
  {
   "id": "technique-pr-triton-629",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #629 - PR Insight",
+  "title": "Triton GEMM Tuning Script Cleanup",
   "path": "wiki/techniques/pr-triton-629.md",
   "architectures": [
    "cdna2",
@@ -87833,18 +90165,25 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
+   "triton",
    "optimization",
-   "rocm-kernel"
+   "python"
   ],
-  "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm",
+   "python"
+  ],
+  "confidence": null,
+  "summary": "Analysis of PR 629 in ROCm/triton: Clean up tune_gemm script from main_perf branch"
  },
  {
   "id": "technique-pr-triton-630",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #630 - PR Insight",
+  "title": "XCD-Aware PID Remapping and Profiler Tooling Reversion",
   "path": "wiki/techniques/pr-triton-630.md",
   "architectures": [
    "cdna2",
@@ -87853,7 +90192,9 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "scheduling",
+   "rocm",
+   "cross-cu"
   ],
   "kernel_types": [],
   "languages": [],
@@ -87863,7 +90204,7 @@
  {
   "id": "technique-pr-triton-632",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #632 - PR Insight",
+  "title": "PR Insight: StreamK Atomics Replacement via Spinlocks and Multiple Buffers",
   "path": "wiki/techniques/pr-triton-632.md",
   "architectures": [
    "cdna2",
@@ -87872,17 +90213,24 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm-kernel",
+   "synchronization",
+   "memory",
+   "memory-bound"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-633",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #633 - PR Insight",
+  "title": "PR Insight: triton #633 - Add rmsnorm kernel",
   "path": "wiki/techniques/pr-triton-633.md",
   "architectures": [
    "cdna2",
@@ -87890,18 +90238,28 @@
    "cdna4"
   ],
   "tags": [
+   "rocm",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "bandwidth",
+   "hardware",
+   "vgpr",
+   "triton-rocm"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "rmsnorm",
+   "layernorm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-634",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #634 - PR Insight",
+  "title": "Persistent Softmax Optimization in Triton",
   "path": "wiki/techniques/pr-triton-634.md",
   "architectures": [
    "cdna2",
@@ -87909,18 +90267,24 @@
    "cdna4"
   ],
   "tags": [
+   "rocm-kernel",
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "bandwidth"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "softmax"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-635",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #635 - PR Insight",
+  "title": "Utility Tools: Layout Plotting for Triton MLIR on ROCm",
   "path": "wiki/techniques/pr-triton-635.md",
   "architectures": [
    "cdna2",
@@ -87929,36 +90293,21 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "rocm",
+   "lds",
+   "mfma"
   ],
   "kernel_types": [],
-  "languages": [],
-  "confidence": "inferred",
-  "summary": ""
- },
- {
-  "id": "technique-pr-triton-637",
-  "type": "wiki-technique",
-  "title": "PR Insight: triton #637 - PR Insight",
-  "path": "wiki/techniques/pr-triton-637.md",
-  "architectures": [
-   "cdna2",
-   "cdna3",
-   "cdna4"
+  "languages": [
+   "triton-rocm"
   ],
-  "tags": [
-   "optimization",
-   "rocm-kernel"
-  ],
-  "kernel_types": [],
-  "languages": [],
   "confidence": "inferred",
   "summary": ""
  },
  {
   "id": "technique-pr-triton-639",
   "type": "wiki-technique",
-  "title": "PR Insight: triton #639 - PR Insight",
+  "title": "Online Softmax Implementation in Triton",
   "path": "wiki/techniques/pr-triton-639.md",
   "architectures": [
    "cdna2",
@@ -87967,10 +90316,17 @@
   ],
   "tags": [
    "optimization",
-   "rocm-kernel"
+   "memory-bound",
+   "tiling",
+   "vgpr",
+   "occupancy"
   ],
-  "kernel_types": [],
-  "languages": [],
+  "kernel_types": [
+   "softmax"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
   "confidence": "inferred",
   "summary": ""
  },
@@ -97424,6 +99780,97 @@
   "summary": ""
  },
  {
+  "id": "technique-triton-594-gemm-tuning",
+  "type": "wiki-technique",
+  "title": "Persistent Autotuning Results in Triton GEMM",
+  "path": "wiki/techniques/pr-triton-594.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "technique-triton-627",
+  "type": "wiki-technique",
+  "title": "CFG Generator for AMDGCN Assembly in Triton",
+  "path": "wiki/techniques/pr-triton-627.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "optimization",
+   "isa"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "triton-rocm",
+   "assembly"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "technique-triton-gemm-tuning",
+  "type": "wiki-technique",
+  "title": "Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias",
+  "path": "wiki/techniques/pr-triton-588.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "optimization",
+   "memory",
+   "bandwidth",
+   "memory-bound",
+   "rocm"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "technique-triton-rocprofv2-tuning",
+  "type": "wiki-technique",
+  "title": "Accelerating Triton GEMM Tuning with rocprofv2",
+  "path": "wiki/techniques/pr-triton-613.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "optimization",
+   "rocm",
+   "triton-rocm",
+   "gemm"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
   "id": "technique-vectorized-load",
   "type": "wiki-technique",
   "title": "Vectorized Global Memory Loads",
@@ -97572,6 +100019,168 @@
   ],
   "languages": [],
   "confidence": "source-reported",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-explicit-dot-gemm",
+  "type": "wiki-technique",
+  "title": "Testing and Benchmarking Explicit Dot GEMM in ROCm Triton",
+  "path": "wiki/techniques/pr-triton-637.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "optimization",
+   "compute",
+   "memory-bound"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-pr-triton-543",
+  "type": "wiki-technique",
+  "title": "Fast Exponential Computation via Denormals-Are-Zero (DAZ) in Triton",
+  "path": "wiki/techniques/pr-triton-543.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton",
+   "optimization",
+   "compute"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-pr-triton-581",
+  "type": "wiki-technique",
+  "title": "Decoupling CI Pipelines for triton-mlir and main",
+  "path": "wiki/techniques/pr-triton-581.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton-rocm",
+   "pipeline"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-pr-triton-586",
+  "type": "wiki-technique",
+  "title": "Compiler Regression Management: Backward Operators in Triton",
+  "path": "wiki/techniques/pr-triton-586.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "triton-rocm",
+   "memory-bound",
+   "vgpr",
+   "occupancy",
+   "optimization"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-pr-triton-598",
+  "type": "wiki-technique",
+  "title": "Stream-K Auto-Tuning and Correctness Testing in Triton",
+  "path": "wiki/techniques/pr-triton-598.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "optimization",
+   "scheduling",
+   "occupancy"
+  ],
+  "kernel_types": [],
+  "languages": [],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-triton-608",
+  "type": "wiki-technique",
+  "title": "Triton Flash Attention: Constexpr SM Scale & ASM Optimizations",
+  "path": "wiki/techniques/pr-triton-608.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "rocm-kernel",
+   "optimization",
+   "vgpr",
+   "occupancy-tuning",
+   "memory-bound",
+   "isa"
+  ],
+  "kernel_types": [
+   "flash-attention",
+   "attention"
+  ],
+  "languages": [
+   "triton-rocm",
+   "assembly"
+  ],
+  "confidence": "inferred",
+  "summary": ""
+ },
+ {
+  "id": "wiki-technique-triton-scf-if",
+  "type": "wiki-technique",
+  "title": "Triton Compiler Support for Tensor Pointers in scf::IfOp",
+  "path": "wiki/techniques/pr-triton-555.md",
+  "architectures": [
+   "cdna2",
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "triton",
+   "programming-model"
+  ],
+  "kernel_types": [],
+  "languages": [
+   "triton-rocm"
+  ],
+  "confidence": "inferred",
   "summary": ""
  }
 ]

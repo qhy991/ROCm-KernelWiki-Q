@@ -10,6 +10,13 @@ Symptom → Pattern → Technique → Solution
 - Path: [wiki/patterns/compute-bound-optimization.md](../wiki/patterns/compute-bound-optimization.md)
 - Tags: optimization, compute, mfma, pipeline, tiling, vgpr
 
+### Compute-Bound MFMA Pattern on AMD GPUs
+
+- ID: `pattern-compute-bound-mfma-amd`
+- Path: [wiki/patterns/compute-bound-mfma-amd.md](../wiki/patterns/compute-bound-mfma-amd.md)
+- Tags: mfma, compute, optimization, scheduling, occupancy, rocm
+- Related: `hw-mfma-matrix-core`, `hw-wavefront`, `technique-mfma-scheduling`, `technique-register-tiling`, `technique-occupancy-tuning`, `kernel-gemm-mfma-rocm`
+
 ### Cooperative Loading
 
 - ID: `pattern-cooperative-loading`
