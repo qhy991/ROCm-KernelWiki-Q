@@ -1,24 +1,27 @@
 # Index: By Technique
 
 
-## async-copy (8 pages)
+## async-copy (5 pages)
 
 - [Cooperative Loading](../wiki/patterns/cooperative-loading.md)
 - [生产者-消费者流水线 (Producer-Consumer Pipeline)](../wiki/patterns/producer-consumer-pipeline.md)
 - [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 - [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md)
-- [Triton Attention Tuning: Supporting Head Size <= 256 via Autotuning](../wiki/techniques/pr-triton-560.md)
-- [Autotuning Space Expansion for Flash Attention](../wiki/techniques/pr-triton-615.md)
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md)
-- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md)
 
-## bank-conflict-padding (5 pages)
+## bank-conflict-padding (4 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md)
 - [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/hipblaslt/PR-605.md)
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md)
-- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md)
+
+## block-scale (4 pages)
+
+- [[CK Tile Engine] Add block-scale GEMM operators: gemm_aquant, gemm_bquant, gemm_abquant](../sources/prs/hipblaslt/PR-8519.md)
+- [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md)
+- [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md)
+- [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
 
 ## ck-tile-programming (38 pages)
 
@@ -61,7 +64,7 @@
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md)
 - [CDNA4 FP8 Scaled MFMA](../wiki/techniques/mfma-fp8-cdna4.md)
 
-## double-buffering (23 pages)
+## double-buffering (22 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md)
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
@@ -83,11 +86,27 @@
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md)
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md)
 - [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md)
-- [Triton Attention Tuning: Supporting Head Size <= 256 via Autotuning](../wiki/techniques/pr-triton-560.md)
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md)
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md)
 
-## mfma-scheduling (35 pages)
+## kernel-fusion (5 pages)
+
+- [[AMD] Fuse shared-expert sigmoid + bf16->fp32 cast into the MoE append kernel (3 kernels -> 1)](../sources/prs/sglang/PR-28658.md)
+- [[AMD][Perf] Fuse QK RMSNorm + 3D mRoPE + KV-cache store into single aiter op for Qwen3.5-397B-A17B-MXFP4 (TP=2, ROCm/aiter) on HIP](../sources/prs/sglang/PR-28700.md)
+- [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md)
+- [[AMD] Optimize o_proj gemm and attn output rope performance](../sources/prs/sglang/PR-28722.md)
+- [[Attention Backend] add HPC-Ops Attention backend](../sources/prs/vllm/PR-46020.md)
+
+## layout-transform (6 pages)
+
+- [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md)
+- [[RL] MXFP8 flashinfer_trtllm_routed MoE for V4](../sources/prs/sglang/PR-28676.md)
+- [[AMD] Optimize o_proj gemm and attn output rope performance](../sources/prs/sglang/PR-28722.md)
+- [[TE] Improve backward performance for CK Tile FP8 Group GEMM](../sources/prs/transformerengine/PR-544.md)
+- [add MXFP8 pre-swizzling for gfx1250 GEMM](../sources/prs/transformerengine/PR-568.md)
+- [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/transformerengine/PR-605.md)
+
+## mfma-scheduling (31 pages)
 
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md)
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
@@ -109,7 +128,6 @@
 - [Implement device grouped gemm fixed nk multi abd for rdna4](../sources/prs/composable_kernel/PR-3619.md)
 - [[CK_TILE] MX GEMM, non-preshuffled and RCR layout](../sources/prs/composable_kernel/PR-3709.md)
 - [Support biased SwiGLU in MXFP4 MoE](../sources/prs/composable_kernel/PR-3735.md)
-- [[Hipblaslt] [Subtiling] Add non-uniform partition size to Logical Scheduler](../sources/prs/hipblaslt/PR-3.md)
 - [[origami] Subtile-aware heuristic: reject gfx950 BF16 TN subtile kernels for K<512 with large free dim](../sources/prs/hipblaslt/PR-8604.md)
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md)
 - [CK Tile MXFP8 Group GEMM gfx1250](../sources/prs/transformerengine/PR-578.md)
@@ -119,13 +137,10 @@
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md)
 - [CDNA4 FP8 Scaled MFMA](../wiki/techniques/mfma-fp8-cdna4.md)
 - [MFMA Instruction Scheduling](../wiki/techniques/mfma-scheduling.md)
-- [PR Insight: triton #470 - Add matrix_instr_nonkdim to Tuning Space](../wiki/techniques/pr-triton-470.md)
-- [PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation](../wiki/techniques/pr-triton-562.md)
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md)
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md)
-- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md)
 
-## occupancy-tuning (36 pages)
+## occupancy-tuning (30 pages)
 
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
@@ -154,17 +169,11 @@
 - [[ROCm][Perf] MiniMax-M3 MXFP8 gemm/group gemm dispatch AITER](../sources/prs/vllm/PR-46063.md)
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md)
-- [PR Insight: Triton #450 - Occupancy Info Script](../wiki/techniques/pr-triton-450.md)
-- [PR Insight: triton #470 - Add matrix_instr_nonkdim to Tuning Space](../wiki/techniques/pr-triton-470.md)
-- [Triton Attention Tuning: Supporting Head Size <= 256 via Autotuning](../wiki/techniques/pr-triton-560.md)
-- [PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation](../wiki/techniques/pr-triton-562.md)
-- [Pruning LDS Usage in Triton's New Pipeliner](../wiki/techniques/pr-triton-600.md)
-- [Autotuning Space Expansion for Flash Attention](../wiki/techniques/pr-triton-615.md)
 - [Persistent Softmax Optimization in Triton](../wiki/techniques/pr-triton-634.md)
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md)
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md)
 
-## persistent-kernel (16 pages)
+## persistent-kernel (14 pages)
 
 - [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md)
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
@@ -174,8 +183,6 @@
 - [[hipblaslt][tensilelite] Single-hop next-neighbor StreamK work stealing](../sources/prs/hipblaslt/PR-8442.md)
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
 - [[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests](../sources/prs/hipblaslt/PR-8622.md)
-- [Deep Analysis: Stream-K Kernel Implementations in ROCm Triton](../wiki/techniques/pr-triton-579.md)
-- [Persistent Kernel Optimization for Flash Attention Forward in ROCm Triton](../wiki/techniques/pr-triton-670.md)
 - [[ROCm][Kernel][AITER] BlockScale FP8 SplitK zero-init fusion](../sources/prs/vllm/PR-44976.md)
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md)
@@ -183,7 +190,7 @@
 - [Persistent Softmax Optimization in Triton](../wiki/techniques/pr-triton-634.md)
 - [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md)
 
-## register-tiling (18 pages)
+## register-tiling (16 pages)
 
 - [FP8 and Block-Scale GEMM on ROCm](../wiki/kernels/fp8-blockscale-gemm-rocm.md)
 - [MFMA GEMM on ROCm](../wiki/kernels/gemm-mfma-rocm.md)
@@ -197,18 +204,56 @@
 - [[ROCm][Kernel] Extend skinny gemm N=5 to N=8 cases on GFX12 (RDNA4) using SWMMAC optimization](../sources/prs/vllm/PR-45559.md)
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md)
 - [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md)
-- [PR Insight: Triton #450 - Occupancy Info Script](../wiki/techniques/pr-triton-450.md)
-- [Direct Register Layout Conversion for MFMA16 to Dot Operand in Triton](../wiki/techniques/pr-triton-453.md)
 - [Explicit Multiply-Reduce GEMM for Small Block Sizes in Triton](../wiki/techniques/pr-triton-621.md)
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md)
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md)
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md)
 
+## runtime-dispatch (9 pages)
+
+- [[Fix] compressed-tensors block FP8: requantize weight scales to UE8M0 for DeepGEMM on Blackwell](../sources/prs/sglang/PR-28662.md)
+- [[AMD][Perf] Fuse QK RMSNorm + 3D mRoPE + KV-cache store into single aiter op for Qwen3.5-397B-A17B-MXFP4 (TP=2, ROCm/aiter) on HIP](../sources/prs/sglang/PR-28700.md)
+- [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md)
+- [[minimax-m3] Split 4/4: model + VL + glue + function-call + fp8 quant + generic infra](../sources/prs/sglang/PR-28715.md)
+- [[AMD] Optimize o_proj gemm and attn output rope performance](../sources/prs/sglang/PR-28722.md)
+- [[ROCm][Perf] MiniMax-M3 MXFP8 gemm/group gemm dispatch AITER](../sources/prs/vllm/PR-46063.md)
+- [[Attention][DSA] support dcp for FLASHINFER_MLA_SPARSE](../sources/prs/vllm/PR-46076.md)
+- [[ROCm][Perf] Optional FlyDSL BF16 MoE for the MXFP8-emulation path on MiniMax-M3](../sources/prs/vllm/PR-46123.md)
+- [[AMD][OCP MX][CI] Fix tests to not dispatch on UNFUSED_TRITON backend on MI300, improve w_mxfp4_a_fp8 emulation support](../sources/prs/vllm/PR-46142.md)
+
+## scale-preshuffle (3 pages)
+
+- [add MXFP8 pre-swizzling for gfx1250 GEMM](../sources/prs/transformerengine/PR-568.md)
+- [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/transformerengine/PR-605.md)
+- [CK MXFP8 Group Gemm gfx1250 Enablement](../sources/prs/transformerengine/PR-613.md)
+
+## shape-based-kernel-selection (7 pages)
+
+- [MXFP4: Add GEMM kernel tuning and MXFP4Quantizer.copy()](../sources/prs/transformerengine/PR-535.md)
+- [[CI] Add aiter installation to CI image for MXFP4 FP4 GEMM kernels](../sources/prs/transformerengine/PR-562.md)
+- [HipKittens MXFP8 GEMM Support](../sources/prs/transformerengine/PR-566.md)
+- [CK Tile Group GEMM gfx1250](../sources/prs/transformerengine/PR-576.md)
+- [NVFP4: Work around intermittent incorrect results for backward GEMMs](../sources/prs/transformerengine/PR-580.md)
+- [Fix CK FP8 grouped GEMM dtype gating for columnwise operands](../sources/prs/transformerengine/PR-594.md)
+- [add dsv4 production mxfp8 gemm shapes](../sources/prs/transformerengine/PR-636.md)
+
+## subtile (3 pages)
+
+- [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/hipblaslt/PR-8523.md)
+- [[hipblaslt][tensilelite] Add multicast tdm for subtile kernel](../sources/prs/hipblaslt/PR-8524.md)
+- [[tensilelite] Fix subtile PGR=0 WMMA-source WAR hazard on gfx1250](../sources/prs/hipblaslt/PR-8603.md)
+
 ## swizzling (1 pages)
 
 - [Cooperative Loading](../wiki/patterns/cooperative-loading.md)
 
-## vectorized-load (30 pages)
+## tiling (3 pages)
+
+- [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md)
+- [HipKittens MXFP8 GEMM Support](../sources/prs/transformerengine/PR-566.md)
+- [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
+
+## vectorized-load (28 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md)
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
@@ -236,8 +281,6 @@
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md)
 - [[ROCm][Kernel] Add HybridW4A16LinearKernel: Triton prefill + HIP skinny decode](../sources/prs/vllm/PR-40977.md)
 - [合并内存访问模式 (Coalesced Memory Access Patterns)](../wiki/techniques/coalesced-memory.md)
-- [PR Insight: triton #476 - Add option for larger LDS vecSize](../wiki/techniques/pr-triton-476.md)
-- [PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation](../wiki/techniques/pr-triton-562.md)
 - [Persistent Softmax Optimization in Triton](../wiki/techniques/pr-triton-634.md)
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md)
 

@@ -39,7 +39,7 @@
 - [Mxfp8 grouped and multi quantize](../sources/prs/transformerengine/PR-598.md) `[source-pr]` arch:cdna4
 - [[ROCm][Kernel][AITER] BlockScale FP8 SplitK zero-init fusion](../sources/prs/vllm/PR-44976.md) `[source-pr]` arch:cdna3, cdna4
 
-## bpermute (7 pages)
+## bpermute (6 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [DPP — Data-Parallel Primitives (Cross-Lane Operations)](../wiki/hardware/dpp-cross-lane.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -47,23 +47,18 @@
 - [Reduction and Softmax Kernels on ROCm](../wiki/kernels/reduction-softmax-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Reduction Tree](../wiki/patterns/reduction-tree.md) `[wiki-pattern]` arch:cdna1, cdna2, cdna3, cdna4
 - [Triton Layer Normalization Optimization on AMD CDNA](../wiki/techniques/pr-triton-641.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Chained Dot Optimization via Shuffle Conversion (FP8)](../wiki/techniques/pr-triton-665.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
-## compute-unit (11 pages)
+## compute-unit (7 pages)
 
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [XCD Chiplet Architecture](../wiki/hardware/xcd-chiplet.md) `[wiki-hardware]` arch:cdna3
 - [Migration Guide: CDNA2 to CDNA3 Architecture](../wiki/migration/cdna2-to-cdna3.md) `[wiki-migration]` arch:cdna2, cdna3
-- [Persistent Kernel Optimization for Flash Attention Forward in ROCm Triton](../wiki/techniques/pr-triton-670.md) `[technique]` arch:cdna2, cdna3, cdna4
-- [Accurate Occupancy Modeling on CDNA Architectures](../wiki/techniques/pr-triton-554.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
-- [PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation](../wiki/techniques/pr-triton-562.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Stream-K GEMM Work Distribution in Triton](../wiki/techniques/pr-triton-619.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Softmax Optimization in Triton](../wiki/techniques/pr-triton-634.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
-## dpp (12 pages)
+## dpp (11 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [DPP — Data-Parallel Primitives (Cross-Lane Operations)](../wiki/hardware/dpp-cross-lane.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -74,7 +69,6 @@
 - [Triton FlashAttention on ROCm](../wiki/kernels/triton-flash-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [Reduction Tree](../wiki/patterns/reduction-tree.md) `[wiki-pattern]` arch:cdna1, cdna2, cdna3, cdna4
 - [Triton Layer Normalization Optimization on AMD CDNA](../wiki/techniques/pr-triton-641.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Chained Dot Optimization via Shuffle Conversion (FP8)](../wiki/techniques/pr-triton-665.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Cross-Lane Communication with DPP (Warp Shuffle Equivalent)](../wiki/techniques/warp-shuffle-dpp.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
@@ -96,7 +90,7 @@
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Kernel Pattern](../wiki/techniques/persistent-kernel.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
-## lds (95 pages)
+## lds (64 pages)
 
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -124,7 +118,6 @@
 - [Cooperative Loading](../wiki/patterns/cooperative-loading.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
 - [Reduction Tree](../wiki/patterns/reduction-tree.md) `[wiki-pattern]` arch:cdna1, cdna2, cdna3, cdna4
 - [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
-- [Refactor weight preshuffled pipeline and unify LDS buffer management API](../sources/prs/composable_kernel/PR-3493.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK TILE] Fix grouped conv kernels splitk and double lds](../sources/prs/composable_kernel/PR-3527.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK] Add FP8 KV_BLOCKSCALE support for batch prefill](../sources/prs/composable_kernel/PR-3696.md) `[source-pr]` arch:cdna3, cdna4
 - [[CK_TILE] Add support and tests for V6 pipeline in conv fwd](../sources/prs/composable_kernel/PR-3708.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -139,13 +132,6 @@
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md) `[source-pr]` arch:cdna2, cdna3
 - [Improve FMHA bwd](../sources/prs/flash-attention/PR-70.md) `[source-pr]` arch:cdna2, cdna3
 - [Ck tile/kvcache](../sources/prs/flash-attention/PR-74.md) `[source-pr]` arch:cdna2, cdna3
-- [Enable StoreSwapAddr and LDS > 64K for SPMM](../sources/prs/hipblaslt/PR-1968.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [fix lds padding vgpr alignment](../sources/prs/hipblaslt/PR-1981.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Enabling LDS>64K for LocalReadVALU](../sources/prs/hipblaslt/PR-2009.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [ LDS>64K enablement for LSU](../sources/prs/hipblaslt/PR-2015.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Fix device LDS size](../sources/prs/hipblaslt/PR-2035.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Remove an assertion related to LDS transpose](../sources/prs/hipblaslt/PR-2141.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Modify lds predicates](../sources/prs/rocWMMA/PR-298.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 - [# [TensileLite] Decouple MXFP8 scale DepthU from data DepthU (`ScaleDepthURatio`)](../sources/prs/hipblaslt/PR-7767.md) `[source-pr]` arch:cdna4
 - [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md) `[source-pr]` arch:cdna4, rdna4
@@ -155,10 +141,6 @@
 - [[AMD][Perf] Fuse QK RMSNorm + 3D mRoPE + KV-cache store into single aiter op for Qwen3.5-397B-A17B-MXFP4 (TP=2, ROCm/aiter) on HIP](../sources/prs/sglang/PR-28700.md) `[source-pr]` arch:cdna4
 - [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md) `[source-pr]` arch:cdna4
 - [[AMD] Optimize o_proj gemm and attn output rope performance](../sources/prs/sglang/PR-28722.md) `[source-pr]` arch:cdna4
-- [Add option for larger LDS vecSize](../sources/prs/triton/PR-476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [prune LDS usage for the new pipeliner](../sources/prs/triton/PR-600.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[tune_gemm] Update the filter for LDS usage for stream-pipelineV2](../sources/prs/triton/PR-661.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Query lds size for tune_gemm and tune_streamk](../sources/prs/triton/PR-680.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) `[source-pr]` arch:cdna3
 - [MoE wvSplitK_int4: CU-count grid + skip duplicate MatA to LDS + gfx1151 N=1 K<1024 retune](../sources/prs/vllm/PR-920.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
@@ -169,30 +151,11 @@
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) `[wiki-technique]` arch:cdna3, cdna4
 - [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
-- [PR Insight: Triton #450 - Occupancy Info Script](../wiki/techniques/pr-triton-450.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Direct Register Layout Conversion for MFMA16 to Dot Operand in Triton](../wiki/techniques/pr-triton-453.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [LDS Swizzling for Transposed Dot Operands in Triton](../wiki/techniques/pr-triton-474.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #476 - Add option for larger LDS vecSize](../wiki/techniques/pr-triton-476.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Stream Pipelining with Transpose in ROCm Triton](../wiki/techniques/pr-triton-501.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Custom Kernel Configuration via Command Line in Triton Benchmarks](../wiki/techniques/pr-triton-530.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Refactoring SharedToDotOperandMFMA in Triton for AMD](../wiki/techniques/pr-triton-533.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton Attention Tuning: Supporting Head Size <= 256 via Autotuning](../wiki/techniques/pr-triton-560.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation](../wiki/techniques/pr-triton-562.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #563 - New Base Backwards Kernel](../wiki/techniques/pr-triton-563.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton: Support for Common Tensor Layouts](../wiki/techniques/pr-triton-587.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Handling Upstream Local Memory Ops in Triton's Occupancy Calculator](../wiki/techniques/pr-triton-591.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Pruning LDS Usage in Triton's New Pipeliner](../wiki/techniques/pr-triton-600.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Autotuning Space Expansion for Flash Attention](../wiki/techniques/pr-triton-615.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Utility Tools: Layout Plotting for Triton MLIR on ROCm](../wiki/techniques/pr-triton-635.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Triton Layer Normalization Optimization on AMD CDNA](../wiki/techniques/pr-triton-641.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Software Pipelining: Enforcing Double Buffering with num_stages=2 in Triton](../wiki/techniques/pr-triton-655.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton stream-pipelineV2 LDS Usage Optimization](../wiki/techniques/pr-triton-661.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
-- [Testing and Benchmarking Explicit Dot GEMM in ROCm Triton](../wiki/techniques/pr-triton-637.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Dynamic LDS Bounds Querying for GEMM and Stream-K Autotuning](../wiki/techniques/pr-triton-680.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
 ## lds-transpose (7 pages)
 
@@ -204,7 +167,7 @@
 - [[CK_TILE] async trload for fmha 192/128 in mi355](../sources/prs/composable_kernel/PR-3729.md) `[source-pr]` arch:cdna4
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 
-## mfma (131 pages)
+## mfma (87 pages)
 
 - [ROCm FlashAttention Performance Notes](../sources/blogs/flash-attention-rocm.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -249,14 +212,7 @@
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md) `[source-pr]` arch:cdna2, cdna3
 - [Improve FMHA bwd](../sources/prs/flash-attention/PR-70.md) `[source-pr]` arch:cdna2, cdna3
 - [Ck tile/kvcache](../sources/prs/flash-attention/PR-74.md) `[source-pr]` arch:cdna2, cdna3
-- [add three I8 MFMA instructions into Stream-K I8 test for gfx950](../sources/prs/hipblaslt/PR-2105.md) `[source-pr]` arch:cdna4
-- [issueLatency for MFMA](../sources/prs/hipblaslt/PR-2185.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Refine the method for caculating sparse mfma offset at tile section](../sources/prs/hipblaslt/PR-2195.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [update I8II gfx950 liblogic to use new gfx950 mfma instructions](../sources/prs/hipblaslt/PR-2237.md) `[source-pr]` arch:cdna4
-- [update I8I8I liblogic to use new gfx950 mfma instructions](../sources/prs/hipblaslt/PR-2238.md) `[source-pr]` arch:cdna4
 - [fix: AMD gfx1201 (RDNA4/ROCm) — INT8 Triton f32 MFMA, LTX Video device fix, validate_settings KeyError](../sources/prs/hipblaslt/PR-1822.md) `[source-pr]` arch:rdna4
-- [Implement static unrolling in WMMA and MFMA](../sources/prs/rocWMMA/PR-497.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Fix f8 mfma implementation](../sources/prs/rocWMMA/PR-517.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 - [[CK Tile] Wavelet gemm pipeline for conv fwd](../sources/prs/hipblaslt/PR-7196.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[tensile] gfx12 assembly compatibility](../sources/prs/hipblaslt/PR-7655.md) `[source-pr]` arch:rdna4
@@ -273,16 +229,6 @@
 - [[AMD] Optimize o_proj gemm and attn output rope performance](../sources/prs/sglang/PR-28722.md) `[source-pr]` arch:cdna4
 - [CK Tile MXFP8 Group GEMM gfx1250](../sources/prs/transformerengine/PR-578.md) `[source-pr]` arch:rdna4
 - [[AMD] Restrict BlockPingPong scheduling for loop-variant masked loads](../sources/prs/hipblaslt/PR-10585.md) `[source-pr]` arch:cdna4
-- [enable layout conversion from mfma to dot_op for mfma16.](../sources/prs/triton/PR-453.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[MFMA] Support 64x4 and 4x64 tile size](../sources/prs/triton/PR-469.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[MFMA][Test] Add scripts generating mfma related lit tests](../sources/prs/triton/PR-472.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[MFMA] Move operand casts to AccelerateMatMul pass](../sources/prs/triton/PR-477.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[MFMA] Cleanup mfma pipeline](../sources/prs/triton/PR-479.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[MFMA] Remove redundant checks](../sources/prs/triton/PR-496.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Revert "[MFMA] Move operand casts to AccelerateMatMul pass"](../sources/prs/triton/PR-500.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [[ReductionOp][MFMA] fix reduction of mfma64x4 layout ](../sources/prs/triton/PR-526.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Triton DotSlicing: Support for Multiple Load Operands](../wiki/techniques/pr-triton-532.md) `[source-pr]` arch:cdna2, cdna3, cdna4
-- [Adding more support for machine model cycles per dot/mfma](../sources/prs/triton/PR-879.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) `[source-pr]` arch:cdna3
 - [[Bugfix][ROCm] Fix OOB query read in paged_attention_rocm for head_size < 128](../sources/prs/vllm/PR-40745.md) `[source-pr]` arch:cdna3, cdna4
 - [[ROCm][Kernel] Add HybridW4A16LinearKernel: Triton prefill + HIP skinny decode](../sources/prs/vllm/PR-40977.md) `[source-pr]` arch:rdna3, rdna4
@@ -301,42 +247,15 @@
 - [MFMA Instruction Scheduling](../wiki/techniques/mfma-scheduling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Mixed Precision Computing in HIP](../wiki/techniques/mixed-precision-hip.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
-- [Direct Register Layout Conversion for MFMA16 to Dot Operand in Triton](../wiki/techniques/pr-triton-453.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [PR Insight: triton #457 - [Tuning] Gemm tuning v3](../wiki/techniques/pr-triton-457.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [PR Insight: triton #463 - Refine GEMM test_correctness](../wiki/techniques/pr-triton-463.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton ROCm: 64x4 and 4x64 Tile Sizes via MFMA 4x4](../wiki/techniques/pr-triton-469.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #470 - Add matrix_instr_nonkdim to Tuning Space](../wiki/techniques/pr-triton-470.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Testing Infrastructure and MFMA Configurations in Triton (PR #472)](../wiki/techniques/pr-triton-472.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
-- [PR Insight: triton #476 - Add option for larger LDS vecSize](../wiki/techniques/pr-triton-476.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Compiler Optimization: Moving Operand Casts to AccelerateAMDMatmul in Triton](../wiki/techniques/pr-triton-477.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton Compiler: MFMA Pipeline Layout Cleanup](../wiki/techniques/pr-triton-479.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
-- [Triton PR-480: Improve Chain Dot Checking](../wiki/techniques/pr-triton-480.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton Compiler: Reverting Late Operand Casting for FP8 MFMA](../wiki/techniques/pr-triton-500.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Stream Pipelining with Transpose in ROCm Triton](../wiki/techniques/pr-triton-501.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #512 - Unify hasConvertToMMATransisitiveUse in Triton MLIR](../wiki/techniques/pr-triton-512.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Bfloat16 Support for Fused Attention (Transposed V) in Triton](../wiki/techniques/pr-triton-513.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Handling Reduction Operations on Asymmetrical MFMA Layouts (64x4)](../wiki/techniques/pr-triton-526.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Custom Kernel Configuration via Command Line in Triton Benchmarks](../wiki/techniques/pr-triton-530.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Refactoring SharedToDotOperandMFMA in Triton for AMD](../wiki/techniques/pr-triton-533.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #562 - Add kpack and matrix_instr_nonkdim for Stream-K Implementation](../wiki/techniques/pr-triton-562.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #563 - New Base Backwards Kernel](../wiki/techniques/pr-triton-563.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton: Support for Common Tensor Layouts](../wiki/techniques/pr-triton-587.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Autotuning Space Expansion for Flash Attention](../wiki/techniques/pr-triton-615.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Explicit Multiply-Reduce GEMM for Small Block Sizes in Triton](../wiki/techniques/pr-triton-621.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Triton Plot Tool: MFMA16 Support Analysis](../wiki/techniques/pr-triton-624.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Utility Tools: Layout Plotting for Triton MLIR on ROCm](../wiki/techniques/pr-triton-635.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Software Pipelining: Enforcing Double Buffering with num_stages=2 in Triton](../wiki/techniques/pr-triton-655.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Chained Dot Optimization via Shuffle Conversion (FP8)](../wiki/techniques/pr-triton-665.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Tianxing/fa int8: INT8 Flash Attention in Triton for ROCm](../wiki/techniques/pr-triton-669.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Triton 8-bit GEMM Scaling Support](../wiki/techniques/pr-triton-677.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Instruction Scheduling Autotuning in Triton GEMM](../wiki/techniques/pr-triton-649.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Dynamic Scale Loading in Triton GEMM Kernels](../wiki/techniques/pr-triton-684.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
-- [Testing and Benchmarking Explicit Dot GEMM in ROCm Triton](../wiki/techniques/pr-triton-637.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [AMD Performance Cherry Picks (Triton PR 4925)](../wiki/techniques/pr-triton-682.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 
 ## scaled-mfma (39 pages)
 
@@ -380,7 +299,11 @@
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md) `[source-pr]` arch:cdna4
 - [CDNA4 FP8 Scaled MFMA](../wiki/techniques/mfma-fp8-cdna4.md) `[wiki-technique]` arch:cdna4
 
-## wavefront (49 pages)
+## scratch-memory (1 pages)
+
+- [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+
+## wavefront (44 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -420,14 +343,27 @@
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [合并内存访问模式 (Coalesced Memory Access Patterns)](../wiki/techniques/coalesced-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
-- [PR Insight: Triton #450 - Occupancy Info Script](../wiki/techniques/pr-triton-450.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [PR Insight: triton #470 - Add matrix_instr_nonkdim to Tuning Space](../wiki/techniques/pr-triton-470.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Custom Kernel Configuration via Command Line in Triton Benchmarks](../wiki/techniques/pr-triton-530.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
-- [Accurate Occupancy Modeling on CDNA Architectures](../wiki/techniques/pr-triton-554.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
-- [Autotuning Space Expansion for Flash Attention](../wiki/techniques/pr-triton-615.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Explicit Multiply-Reduce GEMM for Small Block Sizes in Triton](../wiki/techniques/pr-triton-621.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Cross-Lane Communication with DPP (Warp Shuffle Equivalent)](../wiki/techniques/warp-shuffle-dpp.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
+
+## wmma (15 pages)
+
+- [[CK] Add support for large tensor index handling into conv bwd data WMMA](../sources/prs/hipblaslt/PR-8518.md) `[source-pr]` arch:rdna3, rdna4
+- [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/hipblaslt/PR-8523.md) `[source-pr]` arch:rdna4
+- [[hipblaslt][tensilelite] Add multicast tdm for subtile kernel](../sources/prs/hipblaslt/PR-8524.md) `[source-pr]` arch:rdna4
+- [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md) `[source-pr]` arch:cdna4, rdna4
+- [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md) `[source-pr]` arch:rdna4
+- [[tensilelite] Fix subtile PGR=0 WMMA-source WAR hazard on gfx1250](../sources/prs/hipblaslt/PR-8603.md) `[source-pr]` arch:rdna4
+- [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md) `[source-pr]` arch:rdna4
+- [[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests](../sources/prs/hipblaslt/PR-8622.md) `[source-pr]` arch:rdna4
+- [add MXFP8 pre-swizzling for gfx1250 GEMM](../sources/prs/transformerengine/PR-568.md) `[source-pr]` arch:rdna4
+- [CK Tile Group GEMM gfx1250](../sources/prs/transformerengine/PR-576.md) `[source-pr]` arch:rdna4
+- [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/transformerengine/PR-605.md) `[source-pr]` arch:rdna4
+- [CK MXFP8 Group Gemm gfx1250 Enablement](../sources/prs/transformerengine/PR-613.md) `[source-pr]` arch:rdna4
+- [gfx1250 mxfp8 gemm: loosen restrictions on K](../sources/prs/transformerengine/PR-627.md) `[source-pr]` arch:rdna4
+- [gfx1250 mxfp8 gemm: add NN/NT transpose workaround](../sources/prs/transformerengine/PR-630.md) `[source-pr]` arch:rdna4
+- [add dsv4 production mxfp8 gemm shapes](../sources/prs/transformerengine/PR-636.md) `[source-pr]` arch:rdna4
