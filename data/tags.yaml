@@ -343,3 +343,7 @@ aux_tags:
 - salu
 - valu
 - v-perm-b32
+  - fused-shared-expert
+  - fse
+  - qwen3.5
+  - aiter

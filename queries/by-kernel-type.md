@@ -588,7 +588,7 @@
 - [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## moe (67 pages)
+## moe (69 pages)
 
 - [Fused MoE GEMM (vLLM ROCm)](../wiki/kernels/fused-moe-gemm-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) conf:source-reported arch:cdna2, cdna3, cdna4
@@ -651,7 +651,9 @@
 - [[ROCm][gfx11] int4 wvSplitK + MoE int4: per-shape dispatch tunes for Qwen3.5-A3B](../sources/prs/vllm/PR-951.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [fix(moe): tune fused_moe per-M config for gfx1151 Qwen3-30B FP16 deco…](../sources/prs/vllm/PR-972.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md) conf:? arch:rdna3
+- [[ROCm][Bugfix][Perf] enable shared expert fusion for Qwen3.5](../sources/prs/vllm/PR-44434.md) conf:? arch:cdna3
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md) conf:source-reported arch:cdna2, cdna3, cdna4
+- [Fused Shared Expert (FSE) Slot Mapping for AITER MoE](../wiki/techniques/pr-vllm-rocm-44434.md) conf:verified arch:cdna3
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) conf:source-reported arch:cdna3, cdna4
 - [Applying Cache Cliff Stride Padding to W4A16 MoE Experts](../wiki/techniques/pr-vllm-rocm-1003.md) conf:verified arch:rdna3

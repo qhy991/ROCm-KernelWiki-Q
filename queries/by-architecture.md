@@ -968,7 +968,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna3 (971 pages)
+## cdna3 (973 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -1456,6 +1456,7 @@
 - [TritonAttention: fix gfx1151 softmax segment buffer undersize](../sources/prs/vllm/PR-961.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [fix(moe): tune fused_moe per-M config for gfx1151 Qwen3-30B FP16 deco…](../sources/prs/vllm/PR-972.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[profiling] Capture attention call shapes with torch.profile](../sources/prs/vllm/PR-996.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCm][Bugfix][Perf] enable shared expert fusion for Qwen3.5](../sources/prs/vllm/PR-44434.md) `[source-pr]` arch:cdna3
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
@@ -1465,6 +1466,7 @@
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md) `[wiki-technique]` arch:cdna3
+- [Fused Shared Expert (FSE) Slot Mapping for AITER MoE](../wiki/techniques/pr-vllm-rocm-44434.md) `[wiki-technique]` arch:cdna3
 - [HIP Graph Capture and Replay](../wiki/techniques/hip-graph-capture.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) `[wiki-technique]` arch:cdna3, cdna4

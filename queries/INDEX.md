@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-1067 pages. Machine-readable form: [pages.json](pages.json).
+1069 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -23,7 +23,7 @@
 - `doc-hip-programming-guide` — [HIP Programming Guide](../sources/docs/hip-programming-guide.md)
 - `doc-mi300x-workload` — [MI300X Workload Optimization Guide](../sources/docs/mi300x-workload.md)
 
-## source-pr (488)
+## source-pr (489)
 
 - `pr-MIOpen-3427` — [Softmax log backward : Increase precision of fp16's accumulator to fp32](../sources/prs/MIOpen/PR-3427.md)
 - `pr-MIOpen-3479` — [Convert softmax from CTest to GTest](../sources/prs/MIOpen/PR-3479.md)
@@ -512,6 +512,7 @@
 - `pr-vllm-972` — [fix(moe): tune fused_moe per-M config for gfx1151 Qwen3-30B FP16 deco…](../sources/prs/vllm/PR-972.md)
 - `pr-vllm-996` — [[profiling] Capture attention call shapes with torch.profile](../sources/prs/vllm/PR-996.md)
 - `pr-vllm-rocm-1003` — [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md)
+- `pr-vllm-rocm-44434` — [[ROCm][Bugfix][Perf] enable shared expert fusion for Qwen3.5](../sources/prs/vllm/PR-44434.md)
 - `pr-vllm-rocm-998` — [[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff](../sources/prs/vllm/PR-998.md)
 
 ## wiki-hardware (15)
@@ -605,7 +606,7 @@
 - `pattern-tile-quantize-dequant` — [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md)
 - `pattern-warp-specialization` — [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 
-## wiki-technique (490)
+## wiki-technique (491)
 
 - `technique-async-copy-lds` — [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - `technique-atomic-operations-hip` — [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md)
@@ -616,6 +617,7 @@
 - `technique-double-buffering` — [LDS Double Buffering](../wiki/techniques/double-buffering.md)
 - `technique-flat-vs-buffer` — [Flat vs Buffer Addressing Modes](../wiki/techniques/flat-addressing.md)
 - `technique-fmha-bwd-unified-workspace` — [Unified Workspace Allocation for Flash Attention Backward](../wiki/techniques/pr-flash-attention-rocm-182.md)
+- `technique-fused-shared-expert-mapping` — [Fused Shared Expert (FSE) Slot Mapping for AITER MoE](../wiki/techniques/pr-vllm-rocm-44434.md)
 - `technique-gfx11x-4096b-cache-cliff` — [Evading the RDNA3 4096B Cache Cliff via Stride Padding](../wiki/techniques/pr-vllm-rocm-998.md)
 - `technique-hip-graph-capture` — [HIP Graph Capture and Replay](../wiki/techniques/hip-graph-capture.md)
 - `technique-kernel-launch-overhead` — [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md)

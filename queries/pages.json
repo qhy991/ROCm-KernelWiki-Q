@@ -13886,6 +13886,29 @@
   "summary": ""
  },
  {
+  "id": "pr-vllm-rocm-44434",
+  "type": "source-pr",
+  "title": "[ROCm][Bugfix][Perf] enable shared expert fusion for Qwen3.5",
+  "path": "sources/prs/vllm/PR-44434.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "fused-shared-expert",
+   "fse",
+   "qwen3.5",
+   "aiter"
+  ],
+  "kernel_types": [
+   "moe"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": null,
+  "summary": ""
+ },
+ {
   "id": "pr-vllm-rocm-998",
   "type": "source-pr",
   "title": "[ROCm] Pad unquantized weight stride off the gfx11x 4096 B cliff",
@@ -14124,6 +14147,27 @@
   ],
   "kernel_types": [
    "flash-attention"
+  ],
+  "languages": [],
+  "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "technique-fused-shared-expert-mapping",
+  "type": "wiki-technique",
+  "title": "Fused Shared Expert (FSE) Slot Mapping for AITER MoE",
+  "path": "wiki/techniques/pr-vllm-rocm-44434.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "fused-shared-expert",
+   "fse",
+   "qwen3.5",
+   "aiter"
+  ],
+  "kernel_types": [
+   "moe"
   ],
   "languages": [],
   "confidence": "verified",
