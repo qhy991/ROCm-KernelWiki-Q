@@ -282,6 +282,7 @@ def main():
 
     count = 0
     skipped = 0
+    skipped_enriched = 0
 
     for pr in prs:
         title = pr.get("title", "")
@@ -294,9 +295,18 @@ def main():
                 skipped += 1
                 continue
 
-        page_content = generate_pr_page(pr, repo_key)
         page_path = os.path.join(out_dir, f"PR-{number}.md")
 
+        # Skip re-generating pages already enriched (have a Changed Files section), so
+        # cross-subproject monorepo PRs don't overwrite enriched content on re-pull.
+        if os.path.exists(page_path):
+            with open(page_path) as existing_f:
+                existing = existing_f.read()
+            if "## Changed Files" in existing:
+                skipped_enriched += 1
+                continue
+
+        page_content = generate_pr_page(pr, repo_key)
         with open(page_path, "w") as f:
             f.write(page_content)
 
@@ -305,6 +315,8 @@ def main():
     print(f"Generated {count} PR pages in {out_dir}")
     if skipped:
         print(f"Skipped {skipped} non-kernel PRs")
+    if skipped_enriched:
+        print(f"Skipped {skipped_enriched} already-enriched pages (not overwritten)")
     return 0
 
 
