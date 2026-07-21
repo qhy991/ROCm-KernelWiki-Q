@@ -45,6 +45,16 @@ REPO_MAP = {
         "full_name": "ROCm/flash-attention",
         "description": "ROCm Flash Attention",
     },
+    "rocm-libraries": {
+        "org": "ROCm",
+        "full_name": "ROCm/rocm-libraries",
+        "description": "ROCm math libraries monorepo (hipBLASLt, MIOpen, rocBLAS, rocWMMA, hipSPARSE, ...)",
+    },
+    "amdmigraphx": {
+        "org": "ROCm",
+        "full_name": "ROCm/AMDMIGraphX",
+        "description": "AMD graph compiler / kernel fusion (MIGraphX)",
+    },
 }
 
 # Auto-classify PRs by title keywords

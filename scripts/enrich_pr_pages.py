@@ -235,11 +235,10 @@ def main() -> int:
     args = parser.parse_args()
 
     updated = 0
-    for repo_key in ("composable_kernel", "hipblaslt", "flash-attention"):
+    repo_dirs = sorted(d for d in SOURCES_DIR.iterdir() if d.is_dir())
+    for repo_dir in repo_dirs:
+        repo_key = repo_dir.name
         if args.repo and args.repo != repo_key:
-            continue
-        repo_dir = SOURCES_DIR / repo_key
-        if not repo_dir.exists():
             continue
         for path in sorted(repo_dir.glob("PR-*.md")):
             if enrich_page(
