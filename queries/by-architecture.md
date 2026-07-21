@@ -1,7 +1,7 @@
 # Index: By Architecture
 
 
-## cdna1 (36 pages)
+## cdna1 (41 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [Composable Kernel README](../sources/docs/ck-readme.md) `[source-doc]` arch:cdna1, cdna2, cdna3, cdna4
@@ -17,6 +17,7 @@
 - [Wavefront (64-thread execution unit)](../wiki/hardware/wavefront.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [Embedding Lookup Kernel Optimization](../wiki/kernels/embedding-lookup.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, rdna3, rdna4
+- [MIOpen Convolution Kernel Strategy on ROCm](../wiki/kernels/miopen-conv-strategy-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [Parallel Prefix Sum (Scan) on ROCm](../wiki/kernels/prefix-sum-scan.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [Reduction Kernels on ROCm](../wiki/kernels/reduction-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [Matrix Transpose on ROCm](../wiki/kernels/transpose-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
@@ -27,6 +28,10 @@
 - [cuDNN to MIOpen Migration Guide](../wiki/migration/cudnn-to-miopen.md) `[wiki-migration]` arch:cdna1, cdna2, cdna3
 - [Compute-Bound MFMA Pattern on AMD GPUs](../wiki/patterns/compute-bound-mfma-amd.md) `[wiki-pattern]` arch:cdna1, cdna2, cdna3, cdna4
 - [Reduction Tree](../wiki/patterns/reduction-tree.md) `[wiki-pattern]` arch:cdna1, cdna2, cdna3, cdna4
+- [[MIOpen] Enable the GPU tests related to determinism](../sources/prs/rocm-libraries/PR-6246.md) `[source-pr]` arch:cdna1
+- [[MIOPEN] Convert conv_ocl_dir2Dfwd from OCL to HIP](../sources/prs/rocm-libraries/PR-7637.md) `[source-pr]` arch:cdna1
+- [[hipBLASLt][TensileLite] Emit VOPD v_dual_fmac_f32 for f32](../sources/prs/rocm-libraries/PR-8349.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix naming bug that would discard kernels as duplicates](../sources/prs/rocm-libraries/PR-8745.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Non-Temporal Store (L2 Cache Bypass)](../wiki/techniques/buffer-store-nt.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
@@ -40,7 +45,7 @@
 - [Wavefront Reduction using DPP](../wiki/techniques/wave-reduction.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna2 (610 pages)
+## cdna2 (1220 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -76,6 +81,7 @@
 - [Efficient Histogram Computation on ROCm](../wiki/kernels/histogram-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [KV Cache Paged Attention on ROCm](../wiki/kernels/kv-cache-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [LayerNorm and RMSNorm Optimization on ROCm](../wiki/kernels/layernorm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [MIOpen Convolution Kernel Strategy on ROCm](../wiki/kernels/miopen-conv-strategy-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [Multi-Head Latent Attention (MLA) on ROCm](../wiki/kernels/mla-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Parallel Prefix Sum (Scan) on ROCm](../wiki/kernels/prefix-sum-scan.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
@@ -119,7 +125,92 @@
 - [[FLYDSL MOE] mixed_moe + moe_gemm_2stage: fx internal-types cleanup (ASM-identical)](../sources/prs/hipblaslt/PR-3450.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fused SplitK zero-init for FP8 a8w8 blockscale GEMMs (y_is_zeroed) + re-enable CKTile SplitK](../sources/prs/hipblaslt/PR-3457.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[feat] FP8 (DeepSeek-V4 layout) sparse paged prefill attention](../sources/prs/hipblaslt/PR-3583.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Use fill_argument for literals that have the same value](../sources/prs/amdmigraphx/PR-3815.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve split reshape](../sources/prs/amdmigraphx/PR-4163.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add deref op](../sources/prs/amdmigraphx/PR-4554.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add gather_slice_concat matcher](../sources/prs/amdmigraphx/PR-4725.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Dedupilicate Gather Reads from Constant Embedding Data Vectors](../sources/prs/amdmigraphx/PR-4727.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve horizontal fusions](../sources/prs/amdmigraphx/PR-4729.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fuse pointwise across split slices](../sources/prs/amdmigraphx/PR-4733.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add versioninfo to migraphx binaries WINDOWS](../sources/prs/amdmigraphx/PR-4765.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Enable fp16 channelwise convolution](../sources/prs/amdmigraphx/PR-4808.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Rewrite skinny gemms to mul+reduce_sum](../sources/prs/hipblaslt/PR-4811.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add dynamic shape support for TopK](../sources/prs/amdmigraphx/PR-4880.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [GPU NMS kernel and refactor of NMS operator](../sources/prs/amdmigraphx/PR-4893.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add torch kit](../sources/prs/amdmigraphx/PR-4899.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Replace deprecated __hip_atomic_* builtins with __scoped_atomic_* equivalents](../sources/prs/amdmigraphx/PR-4902.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [broadcast_with_dims: lower-bound the dynamic output dims at 1, not 0](../sources/prs/amdmigraphx/PR-4927.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Convolution backwards v4r1](../sources/prs/amdmigraphx/PR-4928.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add conv winograd for gfx12](../sources/prs/amdmigraphx/PR-4936.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ONNX parser updates for symbolic shapes](../sources/prs/amdmigraphx/PR-4939.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve error reporting with loop operator](../sources/prs/amdmigraphx/PR-4949.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1082] Decouple OnnxRT from user/local via updateing build script](../sources/prs/amdmigraphx/PR-4951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1085] Add --cout option for driver output](../sources/prs/amdmigraphx/PR-4959.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-12](../sources/prs/amdmigraphx/PR-4960.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Moving RockEnums.h inside header guard](../sources/prs/amdmigraphx/PR-4962.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.6 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Propagate the permutation for resize when using the sizes attribute](../sources/prs/amdmigraphx/PR-4964.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Docs] Add precision support reference page](../sources/prs/amdmigraphx/PR-4965.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix FindParallelSTL MSVC compile check missing C++17 flag](../sources/prs/amdmigraphx/PR-4966.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Vectorize Resize](../sources/prs/amdmigraphx/PR-4967.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add kernelName main guard to mlss conv](../sources/prs/amdmigraphx/PR-4968.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIRADSW-567] Fix int8 models qlinearconv](../sources/prs/amdmigraphx/PR-4969.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[4970] Generate tuning inputs on GPU via splitmix64 device RNG](../sources/prs/amdmigraphx/PR-4971.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump pyjwt from 2.8.0 to 2.13.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4972.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Reject zero-size operation name buffers](../sources/prs/amdmigraphx/PR-4973.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4974.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4975.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Propagate layout with reshape after lowering](../sources/prs/amdmigraphx/PR-4976.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1054] Log debug symbols when exceptions are thrown](../sources/prs/amdmigraphx/PR-4978.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Cross Compile: expose more device_props and pass JSON object in driver](../sources/prs/amdmigraphx/PR-4981.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Encode benchmark MXR comment metadata as JSON](../sources/prs/amdmigraphx/PR-4982.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add concat reshape matcher](../sources/prs/amdmigraphx/PR-4984.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Debug symbols docs update](../sources/prs/amdmigraphx/PR-4985.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Pass in a JSON file to driver](../sources/prs/amdmigraphx/PR-4986.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix verify auto-print handler registration for late targets](../sources/prs/amdmigraphx/PR-4987.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[4979] Adaptive benchmark bundle during tuning](../sources/prs/amdmigraphx/PR-4989.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add backend options](../sources/prs/amdmigraphx/PR-4990.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix redundant re-benchmarking for pooling when using problem cache](../sources/prs/amdmigraphx/PR-4991.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove dev_intro.rst and formatting contributing-to-migraphx](../sources/prs/amdmigraphx/PR-4993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-19](../sources/prs/amdmigraphx/PR-5000.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1082] Update OnnxRT workloads use Plugin EP Registration](../sources/prs/amdmigraphx/PR-5002.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add checkers for redundant static_cast](../sources/prs/amdmigraphx/PR-5003.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add slice squeeze matcher](../sources/prs/amdmigraphx/PR-5004.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocmlir to June 24](../sources/prs/amdmigraphx/PR-5009.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Use gfx90a for HIP RTC Debug](../sources/prs/amdmigraphx/PR-5012.md) `[source-pr]` arch:cdna2
+- [fix bug with simplify reshapes and multi reduction axis](../sources/prs/amdmigraphx/PR-5013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Slice over dynamic dimension](../sources/prs/amdmigraphx/PR-5015.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-26](../sources/prs/amdmigraphx/PR-5016.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Skip fuse_horizontal pass on dynamic shaped inputs](../sources/prs/amdmigraphx/PR-5017.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Use eigen for convolution](../sources/prs/amdmigraphx/PR-5018.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Allow benchmark MXR dumps during cross-compile](../sources/prs/amdmigraphx/PR-5022.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Change option name to MIGRAPHX_USE_MSVC_STATIC_RUNTIME](../sources/prs/amdmigraphx/PR-5023.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Sanitize benchmark mxr file name to use `_` instead of invalid Windows characters](../sources/prs/amdmigraphx/PR-5024.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Don't throw an exception when using MIGRAPHX_GPU_DUMP_BENCHMARK_MXR](../sources/prs/amdmigraphx/PR-5025.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fuse_pointwise fuse dynamic even if scalar](../sources/prs/amdmigraphx/PR-5027.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Lower `dimensions_of` on GPU](../sources/prs/amdmigraphx/PR-5029.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1163] Add lower_device_ops pass](../sources/prs/amdmigraphx/PR-5030.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add windows gpu build](../sources/prs/amdmigraphx/PR-5034.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix gather regression](../sources/prs/amdmigraphx/PR-5038.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Auto select NCHW/NHWC layout](../sources/prs/amdmigraphx/PR-5040.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add notices about following LLVM AI Tool Use Policy](../sources/prs/amdmigraphx/PR-5042.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Mixed length gather merge](../sources/prs/amdmigraphx/PR-5044.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix the unit tests that are broken on develop](../sources/prs/amdmigraphx/PR-5045.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [update rocmlir to eccd4d7](../sources/prs/amdmigraphx/PR-5047.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [update before installing](../sources/prs/amdmigraphx/PR-5050.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.35.0 to 1.36.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5051.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add mlss_use_specific_ops as a GPU backend option](../sources/prs/amdmigraphx/PR-5053.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add from_string/to_string enum macro](../sources/prs/amdmigraphx/PR-5054.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-07-10](../sources/prs/amdmigraphx/PR-5055.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add max block size tuning for JIT reductions](../sources/prs/amdmigraphx/PR-5056.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump soupsieve from 2.5 to 2.8.4 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5057.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [if miopen/hipblas/rocblas are not enabled, send gemms to rocmlir](../sources/prs/amdmigraphx/PR-5059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix windows CI: Workaround files not being deleted](../sources/prs/amdmigraphx/PR-5062.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add toggle for wavefront size to cross compilation options](../sources/prs/amdmigraphx/PR-5065.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix reverse op bug](../sources/prs/amdmigraphx/PR-5068.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix non-standard literals causing failures in mlir modules](../sources/prs/amdmigraphx/PR-5070.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.36.0 to 1.38.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5071.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-07-17](../sources/prs/amdmigraphx/PR-5076.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(compile): expose torch_compile_options for Inductor flag tuning](../sources/prs/hipblaslt/PR-3692.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Disable the gfx90a on CK Tile Grouped GEMM](../sources/prs/composable_kernel/PR-3336.md) `[source-pr]` arch:cdna2
 - [Ck tile/flash attention](../sources/prs/flash-attention/PR-61.md) `[source-pr]` arch:cdna2, cdna3
@@ -156,6 +247,530 @@
 - [[ROCm] Enable native AsyncTP](../sources/prs/hipblaslt/PR-177961.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[inductor][rocm] make AMD MM matrix_instr_nonkdim configurable](../sources/prs/hipblaslt/PR-186642.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add dense FlexGEMM QuACK tuning](../sources/prs/hipblaslt/PR-187108.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocfft): integrate RCCL for single-node multi-GPU global transposition.](../sources/prs/rocm-libraries/PR-3042.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocfft] use thread-safe counting in rocfft_setup and rocfft_cleanup ](../sources/prs/rocm-libraries/PR-3641.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] Add device level parallel algorithm TopK and its tests and benchmarks](../sources/prs/rocm-libraries/PR-3646.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocrand): use primbench](../sources/prs/rocm-libraries/PR-4454.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [aquant block scale gemm](../sources/prs/rocm-libraries/PR-5268.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] refactor(rocprim): combine seperate uses of half type checks and std::is_floating_point ](../sources/prs/rocm-libraries/PR-5271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK TILE ENGINE] Add block-scale GEMM operators BQuant](../sources/prs/rocm-libraries/PR-5496.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Add transposed tile load implementation, and tests for load_and_convert_tile](../sources/prs/rocm-libraries/PR-5510.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Reduce unaccounted overhead of ScopedTimer and timing_context](../sources/prs/rocm-libraries/PR-6043.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [bitonic warp/ block sort with forward only comparision ](../sources/prs/rocm-libraries/PR-6061.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Origami Model for Attention](../sources/prs/rocm-libraries/PR-6334.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): use wavefront size-based dispatching in remaining warp algorithms](../sources/prs/rocm-libraries/PR-6420.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Add gfx120x support to Winograd Rage](../sources/prs/rocm-libraries/PR-6439.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(composablekernel): More data type tests for ck tile batched grouped gemm](../sources/prs/rocm-libraries/PR-6521.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(origami): add gfx1200 (RDNA4) hardware support](../sources/prs/rocm-libraries/PR-6524.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK Tile] mxfp8 support for qr async pipeline](../sources/prs/rocm-libraries/PR-6526.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Correct compute type conversion for User offline tuning](../sources/prs/rocm-libraries/PR-6557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Layernorm bwd frontend and CPU reference](../sources/prs/rocm-libraries/PR-6566.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT | hipFFT] gfx90c enablement in FFT libs](../sources/prs/rocm-libraries/PR-6682.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): Add CSC format support to spsv and sptrsv](../sources/prs/rocm-libraries/PR-6695.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Debug memory](../sources/prs/rocm-libraries/PR-6844.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Added Global Read/Write Support](../sources/prs/rocm-libraries/PR-6944.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM][hipRAND[rocRAND] Remove rocm-smi from template documents](../sources/prs/rocm-libraries/PR-6981.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix incorrect output for SIA0 + PGR](../sources/prs/rocm-libraries/PR-6993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocBLAS: Fix Fortran sample HIP result names](../sources/prs/rocm-libraries/PR-7059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocWMMA][Community] Add lora adapter fusion sample](../sources/prs/rocm-libraries/PR-7083.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT] Move partial-pass generator functions from RR/CC classes to base class](../sources/prs/rocm-libraries/PR-7137.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): use singleton class for random numbers](../sources/prs/rocm-libraries/PR-7174.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[fft mpi workers] Use reference_fft_data in MPI tests](../sources/prs/rocm-libraries/PR-7225.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix example_arch for spirv compilation](../sources/prs/rocm-libraries/PR-7334.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix name change in report_noise.py](../sources/prs/rocm-libraries/PR-7337.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] [ALMIOPEN-1898] RFC: MIOpen→hipDNN forwarding wrapper](../sources/prs/rocm-libraries/PR-7388.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASlt] Enabling test_categories](../sources/prs/rocm-libraries/PR-7396.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK TILE] Unification Work – Integration of unification framework into CK Tile](../sources/prs/rocm-libraries/PR-7407.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix yaml type mismatch in library logic for aquavanjaram (d) + arcturus (6/13 of #6609)](../sources/prs/rocm-libraries/PR-7413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT] Add support for batch configuration directly in the partial-pass kernels config file](../sources/prs/rocm-libraries/PR-7476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CI] Run hipSPARSELt when hipBLASLt subtree changes](../sources/prs/rocm-libraries/PR-7514.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(tensilelite): add stage-tagged TypeAlias for LogicalScheduler pipeline](../sources/prs/rocm-libraries/PR-7540.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Relax batchnorm scale bias](../sources/prs/rocm-libraries/PR-7566.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Tensilelite] MBSK: packed βC dword unpack indexes wrong dataV/byteOffset for I8/F8/B8 dest](../sources/prs/rocm-libraries/PR-7578.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1943 Add pytest suite and CI workflow for Python bindings](../sources/prs/rocm-libraries/PR-7600.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Add ABQuant block scale GEMM operator](../sources/prs/rocm-libraries/PR-7607.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensile] gfx12 assembly compatibility](../sources/prs/rocm-libraries/PR-7655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Enable grouped CK xdlops solvers for large-stride tensors (ROCM-23997)](../sources/prs/rocm-libraries/PR-7663.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocSPARSE] Implement incomplete LDL' with zero fill-in](../sources/prs/rocm-libraries/PR-7689.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add unit test for TensileLogic_Run, TensileMergeLibrary , TensileRetuneLibrary and TensileUpdateLibrary](../sources/prs/rocm-libraries/PR-7703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Split KDB and PDB testing to allow Database updates without changes to kernel DB](../sources/prs/rocm-libraries/PR-7747.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Add query-only APIs that return workspace range for fwd, bwd and wrw solvers in MIOpen](../sources/prs/rocm-libraries/PR-7770.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [RotateCoObject](../sources/prs/rocm-libraries/PR-7788.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Insert mode2 s_wait_alu + half-aware RegKey](../sources/prs/rocm-libraries/PR-7844.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [style: [CK TILE] Unification Work – Unify format MFMA part](../sources/prs/rocm-libraries/PR-7850.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK Tile] Adding gfx1250 wrappers for dense and scale builtins](../sources/prs/rocm-libraries/PR-7852.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Add coverage for cpp files](../sources/prs/rocm-libraries/PR-7853.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Support function-call CFG](../sources/prs/rocm-libraries/PR-7858.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-1696] Re-enabling certain MIOpen tests with ASan enabled.](../sources/prs/rocm-libraries/PR-7904.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse/hipsparse] Add emulation categories to rocSPARSE/hipSPARSE](../sources/prs/rocm-libraries/PR-7905.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [gmock and gtest needed for compilation](../sources/prs/rocm-libraries/PR-7912.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Add MX F8/F4 F32-out smoke test for gfx1250](../sources/prs/rocm-libraries/PR-7929.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Re-tune gfx1151 NN bf16+bias GridBased selections](../sources/prs/rocm-libraries/PR-7933.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): generalize 2D r2c/c2r to multi-dimensional batch](../sources/prs/rocm-libraries/PR-7963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove disabling offload-compress for spirv in rocPRIM, hipCUB and rocThrust](../sources/prs/rocm-libraries/PR-7971.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add a characterization-test suite for the TensileLite Python surface](../sources/prs/rocm-libraries/PR-7989.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [  [origami] Consume Origami as a findable package; stop duplicate origami builds](../sources/prs/rocm-libraries/PR-7996.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Rewrite wait-count insertion as SSA def-use dataflow with per-counter FIFO modeling](../sources/prs/rocm-libraries/PR-8002.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Enable MBSK GSU on gfx1250](../sources/prs/rocm-libraries/PR-8008.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Use physical CU count for N_CU on RDNA](../sources/prs/rocm-libraries/PR-8013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK TILE] Unification Work – Add WMMA Scale Mixed Types Support](../sources/prs/rocm-libraries/PR-8020.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Allow ScheduleIterAlg=1 with Stream-K](../sources/prs/rocm-libraries/PR-8051.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [New rocblas hipblaslt integration](../sources/prs/rocm-libraries/PR-8082.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): add rocsparse_handle_create/rocsparse_handle_destroy](../sources/prs/rocm-libraries/PR-8083.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Preserve pivot sign/phase in ILU0 numeric boost](../sources/prs/rocm-libraries/PR-8084.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone](../sources/prs/rocm-libraries/PR-8096.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ Add guards around dpp intrinsic for spirv ](../sources/prs/rocm-libraries/PR-8102.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] gfx1151: add K=1024 grid point at (M=4096,N=4096) for BBS TN](../sources/prs/rocm-libraries/PR-8104.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Add fast path reference gemm for MXFP4](../sources/prs/rocm-libraries/PR-8106.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add unit tests for Common/Utilities](../sources/prs/rocm-libraries/PR-8115.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): stop treating tensilelite host as internal library](../sources/prs/rocm-libraries/PR-8133.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [hipblaslt: fix uninitialized read of a_type/b_type in swizzle validation](../sources/prs/rocm-libraries/PR-8147.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Rule-based configuration generation in CK Dispatcher codegen](../sources/prs/rocm-libraries/PR-8157.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][dnn-providers] Allow current tool version when different from expected](../sources/prs/rocm-libraries/PR-8161.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt][tensilelite] StreamK=5 hybrid kernel + Tile Scheduling tri-state mode (OFF/ON/AUTO)](../sources/prs/rocm-libraries/PR-8162.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Revert "[rocBLAS] Tag gfx12 f16 NN gemm_512 cases as known bug (ROCM-…](../sources/prs/rocm-libraries/PR-8163.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Test harness: abort + backtrace on fatal signals instead of recovering and hanging](../sources/prs/rocm-libraries/PR-8165.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Stop rejecting valid auto-derived LdsBlockSizePerPad values](../sources/prs/rocm-libraries/PR-8181.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- ["Warning: Stream-K Data Parallel..." spamming theRockCI build](../sources/prs/rocm-libraries/PR-8184.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Deprecate rocsparse_indextype_u16](../sources/prs/rocm-libraries/PR-8189.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[GFX1250][CK_TILE] Add scale16 (ScaleBlockSize=16) support to MX GEMM TDM pipeline](../sources/prs/rocm-libraries/PR-8202.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Fix SIA0+PGR2+PLR0: drain dscnt before barrier sync](../sources/prs/rocm-libraries/PR-8204.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Docs] Standardize precision support reference pages across components](../sources/prs/rocm-libraries/PR-8205.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add packed pk8 FP8 conversion](../sources/prs/rocm-libraries/PR-8207.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hipblaslt] [Subtile] [gfx1250] Remove Bank conflicts + small scheduling improvements](../sources/prs/rocm-libraries/PR-8211.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK TILE] Unification Work – Remove unification Flag structs in favor of new WarpGemmParams](../sources/prs/rocm-libraries/PR-8227.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt): Add 32-bit/size_t overflow test coverage for large-size kernels](../sources/prs/rocm-libraries/PR-8231.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Add RFC 0015: Per-Graph Engine Support Claims](../sources/prs/rocm-libraries/PR-8235.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SpMM regression testing](../sources/prs/rocm-libraries/PR-8236.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocfft-test] Resolve build failure of rocfft-test with older versions of rocfft](../sources/prs/rocm-libraries/PR-8246.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt-provider): Add FP8 OCP dequantize + GEMM support](../sources/prs/rocm-libraries/PR-8251.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SDDMM regression testing](../sources/prs/rocm-libraries/PR-8252.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add hipBLASLt PR Quality skill overlay](../sources/prs/rocm-libraries/PR-8254.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2031 Port dnn-benchmark to Windows (cross-platform CPU probe + setup.ps1)](../sources/prs/rocm-libraries/PR-8255.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen][MICI] switch to ninja](../sources/prs/rocm-libraries/PR-8256.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocprim][ASAN] Remove the ASAN workaround in test_device_histogram](../sources/prs/rocm-libraries/PR-8258.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ [CK_TILE] Add graph capture support for FMHA backward(new branch)](../sources/prs/rocm-libraries/PR-8262.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Autotune](../sources/prs/rocm-libraries/PR-8264.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Fix rebuild barriers error](../sources/prs/rocm-libraries/PR-8266.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Fix out-of-bounds read in Activation CPU reference multi-thread partition](../sources/prs/rocm-libraries/PR-8270.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK Tile] Grouped Conv GFX1250 fixes for dispatcher and builder g…](../sources/prs/rocm-libraries/PR-8271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[dnn-benchmarking] Add CUDA support to the PyTorch backend](../sources/prs/rocm-libraries/PR-8280.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix DirectToLdsMetadata bool/int type mismatch](../sources/prs/rocm-libraries/PR-8284.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [stinkytofu: add missing <cstdint> and <climits> includes](../sources/prs/rocm-libraries/PR-8289.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Guard x86-only compile option](../sources/prs/rocm-libraries/PR-8298.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparselt] Guard x86-only headers and compiler options](../sources/prs/rocm-libraries/PR-8299.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Implement batched GER/GERU with per-batch alpha coefficients](../sources/prs/rocm-libraries/PR-8300.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Use 32-bit GL2PrefetchInc to reduce sgpr pressure](../sources/prs/rocm-libraries/PR-8303.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][SDPA] ALMIOPEN-1826 Mask Support for SDPA BWD](../sources/prs/rocm-libraries/PR-8304.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Make store-remap (SRVW) work gwvw=16 and StreamK=3](../sources/prs/rocm-libraries/PR-8308.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hipblaslt] Subtile/TDM (gfx1250): load dedup, multi-partition LDS fix, WMMA matrix-A reuse](../sources/prs/rocm-libraries/PR-8323.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Add validation infrastructure for input yaml files (gated off)](../sources/prs/rocm-libraries/PR-8327.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT][ci] Add multi-GPU test category](../sources/prs/rocm-libraries/PR-8329.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-899 Add Windows VERSIONINFO and drop the umbrella product version](../sources/prs/rocm-libraries/PR-8330.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] ALMIOPEN-2069 Work around missing nlohmann_json natvis file in TheRock prebuilt artifact](../sources/prs/rocm-libraries/PR-8331.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Retry builds on node failure with automatic rerouting](../sources/prs/rocm-libraries/PR-8332.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][G-F-A] Demo calling triton fp4 kernel](../sources/prs/rocm-libraries/PR-8336.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add adaptive timing mode to hipblaslt-bench](../sources/prs/rocm-libraries/PR-8337.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Throttle tensor_load_to_lds with a bounded in-flight credit pool](../sources/prs/rocm-libraries/PR-8345.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Fp32 and Bf16 mfma instructions extension](../sources/prs/rocm-libraries/PR-8348.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt][TensileLite] Emit VOPD v_dual_fmac_f32 for f32](../sources/prs/rocm-libraries/PR-8349.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
+- [Add tile shape for FMHA batch prefill on MI308X (on fp8, hdim=256)](../sources/prs/rocm-libraries/PR-8350.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [CompactLoopStore](../sources/prs/rocm-libraries/PR-8354.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Conv 3d support](../sources/prs/rocm-libraries/PR-8355.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Revert "Reduce CachingLibrary map lookup/write overhead (#7754)"](../sources/prs/rocm-libraries/PR-8356.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-8359.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-8361.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-8371.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2035] - cuDNN compatibility layer enum updates](../sources/prs/rocm-libraries/PR-8376.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.6 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8379.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM][hipCUB][rocThrust][rocRAND][hipRAND] Update version info for 7.14 release](../sources/prs/rocm-libraries/PR-8392.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipsparse): fix hipSPARSE Build and Tests for CUDA 13](../sources/prs/rocm-libraries/PR-8393.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] per-batch alpha stride support for axpy/axpy_ex](../sources/prs/rocm-libraries/PR-8394.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Retuned TN HHS and BBS kernels on gfx1100 and vgpr change](../sources/prs/rocm-libraries/PR-8396.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Cold cache retune gfx1151 HHS GridBased skinny_N shapes](../sources/prs/rocm-libraries/PR-8398.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Resubmit LLVM-style pass plugin mechanism with standalone-build install gate](../sources/prs/rocm-libraries/PR-8400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2064] [hipDNN] Add PyTorch references for benchmarking](../sources/prs/rocm-libraries/PR-8402.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix 2 kernel bugs](../sources/prs/rocm-libraries/PR-8406.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] CachingLibrary hash-collision regression test ](../sources/prs/rocm-libraries/PR-8411.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Updated client code to handle A/B=0 for General Batched GEMM and added corresponding tests](../sources/prs/rocm-libraries/PR-8412.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix tail loop token](../sources/prs/rocm-libraries/PR-8413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix MX batch stride for gfx1250](../sources/prs/rocm-libraries/PR-8414.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2092] Restructure MIOpen Jenkins pipeline to reduce Jenkinsfile size and support selective reruns](../sources/prs/rocm-libraries/PR-8415.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add tests for tensor_load_to_lds in-flight throttle](../sources/prs/rocm-libraries/PR-8416.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensile] Fix SIA0 PGR2 global-read placement](../sources/prs/rocm-libraries/PR-8417.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Add gfx1250 support for AdaptiveGemmNTAB](../sources/prs/rocm-libraries/PR-8421.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Extend and optimize Quant Gemm Kernel for Aiter a8w8](../sources/prs/rocm-libraries/PR-8423.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add missing constraint in the FMHA qr async pipeline to enforce bk0=bk1 ](../sources/prs/rocm-libraries/PR-8424.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Fix softmax kernel NaN failure when beta=0 (ROCM-26026)](../sources/prs/rocm-libraries/PR-8426.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Re-enable hipGraph solve/factor tests (revert #8111)](../sources/prs/rocm-libraries/PR-8430.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Instruct agents to use SPDX license headers and the rocm-libraries PR template](../sources/prs/rocm-libraries/PR-8431.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove OpenCL backend from MIOpen](../sources/prs/rocm-libraries/PR-8433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Update test_categories.yaml](../sources/prs/rocm-libraries/PR-8441.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] [ALMIOPEN-1962] Initial MIOpen superbuild integration](../sources/prs/rocm-libraries/PR-8443.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2101 Add libsqlite3-dev to Ubuntu 24 Dockerfile](../sources/prs/rocm-libraries/PR-8444.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblalst][tensilelite] Add no stream-k support for subtile on gfx1250](../sources/prs/rocm-libraries/PR-8445.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: add internal test suite for library-side unit tests](../sources/prs/rocm-libraries/PR-8446.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] match new hipblaslt and legacy blas in bad arg tests](../sources/prs/rocm-libraries/PR-8448.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump pyjwt from 2.10.1 to 2.13.0 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8451.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2115 Replace ROCm SMI references with AMD SMI](../sources/prs/rocm-libraries/PR-8456.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Co-locate Python bindings extension with backend](../sources/prs/rocm-libraries/PR-8459.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8461.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.7 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-8462.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-8463.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8465.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][SDPA] ALMIOPEN-2116 Fix accumulate backward CPU reference gradients in FP32](../sources/prs/rocm-libraries/PR-8469.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix multiple issues related with code coverage in hipblaslt ](../sources/prs/rocm-libraries/PR-8470.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu][rocisa] De-bundle libstinkytofu; resolve example plugin via stinkytofu](../sources/prs/rocm-libraries/PR-8473.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] InsertWaitAluPass: converge mode0 at exit label so conditional in-region edges keep mode2](../sources/prs/rocm-libraries/PR-8476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocFFT: give default FFT callbacks external linkage to fix hipModuleGlobal](../sources/prs/rocm-libraries/PR-8477.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] conv: ML heuristic for implicit-GEMM forward](../sources/prs/rocm-libraries/PR-8481.md) `[source-pr]` arch:cdna2, cdna3
+- [Revert "[tensilelite] Keep WrapU* SGPRs live for TDM StaggerU kernels"](../sources/prs/rocm-libraries/PR-8482.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Verification improvements](../sources/prs/rocm-libraries/PR-8486.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Skip tests on gfx11 that have intermittent failures](../sources/prs/rocm-libraries/PR-8487.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix MBSK GSU>1 synchronizer race on gfx1250](../sources/prs/rocm-libraries/PR-8488.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8490.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add tile size for FMHA batch prefill bf16 for MI308X](../sources/prs/rocm-libraries/PR-8492.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2117 Hard engine selection + selected-engine read-back for dnn-benchmarking](../sources/prs/rocm-libraries/PR-8493.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Fix HIPDNN_ENABLE_SDPA flag being ignored when set by TheRock (ALMIOPEN-2120)](../sources/prs/rocm-libraries/PR-8495.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8497.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add `invoke coverage` task for LLVM source-based coverage](../sources/prs/rocm-libraries/PR-8498.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Remove unused ConfigurableWaitCnt and Schedule{First,Last}LRs passes](../sources/prs/rocm-libraries/PR-8500.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] disable DPP kernels by default](../sources/prs/rocm-libraries/PR-8501.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocsparse): add residual computation example to rocsparse documentation](../sources/prs/rocm-libraries/PR-8506.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Make gfx1250 build compile-only](../sources/prs/rocm-libraries/PR-8508.md) `[source-pr]` arch:cdna2
+- [[rocsparse][hipsparse] Update changelog and version numbers for rocSPARSE and hipSPARSE](../sources/prs/rocm-libraries/PR-8512.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1867 Fix Graph plan serialization state](../sources/prs/rocm-libraries/PR-8516.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Add support for large tensor index handling into conv bwd data WMMA](../sources/prs/rocm-libraries/PR-8518.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add block-scale GEMM operators (aquant, bquant, abquant)](../sources/prs/rocm-libraries/PR-8519.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Install tensilelite-client and fix makeIsaInfoMap singleton poisoning](../sources/prs/rocm-libraries/PR-8520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2082 Enable LSE/stats output for SDPA forward golden data](../sources/prs/rocm-libraries/PR-8522.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/rocm-libraries/PR-8523.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add multicast tdm for subtile kernel](../sources/prs/rocm-libraries/PR-8524.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Fix stale stinkytofu-opt/docs references](../sources/prs/rocm-libraries/PR-8525.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2130] [MIOpen] Add gfx1250 support to gtests](../sources/prs/rocm-libraries/PR-8526.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Deprecate rocm-smi and use amdsmi](../sources/prs/rocm-libraries/PR-8527.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add MemTokenConsistencyCheckPass death tests](../sources/prs/rocm-libraries/PR-8528.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Remove pass-order-snapshot JSON; unify pass observability (verify-each)](../sources/prs/rocm-libraries/PR-8529.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/rocm-libraries/PR-8531.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] EightWaves pipeline int8 support](../sources/prs/rocm-libraries/PR-8535.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] fix(benchmarks): Fix memory crash in benchmarks](../sources/prs/rocm-libraries/PR-8537.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Update CHANGELOG.md](../sources/prs/rocm-libraries/PR-8546.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Retry git network ops to survive transient DNS blips](../sources/prs/rocm-libraries/PR-8558.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Post failure GitHub status on stage build errors](../sources/prs/rocm-libraries/PR-8560.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1896 Extend autotune config op matching](../sources/prs/rocm-libraries/PR-8562.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SpSV regression testing](../sources/prs/rocm-libraries/PR-8565.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Update test_categories.yaml](../sources/prs/rocm-libraries/PR-8570.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK Tile] Drop profiler for experimental builder codegen](../sources/prs/rocm-libraries/PR-8573.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): auto-build rocisa via CMake when not pip-installed](../sources/prs/rocm-libraries/PR-8574.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Export attention public API and add header to FILE_SET](../sources/prs/rocm-libraries/PR-8576.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2092] Fix selective rerun skipping catchError-failed parallel stages](../sources/prs/rocm-libraries/PR-8577.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216](../sources/prs/rocm-libraries/PR-8579.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2139 dnn-benchmarking: fuse batchnorm training/backward and layernorm with native ATen ops; generalize conv to 1D/2D/3D](../sources/prs/rocm-libraries/PR-8580.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2135 dnn-benchmarking: use current gfx90a nightly bucket; fix Linux bindings preload](../sources/prs/rocm-libraries/PR-8581.md) `[source-pr]` arch:cdna2
+- [[stinkytofu] Freeze tensor waitcnt dataflow across loop back-edges](../sources/prs/rocm-libraries/PR-8582.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Build with OBJECT lib; add stinkytofu_static for white-box tests and api_tests for export surface](../sources/prs/rocm-libraries/PR-8583.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1972 Rename golden_reference_data to integration_test_bundles](../sources/prs/rocm-libraries/PR-8584.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/rocm-libraries/PR-8586.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): add tensor attribute equality helpers](../sources/prs/rocm-libraries/PR-8589.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] fix daily hipTensor tests.](../sources/prs/rocm-libraries/PR-8591.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck): Clean up Stream-K remnants in old CK and fix static_assert in CK Tile](../sources/prs/rocm-libraries/PR-8595.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASlt] Silence spurious 'invalid values of lda' test-client warning](../sources/prs/rocm-libraries/PR-8602.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix subtile PGR=0 WAR hazard on gfx1250](../sources/prs/rocm-libraries/PR-8603.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2036] Ship stub cudnn.h C-API (types, handle/stream/version/error entry points)](../sources/prs/rocm-libraries/PR-8605.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/rocm-libraries/PR-8609.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): overlap accum init with GR across all Subtile paths](../sources/prs/rocm-libraries/PR-8615.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): add test filter standardization](../sources/prs/rocm-libraries/PR-8616.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn)!: require explicit conv backward output dimensions](../sources/prs/rocm-libraries/PR-8617.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Load Composable Kernel library at handle creation (ALMIOPEN-2133)](../sources/prs/rocm-libraries/PR-8618.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: add CHANGELOG entry for LDS-aware real fusion](../sources/prs/rocm-libraries/PR-8619.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/rocm-libraries/PR-8620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove forced OpenBLAS/OpenMP thread env from client test categories](../sources/prs/rocm-libraries/PR-8621.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): Reorganize GFX1250 StreamK tests](../sources/prs/rocm-libraries/PR-8622.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/rocm-libraries/PR-8624.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Build and install stinkytofu locally so rocisa uses find_package](../sources/prs/rocm-libraries/PR-8625.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Update subtile heuristic to only restrict based on K<512.](../sources/prs/rocm-libraries/PR-8626.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add coverage tests for StinkyModifiers, LegalizationUtils, and StinkyAsmEmitter](../sources/prs/rocm-libraries/PR-8628.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Read default flatc version from file](../sources/prs/rocm-libraries/PR-8629.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): remove compile time warnings ](../sources/prs/rocm-libraries/PR-8630.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Tune gfx1100 BBS GEMM kernels for Llama-3.1-8b-Instruct](../sources/prs/rocm-libraries/PR-8631.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][docs] Update roadmap for Q2 progress and Q3 planning](../sources/prs/rocm-libraries/PR-8633.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS][hipBLAS] pre-release changelog updates](../sources/prs/rocm-libraries/PR-8634.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocprim] Add MEMCHECKs to several high-memory usage unit tests to improve stability](../sources/prs/rocm-libraries/PR-8635.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Fix compilation](../sources/prs/rocm-libraries/PR-8637.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Users/torrezuk/rocm 13365 partial revert asan workaround](../sources/prs/rocm-libraries/PR-8640.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[HIPDNN] Add --verification-mode and --golden-data-dir CLI flags with fallback chain](../sources/prs/rocm-libraries/PR-8642.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [disable chunk mapping for NT flags with splitK](../sources/prs/rocm-libraries/PR-8643.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Expand other stages to use healthy-node retry logic.](../sources/prs/rocm-libraries/PR-8644.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] C++ complement to Python and feature updates](../sources/prs/rocm-libraries/PR-8652.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Refine scheduling](../sources/prs/rocm-libraries/PR-8655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Exclude TensorLoad from EV_VGPR_VMEM_READ in InsertWaitAluPass](../sources/prs/rocm-libraries/PR-8657.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): TDMSplit memtoken amendment](../sources/prs/rocm-libraries/PR-8658.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Remove the ROCPRIM_AMDGCN_CONSTEXPR define](../sources/prs/rocm-libraries/PR-8662.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Add intermediate K grid points for gfx1151](../sources/prs/rocm-libraries/PR-8664.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix pk8 FP8/BF8 saturation and skipRearrangement multi-ti…](../sources/prs/rocm-libraries/PR-8667.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Stage fetched nlohmann_json for example plugin in superbuild](../sources/prs/rocm-libraries/PR-8669.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipdnn] Patch resample fwd interface to match cuDNN](../sources/prs/rocm-libraries/PR-8672.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] TensileLite snapshot golden governance docs](../sources/prs/rocm-libraries/PR-8676.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2192 Prefer local test libraries in RPATH](../sources/prs/rocm-libraries/PR-8689.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2186 Update golden reference RFC for compressed bundles](../sources/prs/rocm-libraries/PR-8690.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2193 Fix superbuild logging test flakiness](../sources/prs/rocm-libraries/PR-8691.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Improve performance of occupancy calculation](../sources/prs/rocm-libraries/PR-8692.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add WmmaVgprReorder analysis pass with explicit pool tagging](../sources/prs/rocm-libraries/PR-8697.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "[rocPRIM] Add device level parallel algorithm TopK and its tests and benchmarks"](../sources/prs/rocm-libraries/PR-8700.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Force skipRearrangement off when CompactLoopStore is enabled](../sources/prs/rocm-libraries/PR-8702.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add RemoveInstrucitonPass](../sources/prs/rocm-libraries/PR-8703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [hipdnn-samples] Add test filter standardization](../sources/prs/rocm-libraries/PR-8712.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocSPARSE] relax tolerances for sharding](../sources/prs/rocm-libraries/PR-8713.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] [Security] remove allow-unauthenticated flag from dockerfile](../sources/prs/rocm-libraries/PR-8716.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] [Security] pin getopt library to specific commit](../sources/prs/rocm-libraries/PR-8723.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Fix gfx1250 StreamK fixup flag coherence](../sources/prs/rocm-libraries/PR-8726.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] RDNA4 support for topk/atomic functions](../sources/prs/rocm-libraries/PR-8730.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Enable C++ asserts in tensilelite-client math-CI Jenkins builds](../sources/prs/rocm-libraries/PR-8735.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(miopen): make quick pre-commit gate run a fast, real Smoke tier](../sources/prs/rocm-libraries/PR-8736.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): parse-once PyTorch ref+ stalled-queue A/B timing (ALMIOPEN-2153)](../sources/prs/rocm-libraries/PR-8737.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipcub, rocthrust, rocprim, ck] updating changelogs for 7.14](../sources/prs/rocm-libraries/PR-8739.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: do not generate bitwise reproducibility tests if they will be skipped](../sources/prs/rocm-libraries/PR-8740.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Restrict rocfft/hipfft concurrency by omp max threads.](../sources/prs/rocm-libraries/PR-8743.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2037] [ALMIOPEN-2038] cuDNN shim: enum/error and Tensor_attributes aliasing](../sources/prs/rocm-libraries/PR-8744.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix naming bug that would discard kernels as duplicates](../sources/prs/rocm-libraries/PR-8745.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
+- [Update on the newly added API hipblaslt-ext::isSolutionSupported()](../sources/prs/rocm-libraries/PR-8746.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipsparselt): Add CTests for FFM and merge SPMM into other tests](../sources/prs/rocm-libraries/PR-8750.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Remove legacy hip kernel launcher backend](../sources/prs/rocm-libraries/PR-8754.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hotfix][tensilelite][stinkytofu] Fix de-bundled rocisa build via find_package](../sources/prs/rocm-libraries/PR-8755.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Refine the reject for LDS](../sources/prs/rocm-libraries/PR-8759.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix gfx1250 TDM PGR2 + PLR1 WAR dependency](../sources/prs/rocm-libraries/PR-8760.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Fix flaky test `test_batched_gemm_b_scale_wmma`](../sources/prs/rocm-libraries/PR-8762.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CTest] ALMIOPEN-2219 Fix optional argument scoping in test categories](../sources/prs/rocm-libraries/PR-8763.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipfft, rocfft] update changelog headings for 7.14](../sources/prs/rocm-libraries/PR-8766.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparse, rocsparse] update changelog headings for 7.14](../sources/prs/rocm-libraries/PR-8769.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparselt] update changelog heading for 7.14](../sources/prs/rocm-libraries/PR-8770.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1869 Install Windows Python extension to bin/](../sources/prs/rocm-libraries/PR-8771.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix yaml dtypes in utilities folder](../sources/prs/rocm-libraries/PR-8772.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Users/randyh/for rocm 7.14](../sources/prs/rocm-libraries/PR-8777.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: Add TensileLite affected-tests pre-commit hook](../sources/prs/rocm-libraries/PR-8787.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Add runtime dlopen backend-loading mode](../sources/prs/rocm-libraries/PR-8792.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): add catastrophic fallback to rank_configs](../sources/prs/rocm-libraries/PR-8793.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): harden library code for compressed .dat](../sources/prs/rocm-libraries/PR-8796.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Using s_add_u64 for tdm address increment](../sources/prs/rocm-libraries/PR-8798.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix output-store 32-bit address overflow](../sources/prs/rocm-libraries/PR-8801.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite ] fix gfx1250 gl2_prefetch unit test](../sources/prs/rocm-libraries/PR-8803.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt): Split subtile cluster barrier signal/wait (gfx1250)](../sources/prs/rocm-libraries/PR-8805.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add experimental-library generation tooling for TensileLite](../sources/prs/rocm-libraries/PR-8826.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): make test filtering YAML-driven](../sources/prs/rocm-libraries/PR-8830.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: Fix test failures on gfx1250 HW listed in AICK-998](../sources/prs/rocm-libraries/PR-8837.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocke): cshuffle support for fp32 and bf16](../sources/prs/rocm-libraries/PR-8841.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs: [rocBLAS][hipBLAS] update for rocm next](../sources/prs/rocm-libraries/PR-8846.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparselt): Fix dtypes in hipsparselt library logic files](../sources/prs/rocm-libraries/PR-8853.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add wmma vgpr reuse for subtile kernels](../sources/prs/rocm-libraries/PR-8854.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix dtypes in hipblaslt library logic files](../sources/prs/rocm-libraries/PR-8855.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipdnn): add runtime pass-by-value tensors RFC (ALMIOPEN-2239)](../sources/prs/rocm-libraries/PR-8860.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add TENSILE_DB=0x100000 debug log for SK5 hybrid mode selection](../sources/prs/rocm-libraries/PR-8861.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [rocWMMA] fix: Catch launch errors in regression test](../sources/prs/rocm-libraries/PR-8862.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hip-kernel-provider): Wire rocKE C++ smoke tests into provider CI lane](../sources/prs/rocm-libraries/PR-8864.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCM-27193] Add gfx1250 to MIOpen CK supported archs and known arch list](../sources/prs/rocm-libraries/PR-8875.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipdnn): adopt Conventional Commits for PR titles in AI tooling](../sources/prs/rocm-libraries/PR-8876.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): fail fast on plan-only override execute without override enabled](../sources/prs/rocm-libraries/PR-8881.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipblaslt): add PR title and JIRA ID conventions to AGENTS.md](../sources/prs/rocm-libraries/PR-8882.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Accept .dat.zlib in --use-cache existence check](../sources/prs/rocm-libraries/PR-8892.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): skip gfx1250 subtile codegen tests on other archs](../sources/prs/rocm-libraries/PR-8893.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Change library logic parsing to error out on incorrect dtypes](../sources/prs/rocm-libraries/PR-8904.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipSPARSE): restore matC pointers so SpGEMM_compute can be reused](../sources/prs/rocm-libraries/PR-8913.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): gfx1201 Tensile tunings for Kokoro-82M GEMM shapes](../sources/prs/rocm-libraries/PR-8916.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): thread-safety fix + plan-capacity regression tests](../sources/prs/rocm-libraries/PR-8920.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipsparselt): raise quick/spmm_quick ctest timeouts to 15m](../sources/prs/rocm-libraries/PR-8922.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): ALM-2186 add batchnorm forward inference bundle sweeps](../sources/prs/rocm-libraries/PR-8926.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Dapper validation](../sources/prs/rocm-libraries/PR-8927.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocke): add rocke-client skeleton](../sources/prs/rocm-libraries/PR-8928.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): fix SpMM with blocked ELL format](../sources/prs/rocm-libraries/PR-8930.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(rocsparse): load-balanced default kernel for skewed SpMM](../sources/prs/rocm-libraries/PR-8932.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Auto-derive arch marks from Architecture field and filename](../sources/prs/rocm-libraries/PR-8935.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix sia bug](../sources/prs/rocm-libraries/PR-8937.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "[stinkytofu] Support function-call CFG (#7858)"](../sources/prs/rocm-libraries/PR-8938.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): Reapply function-call support and fix issues](../sources/prs/rocm-libraries/PR-8939.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] restore not-tdmMetadata guards for sparse metadata global-read addressing](../sources/prs/rocm-libraries/PR-8942.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): handle skip branch with InitCIterWmma](../sources/prs/rocm-libraries/PR-8943.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Add swiglu_oai (OAI SwiGLU) activation to XDL 2-stage MoE epilogue.](../sources/prs/rocm-libraries/PR-8944.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocisa] Add unit tests for gfx12+ scalar-float/u64 instruction classes](../sources/prs/rocm-libraries/PR-8951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix MX F4 GEMM  bugs on gfx1250](../sources/prs/rocm-libraries/PR-8952.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix test infrastructure: parallel GPU execution and coverage reporting ](../sources/prs/rocm-libraries/PR-8953.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): remove the previously deprecated rocsparse_indextype_u16](../sources/prs/rocm-libraries/PR-8963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [tests(hip-kernel-provider): Close mlops engine code coverage gaps](../sources/prs/rocm-libraries/PR-8964.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): wrong restrict keyword usage](../sources/prs/rocm-libraries/PR-8966.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs (tensile): Tensile doc improvements](../sources/prs/rocm-libraries/PR-8968.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Add missing assert to testing_auxiliary.hpp](../sources/prs/rocm-libraries/PR-8970.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocsparse): add missing routines in rocsparse and hipsparse documentation](../sources/prs/rocm-libraries/PR-8978.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Adding ULP measurements to hipblaslt-bench](../sources/prs/rocm-libraries/PR-8979.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): magic division for long_index_t](../sources/prs/rocm-libraries/PR-8983.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [rocBLAS] expand supported ctest options](../sources/prs/rocm-libraries/PR-8984.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add stream_k variant to GEMM Dispatcher codegen](../sources/prs/rocm-libraries/PR-8985.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen/cat): clamp Y grid size to avoid invalid dispatch on gfx1250](../sources/prs/rocm-libraries/PR-8987.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): always register CK grouped-conv solvers in the host (ROCM-27359)](../sources/prs/rocm-libraries/PR-8988.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(stinkytofu): consolidate CDNA5 scheduling tunables into named constants](../sources/prs/rocm-libraries/PR-8990.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): TE to dispatcher GEMM bridge (fp16/bf16, all layouts)](../sources/prs/rocm-libraries/PR-8997.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): TE to dispatcher GEMM bridge for fp8/bf8/int8 (all layouts)](../sources/prs/rocm-libraries/PR-8998.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): schedule barrier better when heavy ds load](../sources/prs/rocm-libraries/PR-8999.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add grouped GEMM variant to TE to dispatcher bridge](../sources/prs/rocm-libraries/PR-9000.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): represent exec-masked spans as atomic DAG nodes](../sources/prs/rocm-libraries/PR-9004.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): wrong restrict keyword usage #2](../sources/prs/rocm-libraries/PR-9006.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Fix missing precision support page](../sources/prs/rocm-libraries/PR-9008.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(node): implement logical and strict equality for execution nodes](../sources/prs/rocm-libraries/PR-9009.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocprim): update benchmark instructions](../sources/prs/rocm-libraries/PR-9011.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): use hipMemcpyAsync() to fix regression](../sources/prs/rocm-libraries/PR-9013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ci): Threefold increase timeout limit for standard test filter of rocfft](../sources/prs/rocm-libraries/PR-9018.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): tolerate non-mbcs bytes in vcvarsall.bat output](../sources/prs/rocm-libraries/PR-9021.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft): version bump post ROCm 7.14](../sources/prs/rocm-libraries/PR-9022.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): stream-K GEMM TE to dispatcher bridge](../sources/prs/rocm-libraries/PR-9028.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): batchnorm CalcStats remainder loop uses wrong thread stride](../sources/prs/rocm-libraries/PR-9031.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): serialize HipGraphExist gtest to prevent concurrent-shard OOM](../sources/prs/rocm-libraries/PR-9032.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): not needed cmake change from test grouped conv bwd data](../sources/prs/rocm-libraries/PR-9034.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): speed up ASAN codegen via asan allocator options](../sources/prs/rocm-libraries/PR-9036.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): emit a relocatable installed CTestTestfile](../sources/prs/rocm-libraries/PR-9047.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCM-27460] Fix integer overflow in tensor ops for large allocations on gfx1250](../sources/prs/rocm-libraries/PR-9049.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Disable CK grouped conv support for gfx1250](../sources/prs/rocm-libraries/PR-9050.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): tolerate non-mbcs bytes in vcvarsall.bat output](../sources/prs/rocm-libraries/PR-9052.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): use portable getenv wrapper in stinkytofu-opt](../sources/prs/rocm-libraries/PR-9054.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim) Update changelog for fixes that were not included in 7.14](../sources/prs/rocm-libraries/PR-9059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ refactor(integration-tests): unify tolerance and synthesis pipeline](../sources/prs/rocm-libraries/PR-9062.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Improvements to fix_yaml_types.py](../sources/prs/rocm-libraries/PR-9066.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Enable dynamic-queue and hybrid StreamK on gfx1250](../sources/prs/rocm-libraries/PR-9074.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [rocWMMA] FFM Test Filters](../sources/prs/rocm-libraries/PR-9078.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [rocBLAS] adds hipblaslt only developer build mode](../sources/prs/rocm-libraries/PR-9079.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Correct tensilelite-host alias ref](../sources/prs/rocm-libraries/PR-9080.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparselt): remove spmm from StinkyTofuESM2](../sources/prs/rocm-libraries/PR-9085.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): expose CDNA5 scheduler tuning knobs via ModuleOptions](../sources/prs/rocm-libraries/PR-9103.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): always register CK grouped-conv solvers in host (ROCM-27359)](../sources/prs/rocm-libraries/PR-9105.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocblas): Add per-batch alpha stride support to scal](../sources/prs/rocm-libraries/PR-9108.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim) Exclude slow tests from the quick test suite to avoid timeouts](../sources/prs/rocm-libraries/PR-9109.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): magic division for long_index_t (#8983)](../sources/prs/rocm-libraries/PR-9110.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Add explicit Architecture field to gfx1250 test YAMLs](../sources/prs/rocm-libraries/PR-9117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [MIOpen error tolerance](../sources/prs/rocm-libraries/PR-912.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ fix(rocprim): speed up host data gen in `ReduceArgMinimum` subtest](../sources/prs/rocm-libraries/PR-9120.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(hipblaslt): Use mxDataGenerator for MX datatypes for gfx1250](../sources/prs/rocm-libraries/PR-9122.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): make format targets platform-agnostic](../sources/prs/rocm-libraries/PR-9124.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): suppress third-party ROCm toolchain warnings](../sources/prs/rocm-libraries/PR-9125.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(tensilelite): AIHPBLAS-3463 add build(stop_after=...) API](../sources/prs/rocm-libraries/PR-9127.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): guard AI heuristic fdeep model caches with a mutex](../sources/prs/rocm-libraries/PR-9131.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Avoid dsload overlap](../sources/prs/rocm-libraries/PR-9137.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Centralize CK compile defs and align FP8 defaults](../sources/prs/rocm-libraries/PR-9146.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): use relative paths in installed CTestTestfile](../sources/prs/rocm-libraries/PR-9148.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): guard AI heuristic fdeep model caches with a mutex (cherry-pick #9131)](../sources/prs/rocm-libraries/PR-9149.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): Add streamk unit tests for complex data types](../sources/prs/rocm-libraries/PR-9150.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): fix csrmv rounding failures](../sources/prs/rocm-libraries/PR-9155.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt) Add prefetch gl2 support for subtile kernel](../sources/prs/rocm-libraries/PR-9161.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): expand FFM testing](../sources/prs/rocm-libraries/PR-9165.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt): raise standard-tier ctest timeout from 30m to 1h](../sources/prs/rocm-libraries/PR-9170.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Restore WG barrier at preloop and in NLL in subtile kernel](../sources/prs/rocm-libraries/PR-9177.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Fix missing parameter issue](../sources/prs/rocm-libraries/PR-9180.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): mark bsrilu0_graph_test as known_bug](../sources/prs/rocm-libraries/PR-9191.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(stinkytofu): onboard to Read the Docs via Doxygen/Sphinx](../sources/prs/rocm-libraries/PR-9193.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): Move misplaced CHANGELOG entry](../sources/prs/rocm-libraries/PR-9195.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix PAP+TDM redundant descriptor rebuild](../sources/prs/rocm-libraries/PR-9196.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Skip failing tests for tox -e coverage-cpp](../sources/prs/rocm-libraries/PR-9197.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Type checking of derived parameters](../sources/prs/rocm-libraries/PR-9201.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Extend fast reference gemm to fp64 and tf32](../sources/prs/rocm-libraries/PR-9203.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix gfx1201 test for FP16 T-T GEMM + bias-fused epilogue](../sources/prs/rocm-libraries/PR-9204.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt-provider): port matmul tests to common integration suite](../sources/prs/rocm-libraries/PR-9205.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): add SIA4 coverage in StreamK GFX1250 tests](../sources/prs/rocm-libraries/PR-9208.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(origami): replace SK5 hybrid-mode table with learned rule](../sources/prs/rocm-libraries/PR-9209.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite):  fix gfx1250 Subtile + TDM + StreamK faults](../sources/prs/rocm-libraries/PR-9210.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): add Python frontend wheel package](../sources/prs/rocm-libraries/PR-9211.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: FMHA batch-prefill paged-KV 32-bit VA overflow at high GPU base addresses](../sources/prs/rocm-libraries/PR-9214.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: Remove GRVW rejection for TDM enabled kernel for gfx1250](../sources/prs/rocm-libraries/PR-9217.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore(hipdnn): remove dnn-benchmarking tool](../sources/prs/rocm-libraries/PR-9224.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): enable TDMSplit for StreamK GEMM on gfx1250](../sources/prs/rocm-libraries/PR-9227.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: guard arg.Print() in WMMA bwd data grouped conv with log level check](../sources/prs/rocm-libraries/PR-9232.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipdnn): pull ROCm from multi-arch nightlies and flag stale wheels](../sources/prs/rocm-libraries/PR-9234.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipdnn): run CodeQL over the superbuild, host-only](../sources/prs/rocm-libraries/PR-9235.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): Add Blocked ELL format support to dense to sparse conversion.](../sources/prs/rocm-libraries/PR-9236.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt): add tuned K=1024 grid entries for gfx1151 BF16 GEMMs](../sources/prs/rocm-libraries/PR-9238.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump soupsieve from 2.5 to 2.8.4 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-9241.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump soupsieve from 2.8.1 to 2.8.4 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-9242.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): raise standard category ctest timeout to 1h](../sources/prs/rocm-libraries/PR-9252.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "feat(hipblaslt): Change library logic parsing to error out on incorrect dtypes"](../sources/prs/rocm-libraries/PR-9263.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): mark csrilu0/csric0/bsric0_graph_test as known_bug](../sources/prs/rocm-libraries/PR-9271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-9275.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9276.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocblas/docs/sphinx in the rocblas-docs-dependencies group](../sources/prs/rocm-libraries/PR-9277.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9281.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /shared/tensile/docs/sphinx in the tensile-docs-dependencies group](../sources/prs/rocm-libraries/PR-9282.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Change library logic parsing from warning to error](../sources/prs/rocm-libraries/PR-9284.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): implement RFC 0016 runtime pass-by-value tensors](../sources/prs/rocm-libraries/PR-9286.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): expose python error code bindings](../sources/prs/rocm-libraries/PR-9290.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparse): adding blocked ELL format to hipsparseDenseToSparse](../sources/prs/rocm-libraries/PR-9291.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipblaslt): add Windows DLL VERSIONINFO metadata](../sources/prs/rocm-libraries/PR-9294.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): Remove use of mat->analysed in SpSV](../sources/prs/rocm-libraries/PR-9295.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rfc): extend RFC 0015 engine support claims for bundle sweeps](../sources/prs/rocm-libraries/PR-9296.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocblas): Deprecate ROCBLAS_USE_HIPBLASLT_BATCHED flag](../sources/prs/rocm-libraries/PR-9298.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocisa): resolve dependent DLLs on Windows via os.add_dll_directory](../sources/prs/rocm-libraries/PR-9309.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): skip default_amdclang when CMAKE_TOOLCHAIN_FILE is set](../sources/prs/rocm-libraries/PR-9321.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): prefetchGL2 generalization](../sources/prs/rocm-libraries/PR-9326.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Add gfx90c build support](../sources/prs/rocm-libraries/PR-9333.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): add CLI argument support to samples for configurable execution](../sources/prs/rocm-libraries/PR-9342.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): enable HalfPLR on StreamK for gfx1250](../sources/prs/rocm-libraries/PR-9344.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore(hipdnn): bump hipDNN component and provider versions](../sources/prs/rocm-libraries/PR-9347.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): add script to report and apply version bumps](../sources/prs/rocm-libraries/PR-9350.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparse): Fix doxygen errors caused by README](../sources/prs/rocm-libraries/PR-9356.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck-tile): Fix compiler issue](../sources/prs/rocm-libraries/PR-9359.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): Use miopen- targets. ](../sources/prs/rocm-libraries/PR-9365.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): repair superbuild skill provisioning and test discovery](../sources/prs/rocm-libraries/PR-9371.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocBLAS): add FFM test sets](../sources/prs/rocm-libraries/PR-9376.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Fix co-exec harzard in scheduling](../sources/prs/rocm-libraries/PR-9384.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): resolve Windows build issues in samples and dependency fetching](../sources/prs/rocm-libraries/PR-9387.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): defer non-E8 MX scales to slow reference path](../sources/prs/rocm-libraries/PR-9389.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): keep scale-format modifier on MX f4 WMMA to fix MI32x16](../sources/prs/rocm-libraries/PR-9390.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparse): fix docs cross-reference warnings in rocSPARSE and hipSPARSE](../sources/prs/rocm-libraries/PR-9397.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocBLAS): ignore Gtest summary line](../sources/prs/rocm-libraries/PR-9399.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Skip equality library if dynamic kernels are requested](../sources/prs/rocm-libraries/PR-9406.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): track returning atomics in waitcnt dataflow](../sources/prs/rocm-libraries/PR-9407.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): check hipGetDeviceProperties return value in client](../sources/prs/rocm-libraries/PR-9411.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): stop auto-installing hip-python from test.pypi.org](../sources/prs/rocm-libraries/PR-9413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft-shared): Propagate async reference-FFT exceptions via .get()](../sources/prs/rocm-libraries/PR-9421.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(origami): add problem.num_cus to model a capped CU budget](../sources/prs/rocm-libraries/PR-9424.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocblas): add per-batch alpha/beta stride to remaining Level 2 functions](../sources/prs/rocm-libraries/PR-9425.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(miopen): backfill missing 7.14.0 changelog entries](../sources/prs/rocm-libraries/PR-9433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): refactory and use simpler rule to sheduling barrier](../sources/prs/rocm-libraries/PR-9436.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Handle WAR hazard for VALU and VMEM  in expert mode2](../sources/prs/rocm-libraries/PR-9438.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): support SourceSwap on non-square MatrixInstruction](../sources/prs/rocm-libraries/PR-9443.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): skip sgemm_dual_fmac_asm on gfx1250](../sources/prs/rocm-libraries/PR-9448.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): make MXDataGenModeTest static helpers public](../sources/prs/rocm-libraries/PR-9458.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert PR #6526 "feat: [CK Tile] mxfp8 support for qr async pipeline (#6526)"](../sources/prs/rocm-libraries/PR-9461.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Add missing namespace prefix to function call](../sources/prs/rocm-libraries/PR-9463.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): support 1-D wg clusters with Stream-K on gfx1250](../sources/prs/rocm-libraries/PR-9464.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck_tile): CK CI Aiter test error](../sources/prs/rocm-libraries/PR-9473.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): de-flake autotune strategy smoke test](../sources/prs/rocm-libraries/PR-9474.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore: remove USE_CUDA from rocFFT CMake](../sources/prs/rocm-libraries/PR-9476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparse): expose rocSPARSE CSR nnzsplit SpMV algorithm](../sources/prs/rocm-libraries/PR-9478.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix rotating buffer and flush under adaptive timing](../sources/prs/rocm-libraries/PR-9479.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): rank ASM SDPA engine above rocKE](../sources/prs/rocm-libraries/PR-9484.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add patch-logic to ExperimentalLibrary](../sources/prs/rocm-libraries/PR-9485.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): do not bump numSgprStreamK for SkPrefetchPrimed](../sources/prs/rocm-libraries/PR-9486.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(miopen): "[MIOpen] Disable CK grouped conv support for gfx1250"](../sources/prs/rocm-libraries/PR-9491.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): Support whole-kernel expert mode2](../sources/prs/rocm-libraries/PR-9493.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ fix(hipblaslt): map InitMode::Random to rand_int for MX datatypes](../sources/prs/rocm-libraries/PR-9494.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "feat(tensilelite): prefetchGL2 generalization"](../sources/prs/rocm-libraries/PR-9501.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): fix IntegrationGpuConvFwd3dFp32 flake](../sources/prs/rocm-libraries/PR-9504.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): use build(stop_after=EMIT) in initD preloop tests](../sources/prs/rocm-libraries/PR-9506.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft): silence compiler warnings for hipfft-test with CUDA backend ](../sources/prs/rocm-libraries/PR-9509.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): remove Stream-K ClusterDim reject shadowing 1-D WG cluster](../sources/prs/rocm-libraries/PR-9514.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck-tile): close GEMM_GROUPED entry in arch_filter OPERATOR_TILE_CONSTRAINTS](../sources/prs/rocm-libraries/PR-9520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft-test): skip tests that may need 64-bit indexing in kernel(s)](../sources/prs/rocm-libraries/PR-9528.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): reapply prefetchGL2 generalization](../sources/prs/rocm-libraries/PR-9534.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix (Tensilelite) (StinkyTofu) support-106sgpr-gfx1250](../sources/prs/rocm-libraries/PR-9538.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: TDM GRVW corner cases for gfx1250](../sources/prs/rocm-libraries/PR-9542.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Fix device_select test timeout in the unit test "quick" suite](../sources/prs/rocm-libraries/PR-9547.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): mxDataGenerator can create data where K % block size !=0](../sources/prs/rocm-libraries/PR-9548.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9550.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9551.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocblas/docs/sphinx in the rocblas-docs-dependencies group](../sources/prs/rocm-libraries/PR-9554.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-9556.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /shared/tensile/docs/sphinx in the tensile-docs-dependencies group](../sources/prs/rocm-libraries/PR-9557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipsparselt): Removed hipDataType Doxygen reference](../sources/prs/rocm-libraries/PR-9558.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(CK_TILE): fix error found by Aiter repo tests](../sources/prs/rocm-libraries/PR-9562.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Improve RocprimDeviceSelectTests test filtering](../sources/prs/rocm-libraries/PR-9567.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): initialize all batch-1 inputs in layernorm bprop test](../sources/prs/rocm-libraries/PR-9580.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix intersphinx errors for 7.14.0 release](../sources/prs/rocm-libraries/PR-9582.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): avoid CFGBuilder split-piece label collisions](../sources/prs/rocm-libraries/PR-9585.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(sparse): use safe YAML loaders in test generators](../sources/prs/rocm-libraries/PR-9594.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Correct compute type conversion for User offline tuning](../sources/prs/hipblaslt/PR-6557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add Triton specialization paths to origami (gated on target_t)](../sources/prs/hipblaslt/PR-6604.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Tensilelite] Fix incorrect output for SIA0 + PGR](../sources/prs/hipblaslt/PR-6993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -653,7 +1268,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna3 (976 pages)
+## cdna3 (1616 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -686,6 +1301,7 @@
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Embedding Lookup Kernel Optimization](../wiki/kernels/embedding-lookup.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [FlashAttention on ROCm via Composable Kernel](../wiki/kernels/flash-attention-rocm-ck.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [Flash Decoding on ROCm](../wiki/kernels/flash-decoding-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [FP8 and Block-Scale GEMM on ROCm](../wiki/kernels/fp8-blockscale-gemm-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [FP8 FlashAttention on ROCm](../wiki/kernels/fp8-flash-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
@@ -694,9 +1310,11 @@
 - [MFMA GEMM on ROCm](../wiki/kernels/gemm-mfma-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [GEMM Implementation on AMD CDNA](../wiki/kernels/gemm-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, rdna3, rdna4
 - [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
+- [hipSPARSELt SpMM (Sparse × Dense) on ROCm](../wiki/kernels/hipsparselt-spmm-rocm.md) `[wiki-kernel]` arch:cdna3
 - [Efficient Histogram Computation on ROCm](../wiki/kernels/histogram-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [KV Cache Paged Attention on ROCm](../wiki/kernels/kv-cache-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [LayerNorm and RMSNorm Optimization on ROCm](../wiki/kernels/layernorm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [MIOpen Convolution Kernel Strategy on ROCm](../wiki/kernels/miopen-conv-strategy-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [Multi-Head Latent Attention (MLA) on ROCm](../wiki/kernels/mla-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Paged Prefill Attention on ROCm](../wiki/kernels/paged-prefill-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
@@ -764,7 +1382,93 @@
 - [[FLYDSL MOE] mixed_moe + moe_gemm_2stage: fx internal-types cleanup (ASM-identical)](../sources/prs/hipblaslt/PR-3450.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Fused SplitK zero-init for FP8 a8w8 blockscale GEMMs (y_is_zeroed) + re-enable CKTile SplitK](../sources/prs/hipblaslt/PR-3457.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[feat] FP8 (DeepSeek-V4 layout) sparse paged prefill attention](../sources/prs/hipblaslt/PR-3583.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Use fill_argument for literals that have the same value](../sources/prs/amdmigraphx/PR-3815.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve split reshape](../sources/prs/amdmigraphx/PR-4163.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add deref op](../sources/prs/amdmigraphx/PR-4554.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add gather_slice_concat matcher](../sources/prs/amdmigraphx/PR-4725.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Dedupilicate Gather Reads from Constant Embedding Data Vectors](../sources/prs/amdmigraphx/PR-4727.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve horizontal fusions](../sources/prs/amdmigraphx/PR-4729.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fuse pointwise across split slices](../sources/prs/amdmigraphx/PR-4733.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add versioninfo to migraphx binaries WINDOWS](../sources/prs/amdmigraphx/PR-4765.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Enable fp16 channelwise convolution](../sources/prs/amdmigraphx/PR-4808.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Rewrite skinny gemms to mul+reduce_sum](../sources/prs/hipblaslt/PR-4811.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add dynamic shape support for TopK](../sources/prs/amdmigraphx/PR-4880.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [GPU NMS kernel and refactor of NMS operator](../sources/prs/amdmigraphx/PR-4893.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add torch kit](../sources/prs/amdmigraphx/PR-4899.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Replace deprecated __hip_atomic_* builtins with __scoped_atomic_* equivalents](../sources/prs/amdmigraphx/PR-4902.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [broadcast_with_dims: lower-bound the dynamic output dims at 1, not 0](../sources/prs/amdmigraphx/PR-4927.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Convolution backwards v4r1](../sources/prs/amdmigraphx/PR-4928.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add conv winograd for gfx12](../sources/prs/amdmigraphx/PR-4936.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ONNX parser updates for symbolic shapes](../sources/prs/amdmigraphx/PR-4939.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve error reporting with loop operator](../sources/prs/amdmigraphx/PR-4949.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1082] Decouple OnnxRT from user/local via updateing build script](../sources/prs/amdmigraphx/PR-4951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1085] Add --cout option for driver output](../sources/prs/amdmigraphx/PR-4959.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-12](../sources/prs/amdmigraphx/PR-4960.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Moving RockEnums.h inside header guard](../sources/prs/amdmigraphx/PR-4962.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.6 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Propagate the permutation for resize when using the sizes attribute](../sources/prs/amdmigraphx/PR-4964.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Docs] Add precision support reference page](../sources/prs/amdmigraphx/PR-4965.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix FindParallelSTL MSVC compile check missing C++17 flag](../sources/prs/amdmigraphx/PR-4966.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Vectorize Resize](../sources/prs/amdmigraphx/PR-4967.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add kernelName main guard to mlss conv](../sources/prs/amdmigraphx/PR-4968.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIRADSW-567] Fix int8 models qlinearconv](../sources/prs/amdmigraphx/PR-4969.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[4970] Generate tuning inputs on GPU via splitmix64 device RNG](../sources/prs/amdmigraphx/PR-4971.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump pyjwt from 2.8.0 to 2.13.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4972.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Reject zero-size operation name buffers](../sources/prs/amdmigraphx/PR-4973.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4974.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4975.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Propagate layout with reshape after lowering](../sources/prs/amdmigraphx/PR-4976.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1054] Log debug symbols when exceptions are thrown](../sources/prs/amdmigraphx/PR-4978.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Cross Compile: expose more device_props and pass JSON object in driver](../sources/prs/amdmigraphx/PR-4981.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Encode benchmark MXR comment metadata as JSON](../sources/prs/amdmigraphx/PR-4982.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add concat reshape matcher](../sources/prs/amdmigraphx/PR-4984.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Debug symbols docs update](../sources/prs/amdmigraphx/PR-4985.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Pass in a JSON file to driver](../sources/prs/amdmigraphx/PR-4986.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix verify auto-print handler registration for late targets](../sources/prs/amdmigraphx/PR-4987.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[4979] Adaptive benchmark bundle during tuning](../sources/prs/amdmigraphx/PR-4989.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add backend options](../sources/prs/amdmigraphx/PR-4990.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix redundant re-benchmarking for pooling when using problem cache](../sources/prs/amdmigraphx/PR-4991.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove dev_intro.rst and formatting contributing-to-migraphx](../sources/prs/amdmigraphx/PR-4993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-19](../sources/prs/amdmigraphx/PR-5000.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1082] Update OnnxRT workloads use Plugin EP Registration](../sources/prs/amdmigraphx/PR-5002.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add checkers for redundant static_cast](../sources/prs/amdmigraphx/PR-5003.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add slice squeeze matcher](../sources/prs/amdmigraphx/PR-5004.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocmlir to June 24](../sources/prs/amdmigraphx/PR-5009.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add the gfx942 build target](../sources/prs/amdmigraphx/PR-5010.md) `[source-pr]` arch:cdna3
+- [fix bug with simplify reshapes and multi reduction axis](../sources/prs/amdmigraphx/PR-5013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Slice over dynamic dimension](../sources/prs/amdmigraphx/PR-5015.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-26](../sources/prs/amdmigraphx/PR-5016.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Skip fuse_horizontal pass on dynamic shaped inputs](../sources/prs/amdmigraphx/PR-5017.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Use eigen for convolution](../sources/prs/amdmigraphx/PR-5018.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Allow benchmark MXR dumps during cross-compile](../sources/prs/amdmigraphx/PR-5022.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Change option name to MIGRAPHX_USE_MSVC_STATIC_RUNTIME](../sources/prs/amdmigraphx/PR-5023.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Sanitize benchmark mxr file name to use `_` instead of invalid Windows characters](../sources/prs/amdmigraphx/PR-5024.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Don't throw an exception when using MIGRAPHX_GPU_DUMP_BENCHMARK_MXR](../sources/prs/amdmigraphx/PR-5025.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fuse_pointwise fuse dynamic even if scalar](../sources/prs/amdmigraphx/PR-5027.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Lower `dimensions_of` on GPU](../sources/prs/amdmigraphx/PR-5029.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1163] Add lower_device_ops pass](../sources/prs/amdmigraphx/PR-5030.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add windows gpu build](../sources/prs/amdmigraphx/PR-5034.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix gather regression](../sources/prs/amdmigraphx/PR-5038.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Auto select NCHW/NHWC layout](../sources/prs/amdmigraphx/PR-5040.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add notices about following LLVM AI Tool Use Policy](../sources/prs/amdmigraphx/PR-5042.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Mixed length gather merge](../sources/prs/amdmigraphx/PR-5044.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix the unit tests that are broken on develop](../sources/prs/amdmigraphx/PR-5045.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [update rocmlir to eccd4d7](../sources/prs/amdmigraphx/PR-5047.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Prevent propagate_precision from removing fp8 converts](../sources/prs/amdmigraphx/PR-5049.md) `[source-pr]` arch:cdna3
+- [update before installing](../sources/prs/amdmigraphx/PR-5050.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.35.0 to 1.36.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5051.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add mlss_use_specific_ops as a GPU backend option](../sources/prs/amdmigraphx/PR-5053.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add from_string/to_string enum macro](../sources/prs/amdmigraphx/PR-5054.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-07-10](../sources/prs/amdmigraphx/PR-5055.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add max block size tuning for JIT reductions](../sources/prs/amdmigraphx/PR-5056.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump soupsieve from 2.5 to 2.8.4 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5057.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [if miopen/hipblas/rocblas are not enabled, send gemms to rocmlir](../sources/prs/amdmigraphx/PR-5059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix windows CI: Workaround files not being deleted](../sources/prs/amdmigraphx/PR-5062.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add toggle for wavefront size to cross compilation options](../sources/prs/amdmigraphx/PR-5065.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix reverse op bug](../sources/prs/amdmigraphx/PR-5068.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix non-standard literals causing failures in mlir modules](../sources/prs/amdmigraphx/PR-5070.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.36.0 to 1.38.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5071.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-07-17](../sources/prs/amdmigraphx/PR-5076.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [test: use l1/l2 norm as softmax_scale](../sources/prs/aotriton/PR-105.md) `[source-pr]` arch:cdna3
 - [Add CI Script to Test Triton Upstream](../sources/prs/aotriton/PR-127.md) `[source-pr]` arch:cdna3
 - [Add deterministic algorithm support to v3::flash::attn_options](../sources/prs/aotriton/PR-134.md) `[source-pr]` arch:cdna3
@@ -986,6 +1690,556 @@
 - [Refactor gemm kernel base](../sources/prs/rocWMMA/PR-390.md) `[source-pr]` arch:cdna3
 - [add fp8e4m3fnuz&&int8 gemm sample](../sources/prs/rocWMMA/PR-582.md) `[source-pr]` arch:cdna3
 - [Fix bug in i8 gemm sample and remove compilation warning](../sources/prs/rocWMMA/PR-586.md) `[source-pr]` arch:cdna3
+- [feat(rocfft): integrate RCCL for single-node multi-GPU global transposition.](../sources/prs/rocm-libraries/PR-3042.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocfft] use thread-safe counting in rocfft_setup and rocfft_cleanup ](../sources/prs/rocm-libraries/PR-3641.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] Add device level parallel algorithm TopK and its tests and benchmarks](../sources/prs/rocm-libraries/PR-3646.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocrand): use primbench](../sources/prs/rocm-libraries/PR-4454.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [aquant block scale gemm](../sources/prs/rocm-libraries/PR-5268.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] refactor(rocprim): combine seperate uses of half type checks and std::is_floating_point ](../sources/prs/rocm-libraries/PR-5271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [enabling multi-thread test in nightly for hipblaslt-test](../sources/prs/rocm-libraries/PR-5389.md) `[source-pr]` arch:cdna3, cdna4
+- [[CK TILE ENGINE] Add block-scale GEMM operators BQuant](../sources/prs/rocm-libraries/PR-5496.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Add transposed tile load implementation, and tests for load_and_convert_tile](../sources/prs/rocm-libraries/PR-5510.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Reduce unaccounted overhead of ScopedTimer and timing_context](../sources/prs/rocm-libraries/PR-6043.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [bitonic warp/ block sort with forward only comparision ](../sources/prs/rocm-libraries/PR-6061.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Origami Model for Attention](../sources/prs/rocm-libraries/PR-6334.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): use wavefront size-based dispatching in remaining warp algorithms](../sources/prs/rocm-libraries/PR-6420.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Add gfx120x support to Winograd Rage](../sources/prs/rocm-libraries/PR-6439.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(composablekernel): More data type tests for ck tile batched grouped gemm](../sources/prs/rocm-libraries/PR-6521.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(origami): add gfx1200 (RDNA4) hardware support](../sources/prs/rocm-libraries/PR-6524.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK Tile] mxfp8 support for qr async pipeline](../sources/prs/rocm-libraries/PR-6526.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Correct compute type conversion for User offline tuning](../sources/prs/rocm-libraries/PR-6557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Layernorm bwd frontend and CPU reference](../sources/prs/rocm-libraries/PR-6566.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT | hipFFT] gfx90c enablement in FFT libs](../sources/prs/rocm-libraries/PR-6682.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): Add CSC format support to spsv and sptrsv](../sources/prs/rocm-libraries/PR-6695.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Debug memory](../sources/prs/rocm-libraries/PR-6844.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Added Global Read/Write Support](../sources/prs/rocm-libraries/PR-6944.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM][hipRAND[rocRAND] Remove rocm-smi from template documents](../sources/prs/rocm-libraries/PR-6981.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix incorrect output for SIA0 + PGR](../sources/prs/rocm-libraries/PR-6993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocBLAS: Fix Fortran sample HIP result names](../sources/prs/rocm-libraries/PR-7059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocWMMA][Community] Add lora adapter fusion sample](../sources/prs/rocm-libraries/PR-7083.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT] Move partial-pass generator functions from RR/CC classes to base class](../sources/prs/rocm-libraries/PR-7137.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): use singleton class for random numbers](../sources/prs/rocm-libraries/PR-7174.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[fft mpi workers] Use reference_fft_data in MPI tests](../sources/prs/rocm-libraries/PR-7225.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix example_arch for spirv compilation](../sources/prs/rocm-libraries/PR-7334.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix name change in report_noise.py](../sources/prs/rocm-libraries/PR-7337.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] [ALMIOPEN-1898] RFC: MIOpen→hipDNN forwarding wrapper](../sources/prs/rocm-libraries/PR-7388.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASlt] Enabling test_categories](../sources/prs/rocm-libraries/PR-7396.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK TILE] Unification Work – Integration of unification framework into CK Tile](../sources/prs/rocm-libraries/PR-7407.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix yaml type mismatch in library logic for aquavanjaram (d) + arcturus (6/13 of #6609)](../sources/prs/rocm-libraries/PR-7413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT] Add support for batch configuration directly in the partial-pass kernels config file](../sources/prs/rocm-libraries/PR-7476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CI] Run hipSPARSELt when hipBLASLt subtree changes](../sources/prs/rocm-libraries/PR-7514.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(tensilelite): add stage-tagged TypeAlias for LogicalScheduler pipeline](../sources/prs/rocm-libraries/PR-7540.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Relax batchnorm scale bias](../sources/prs/rocm-libraries/PR-7566.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Tensilelite] MBSK: packed βC dword unpack indexes wrong dataV/byteOffset for I8/F8/B8 dest](../sources/prs/rocm-libraries/PR-7578.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1943 Add pytest suite and CI workflow for Python bindings](../sources/prs/rocm-libraries/PR-7600.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Add ABQuant block scale GEMM operator](../sources/prs/rocm-libraries/PR-7607.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensile] gfx12 assembly compatibility](../sources/prs/rocm-libraries/PR-7655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Enable grouped CK xdlops solvers for large-stride tensors (ROCM-23997)](../sources/prs/rocm-libraries/PR-7663.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocSPARSE] Implement incomplete LDL' with zero fill-in](../sources/prs/rocm-libraries/PR-7689.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add unit test for TensileLogic_Run, TensileMergeLibrary , TensileRetuneLibrary and TensileUpdateLibrary](../sources/prs/rocm-libraries/PR-7703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix yaml type mismatch in library logic for aquavanjaram (b) (3/13 of #6609)](../sources/prs/rocm-libraries/PR-7738.md) `[source-pr]` arch:cdna3
+- [Split KDB and PDB testing to allow Database updates without changes to kernel DB](../sources/prs/rocm-libraries/PR-7747.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Add query-only APIs that return workspace range for fwd, bwd and wrw solvers in MIOpen](../sources/prs/rocm-libraries/PR-7770.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [RotateCoObject](../sources/prs/rocm-libraries/PR-7788.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Insert mode2 s_wait_alu + half-aware RegKey](../sources/prs/rocm-libraries/PR-7844.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [style: [CK TILE] Unification Work – Unify format MFMA part](../sources/prs/rocm-libraries/PR-7850.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK Tile] Adding gfx1250 wrappers for dense and scale builtins](../sources/prs/rocm-libraries/PR-7852.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Add coverage for cpp files](../sources/prs/rocm-libraries/PR-7853.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Support function-call CFG](../sources/prs/rocm-libraries/PR-7858.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-1696] Re-enabling certain MIOpen tests with ASan enabled.](../sources/prs/rocm-libraries/PR-7904.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse/hipsparse] Add emulation categories to rocSPARSE/hipSPARSE](../sources/prs/rocm-libraries/PR-7905.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [gmock and gtest needed for compilation](../sources/prs/rocm-libraries/PR-7912.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Add MX F8/F4 F32-out smoke test for gfx1250](../sources/prs/rocm-libraries/PR-7929.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Re-tune gfx1151 NN bf16+bias GridBased selections](../sources/prs/rocm-libraries/PR-7933.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): generalize 2D r2c/c2r to multi-dimensional batch](../sources/prs/rocm-libraries/PR-7963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove disabling offload-compress for spirv in rocPRIM, hipCUB and rocThrust](../sources/prs/rocm-libraries/PR-7971.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore(tensilelite): Remove legacy StreamK modes](../sources/prs/rocm-libraries/PR-7980.md) `[source-pr]` arch:cdna3, cdna4
+- [[hipblaslt][tensilelite] Add a characterization-test suite for the TensileLite Python surface](../sources/prs/rocm-libraries/PR-7989.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [  [origami] Consume Origami as a findable package; stop duplicate origami builds](../sources/prs/rocm-libraries/PR-7996.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Rewrite wait-count insertion as SSA def-use dataflow with per-counter FIFO modeling](../sources/prs/rocm-libraries/PR-8002.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Disable GRVWM expansion when running TensileClient](../sources/prs/rocm-libraries/PR-8003.md) `[source-pr]` arch:cdna3
+- [[hipblaslt] Enable MBSK GSU on gfx1250](../sources/prs/rocm-libraries/PR-8008.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Use physical CU count for N_CU on RDNA](../sources/prs/rocm-libraries/PR-8013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK TILE] Unification Work – Add WMMA Scale Mixed Types Support](../sources/prs/rocm-libraries/PR-8020.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Allow ScheduleIterAlg=1 with Stream-K](../sources/prs/rocm-libraries/PR-8051.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [New rocblas hipblaslt integration](../sources/prs/rocm-libraries/PR-8082.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): add rocsparse_handle_create/rocsparse_handle_destroy](../sources/prs/rocm-libraries/PR-8083.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Preserve pivot sign/phase in ILU0 numeric boost](../sources/prs/rocm-libraries/PR-8084.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone](../sources/prs/rocm-libraries/PR-8096.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ Add guards around dpp intrinsic for spirv ](../sources/prs/rocm-libraries/PR-8102.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] gfx1151: add K=1024 grid point at (M=4096,N=4096) for BBS TN](../sources/prs/rocm-libraries/PR-8104.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Add fast path reference gemm for MXFP4](../sources/prs/rocm-libraries/PR-8106.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add unit tests for Common/Utilities](../sources/prs/rocm-libraries/PR-8115.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): stop treating tensilelite host as internal library](../sources/prs/rocm-libraries/PR-8133.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [hipblaslt: fix uninitialized read of a_type/b_type in swizzle validation](../sources/prs/rocm-libraries/PR-8147.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Rule-based configuration generation in CK Dispatcher codegen](../sources/prs/rocm-libraries/PR-8157.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][dnn-providers] Allow current tool version when different from expected](../sources/prs/rocm-libraries/PR-8161.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt][tensilelite] StreamK=5 hybrid kernel + Tile Scheduling tri-state mode (OFF/ON/AUTO)](../sources/prs/rocm-libraries/PR-8162.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Revert "[rocBLAS] Tag gfx12 f16 NN gemm_512 cases as known bug (ROCM-…](../sources/prs/rocm-libraries/PR-8163.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Test harness: abort + backtrace on fatal signals instead of recovering and hanging](../sources/prs/rocm-libraries/PR-8165.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Refresh gfx942 SystemDB](../sources/prs/rocm-libraries/PR-8174.md) `[source-pr]` arch:cdna3
+- [[hipblaslt][tensilelite] Stop rejecting valid auto-derived LdsBlockSizePerPad values](../sources/prs/rocm-libraries/PR-8181.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- ["Warning: Stream-K Data Parallel..." spamming theRockCI build](../sources/prs/rocm-libraries/PR-8184.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Deprecate rocsparse_indextype_u16](../sources/prs/rocm-libraries/PR-8189.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[GFX1250][CK_TILE] Add scale16 (ScaleBlockSize=16) support to MX GEMM TDM pipeline](../sources/prs/rocm-libraries/PR-8202.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Fix SIA0+PGR2+PLR0: drain dscnt before barrier sync](../sources/prs/rocm-libraries/PR-8204.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Docs] Standardize precision support reference pages across components](../sources/prs/rocm-libraries/PR-8205.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add packed pk8 FP8 conversion](../sources/prs/rocm-libraries/PR-8207.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hipblaslt] [Subtile] [gfx1250] Remove Bank conflicts + small scheduling improvements](../sources/prs/rocm-libraries/PR-8211.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Update gfx942 BBS/HHS TN SPA/SPB Gridbased Logic Yaml](../sources/prs/rocm-libraries/PR-8216.md) `[source-pr]` arch:cdna3
+- [[hipSPARSELt] Update gfx942 BBS/HHS NN SPA/SPB Gridbased Logic Yaml](../sources/prs/rocm-libraries/PR-8217.md) `[source-pr]` arch:cdna3
+- [[hipSPARSELt] Update gfx942 BBS/HHS NT SPA Gridbased Logic Yaml](../sources/prs/rocm-libraries/PR-8219.md) `[source-pr]` arch:cdna3
+- [[CK TILE] Unification Work – Remove unification Flag structs in favor of new WarpGemmParams](../sources/prs/rocm-libraries/PR-8227.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt): Add 32-bit/size_t overflow test coverage for large-size kernels](../sources/prs/rocm-libraries/PR-8231.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Add RFC 0015: Per-Graph Engine Support Claims](../sources/prs/rocm-libraries/PR-8235.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SpMM regression testing](../sources/prs/rocm-libraries/PR-8236.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocfft-test] Resolve build failure of rocfft-test with older versions of rocfft](../sources/prs/rocm-libraries/PR-8246.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt-provider): Add FP8 OCP dequantize + GEMM support](../sources/prs/rocm-libraries/PR-8251.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SDDMM regression testing](../sources/prs/rocm-libraries/PR-8252.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add hipBLASLt PR Quality skill overlay](../sources/prs/rocm-libraries/PR-8254.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2031 Port dnn-benchmark to Windows (cross-platform CPU probe + setup.ps1)](../sources/prs/rocm-libraries/PR-8255.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen][MICI] switch to ninja](../sources/prs/rocm-libraries/PR-8256.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocprim][ASAN] Remove the ASAN workaround in test_device_histogram](../sources/prs/rocm-libraries/PR-8258.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ [CK_TILE] Add graph capture support for FMHA backward(new branch)](../sources/prs/rocm-libraries/PR-8262.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Autotune](../sources/prs/rocm-libraries/PR-8264.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Update gfx942 BBS/HHS NT SPB Gridbased Logic Yaml](../sources/prs/rocm-libraries/PR-8265.md) `[source-pr]` arch:cdna3
+- [[stinkytofu] Fix rebuild barriers error](../sources/prs/rocm-libraries/PR-8266.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Fix out-of-bounds read in Activation CPU reference multi-thread partition](../sources/prs/rocm-libraries/PR-8270.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK Tile] Grouped Conv GFX1250 fixes for dispatcher and builder g…](../sources/prs/rocm-libraries/PR-8271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[dnn-benchmarking] Add CUDA support to the PyTorch backend](../sources/prs/rocm-libraries/PR-8280.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix DirectToLdsMetadata bool/int type mismatch](../sources/prs/rocm-libraries/PR-8284.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [stinkytofu: add missing <cstdint> and <climits> includes](../sources/prs/rocm-libraries/PR-8289.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Compress .dat files with zlib to reduce installed package size](../sources/prs/rocm-libraries/PR-8294.md) `[source-pr]` arch:cdna3
+- [[rocsparse] Guard x86-only compile option](../sources/prs/rocm-libraries/PR-8298.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparselt] Guard x86-only headers and compiler options](../sources/prs/rocm-libraries/PR-8299.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Implement batched GER/GERU with per-batch alpha coefficients](../sources/prs/rocm-libraries/PR-8300.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Use 32-bit GL2PrefetchInc to reduce sgpr pressure](../sources/prs/rocm-libraries/PR-8303.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][SDPA] ALMIOPEN-1826 Mask Support for SDPA BWD](../sources/prs/rocm-libraries/PR-8304.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Make store-remap (SRVW) work gwvw=16 and StreamK=3](../sources/prs/rocm-libraries/PR-8308.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hipblaslt] Subtile/TDM (gfx1250): load dedup, multi-partition LDS fix, WMMA matrix-A reuse](../sources/prs/rocm-libraries/PR-8323.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Add validation infrastructure for input yaml files (gated off)](../sources/prs/rocm-libraries/PR-8327.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Input yaml validation and fixes](../sources/prs/rocm-libraries/PR-8328.md) `[source-pr]` arch:cdna3, cdna4
+- [[rocFFT][ci] Add multi-GPU test category](../sources/prs/rocm-libraries/PR-8329.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-899 Add Windows VERSIONINFO and drop the umbrella product version](../sources/prs/rocm-libraries/PR-8330.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] ALMIOPEN-2069 Work around missing nlohmann_json natvis file in TheRock prebuilt artifact](../sources/prs/rocm-libraries/PR-8331.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Retry builds on node failure with automatic rerouting](../sources/prs/rocm-libraries/PR-8332.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][G-F-A] Demo calling triton fp4 kernel](../sources/prs/rocm-libraries/PR-8336.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add adaptive timing mode to hipblaslt-bench](../sources/prs/rocm-libraries/PR-8337.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Throttle tensor_load_to_lds with a bounded in-flight credit pool](../sources/prs/rocm-libraries/PR-8345.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Fp32 and Bf16 mfma instructions extension](../sources/prs/rocm-libraries/PR-8348.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt][TensileLite] Emit VOPD v_dual_fmac_f32 for f32](../sources/prs/rocm-libraries/PR-8349.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
+- [Add tile shape for FMHA batch prefill on MI308X (on fp8, hdim=256)](../sources/prs/rocm-libraries/PR-8350.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [CompactLoopStore](../sources/prs/rocm-libraries/PR-8354.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Conv 3d support](../sources/prs/rocm-libraries/PR-8355.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Revert "Reduce CachingLibrary map lookup/write overhead (#7754)"](../sources/prs/rocm-libraries/PR-8356.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-8359.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-8361.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-8371.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2035] - cuDNN compatibility layer enum updates](../sources/prs/rocm-libraries/PR-8376.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.6 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8379.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM][hipCUB][rocThrust][rocRAND][hipRAND] Update version info for 7.14 release](../sources/prs/rocm-libraries/PR-8392.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipsparse): fix hipSPARSE Build and Tests for CUDA 13](../sources/prs/rocm-libraries/PR-8393.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] per-batch alpha stride support for axpy/axpy_ex](../sources/prs/rocm-libraries/PR-8394.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Retuned TN HHS and BBS kernels on gfx1100 and vgpr change](../sources/prs/rocm-libraries/PR-8396.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[[hipBLASLt] Normalize sanitizer GPU targets to xnack+](../sources/prs/rocm-libraries/PR-8397.md) `[source-pr]` arch:cdna3, cdna4
+- [Cold cache retune gfx1151 HHS GridBased skinny_N shapes](../sources/prs/rocm-libraries/PR-8398.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Resubmit LLVM-style pass plugin mechanism with standalone-build install gate](../sources/prs/rocm-libraries/PR-8400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2064] [hipDNN] Add PyTorch references for benchmarking](../sources/prs/rocm-libraries/PR-8402.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Update gfx942 BBS/HHS TT SPA Gridbased Logic Yaml](../sources/prs/rocm-libraries/PR-8404.md) `[source-pr]` arch:cdna3
+- [[hipSPARSELt] Update gfx942 BBS/HHS TT SPB Gridbased Logic Yaml](../sources/prs/rocm-libraries/PR-8405.md) `[source-pr]` arch:cdna3
+- [Fix 2 kernel bugs](../sources/prs/rocm-libraries/PR-8406.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] CachingLibrary hash-collision regression test ](../sources/prs/rocm-libraries/PR-8411.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Updated client code to handle A/B=0 for General Batched GEMM and added corresponding tests](../sources/prs/rocm-libraries/PR-8412.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix tail loop token](../sources/prs/rocm-libraries/PR-8413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix MX batch stride for gfx1250](../sources/prs/rocm-libraries/PR-8414.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2092] Restructure MIOpen Jenkins pipeline to reduce Jenkinsfile size and support selective reruns](../sources/prs/rocm-libraries/PR-8415.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add tests for tensor_load_to_lds in-flight throttle](../sources/prs/rocm-libraries/PR-8416.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensile] Fix SIA0 PGR2 global-read placement](../sources/prs/rocm-libraries/PR-8417.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(rocprim): store flag for lookback scan as 32 bit value for fallback path](../sources/prs/rocm-libraries/PR-8420.md) `[source-pr]` arch:cdna3
+- [feat(tensilelite): Add gfx1250 support for AdaptiveGemmNTAB](../sources/prs/rocm-libraries/PR-8421.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Extend and optimize Quant Gemm Kernel for Aiter a8w8](../sources/prs/rocm-libraries/PR-8423.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add missing constraint in the FMHA qr async pipeline to enforce bk0=bk1 ](../sources/prs/rocm-libraries/PR-8424.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Fix softmax kernel NaN failure when beta=0 (ROCM-26026)](../sources/prs/rocm-libraries/PR-8426.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Re-enable hipGraph solve/factor tests (revert #8111)](../sources/prs/rocm-libraries/PR-8430.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Instruct agents to use SPDX license headers and the rocm-libraries PR template](../sources/prs/rocm-libraries/PR-8431.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove OpenCL backend from MIOpen](../sources/prs/rocm-libraries/PR-8433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Update test_categories.yaml](../sources/prs/rocm-libraries/PR-8441.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] [ALMIOPEN-1962] Initial MIOpen superbuild integration](../sources/prs/rocm-libraries/PR-8443.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2101 Add libsqlite3-dev to Ubuntu 24 Dockerfile](../sources/prs/rocm-libraries/PR-8444.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblalst][tensilelite] Add no stream-k support for subtile on gfx1250](../sources/prs/rocm-libraries/PR-8445.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: add internal test suite for library-side unit tests](../sources/prs/rocm-libraries/PR-8446.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] match new hipblaslt and legacy blas in bad arg tests](../sources/prs/rocm-libraries/PR-8448.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump pyjwt from 2.10.1 to 2.13.0 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8451.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2115 Replace ROCm SMI references with AMD SMI](../sources/prs/rocm-libraries/PR-8456.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Co-locate Python bindings extension with backend](../sources/prs/rocm-libraries/PR-8459.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8461.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.7 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-8462.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-8463.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8465.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][SDPA] ALMIOPEN-2116 Fix accumulate backward CPU reference gradients in FP32](../sources/prs/rocm-libraries/PR-8469.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix multiple issues related with code coverage in hipblaslt ](../sources/prs/rocm-libraries/PR-8470.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu][rocisa] De-bundle libstinkytofu; resolve example plugin via stinkytofu](../sources/prs/rocm-libraries/PR-8473.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] InsertWaitAluPass: converge mode0 at exit label so conditional in-region edges keep mode2](../sources/prs/rocm-libraries/PR-8476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocFFT: give default FFT callbacks external linkage to fix hipModuleGlobal](../sources/prs/rocm-libraries/PR-8477.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] conv: ML heuristic for implicit-GEMM forward](../sources/prs/rocm-libraries/PR-8481.md) `[source-pr]` arch:cdna2, cdna3
+- [Revert "[tensilelite] Keep WrapU* SGPRs live for TDM StaggerU kernels"](../sources/prs/rocm-libraries/PR-8482.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Verification improvements](../sources/prs/rocm-libraries/PR-8486.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Skip tests on gfx11 that have intermittent failures](../sources/prs/rocm-libraries/PR-8487.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix MBSK GSU>1 synchronizer race on gfx1250](../sources/prs/rocm-libraries/PR-8488.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8490.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add tile size for FMHA batch prefill bf16 for MI308X](../sources/prs/rocm-libraries/PR-8492.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2117 Hard engine selection + selected-engine read-back for dnn-benchmarking](../sources/prs/rocm-libraries/PR-8493.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [add 24 sizes to grid for gfx942 80cu f32 tn f8nbs tn](../sources/prs/rocm-libraries/PR-8494.md) `[source-pr]` arch:cdna3
+- [[hipDNN] Fix HIPDNN_ENABLE_SDPA flag being ignored when set by TheRock (ALMIOPEN-2120)](../sources/prs/rocm-libraries/PR-8495.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8497.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add `invoke coverage` task for LLVM source-based coverage](../sources/prs/rocm-libraries/PR-8498.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Remove unused ConfigurableWaitCnt and Schedule{First,Last}LRs passes](../sources/prs/rocm-libraries/PR-8500.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] disable DPP kernels by default](../sources/prs/rocm-libraries/PR-8501.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocsparse): add residual computation example to rocsparse documentation](../sources/prs/rocm-libraries/PR-8506.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse][hipsparse] Update changelog and version numbers for rocSPARSE and hipSPARSE](../sources/prs/rocm-libraries/PR-8512.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1867 Fix Graph plan serialization state](../sources/prs/rocm-libraries/PR-8516.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Add support for large tensor index handling into conv bwd data WMMA](../sources/prs/rocm-libraries/PR-8518.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add block-scale GEMM operators (aquant, bquant, abquant)](../sources/prs/rocm-libraries/PR-8519.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Install tensilelite-client and fix makeIsaInfoMap singleton poisoning](../sources/prs/rocm-libraries/PR-8520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2082 Enable LSE/stats output for SDPA forward golden data](../sources/prs/rocm-libraries/PR-8522.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/rocm-libraries/PR-8523.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add multicast tdm for subtile kernel](../sources/prs/rocm-libraries/PR-8524.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Fix stale stinkytofu-opt/docs references](../sources/prs/rocm-libraries/PR-8525.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2130] [MIOpen] Add gfx1250 support to gtests](../sources/prs/rocm-libraries/PR-8526.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Deprecate rocm-smi and use amdsmi](../sources/prs/rocm-libraries/PR-8527.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add MemTokenConsistencyCheckPass death tests](../sources/prs/rocm-libraries/PR-8528.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Remove pass-order-snapshot JSON; unify pass observability (verify-each)](../sources/prs/rocm-libraries/PR-8529.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/rocm-libraries/PR-8531.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] EightWaves pipeline int8 support](../sources/prs/rocm-libraries/PR-8535.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] fix(benchmarks): Fix memory crash in benchmarks](../sources/prs/rocm-libraries/PR-8537.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Update CHANGELOG.md](../sources/prs/rocm-libraries/PR-8546.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Retry git network ops to survive transient DNS blips](../sources/prs/rocm-libraries/PR-8558.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_DSL] Reset tiled C-core build-local caches](../sources/prs/rocm-libraries/PR-8559.md) `[source-pr]` arch:cdna3, cdna4
+- [[CK][CI] Post failure GitHub status on stage build errors](../sources/prs/rocm-libraries/PR-8560.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1896 Extend autotune config op matching](../sources/prs/rocm-libraries/PR-8562.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SpSV regression testing](../sources/prs/rocm-libraries/PR-8565.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Update test_categories.yaml](../sources/prs/rocm-libraries/PR-8570.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK Tile] Drop profiler for experimental builder codegen](../sources/prs/rocm-libraries/PR-8573.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): auto-build rocisa via CMake when not pip-installed](../sources/prs/rocm-libraries/PR-8574.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Export attention public API and add header to FILE_SET](../sources/prs/rocm-libraries/PR-8576.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2092] Fix selective rerun skipping catchError-failed parallel stages](../sources/prs/rocm-libraries/PR-8577.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216](../sources/prs/rocm-libraries/PR-8579.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2139 dnn-benchmarking: fuse batchnorm training/backward and layernorm with native ATen ops; generalize conv to 1D/2D/3D](../sources/prs/rocm-libraries/PR-8580.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Freeze tensor waitcnt dataflow across loop back-edges](../sources/prs/rocm-libraries/PR-8582.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Build with OBJECT lib; add stinkytofu_static for white-box tests and api_tests for export surface](../sources/prs/rocm-libraries/PR-8583.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1972 Rename golden_reference_data to integration_test_bundles](../sources/prs/rocm-libraries/PR-8584.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/rocm-libraries/PR-8586.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): add tensor attribute equality helpers](../sources/prs/rocm-libraries/PR-8589.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] fix daily hipTensor tests.](../sources/prs/rocm-libraries/PR-8591.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck): Clean up Stream-K remnants in old CK and fix static_assert in CK Tile](../sources/prs/rocm-libraries/PR-8595.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASlt] Silence spurious 'invalid values of lda' test-client warning](../sources/prs/rocm-libraries/PR-8602.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix subtile PGR=0 WAR hazard on gfx1250](../sources/prs/rocm-libraries/PR-8603.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2036] Ship stub cudnn.h C-API (types, handle/stream/version/error entry points)](../sources/prs/rocm-libraries/PR-8605.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/rocm-libraries/PR-8609.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): overlap accum init with GR across all Subtile paths](../sources/prs/rocm-libraries/PR-8615.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): add test filter standardization](../sources/prs/rocm-libraries/PR-8616.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn)!: require explicit conv backward output dimensions](../sources/prs/rocm-libraries/PR-8617.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Load Composable Kernel library at handle creation (ALMIOPEN-2133)](../sources/prs/rocm-libraries/PR-8618.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: add CHANGELOG entry for LDS-aware real fusion](../sources/prs/rocm-libraries/PR-8619.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/rocm-libraries/PR-8620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove forced OpenBLAS/OpenMP thread env from client test categories](../sources/prs/rocm-libraries/PR-8621.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): Reorganize GFX1250 StreamK tests](../sources/prs/rocm-libraries/PR-8622.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/rocm-libraries/PR-8624.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Build and install stinkytofu locally so rocisa uses find_package](../sources/prs/rocm-libraries/PR-8625.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Update subtile heuristic to only restrict based on K<512.](../sources/prs/rocm-libraries/PR-8626.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensile] strip sramecc from helper-kernel code-object filename](../sources/prs/rocm-libraries/PR-8627.md) `[source-pr]` arch:cdna3
+- [[stinkytofu] Add coverage tests for StinkyModifiers, LegalizationUtils, and StinkyAsmEmitter](../sources/prs/rocm-libraries/PR-8628.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Read default flatc version from file](../sources/prs/rocm-libraries/PR-8629.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): remove compile time warnings ](../sources/prs/rocm-libraries/PR-8630.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Tune gfx1100 BBS GEMM kernels for Llama-3.1-8b-Instruct](../sources/prs/rocm-libraries/PR-8631.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][docs] Update roadmap for Q2 progress and Q3 planning](../sources/prs/rocm-libraries/PR-8633.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS][hipBLAS] pre-release changelog updates](../sources/prs/rocm-libraries/PR-8634.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocprim] Add MEMCHECKs to several high-memory usage unit tests to improve stability](../sources/prs/rocm-libraries/PR-8635.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Fix compilation](../sources/prs/rocm-libraries/PR-8637.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Users/torrezuk/rocm 13365 partial revert asan workaround](../sources/prs/rocm-libraries/PR-8640.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[HIPDNN] Add --verification-mode and --golden-data-dir CLI flags with fallback chain](../sources/prs/rocm-libraries/PR-8642.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [disable chunk mapping for NT flags with splitK](../sources/prs/rocm-libraries/PR-8643.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Expand other stages to use healthy-node retry logic.](../sources/prs/rocm-libraries/PR-8644.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] C++ complement to Python and feature updates](../sources/prs/rocm-libraries/PR-8652.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Refine scheduling](../sources/prs/rocm-libraries/PR-8655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Exclude TensorLoad from EV_VGPR_VMEM_READ in InsertWaitAluPass](../sources/prs/rocm-libraries/PR-8657.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): TDMSplit memtoken amendment](../sources/prs/rocm-libraries/PR-8658.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Remove the ROCPRIM_AMDGCN_CONSTEXPR define](../sources/prs/rocm-libraries/PR-8662.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Add intermediate K grid points for gfx1151](../sources/prs/rocm-libraries/PR-8664.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix pk8 FP8/BF8 saturation and skipRearrangement multi-ti…](../sources/prs/rocm-libraries/PR-8667.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Stage fetched nlohmann_json for example plugin in superbuild](../sources/prs/rocm-libraries/PR-8669.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipdnn] Patch resample fwd interface to match cuDNN](../sources/prs/rocm-libraries/PR-8672.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] TensileLite snapshot golden governance docs](../sources/prs/rocm-libraries/PR-8676.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2192 Prefer local test libraries in RPATH](../sources/prs/rocm-libraries/PR-8689.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2186 Update golden reference RFC for compressed bundles](../sources/prs/rocm-libraries/PR-8690.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2193 Fix superbuild logging test flakiness](../sources/prs/rocm-libraries/PR-8691.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Improve performance of occupancy calculation](../sources/prs/rocm-libraries/PR-8692.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add WmmaVgprReorder analysis pass with explicit pool tagging](../sources/prs/rocm-libraries/PR-8697.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "[rocPRIM] Add device level parallel algorithm TopK and its tests and benchmarks"](../sources/prs/rocm-libraries/PR-8700.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Force skipRearrangement off when CompactLoopStore is enabled](../sources/prs/rocm-libraries/PR-8702.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add RemoveInstrucitonPass](../sources/prs/rocm-libraries/PR-8703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [hipdnn-samples] Add test filter standardization](../sources/prs/rocm-libraries/PR-8712.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocSPARSE] relax tolerances for sharding](../sources/prs/rocm-libraries/PR-8713.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Cleanup dead keys from input yamls](../sources/prs/rocm-libraries/PR-8714.md) `[source-pr]` arch:cdna3
+- [[CK] [Security] remove allow-unauthenticated flag from dockerfile](../sources/prs/rocm-libraries/PR-8716.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Fix miopenStatusInternalError on depthwise NHWC Winograd conv (ROCM-26918)](../sources/prs/rocm-libraries/PR-8722.md) `[source-pr]` arch:cdna3
+- [[CK] [Security] pin getopt library to specific commit](../sources/prs/rocm-libraries/PR-8723.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Fix gfx1250 StreamK fixup flag coherence](../sources/prs/rocm-libraries/PR-8726.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] RDNA4 support for topk/atomic functions](../sources/prs/rocm-libraries/PR-8730.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Enable C++ asserts in tensilelite-client math-CI Jenkins builds](../sources/prs/rocm-libraries/PR-8735.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(miopen): make quick pre-commit gate run a fast, real Smoke tier](../sources/prs/rocm-libraries/PR-8736.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): parse-once PyTorch ref+ stalled-queue A/B timing (ALMIOPEN-2153)](../sources/prs/rocm-libraries/PR-8737.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipcub, rocthrust, rocprim, ck] updating changelogs for 7.14](../sources/prs/rocm-libraries/PR-8739.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: do not generate bitwise reproducibility tests if they will be skipped](../sources/prs/rocm-libraries/PR-8740.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Restrict rocfft/hipfft concurrency by omp max threads.](../sources/prs/rocm-libraries/PR-8743.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2037] [ALMIOPEN-2038] cuDNN shim: enum/error and Tensor_attributes aliasing](../sources/prs/rocm-libraries/PR-8744.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix naming bug that would discard kernels as duplicates](../sources/prs/rocm-libraries/PR-8745.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
+- [Update on the newly added API hipblaslt-ext::isSolutionSupported()](../sources/prs/rocm-libraries/PR-8746.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipsparselt): Add CTests for FFM and merge SPMM into other tests](../sources/prs/rocm-libraries/PR-8750.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Remove legacy hip kernel launcher backend](../sources/prs/rocm-libraries/PR-8754.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hotfix][tensilelite][stinkytofu] Fix de-bundled rocisa build via find_package](../sources/prs/rocm-libraries/PR-8755.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCM-26590] Fix legacy-CK buffer resource descriptor for gfx1250](../sources/prs/rocm-libraries/PR-8758.md) `[source-pr]` arch:cdna3
+- [Refine the reject for LDS](../sources/prs/rocm-libraries/PR-8759.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix gfx1250 TDM PGR2 + PLR1 WAR dependency](../sources/prs/rocm-libraries/PR-8760.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Fix flaky test `test_batched_gemm_b_scale_wmma`](../sources/prs/rocm-libraries/PR-8762.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CTest] ALMIOPEN-2219 Fix optional argument scoping in test categories](../sources/prs/rocm-libraries/PR-8763.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipfft, rocfft] update changelog headings for 7.14](../sources/prs/rocm-libraries/PR-8766.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparse, rocsparse] update changelog headings for 7.14](../sources/prs/rocm-libraries/PR-8769.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparselt] update changelog heading for 7.14](../sources/prs/rocm-libraries/PR-8770.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1869 Install Windows Python extension to bin/](../sources/prs/rocm-libraries/PR-8771.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix yaml dtypes in utilities folder](../sources/prs/rocm-libraries/PR-8772.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Users/randyh/for rocm 7.14](../sources/prs/rocm-libraries/PR-8777.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Gate FNUZ 8-bit spmm tests as known bugs on gfx942](../sources/prs/rocm-libraries/PR-8784.md) `[source-pr]` arch:cdna3
+- [feat: Add TensileLite affected-tests pre-commit hook](../sources/prs/rocm-libraries/PR-8787.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Add runtime dlopen backend-loading mode](../sources/prs/rocm-libraries/PR-8792.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): add catastrophic fallback to rank_configs](../sources/prs/rocm-libraries/PR-8793.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): harden library code for compressed .dat](../sources/prs/rocm-libraries/PR-8796.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Using s_add_u64 for tdm address increment](../sources/prs/rocm-libraries/PR-8798.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix output-store 32-bit address overflow](../sources/prs/rocm-libraries/PR-8801.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite ] fix gfx1250 gl2_prefetch unit test](../sources/prs/rocm-libraries/PR-8803.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt): Split subtile cluster barrier signal/wait (gfx1250)](../sources/prs/rocm-libraries/PR-8805.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add experimental-library generation tooling for TensileLite](../sources/prs/rocm-libraries/PR-8826.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): make test filtering YAML-driven](../sources/prs/rocm-libraries/PR-8830.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: Fix test failures on gfx1250 HW listed in AICK-998](../sources/prs/rocm-libraries/PR-8837.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocke): cshuffle support for fp32 and bf16](../sources/prs/rocm-libraries/PR-8841.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs: [rocBLAS][hipBLAS] update for rocm next](../sources/prs/rocm-libraries/PR-8846.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparselt): Fix dtypes in hipsparselt library logic files](../sources/prs/rocm-libraries/PR-8853.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add wmma vgpr reuse for subtile kernels](../sources/prs/rocm-libraries/PR-8854.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix dtypes in hipblaslt library logic files](../sources/prs/rocm-libraries/PR-8855.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipdnn): add runtime pass-by-value tensors RFC (ALMIOPEN-2239)](../sources/prs/rocm-libraries/PR-8860.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add TENSILE_DB=0x100000 debug log for SK5 hybrid mode selection](../sources/prs/rocm-libraries/PR-8861.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [rocWMMA] fix: Catch launch errors in regression test](../sources/prs/rocm-libraries/PR-8862.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hip-kernel-provider): Wire rocKE C++ smoke tests into provider CI lane](../sources/prs/rocm-libraries/PR-8864.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCM-27193] Add gfx1250 to MIOpen CK supported archs and known arch list](../sources/prs/rocm-libraries/PR-8875.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipdnn): adopt Conventional Commits for PR titles in AI tooling](../sources/prs/rocm-libraries/PR-8876.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): fail fast on plan-only override execute without override enabled](../sources/prs/rocm-libraries/PR-8881.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipblaslt): add PR title and JIRA ID conventions to AGENTS.md](../sources/prs/rocm-libraries/PR-8882.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Accept .dat.zlib in --use-cache existence check](../sources/prs/rocm-libraries/PR-8892.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): skip gfx1250 subtile codegen tests on other archs](../sources/prs/rocm-libraries/PR-8893.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix incorrect dtypes in yaml files.](../sources/prs/rocm-libraries/PR-8903.md) `[source-pr]` arch:cdna3, cdna4
+- [feat(hipblaslt): Change library logic parsing to error out on incorrect dtypes](../sources/prs/rocm-libraries/PR-8904.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipSPARSE): restore matC pointers so SpGEMM_compute can be reused](../sources/prs/rocm-libraries/PR-8913.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): gfx1201 Tensile tunings for Kokoro-82M GEMM shapes](../sources/prs/rocm-libraries/PR-8916.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): thread-safety fix + plan-capacity regression tests](../sources/prs/rocm-libraries/PR-8920.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipsparselt): raise quick/spmm_quick ctest timeouts to 15m](../sources/prs/rocm-libraries/PR-8922.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): ALM-2186 add batchnorm forward inference bundle sweeps](../sources/prs/rocm-libraries/PR-8926.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Dapper validation](../sources/prs/rocm-libraries/PR-8927.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocke): add rocke-client skeleton](../sources/prs/rocm-libraries/PR-8928.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): fix SpMM with blocked ELL format](../sources/prs/rocm-libraries/PR-8930.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(rocsparse): load-balanced default kernel for skewed SpMM](../sources/prs/rocm-libraries/PR-8932.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Auto-derive arch marks from Architecture field and filename](../sources/prs/rocm-libraries/PR-8935.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix sia bug](../sources/prs/rocm-libraries/PR-8937.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "[stinkytofu] Support function-call CFG (#7858)"](../sources/prs/rocm-libraries/PR-8938.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): Reapply function-call support and fix issues](../sources/prs/rocm-libraries/PR-8939.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] restore not-tdmMetadata guards for sparse metadata global-read addressing](../sources/prs/rocm-libraries/PR-8942.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): handle skip branch with InitCIterWmma](../sources/prs/rocm-libraries/PR-8943.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Add swiglu_oai (OAI SwiGLU) activation to XDL 2-stage MoE epilogue.](../sources/prs/rocm-libraries/PR-8944.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocisa] Add unit tests for gfx12+ scalar-float/u64 instruction classes](../sources/prs/rocm-libraries/PR-8951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix MX F4 GEMM  bugs on gfx1250](../sources/prs/rocm-libraries/PR-8952.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix test infrastructure: parallel GPU execution and coverage reporting ](../sources/prs/rocm-libraries/PR-8953.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): remove the previously deprecated rocsparse_indextype_u16](../sources/prs/rocm-libraries/PR-8963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [tests(hip-kernel-provider): Close mlops engine code coverage gaps](../sources/prs/rocm-libraries/PR-8964.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): wrong restrict keyword usage](../sources/prs/rocm-libraries/PR-8966.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs (tensile): Tensile doc improvements](../sources/prs/rocm-libraries/PR-8968.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Add missing assert to testing_auxiliary.hpp](../sources/prs/rocm-libraries/PR-8970.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocsparse): add missing routines in rocsparse and hipsparse documentation](../sources/prs/rocm-libraries/PR-8978.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Adding ULP measurements to hipblaslt-bench](../sources/prs/rocm-libraries/PR-8979.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): magic division for long_index_t](../sources/prs/rocm-libraries/PR-8983.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [rocBLAS] expand supported ctest options](../sources/prs/rocm-libraries/PR-8984.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add stream_k variant to GEMM Dispatcher codegen](../sources/prs/rocm-libraries/PR-8985.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen/cat): clamp Y grid size to avoid invalid dispatch on gfx1250](../sources/prs/rocm-libraries/PR-8987.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): always register CK grouped-conv solvers in the host (ROCM-27359)](../sources/prs/rocm-libraries/PR-8988.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(stinkytofu): consolidate CDNA5 scheduling tunables into named constants](../sources/prs/rocm-libraries/PR-8990.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): TE to dispatcher GEMM bridge (fp16/bf16, all layouts)](../sources/prs/rocm-libraries/PR-8997.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): TE to dispatcher GEMM bridge for fp8/bf8/int8 (all layouts)](../sources/prs/rocm-libraries/PR-8998.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): schedule barrier better when heavy ds load](../sources/prs/rocm-libraries/PR-8999.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add grouped GEMM variant to TE to dispatcher bridge](../sources/prs/rocm-libraries/PR-9000.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): represent exec-masked spans as atomic DAG nodes](../sources/prs/rocm-libraries/PR-9004.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): wrong restrict keyword usage #2](../sources/prs/rocm-libraries/PR-9006.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Fix missing precision support page](../sources/prs/rocm-libraries/PR-9008.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(node): implement logical and strict equality for execution nodes](../sources/prs/rocm-libraries/PR-9009.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocprim): update benchmark instructions](../sources/prs/rocm-libraries/PR-9011.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): use hipMemcpyAsync() to fix regression](../sources/prs/rocm-libraries/PR-9013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ci): Threefold increase timeout limit for standard test filter of rocfft](../sources/prs/rocm-libraries/PR-9018.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): tolerate non-mbcs bytes in vcvarsall.bat output](../sources/prs/rocm-libraries/PR-9021.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft): version bump post ROCm 7.14](../sources/prs/rocm-libraries/PR-9022.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): stream-K GEMM TE to dispatcher bridge](../sources/prs/rocm-libraries/PR-9028.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): batchnorm CalcStats remainder loop uses wrong thread stride](../sources/prs/rocm-libraries/PR-9031.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): serialize HipGraphExist gtest to prevent concurrent-shard OOM](../sources/prs/rocm-libraries/PR-9032.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): not needed cmake change from test grouped conv bwd data](../sources/prs/rocm-libraries/PR-9034.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): speed up ASAN codegen via asan allocator options](../sources/prs/rocm-libraries/PR-9036.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): emit a relocatable installed CTestTestfile](../sources/prs/rocm-libraries/PR-9047.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCM-27460] Fix integer overflow in tensor ops for large allocations on gfx1250](../sources/prs/rocm-libraries/PR-9049.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Disable CK grouped conv support for gfx1250](../sources/prs/rocm-libraries/PR-9050.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): tolerate non-mbcs bytes in vcvarsall.bat output](../sources/prs/rocm-libraries/PR-9052.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): use portable getenv wrapper in stinkytofu-opt](../sources/prs/rocm-libraries/PR-9054.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim) Update changelog for fixes that were not included in 7.14](../sources/prs/rocm-libraries/PR-9059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ refactor(integration-tests): unify tolerance and synthesis pipeline](../sources/prs/rocm-libraries/PR-9062.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix hipblaslt yaml files](../sources/prs/rocm-libraries/PR-9065.md) `[source-pr]` arch:cdna3
+- [feat(hipblaslt): Improvements to fix_yaml_types.py](../sources/prs/rocm-libraries/PR-9066.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Enable dynamic-queue and hybrid StreamK on gfx1250](../sources/prs/rocm-libraries/PR-9074.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [rocWMMA] FFM Test Filters](../sources/prs/rocm-libraries/PR-9078.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [rocBLAS] adds hipblaslt only developer build mode](../sources/prs/rocm-libraries/PR-9079.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Correct tensilelite-host alias ref](../sources/prs/rocm-libraries/PR-9080.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparselt): remove spmm from StinkyTofuESM2](../sources/prs/rocm-libraries/PR-9085.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): expose CDNA5 scheduler tuning knobs via ModuleOptions](../sources/prs/rocm-libraries/PR-9103.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Add test to prevent benchmarking in common tests](../sources/prs/rocm-libraries/PR-9104.md) `[source-pr]` arch:cdna3, cdna4
+- [fix(miopen): always register CK grouped-conv solvers in host (ROCM-27359)](../sources/prs/rocm-libraries/PR-9105.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocblas): Add per-batch alpha stride support to scal](../sources/prs/rocm-libraries/PR-9108.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim) Exclude slow tests from the quick test suite to avoid timeouts](../sources/prs/rocm-libraries/PR-9109.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): magic division for long_index_t (#8983)](../sources/prs/rocm-libraries/PR-9110.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Add explicit Architecture field to gfx1250 test YAMLs](../sources/prs/rocm-libraries/PR-9117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [MIOpen error tolerance](../sources/prs/rocm-libraries/PR-912.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ fix(rocprim): speed up host data gen in `ReduceArgMinimum` subtest](../sources/prs/rocm-libraries/PR-9120.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(hipblaslt): Use mxDataGenerator for MX datatypes for gfx1250](../sources/prs/rocm-libraries/PR-9122.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): make format targets platform-agnostic](../sources/prs/rocm-libraries/PR-9124.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): suppress third-party ROCm toolchain warnings](../sources/prs/rocm-libraries/PR-9125.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(tensilelite): AIHPBLAS-3463 add build(stop_after=...) API](../sources/prs/rocm-libraries/PR-9127.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): guard AI heuristic fdeep model caches with a mutex](../sources/prs/rocm-libraries/PR-9131.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Avoid dsload overlap](../sources/prs/rocm-libraries/PR-9137.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Centralize CK compile defs and align FP8 defaults](../sources/prs/rocm-libraries/PR-9146.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): use relative paths in installed CTestTestfile](../sources/prs/rocm-libraries/PR-9148.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): guard AI heuristic fdeep model caches with a mutex (cherry-pick #9131)](../sources/prs/rocm-libraries/PR-9149.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): Add streamk unit tests for complex data types](../sources/prs/rocm-libraries/PR-9150.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): fix csrmv rounding failures](../sources/prs/rocm-libraries/PR-9155.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt) Add prefetch gl2 support for subtile kernel](../sources/prs/rocm-libraries/PR-9161.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): expand FFM testing](../sources/prs/rocm-libraries/PR-9165.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparselt): Update F8NSS Equality Logic Yaml on gfx942](../sources/prs/rocm-libraries/PR-9167.md) `[source-pr]` arch:cdna3
+- [test(hipblaslt): raise standard-tier ctest timeout from 30m to 1h](../sources/prs/rocm-libraries/PR-9170.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Restore WG barrier at preloop and in NLL in subtile kernel](../sources/prs/rocm-libraries/PR-9177.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Fix missing parameter issue](../sources/prs/rocm-libraries/PR-9180.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): mark bsrilu0_graph_test as known_bug](../sources/prs/rocm-libraries/PR-9191.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(stinkytofu): onboard to Read the Docs via Doxygen/Sphinx](../sources/prs/rocm-libraries/PR-9193.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): Move misplaced CHANGELOG entry](../sources/prs/rocm-libraries/PR-9195.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix PAP+TDM redundant descriptor rebuild](../sources/prs/rocm-libraries/PR-9196.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Skip failing tests for tox -e coverage-cpp](../sources/prs/rocm-libraries/PR-9197.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Type checking of derived parameters](../sources/prs/rocm-libraries/PR-9201.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Extend fast reference gemm to fp64 and tf32](../sources/prs/rocm-libraries/PR-9203.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix gfx1201 test for FP16 T-T GEMM + bias-fused epilogue](../sources/prs/rocm-libraries/PR-9204.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt-provider): port matmul tests to common integration suite](../sources/prs/rocm-libraries/PR-9205.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): add SIA4 coverage in StreamK GFX1250 tests](../sources/prs/rocm-libraries/PR-9208.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(origami): replace SK5 hybrid-mode table with learned rule](../sources/prs/rocm-libraries/PR-9209.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite):  fix gfx1250 Subtile + TDM + StreamK faults](../sources/prs/rocm-libraries/PR-9210.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): add Python frontend wheel package](../sources/prs/rocm-libraries/PR-9211.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: FMHA batch-prefill paged-KV 32-bit VA overflow at high GPU base addresses](../sources/prs/rocm-libraries/PR-9214.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: Remove GRVW rejection for TDM enabled kernel for gfx1250](../sources/prs/rocm-libraries/PR-9217.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparselt): Update B8NSS Equality Logic Yaml on gfx942](../sources/prs/rocm-libraries/PR-9223.md) `[source-pr]` arch:cdna3
+- [chore(hipdnn): remove dnn-benchmarking tool](../sources/prs/rocm-libraries/PR-9224.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): enable TDMSplit for StreamK GEMM on gfx1250](../sources/prs/rocm-libraries/PR-9227.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: guard arg.Print() in WMMA bwd data grouped conv with log level check](../sources/prs/rocm-libraries/PR-9232.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipdnn): pull ROCm from multi-arch nightlies and flag stale wheels](../sources/prs/rocm-libraries/PR-9234.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipdnn): run CodeQL over the superbuild, host-only](../sources/prs/rocm-libraries/PR-9235.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): Add Blocked ELL format support to dense to sparse conversion.](../sources/prs/rocm-libraries/PR-9236.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt): add tuned K=1024 grid entries for gfx1151 BF16 GEMMs](../sources/prs/rocm-libraries/PR-9238.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump soupsieve from 2.5 to 2.8.4 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-9241.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump soupsieve from 2.8.1 to 2.8.4 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-9242.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): raise standard category ctest timeout to 1h](../sources/prs/rocm-libraries/PR-9252.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "feat(hipblaslt): Change library logic parsing to error out on incorrect dtypes"](../sources/prs/rocm-libraries/PR-9263.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): mark csrilu0/csric0/bsric0_graph_test as known_bug](../sources/prs/rocm-libraries/PR-9271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt/hipsparselt): Fix incorrect dtypes in yaml files](../sources/prs/rocm-libraries/PR-9273.md) `[source-pr]` arch:cdna3
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-9275.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9276.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocblas/docs/sphinx in the rocblas-docs-dependencies group](../sources/prs/rocm-libraries/PR-9277.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9281.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /shared/tensile/docs/sphinx in the tensile-docs-dependencies group](../sources/prs/rocm-libraries/PR-9282.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Change library logic parsing from warning to error](../sources/prs/rocm-libraries/PR-9284.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): implement RFC 0016 runtime pass-by-value tensors](../sources/prs/rocm-libraries/PR-9286.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): expose python error code bindings](../sources/prs/rocm-libraries/PR-9290.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparse): adding blocked ELL format to hipsparseDenseToSparse](../sources/prs/rocm-libraries/PR-9291.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipblaslt): add Windows DLL VERSIONINFO metadata](../sources/prs/rocm-libraries/PR-9294.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): Remove use of mat->analysed in SpSV](../sources/prs/rocm-libraries/PR-9295.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rfc): extend RFC 0015 engine support claims for bundle sweeps](../sources/prs/rocm-libraries/PR-9296.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocblas): Deprecate ROCBLAS_USE_HIPBLASLT_BATCHED flag](../sources/prs/rocm-libraries/PR-9298.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocisa): resolve dependent DLLs on Windows via os.add_dll_directory](../sources/prs/rocm-libraries/PR-9309.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): skip default_amdclang when CMAKE_TOOLCHAIN_FILE is set](../sources/prs/rocm-libraries/PR-9321.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): prefetchGL2 generalization](../sources/prs/rocm-libraries/PR-9326.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Add gfx90c build support](../sources/prs/rocm-libraries/PR-9333.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): add CLI argument support to samples for configurable execution](../sources/prs/rocm-libraries/PR-9342.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): enable HalfPLR on StreamK for gfx1250](../sources/prs/rocm-libraries/PR-9344.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore(hipdnn): bump hipDNN component and provider versions](../sources/prs/rocm-libraries/PR-9347.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): add script to report and apply version bumps](../sources/prs/rocm-libraries/PR-9350.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparse): Fix doxygen errors caused by README](../sources/prs/rocm-libraries/PR-9356.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck-tile): Fix compiler issue](../sources/prs/rocm-libraries/PR-9359.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): Use miopen- targets. ](../sources/prs/rocm-libraries/PR-9365.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): repair superbuild skill provisioning and test discovery](../sources/prs/rocm-libraries/PR-9371.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocBLAS): add FFM test sets](../sources/prs/rocm-libraries/PR-9376.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Fix co-exec harzard in scheduling](../sources/prs/rocm-libraries/PR-9384.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): resolve Windows build issues in samples and dependency fetching](../sources/prs/rocm-libraries/PR-9387.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): defer non-E8 MX scales to slow reference path](../sources/prs/rocm-libraries/PR-9389.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): keep scale-format modifier on MX f4 WMMA to fix MI32x16](../sources/prs/rocm-libraries/PR-9390.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparse): fix docs cross-reference warnings in rocSPARSE and hipSPARSE](../sources/prs/rocm-libraries/PR-9397.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocBLAS): ignore Gtest summary line](../sources/prs/rocm-libraries/PR-9399.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Skip equality library if dynamic kernels are requested](../sources/prs/rocm-libraries/PR-9406.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): track returning atomics in waitcnt dataflow](../sources/prs/rocm-libraries/PR-9407.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): check hipGetDeviceProperties return value in client](../sources/prs/rocm-libraries/PR-9411.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): stop auto-installing hip-python from test.pypi.org](../sources/prs/rocm-libraries/PR-9413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft-shared): Propagate async reference-FFT exceptions via .get()](../sources/prs/rocm-libraries/PR-9421.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(origami): add problem.num_cus to model a capped CU budget](../sources/prs/rocm-libraries/PR-9424.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocblas): add per-batch alpha/beta stride to remaining Level 2 functions](../sources/prs/rocm-libraries/PR-9425.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(miopen): backfill missing 7.14.0 changelog entries](../sources/prs/rocm-libraries/PR-9433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): refactory and use simpler rule to sheduling barrier](../sources/prs/rocm-libraries/PR-9436.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Handle WAR hazard for VALU and VMEM  in expert mode2](../sources/prs/rocm-libraries/PR-9438.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): support SourceSwap on non-square MatrixInstruction](../sources/prs/rocm-libraries/PR-9443.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): skip sgemm_dual_fmac_asm on gfx1250](../sources/prs/rocm-libraries/PR-9448.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): make MXDataGenModeTest static helpers public](../sources/prs/rocm-libraries/PR-9458.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert PR #6526 "feat: [CK Tile] mxfp8 support for qr async pipeline (#6526)"](../sources/prs/rocm-libraries/PR-9461.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Add missing namespace prefix to function call](../sources/prs/rocm-libraries/PR-9463.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): support 1-D wg clusters with Stream-K on gfx1250](../sources/prs/rocm-libraries/PR-9464.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck_tile): CK CI Aiter test error](../sources/prs/rocm-libraries/PR-9473.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): de-flake autotune strategy smoke test](../sources/prs/rocm-libraries/PR-9474.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore: remove USE_CUDA from rocFFT CMake](../sources/prs/rocm-libraries/PR-9476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparse): expose rocSPARSE CSR nnzsplit SpMV algorithm](../sources/prs/rocm-libraries/PR-9478.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix rotating buffer and flush under adaptive timing](../sources/prs/rocm-libraries/PR-9479.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): rank ASM SDPA engine above rocKE](../sources/prs/rocm-libraries/PR-9484.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add patch-logic to ExperimentalLibrary](../sources/prs/rocm-libraries/PR-9485.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): do not bump numSgprStreamK for SkPrefetchPrimed](../sources/prs/rocm-libraries/PR-9486.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(miopen): "[MIOpen] Disable CK grouped conv support for gfx1250"](../sources/prs/rocm-libraries/PR-9491.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): Support whole-kernel expert mode2](../sources/prs/rocm-libraries/PR-9493.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ fix(hipblaslt): map InitMode::Random to rand_int for MX datatypes](../sources/prs/rocm-libraries/PR-9494.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "feat(tensilelite): prefetchGL2 generalization"](../sources/prs/rocm-libraries/PR-9501.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): fix IntegrationGpuConvFwd3dFp32 flake](../sources/prs/rocm-libraries/PR-9504.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): use build(stop_after=EMIT) in initD preloop tests](../sources/prs/rocm-libraries/PR-9506.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft): silence compiler warnings for hipfft-test with CUDA backend ](../sources/prs/rocm-libraries/PR-9509.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): remove Stream-K ClusterDim reject shadowing 1-D WG cluster](../sources/prs/rocm-libraries/PR-9514.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck-tile): close GEMM_GROUPED entry in arch_filter OPERATOR_TILE_CONSTRAINTS](../sources/prs/rocm-libraries/PR-9520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft-test): skip tests that may need 64-bit indexing in kernel(s)](../sources/prs/rocm-libraries/PR-9528.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): reapply prefetchGL2 generalization](../sources/prs/rocm-libraries/PR-9534.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix (Tensilelite) (StinkyTofu) support-106sgpr-gfx1250](../sources/prs/rocm-libraries/PR-9538.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: TDM GRVW corner cases for gfx1250](../sources/prs/rocm-libraries/PR-9542.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Fix device_select test timeout in the unit test "quick" suite](../sources/prs/rocm-libraries/PR-9547.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): mxDataGenerator can create data where K % block size !=0](../sources/prs/rocm-libraries/PR-9548.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9550.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9551.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocblas/docs/sphinx in the rocblas-docs-dependencies group](../sources/prs/rocm-libraries/PR-9554.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-9556.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /shared/tensile/docs/sphinx in the tensile-docs-dependencies group](../sources/prs/rocm-libraries/PR-9557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipsparselt): Removed hipDataType Doxygen reference](../sources/prs/rocm-libraries/PR-9558.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(CK_TILE): fix error found by Aiter repo tests](../sources/prs/rocm-libraries/PR-9562.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Improve RocprimDeviceSelectTests test filtering](../sources/prs/rocm-libraries/PR-9567.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): initialize all batch-1 inputs in layernorm bprop test](../sources/prs/rocm-libraries/PR-9580.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix intersphinx errors for 7.14.0 release](../sources/prs/rocm-libraries/PR-9582.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): avoid CFGBuilder split-piece label collisions](../sources/prs/rocm-libraries/PR-9585.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(sparse): use safe YAML loaders in test generators](../sources/prs/rocm-libraries/PR-9594.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Correct compute type conversion for User offline tuning](../sources/prs/hipblaslt/PR-6557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add Triton specialization paths to origami (gated on target_t)](../sources/prs/hipblaslt/PR-6604.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[Tensilelite] Fix incorrect output for SIA0 + PGR](../sources/prs/hipblaslt/PR-6993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -1622,6 +2876,7 @@
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md) `[wiki-technique]` arch:cdna3
 - [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md) `[wiki-technique]` arch:cdna3, cdna4
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
@@ -1632,7 +2887,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna4 (680 pages)
+## cdna4 (1325 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -1661,10 +2916,12 @@
 - [Activation Kernels (SiLU, GELU, SwiGLU)](../wiki/kernels/activation-kernels.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [AllReduce on ROCm](../wiki/kernels/all-reduce-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Batched GEMM on ROCm](../wiki/kernels/batched-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [CDNA4 (gfx950/MI350) Scaled-MFMA GEMM in hipBLASLt](../wiki/kernels/cdna4-hipblaslt-scaled-mfma-gemm.md) `[wiki-kernel]` arch:cdna4
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Embedding Lookup Kernel Optimization](../wiki/kernels/embedding-lookup.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [FlashAttention on ROCm via Composable Kernel](../wiki/kernels/flash-attention-rocm-ck.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [Flash Decoding on ROCm](../wiki/kernels/flash-decoding-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [FP8 and Block-Scale GEMM on ROCm](../wiki/kernels/fp8-blockscale-gemm-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [FP8 FlashAttention on ROCm](../wiki/kernels/fp8-flash-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
@@ -1675,6 +2932,7 @@
 - [Efficient Histogram Computation on ROCm](../wiki/kernels/histogram-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [KV Cache Paged Attention on ROCm](../wiki/kernels/kv-cache-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [LayerNorm and RMSNorm Optimization on ROCm](../wiki/kernels/layernorm-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
+- [MIOpen Convolution Kernel Strategy on ROCm](../wiki/kernels/miopen-conv-strategy-rocm.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Paged Prefill Attention on ROCm](../wiki/kernels/paged-prefill-attention-rocm.md) `[wiki-kernel]` arch:cdna3, cdna4
 - [Parallel Prefix Sum (Scan) on ROCm](../wiki/kernels/prefix-sum-scan.md) `[wiki-kernel]` arch:cdna1, cdna2, cdna3, cdna4
@@ -1721,7 +2979,91 @@
 - [[PERF] MXFP4 (a4w4) MoE backend for gfx950](../sources/prs/hipblaslt/PR-3470.md) `[source-pr]` arch:cdna4
 - [[feat] FP8 (DeepSeek-V4 layout) sparse paged prefill attention](../sources/prs/hipblaslt/PR-3583.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Tune fused GEMM AFP4WFP4 A16W16 gfx950 config and add benchmark](../sources/prs/hipblaslt/PR-3642.md) `[source-pr]` arch:cdna4
+- [Use fill_argument for literals that have the same value](../sources/prs/amdmigraphx/PR-3815.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve split reshape](../sources/prs/amdmigraphx/PR-4163.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add deref op](../sources/prs/amdmigraphx/PR-4554.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add gather_slice_concat matcher](../sources/prs/amdmigraphx/PR-4725.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Dedupilicate Gather Reads from Constant Embedding Data Vectors](../sources/prs/amdmigraphx/PR-4727.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve horizontal fusions](../sources/prs/amdmigraphx/PR-4729.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fuse pointwise across split slices](../sources/prs/amdmigraphx/PR-4733.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add versioninfo to migraphx binaries WINDOWS](../sources/prs/amdmigraphx/PR-4765.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Enable fp16 channelwise convolution](../sources/prs/amdmigraphx/PR-4808.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Rewrite skinny gemms to mul+reduce_sum](../sources/prs/hipblaslt/PR-4811.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add dynamic shape support for TopK](../sources/prs/amdmigraphx/PR-4880.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [GPU NMS kernel and refactor of NMS operator](../sources/prs/amdmigraphx/PR-4893.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add torch kit](../sources/prs/amdmigraphx/PR-4899.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Replace deprecated __hip_atomic_* builtins with __scoped_atomic_* equivalents](../sources/prs/amdmigraphx/PR-4902.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [broadcast_with_dims: lower-bound the dynamic output dims at 1, not 0](../sources/prs/amdmigraphx/PR-4927.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Convolution backwards v4r1](../sources/prs/amdmigraphx/PR-4928.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add conv winograd for gfx12](../sources/prs/amdmigraphx/PR-4936.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ONNX parser updates for symbolic shapes](../sources/prs/amdmigraphx/PR-4939.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Improve error reporting with loop operator](../sources/prs/amdmigraphx/PR-4949.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1082] Decouple OnnxRT from user/local via updateing build script](../sources/prs/amdmigraphx/PR-4951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1085] Add --cout option for driver output](../sources/prs/amdmigraphx/PR-4959.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-12](../sources/prs/amdmigraphx/PR-4960.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Moving RockEnums.h inside header guard](../sources/prs/amdmigraphx/PR-4962.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.6 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Propagate the permutation for resize when using the sizes attribute](../sources/prs/amdmigraphx/PR-4964.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Docs] Add precision support reference page](../sources/prs/amdmigraphx/PR-4965.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix FindParallelSTL MSVC compile check missing C++17 flag](../sources/prs/amdmigraphx/PR-4966.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Vectorize Resize](../sources/prs/amdmigraphx/PR-4967.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add kernelName main guard to mlss conv](../sources/prs/amdmigraphx/PR-4968.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIRADSW-567] Fix int8 models qlinearconv](../sources/prs/amdmigraphx/PR-4969.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[4970] Generate tuning inputs on GPU via splitmix64 device RNG](../sources/prs/amdmigraphx/PR-4971.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump pyjwt from 2.8.0 to 2.13.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4972.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Reject zero-size operation name buffers](../sources/prs/amdmigraphx/PR-4973.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4974.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /docs/sphinx](../sources/prs/amdmigraphx/PR-4975.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Propagate layout with reshape after lowering](../sources/prs/amdmigraphx/PR-4976.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1054] Log debug symbols when exceptions are thrown](../sources/prs/amdmigraphx/PR-4978.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Cross Compile: expose more device_props and pass JSON object in driver](../sources/prs/amdmigraphx/PR-4981.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Encode benchmark MXR comment metadata as JSON](../sources/prs/amdmigraphx/PR-4982.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add concat reshape matcher](../sources/prs/amdmigraphx/PR-4984.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Debug symbols docs update](../sources/prs/amdmigraphx/PR-4985.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Pass in a JSON file to driver](../sources/prs/amdmigraphx/PR-4986.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix verify auto-print handler registration for late targets](../sources/prs/amdmigraphx/PR-4987.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[4979] Adaptive benchmark bundle during tuning](../sources/prs/amdmigraphx/PR-4989.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add backend options](../sources/prs/amdmigraphx/PR-4990.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix redundant re-benchmarking for pooling when using problem cache](../sources/prs/amdmigraphx/PR-4991.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove dev_intro.rst and formatting contributing-to-migraphx](../sources/prs/amdmigraphx/PR-4993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-19](../sources/prs/amdmigraphx/PR-5000.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1082] Update OnnxRT workloads use Plugin EP Registration](../sources/prs/amdmigraphx/PR-5002.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add checkers for redundant static_cast](../sources/prs/amdmigraphx/PR-5003.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-885] Add slice squeeze matcher](../sources/prs/amdmigraphx/PR-5004.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocmlir to June 24](../sources/prs/amdmigraphx/PR-5009.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix bug with simplify reshapes and multi reduction axis](../sources/prs/amdmigraphx/PR-5013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Slice over dynamic dimension](../sources/prs/amdmigraphx/PR-5015.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-06-26](../sources/prs/amdmigraphx/PR-5016.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Skip fuse_horizontal pass on dynamic shaped inputs](../sources/prs/amdmigraphx/PR-5017.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Use eigen for convolution](../sources/prs/amdmigraphx/PR-5018.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Allow benchmark MXR dumps during cross-compile](../sources/prs/amdmigraphx/PR-5022.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Change option name to MIGRAPHX_USE_MSVC_STATIC_RUNTIME](../sources/prs/amdmigraphx/PR-5023.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Sanitize benchmark mxr file name to use `_` instead of invalid Windows characters](../sources/prs/amdmigraphx/PR-5024.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Don't throw an exception when using MIGRAPHX_GPU_DUMP_BENCHMARK_MXR](../sources/prs/amdmigraphx/PR-5025.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fuse_pointwise fuse dynamic even if scalar](../sources/prs/amdmigraphx/PR-5027.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Lower `dimensions_of` on GPU](../sources/prs/amdmigraphx/PR-5029.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIMIGRAPHX-1163] Add lower_device_ops pass](../sources/prs/amdmigraphx/PR-5030.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add windows gpu build](../sources/prs/amdmigraphx/PR-5034.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix gather regression](../sources/prs/amdmigraphx/PR-5038.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Auto select NCHW/NHWC layout](../sources/prs/amdmigraphx/PR-5040.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add notices about following LLVM AI Tool Use Policy](../sources/prs/amdmigraphx/PR-5042.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Mixed length gather merge](../sources/prs/amdmigraphx/PR-5044.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix the unit tests that are broken on develop](../sources/prs/amdmigraphx/PR-5045.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [update rocmlir to eccd4d7](../sources/prs/amdmigraphx/PR-5047.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [update before installing](../sources/prs/amdmigraphx/PR-5050.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.35.0 to 1.36.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5051.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add mlss_use_specific_ops as a GPU backend option](../sources/prs/amdmigraphx/PR-5053.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add from_string/to_string enum macro](../sources/prs/amdmigraphx/PR-5054.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-07-10](../sources/prs/amdmigraphx/PR-5055.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add max block size tuning for JIT reductions](../sources/prs/amdmigraphx/PR-5056.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump soupsieve from 2.5 to 2.8.4 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5057.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [if miopen/hipblas/rocblas are not enabled, send gemms to rocmlir](../sources/prs/amdmigraphx/PR-5059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix windows CI: Workaround files not being deleted](../sources/prs/amdmigraphx/PR-5062.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add toggle for wavefront size to cross compilation options](../sources/prs/amdmigraphx/PR-5065.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix reverse op bug](../sources/prs/amdmigraphx/PR-5068.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix non-standard literals causing failures in mlir modules](../sources/prs/amdmigraphx/PR-5070.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.36.0 to 1.38.0 in /docs/sphinx](../sources/prs/amdmigraphx/PR-5071.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Onnxruntime Weekly Sync 2026-07-17](../sources/prs/amdmigraphx/PR-5076.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [feat(compile): expose torch_compile_options for Inductor flag tuning](../sources/prs/hipblaslt/PR-3692.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK] Add FP8 KV_BLOCKSCALE support for batch prefill](../sources/prs/composable_kernel/PR-3696.md) `[source-pr]` arch:cdna3, cdna4
 - [[CK_TILE] MX GEMM, non-preshuffled and RCR layout](../sources/prs/composable_kernel/PR-3709.md) `[source-pr]` arch:cdna4
@@ -1766,6 +3108,563 @@
 - [[ROCm] Enable native AsyncTP](../sources/prs/hipblaslt/PR-177961.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[inductor][rocm] make AMD MM matrix_instr_nonkdim configurable](../sources/prs/hipblaslt/PR-186642.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add dense FlexGEMM QuACK tuning](../sources/prs/hipblaslt/PR-187108.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocfft): integrate RCCL for single-node multi-GPU global transposition.](../sources/prs/rocm-libraries/PR-3042.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocfft] use thread-safe counting in rocfft_setup and rocfft_cleanup ](../sources/prs/rocm-libraries/PR-3641.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] Add device level parallel algorithm TopK and its tests and benchmarks](../sources/prs/rocm-libraries/PR-3646.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocrand): use primbench](../sources/prs/rocm-libraries/PR-4454.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [aquant block scale gemm](../sources/prs/rocm-libraries/PR-5268.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] refactor(rocprim): combine seperate uses of half type checks and std::is_floating_point ](../sources/prs/rocm-libraries/PR-5271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [enabling multi-thread test in nightly for hipblaslt-test](../sources/prs/rocm-libraries/PR-5389.md) `[source-pr]` arch:cdna3, cdna4
+- [[CK TILE ENGINE] Add block-scale GEMM operators BQuant](../sources/prs/rocm-libraries/PR-5496.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Add transposed tile load implementation, and tests for load_and_convert_tile](../sources/prs/rocm-libraries/PR-5510.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/rocm-libraries/PR-5813.md) `[source-pr]` arch:cdna4
+- [fix(tensilelite): Reduce unaccounted overhead of ScopedTimer and timing_context](../sources/prs/rocm-libraries/PR-6043.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [bitonic warp/ block sort with forward only comparision ](../sources/prs/rocm-libraries/PR-6061.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Origami Model for Attention](../sources/prs/rocm-libraries/PR-6334.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): use wavefront size-based dispatching in remaining warp algorithms](../sources/prs/rocm-libraries/PR-6420.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Add gfx120x support to Winograd Rage](../sources/prs/rocm-libraries/PR-6439.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(composablekernel): More data type tests for ck tile batched grouped gemm](../sources/prs/rocm-libraries/PR-6521.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(origami): add gfx1200 (RDNA4) hardware support](../sources/prs/rocm-libraries/PR-6524.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK Tile] mxfp8 support for qr async pipeline](../sources/prs/rocm-libraries/PR-6526.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Correct compute type conversion for User offline tuning](../sources/prs/rocm-libraries/PR-6557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Async support pipeline V3](../sources/prs/rocm-libraries/PR-6565.md) `[source-pr]` arch:cdna4
+- [feat(hipdnn): Layernorm bwd frontend and CPU reference](../sources/prs/rocm-libraries/PR-6566.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CKTile] Fix MX GEMM: num_loop==3 dispatch, split-K, unsupported-shape guard](../sources/prs/rocm-libraries/PR-6663.md) `[source-pr]` arch:cdna4
+- [[rocFFT | hipFFT] gfx90c enablement in FFT libs](../sources/prs/rocm-libraries/PR-6682.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): Add CSC format support to spsv and sptrsv](../sources/prs/rocm-libraries/PR-6695.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Debug memory](../sources/prs/rocm-libraries/PR-6844.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Added Global Read/Write Support](../sources/prs/rocm-libraries/PR-6944.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM][hipRAND[rocRAND] Remove rocm-smi from template documents](../sources/prs/rocm-libraries/PR-6981.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix incorrect output for SIA0 + PGR](../sources/prs/rocm-libraries/PR-6993.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add PrefetchAcrossPersistent](../sources/prs/rocm-libraries/PR-7053.md) `[source-pr]` arch:cdna4
+- [rocBLAS: Fix Fortran sample HIP result names](../sources/prs/rocm-libraries/PR-7059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocWMMA][Community] Add lora adapter fusion sample](../sources/prs/rocm-libraries/PR-7083.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Feature-engineered 2D AI heuristics (Tunanet + KTN candidate selection) for gfx942 & gfx950](../sources/prs/rocm-libraries/PR-7109.md) `[source-pr]` arch:cdna4
+- [[rocFFT] Move partial-pass generator functions from RR/CC classes to base class](../sources/prs/rocm-libraries/PR-7137.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): use singleton class for random numbers](../sources/prs/rocm-libraries/PR-7174.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[fft mpi workers] Use reference_fft_data in MPI tests](../sources/prs/rocm-libraries/PR-7225.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix example_arch for spirv compilation](../sources/prs/rocm-libraries/PR-7334.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix name change in report_noise.py](../sources/prs/rocm-libraries/PR-7337.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] [ALMIOPEN-1898] RFC: MIOpen→hipDNN forwarding wrapper](../sources/prs/rocm-libraries/PR-7388.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASlt] Enabling test_categories](../sources/prs/rocm-libraries/PR-7396.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK TILE] Unification Work – Integration of unification framework into CK Tile](../sources/prs/rocm-libraries/PR-7407.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix yaml type mismatch in library logic for aquavanjaram (d) + arcturus (6/13 of #6609)](../sources/prs/rocm-libraries/PR-7413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocFFT] Add support for batch configuration directly in the partial-pass kernels config file](../sources/prs/rocm-libraries/PR-7476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CI] Run hipSPARSELt when hipBLASLt subtree changes](../sources/prs/rocm-libraries/PR-7514.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(tensilelite): add stage-tagged TypeAlias for LogicalScheduler pipeline](../sources/prs/rocm-libraries/PR-7540.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Relax batchnorm scale bias](../sources/prs/rocm-libraries/PR-7566.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Tensilelite] MBSK: packed βC dword unpack indexes wrong dataV/byteOffset for I8/F8/B8 dest](../sources/prs/rocm-libraries/PR-7578.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1943 Add pytest suite and CI workflow for Python bindings](../sources/prs/rocm-libraries/PR-7600.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Add ABQuant block scale GEMM operator](../sources/prs/rocm-libraries/PR-7607.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensile] gfx12 assembly compatibility](../sources/prs/rocm-libraries/PR-7655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Enable grouped CK xdlops solvers for large-stride tensors (ROCM-23997)](../sources/prs/rocm-libraries/PR-7663.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocSPARSE] Implement incomplete LDL' with zero fill-in](../sources/prs/rocm-libraries/PR-7689.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add unit test for TensileLogic_Run, TensileMergeLibrary , TensileRetuneLibrary and TensileUpdateLibrary](../sources/prs/rocm-libraries/PR-7703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Split KDB and PDB testing to allow Database updates without changes to kernel DB](../sources/prs/rocm-libraries/PR-7747.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Add query-only APIs that return workspace range for fwd, bwd and wrw solvers in MIOpen](../sources/prs/rocm-libraries/PR-7770.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [TensileLite: Add multi-DU support.](../sources/prs/rocm-libraries/PR-7781.md) `[source-pr]` arch:cdna4
+- [RotateCoObject](../sources/prs/rocm-libraries/PR-7788.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Insert mode2 s_wait_alu + half-aware RegKey](../sources/prs/rocm-libraries/PR-7844.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [style: [CK TILE] Unification Work – Unify format MFMA part](../sources/prs/rocm-libraries/PR-7850.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK Tile] Adding gfx1250 wrappers for dense and scale builtins](../sources/prs/rocm-libraries/PR-7852.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Add coverage for cpp files](../sources/prs/rocm-libraries/PR-7853.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Support function-call CFG](../sources/prs/rocm-libraries/PR-7858.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-1696] Re-enabling certain MIOpen tests with ASan enabled.](../sources/prs/rocm-libraries/PR-7904.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse/hipsparse] Add emulation categories to rocSPARSE/hipSPARSE](../sources/prs/rocm-libraries/PR-7905.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [gmock and gtest needed for compilation](../sources/prs/rocm-libraries/PR-7912.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Add MX F8/F4 F32-out smoke test for gfx1250](../sources/prs/rocm-libraries/PR-7929.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Re-tune gfx1151 NN bf16+bias GridBased selections](../sources/prs/rocm-libraries/PR-7933.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): generalize 2D r2c/c2r to multi-dimensional batch](../sources/prs/rocm-libraries/PR-7963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove disabling offload-compress for spirv in rocPRIM, hipCUB and rocThrust](../sources/prs/rocm-libraries/PR-7971.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore(tensilelite): Remove legacy StreamK modes](../sources/prs/rocm-libraries/PR-7980.md) `[source-pr]` arch:cdna3, cdna4
+- [[hipblaslt][tensilelite] Add a characterization-test suite for the TensileLite Python surface](../sources/prs/rocm-libraries/PR-7989.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [  [origami] Consume Origami as a findable package; stop duplicate origami builds](../sources/prs/rocm-libraries/PR-7996.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Rewrite wait-count insertion as SSA def-use dataflow with per-counter FIFO modeling](../sources/prs/rocm-libraries/PR-8002.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Enable MBSK GSU on gfx1250](../sources/prs/rocm-libraries/PR-8008.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Use physical CU count for N_CU on RDNA](../sources/prs/rocm-libraries/PR-8013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [CK TILE] Unification Work – Add WMMA Scale Mixed Types Support](../sources/prs/rocm-libraries/PR-8020.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Allow ScheduleIterAlg=1 with Stream-K](../sources/prs/rocm-libraries/PR-8051.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Add gfx950 SystemDB for MI350X/MI355X](../sources/prs/rocm-libraries/PR-8081.md) `[source-pr]` arch:cdna4
+- [New rocblas hipblaslt integration](../sources/prs/rocm-libraries/PR-8082.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): add rocsparse_handle_create/rocsparse_handle_destroy](../sources/prs/rocm-libraries/PR-8083.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Preserve pivot sign/phase in ILU0 numeric boost](../sources/prs/rocm-libraries/PR-8084.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[InitCIterWmma in stinkytofu] RegionClonePass - marker-driven region clone](../sources/prs/rocm-libraries/PR-8096.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ Add guards around dpp intrinsic for spirv ](../sources/prs/rocm-libraries/PR-8102.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] gfx1151: add K=1024 grid point at (M=4096,N=4096) for BBS TN](../sources/prs/rocm-libraries/PR-8104.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Add fast path reference gemm for MXFP4](../sources/prs/rocm-libraries/PR-8106.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add unit tests for Common/Utilities](../sources/prs/rocm-libraries/PR-8115.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): stop treating tensilelite host as internal library](../sources/prs/rocm-libraries/PR-8133.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [hipblaslt: fix uninitialized read of a_type/b_type in swizzle validation](../sources/prs/rocm-libraries/PR-8147.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] Rule-based configuration generation in CK Dispatcher codegen](../sources/prs/rocm-libraries/PR-8157.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][dnn-providers] Allow current tool version when different from expected](../sources/prs/rocm-libraries/PR-8161.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt][tensilelite] StreamK=5 hybrid kernel + Tile Scheduling tri-state mode (OFF/ON/AUTO)](../sources/prs/rocm-libraries/PR-8162.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Revert "[rocBLAS] Tag gfx12 f16 NN gemm_512 cases as known bug (ROCM-…](../sources/prs/rocm-libraries/PR-8163.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Test harness: abort + backtrace on fatal signals instead of recovering and hanging](../sources/prs/rocm-libraries/PR-8165.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Stop rejecting valid auto-derived LdsBlockSizePerPad values](../sources/prs/rocm-libraries/PR-8181.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- ["Warning: Stream-K Data Parallel..." spamming theRockCI build](../sources/prs/rocm-libraries/PR-8184.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Deprecate rocsparse_indextype_u16](../sources/prs/rocm-libraries/PR-8189.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[GFX1250][CK_TILE] Add scale16 (ScaleBlockSize=16) support to MX GEMM TDM pipeline](../sources/prs/rocm-libraries/PR-8202.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Fix SIA0+PGR2+PLR0: drain dscnt before barrier sync](../sources/prs/rocm-libraries/PR-8204.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Docs] Standardize precision support reference pages across components](../sources/prs/rocm-libraries/PR-8205.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add packed pk8 FP8 conversion](../sources/prs/rocm-libraries/PR-8207.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hipblaslt] [Subtile] [gfx1250] Remove Bank conflicts + small scheduling improvements](../sources/prs/rocm-libraries/PR-8211.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] WAVELET pipeline for backward-data grouped convolution](../sources/prs/rocm-libraries/PR-8220.md) `[source-pr]` arch:cdna4
+- [[CK TILE] Unification Work – Remove unification Flag structs in favor of new WarpGemmParams](../sources/prs/rocm-libraries/PR-8227.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt): Add 32-bit/size_t overflow test coverage for large-size kernels](../sources/prs/rocm-libraries/PR-8231.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Add RFC 0015: Per-Graph Engine Support Claims](../sources/prs/rocm-libraries/PR-8235.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SpMM regression testing](../sources/prs/rocm-libraries/PR-8236.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocfft-test] Resolve build failure of rocfft-test with older versions of rocfft](../sources/prs/rocm-libraries/PR-8246.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt-provider): Add FP8 OCP dequantize + GEMM support](../sources/prs/rocm-libraries/PR-8251.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SDDMM regression testing](../sources/prs/rocm-libraries/PR-8252.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add hipBLASLt PR Quality skill overlay](../sources/prs/rocm-libraries/PR-8254.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2031 Port dnn-benchmark to Windows (cross-platform CPU probe + setup.ps1)](../sources/prs/rocm-libraries/PR-8255.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen][MICI] switch to ninja](../sources/prs/rocm-libraries/PR-8256.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocprim][ASAN] Remove the ASAN workaround in test_device_histogram](../sources/prs/rocm-libraries/PR-8258.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ [CK_TILE] Add graph capture support for FMHA backward(new branch)](../sources/prs/rocm-libraries/PR-8262.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Autotune](../sources/prs/rocm-libraries/PR-8264.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Fix rebuild barriers error](../sources/prs/rocm-libraries/PR-8266.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Fix out-of-bounds read in Activation CPU reference multi-thread partition](../sources/prs/rocm-libraries/PR-8270.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK Tile] Grouped Conv GFX1250 fixes for dispatcher and builder g…](../sources/prs/rocm-libraries/PR-8271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[dnn-benchmarking] Add CUDA support to the PyTorch backend](../sources/prs/rocm-libraries/PR-8280.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix DirectToLdsMetadata bool/int type mismatch](../sources/prs/rocm-libraries/PR-8284.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [stinkytofu: add missing <cstdint> and <climits> includes](../sources/prs/rocm-libraries/PR-8289.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Guard x86-only compile option](../sources/prs/rocm-libraries/PR-8298.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparselt] Guard x86-only headers and compiler options](../sources/prs/rocm-libraries/PR-8299.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Implement batched GER/GERU with per-batch alpha coefficients](../sources/prs/rocm-libraries/PR-8300.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Use 32-bit GL2PrefetchInc to reduce sgpr pressure](../sources/prs/rocm-libraries/PR-8303.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][SDPA] ALMIOPEN-1826 Mask Support for SDPA BWD](../sources/prs/rocm-libraries/PR-8304.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Make store-remap (SRVW) work gwvw=16 and StreamK=3](../sources/prs/rocm-libraries/PR-8308.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: CK Tile unification - swizzle support + gfx950 mixed prec scale + misc](../sources/prs/rocm-libraries/PR-8315.md) `[source-pr]` arch:cdna4
+- [[CK DSL] gfx950 GEMM: arch-resolve compv4 schedule hints (~+2%)](../sources/prs/rocm-libraries/PR-8320.md) `[source-pr]` arch:cdna4
+- [[Hipblaslt] Subtile/TDM (gfx1250): load dedup, multi-partition LDS fix, WMMA matrix-A reuse](../sources/prs/rocm-libraries/PR-8323.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[GFX1250][MX GEMM] Unified FLATMM GroupedGemm Implementation for MX Data Types](../sources/prs/rocm-libraries/PR-8325.md) `[source-pr]` arch:cdna4
+- [[tensilelite] Add validation infrastructure for input yaml files (gated off)](../sources/prs/rocm-libraries/PR-8327.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Input yaml validation and fixes](../sources/prs/rocm-libraries/PR-8328.md) `[source-pr]` arch:cdna3, cdna4
+- [[rocFFT][ci] Add multi-GPU test category](../sources/prs/rocm-libraries/PR-8329.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-899 Add Windows VERSIONINFO and drop the umbrella product version](../sources/prs/rocm-libraries/PR-8330.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] ALMIOPEN-2069 Work around missing nlohmann_json natvis file in TheRock prebuilt artifact](../sources/prs/rocm-libraries/PR-8331.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Retry builds on node failure with automatic rerouting](../sources/prs/rocm-libraries/PR-8332.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][G-F-A] Demo calling triton fp4 kernel](../sources/prs/rocm-libraries/PR-8336.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Add adaptive timing mode to hipblaslt-bench](../sources/prs/rocm-libraries/PR-8337.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Throttle tensor_load_to_lds with a bounded in-flight credit pool](../sources/prs/rocm-libraries/PR-8345.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Fp32 and Bf16 mfma instructions extension](../sources/prs/rocm-libraries/PR-8348.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt][TensileLite] Emit VOPD v_dual_fmac_f32 for f32](../sources/prs/rocm-libraries/PR-8349.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
+- [Add tile shape for FMHA batch prefill on MI308X (on fp8, hdim=256)](../sources/prs/rocm-libraries/PR-8350.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [CompactLoopStore](../sources/prs/rocm-libraries/PR-8354.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Conv 3d support](../sources/prs/rocm-libraries/PR-8355.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Revert "Reduce CachingLibrary map lookup/write overhead (#7754)"](../sources/prs/rocm-libraries/PR-8356.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-8359.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-8361.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump rocm-docs-core from 1.33.1 to 1.35.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-8371.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2035] - cuDNN compatibility layer enum updates](../sources/prs/rocm-libraries/PR-8376.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.6 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8379.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM][hipCUB][rocThrust][rocRAND][hipRAND] Update version info for 7.14 release](../sources/prs/rocm-libraries/PR-8392.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipsparse): fix hipSPARSE Build and Tests for CUDA 13](../sources/prs/rocm-libraries/PR-8393.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] per-batch alpha stride support for axpy/axpy_ex](../sources/prs/rocm-libraries/PR-8394.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Retuned TN HHS and BBS kernels on gfx1100 and vgpr change](../sources/prs/rocm-libraries/PR-8396.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[[hipBLASLt] Normalize sanitizer GPU targets to xnack+](../sources/prs/rocm-libraries/PR-8397.md) `[source-pr]` arch:cdna3, cdna4
+- [Cold cache retune gfx1151 HHS GridBased skinny_N shapes](../sources/prs/rocm-libraries/PR-8398.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Resubmit LLVM-style pass plugin mechanism with standalone-build install gate](../sources/prs/rocm-libraries/PR-8400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2064] [hipDNN] Add PyTorch references for benchmarking](../sources/prs/rocm-libraries/PR-8402.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix 2 kernel bugs](../sources/prs/rocm-libraries/PR-8406.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] CachingLibrary hash-collision regression test ](../sources/prs/rocm-libraries/PR-8411.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Updated client code to handle A/B=0 for General Batched GEMM and added corresponding tests](../sources/prs/rocm-libraries/PR-8412.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix tail loop token](../sources/prs/rocm-libraries/PR-8413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix MX batch stride for gfx1250](../sources/prs/rocm-libraries/PR-8414.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2092] Restructure MIOpen Jenkins pipeline to reduce Jenkinsfile size and support selective reruns](../sources/prs/rocm-libraries/PR-8415.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add tests for tensor_load_to_lds in-flight throttle](../sources/prs/rocm-libraries/PR-8416.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensile] Fix SIA0 PGR2 global-read placement](../sources/prs/rocm-libraries/PR-8417.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Add gfx1250 support for AdaptiveGemmNTAB](../sources/prs/rocm-libraries/PR-8421.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Extend and optimize Quant Gemm Kernel for Aiter a8w8](../sources/prs/rocm-libraries/PR-8423.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add missing constraint in the FMHA qr async pipeline to enforce bk0=bk1 ](../sources/prs/rocm-libraries/PR-8424.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Fix softmax kernel NaN failure when beta=0 (ROCM-26026)](../sources/prs/rocm-libraries/PR-8426.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse] Re-enable hipGraph solve/factor tests (revert #8111)](../sources/prs/rocm-libraries/PR-8430.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Instruct agents to use SPDX license headers and the rocm-libraries PR template](../sources/prs/rocm-libraries/PR-8431.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove OpenCL backend from MIOpen](../sources/prs/rocm-libraries/PR-8433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] Update test_categories.yaml](../sources/prs/rocm-libraries/PR-8441.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] [ALMIOPEN-1962] Initial MIOpen superbuild integration](../sources/prs/rocm-libraries/PR-8443.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2101 Add libsqlite3-dev to Ubuntu 24 Dockerfile](../sources/prs/rocm-libraries/PR-8444.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblalst][tensilelite] Add no stream-k support for subtile on gfx1250](../sources/prs/rocm-libraries/PR-8445.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: add internal test suite for library-side unit tests](../sources/prs/rocm-libraries/PR-8446.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS] match new hipblaslt and legacy blas in bad arg tests](../sources/prs/rocm-libraries/PR-8448.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [tune gfx950 hhs_nn_tn](../sources/prs/rocm-libraries/PR-8449.md) `[source-pr]` arch:cdna4
+- [Bump pyjwt from 2.10.1 to 2.13.0 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8451.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2115 Replace ROCm SMI references with AMD SMI](../sources/prs/rocm-libraries/PR-8456.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Co-locate Python bindings extension with backend](../sources/prs/rocm-libraries/PR-8459.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8461.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.5 to 6.5.7 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-8462.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-8463.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-8465.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][SDPA] ALMIOPEN-2116 Fix accumulate backward CPU reference gradients in FP32](../sources/prs/rocm-libraries/PR-8469.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix multiple issues related with code coverage in hipblaslt ](../sources/prs/rocm-libraries/PR-8470.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu][rocisa] De-bundle libstinkytofu; resolve example plugin via stinkytofu](../sources/prs/rocm-libraries/PR-8473.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] InsertWaitAluPass: converge mode0 at exit label so conditional in-region edges keep mode2](../sources/prs/rocm-libraries/PR-8476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocFFT: give default FFT callbacks external linkage to fix hipModuleGlobal](../sources/prs/rocm-libraries/PR-8477.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "[tensilelite] Keep WrapU* SGPRs live for TDM StaggerU kernels"](../sources/prs/rocm-libraries/PR-8482.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Verification improvements](../sources/prs/rocm-libraries/PR-8486.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Skip tests on gfx11 that have intermittent failures](../sources/prs/rocm-libraries/PR-8487.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix MBSK GSU>1 synchronizer race on gfx1250](../sources/prs/rocm-libraries/PR-8488.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump tornado from 6.5.6 to 6.5.7 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8490.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Add tile size for FMHA batch prefill bf16 for MI308X](../sources/prs/rocm-libraries/PR-8492.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2117 Hard engine selection + selected-engine read-back for dnn-benchmarking](../sources/prs/rocm-libraries/PR-8493.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Fix HIPDNN_ENABLE_SDPA flag being ignored when set by TheRock (ALMIOPEN-2120)](../sources/prs/rocm-libraries/PR-8495.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Bump cryptography from 46.0.7 to 48.0.1 in /projects/rocsparse/docs/sphinx](../sources/prs/rocm-libraries/PR-8497.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add `invoke coverage` task for LLVM source-based coverage](../sources/prs/rocm-libraries/PR-8498.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Remove unused ConfigurableWaitCnt and Schedule{First,Last}LRs passes](../sources/prs/rocm-libraries/PR-8500.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] disable DPP kernels by default](../sources/prs/rocm-libraries/PR-8501.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocsparse): add residual computation example to rocsparse documentation](../sources/prs/rocm-libraries/PR-8506.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocsparse][hipsparse] Update changelog and version numbers for rocSPARSE and hipSPARSE](../sources/prs/rocm-libraries/PR-8512.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1867 Fix Graph plan serialization state](../sources/prs/rocm-libraries/PR-8516.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Add support for large tensor index handling into conv bwd data WMMA](../sources/prs/rocm-libraries/PR-8518.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add block-scale GEMM operators (aquant, bquant, abquant)](../sources/prs/rocm-libraries/PR-8519.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Install tensilelite-client and fix makeIsaInfoMap singleton poisoning](../sources/prs/rocm-libraries/PR-8520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2082 Enable LSE/stats output for SDPA forward golden data](../sources/prs/rocm-libraries/PR-8522.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/rocm-libraries/PR-8523.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add multicast tdm for subtile kernel](../sources/prs/rocm-libraries/PR-8524.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Fix stale stinkytofu-opt/docs references](../sources/prs/rocm-libraries/PR-8525.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2130] [MIOpen] Add gfx1250 support to gtests](../sources/prs/rocm-libraries/PR-8526.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Deprecate rocm-smi and use amdsmi](../sources/prs/rocm-libraries/PR-8527.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add MemTokenConsistencyCheckPass death tests](../sources/prs/rocm-libraries/PR-8528.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Remove pass-order-snapshot JSON; unify pass observability (verify-each)](../sources/prs/rocm-libraries/PR-8529.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/rocm-libraries/PR-8531.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK Tile] EightWaves pipeline int8 support](../sources/prs/rocm-libraries/PR-8535.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] fix(benchmarks): Fix memory crash in benchmarks](../sources/prs/rocm-libraries/PR-8537.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Update CHANGELOG.md](../sources/prs/rocm-libraries/PR-8546.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(ck): mx gemm kernel unification](../sources/prs/rocm-libraries/PR-8554.md) `[source-pr]` arch:cdna4
+- [[CK][CI] Retry git network ops to survive transient DNS blips](../sources/prs/rocm-libraries/PR-8558.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK_DSL] Reset tiled C-core build-local caches](../sources/prs/rocm-libraries/PR-8559.md) `[source-pr]` arch:cdna3, cdna4
+- [[CK][CI] Post failure GitHub status on stage build errors](../sources/prs/rocm-libraries/PR-8560.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1896 Extend autotune config op matching](../sources/prs/rocm-libraries/PR-8562.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipsparse): expand SpSV regression testing](../sources/prs/rocm-libraries/PR-8565.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Switch gfx950 device library equality kernels from SK3 to SK5](../sources/prs/rocm-libraries/PR-8568.md) `[source-pr]` arch:cdna4
+- [[rocBLAS] Update test_categories.yaml](../sources/prs/rocm-libraries/PR-8570.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK Tile] Drop profiler for experimental builder codegen](../sources/prs/rocm-libraries/PR-8573.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): auto-build rocisa via CMake when not pip-installed](../sources/prs/rocm-libraries/PR-8574.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Export attention public API and add header to FILE_SET](../sources/prs/rocm-libraries/PR-8576.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ALMIOPEN-2092] Fix selective rerun skipping catchError-failed parallel stages](../sources/prs/rocm-libraries/PR-8577.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216](../sources/prs/rocm-libraries/PR-8579.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2139 dnn-benchmarking: fuse batchnorm training/backward and layernorm with native ATen ops; generalize conv to 1D/2D/3D](../sources/prs/rocm-libraries/PR-8580.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Freeze tensor waitcnt dataflow across loop back-edges](../sources/prs/rocm-libraries/PR-8582.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Build with OBJECT lib; add stinkytofu_static for white-box tests and api_tests for export surface](../sources/prs/rocm-libraries/PR-8583.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1972 Rename golden_reference_data to integration_test_bundles](../sources/prs/rocm-libraries/PR-8584.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/rocm-libraries/PR-8586.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): add tensor attribute equality helpers](../sources/prs/rocm-libraries/PR-8589.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] fix daily hipTensor tests.](../sources/prs/rocm-libraries/PR-8591.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck): Clean up Stream-K remnants in old CK and fix static_assert in CK Tile](../sources/prs/rocm-libraries/PR-8595.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASlt] Silence spurious 'invalid values of lda' test-client warning](../sources/prs/rocm-libraries/PR-8602.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix subtile PGR=0 WAR hazard on gfx1250](../sources/prs/rocm-libraries/PR-8603.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Subtile-aware heuristic: reject gfx950 BF16 TN subtile kernels for K<512 with large free dim](../sources/prs/rocm-libraries/PR-8604.md) `[source-pr]` arch:cdna4
+- [[hipDNN] [ALMIOPEN-2036] Ship stub cudnn.h C-API (types, handle/stream/version/error entry points)](../sources/prs/rocm-libraries/PR-8605.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Equality tuning for multiple data types and layouts](../sources/prs/rocm-libraries/PR-8606.md) `[source-pr]` arch:cdna4
+- [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/rocm-libraries/PR-8609.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): overlap accum init with GR across all Subtile paths](../sources/prs/rocm-libraries/PR-8615.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): add test filter standardization](../sources/prs/rocm-libraries/PR-8616.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn)!: require explicit conv backward output dimensions](../sources/prs/rocm-libraries/PR-8617.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Load Composable Kernel library at handle creation (ALMIOPEN-2133)](../sources/prs/rocm-libraries/PR-8618.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: add CHANGELOG entry for LDS-aware real fusion](../sources/prs/rocm-libraries/PR-8619.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/rocm-libraries/PR-8620.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Remove forced OpenBLAS/OpenMP thread env from client test categories](../sources/prs/rocm-libraries/PR-8621.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): Reorganize GFX1250 StreamK tests](../sources/prs/rocm-libraries/PR-8622.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/rocm-libraries/PR-8624.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Build and install stinkytofu locally so rocisa uses find_package](../sources/prs/rocm-libraries/PR-8625.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[origami] Update subtile heuristic to only restrict based on K<512.](../sources/prs/rocm-libraries/PR-8626.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add coverage tests for StinkyModifiers, LegalizationUtils, and StinkyAsmEmitter](../sources/prs/rocm-libraries/PR-8628.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Read default flatc version from file](../sources/prs/rocm-libraries/PR-8629.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): remove compile time warnings ](../sources/prs/rocm-libraries/PR-8630.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Tune gfx1100 BBS GEMM kernels for Llama-3.1-8b-Instruct](../sources/prs/rocm-libraries/PR-8631.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN][docs] Update roadmap for Q2 progress and Q3 planning](../sources/prs/rocm-libraries/PR-8633.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocBLAS][hipBLAS] pre-release changelog updates](../sources/prs/rocm-libraries/PR-8634.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocprim] Add MEMCHECKs to several high-memory usage unit tests to improve stability](../sources/prs/rocm-libraries/PR-8635.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Fix compilation](../sources/prs/rocm-libraries/PR-8637.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck): fix gfx950 bpreshuffle determinism and illegal-type codegen](../sources/prs/rocm-libraries/PR-8639.md) `[source-pr]` arch:cdna4
+- [[rocBLAS] Users/torrezuk/rocm 13365 partial revert asan workaround](../sources/prs/rocm-libraries/PR-8640.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[HIPDNN] Add --verification-mode and --golden-data-dir CLI flags with fallback chain](../sources/prs/rocm-libraries/PR-8642.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [disable chunk mapping for NT flags with splitK](../sources/prs/rocm-libraries/PR-8643.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK][CI] Expand other stages to use healthy-node retry logic.](../sources/prs/rocm-libraries/PR-8644.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK DSL] C++ complement to Python and feature updates](../sources/prs/rocm-libraries/PR-8652.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Refine scheduling](../sources/prs/rocm-libraries/PR-8655.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Exclude TensorLoad from EV_VGPR_VMEM_READ in InsertWaitAluPass](../sources/prs/rocm-libraries/PR-8657.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): TDMSplit memtoken amendment](../sources/prs/rocm-libraries/PR-8658.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Remove the ROCPRIM_AMDGCN_CONSTEXPR define](../sources/prs/rocm-libraries/PR-8662.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Add intermediate K grid points for gfx1151](../sources/prs/rocm-libraries/PR-8664.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix pk8 FP8/BF8 saturation and skipRearrangement multi-ti…](../sources/prs/rocm-libraries/PR-8667.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] Stage fetched nlohmann_json for example plugin in superbuild](../sources/prs/rocm-libraries/PR-8669.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[AIHPBLAS-3818] Tuning BBS TN for gfx950 id75a8](../sources/prs/rocm-libraries/PR-8671.md) `[source-pr]` arch:cdna4
+- [[hipdnn] Patch resample fwd interface to match cuDNN](../sources/prs/rocm-libraries/PR-8672.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] TensileLite snapshot golden governance docs](../sources/prs/rocm-libraries/PR-8676.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2192 Prefer local test libraries in RPATH](../sources/prs/rocm-libraries/PR-8689.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2186 Update golden reference RFC for compressed bundles](../sources/prs/rocm-libraries/PR-8690.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-2193 Fix superbuild logging test flakiness](../sources/prs/rocm-libraries/PR-8691.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Improve performance of occupancy calculation](../sources/prs/rocm-libraries/PR-8692.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add WmmaVgprReorder analysis pass with explicit pool tagging](../sources/prs/rocm-libraries/PR-8697.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "[rocPRIM] Add device level parallel algorithm TopK and its tests and benchmarks"](../sources/prs/rocm-libraries/PR-8700.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Force skipRearrangement off when CompactLoopStore is enabled](../sources/prs/rocm-libraries/PR-8702.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[stinkytofu] Add RemoveInstrucitonPass](../sources/prs/rocm-libraries/PR-8703.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [hipdnn-samples] Add test filter standardization](../sources/prs/rocm-libraries/PR-8712.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocSPARSE] relax tolerances for sharding](../sources/prs/rocm-libraries/PR-8713.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] [Security] remove allow-unauthenticated flag from dockerfile](../sources/prs/rocm-libraries/PR-8716.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] [Security] pin getopt library to specific commit](../sources/prs/rocm-libraries/PR-8723.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Fix gfx1250 StreamK fixup flag coherence](../sources/prs/rocm-libraries/PR-8726.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocPRIM] RDNA4 support for topk/atomic functions](../sources/prs/rocm-libraries/PR-8730.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Enable C++ asserts in tensilelite-client math-CI Jenkins builds](../sources/prs/rocm-libraries/PR-8735.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(miopen): make quick pre-commit gate run a fast, real Smoke tier](../sources/prs/rocm-libraries/PR-8736.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): parse-once PyTorch ref+ stalled-queue A/B timing (ALMIOPEN-2153)](../sources/prs/rocm-libraries/PR-8737.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipcub, rocthrust, rocprim, ck] updating changelogs for 7.14](../sources/prs/rocm-libraries/PR-8739.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [rocfft: do not generate bitwise reproducibility tests if they will be skipped](../sources/prs/rocm-libraries/PR-8740.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Restrict rocfft/hipfft concurrency by omp max threads.](../sources/prs/rocm-libraries/PR-8743.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] [ALMIOPEN-2037] [ALMIOPEN-2038] cuDNN shim: enum/error and Tensor_attributes aliasing](../sources/prs/rocm-libraries/PR-8744.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix naming bug that would discard kernels as duplicates](../sources/prs/rocm-libraries/PR-8745.md) `[source-pr]` arch:cdna1, cdna2, cdna3, cdna4
+- [Update on the newly added API hipblaslt-ext::isSolutionSupported()](../sources/prs/rocm-libraries/PR-8746.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipsparselt): Add CTests for FFM and merge SPMM into other tests](../sources/prs/rocm-libraries/PR-8750.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipSPARSELt] Remove legacy hip kernel launcher backend](../sources/prs/rocm-libraries/PR-8754.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[Hotfix][tensilelite][stinkytofu] Fix de-bundled rocisa build via find_package](../sources/prs/rocm-libraries/PR-8755.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Refine the reject for LDS](../sources/prs/rocm-libraries/PR-8759.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Fix gfx1250 TDM PGR2 + PLR1 WAR dependency](../sources/prs/rocm-libraries/PR-8760.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CK] Fix flaky test `test_batched_gemm_b_scale_wmma`](../sources/prs/rocm-libraries/PR-8762.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[CTest] ALMIOPEN-2219 Fix optional argument scoping in test categories](../sources/prs/rocm-libraries/PR-8763.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipfft, rocfft] update changelog headings for 7.14](../sources/prs/rocm-libraries/PR-8766.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparse, rocsparse] update changelog headings for 7.14](../sources/prs/rocm-libraries/PR-8769.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipsparselt] update changelog heading for 7.14](../sources/prs/rocm-libraries/PR-8770.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipDNN] ALMIOPEN-1869 Install Windows Python extension to bin/](../sources/prs/rocm-libraries/PR-8771.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix yaml dtypes in utilities folder](../sources/prs/rocm-libraries/PR-8772.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Users/randyh/for rocm 7.14](../sources/prs/rocm-libraries/PR-8777.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipBLASLt] Mark gfx950 MXFP4 subtile scaleAlphaVec asymmetric tiles known bug](../sources/prs/rocm-libraries/PR-8780.md) `[source-pr]` arch:cdna4
+- [feat: Add TensileLite affected-tests pre-commit hook](../sources/prs/rocm-libraries/PR-8787.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): Add runtime dlopen backend-loading mode](../sources/prs/rocm-libraries/PR-8792.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): add catastrophic fallback to rank_configs](../sources/prs/rocm-libraries/PR-8793.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): harden library code for compressed .dat](../sources/prs/rocm-libraries/PR-8796.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Using s_add_u64 for tdm address increment](../sources/prs/rocm-libraries/PR-8798.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck-tile): add missing fp8/bf8 warp_gemm dispatcher entries for gfx950](../sources/prs/rocm-libraries/PR-8799.md) `[source-pr]` arch:cdna4
+- [fix(tensilelite): Fix output-store 32-bit address overflow](../sources/prs/rocm-libraries/PR-8801.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite ] fix gfx1250 gl2_prefetch unit test](../sources/prs/rocm-libraries/PR-8803.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt): Split subtile cluster barrier signal/wait (gfx1250)](../sources/prs/rocm-libraries/PR-8805.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] Remove leftover yaml file entries](../sources/prs/rocm-libraries/PR-8812.md) `[source-pr]` arch:cdna4
+- [feat(hipblaslt): add experimental-library generation tooling for TensileLite](../sources/prs/rocm-libraries/PR-8826.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): make test filtering YAML-driven](../sources/prs/rocm-libraries/PR-8830.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Ductile — GA-based Tuning Backend for Tensilelite](../sources/prs/rocm-libraries/PR-8831.md) `[source-pr]` arch:cdna4
+- [fix: Fix test failures on gfx1250 HW listed in AICK-998](../sources/prs/rocm-libraries/PR-8837.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocke): cshuffle support for fp32 and bf16](../sources/prs/rocm-libraries/PR-8841.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Tuning BBSTN/NN, F8BSTN gfx950 id75a3 (AIHPBLAS-3969)](../sources/prs/rocm-libraries/PR-8845.md) `[source-pr]` arch:cdna4
+- [docs: [rocBLAS][hipBLAS] update for rocm next](../sources/prs/rocm-libraries/PR-8846.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparselt): Fix dtypes in hipsparselt library logic files](../sources/prs/rocm-libraries/PR-8853.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt][tensilelite] Add wmma vgpr reuse for subtile kernels](../sources/prs/rocm-libraries/PR-8854.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[hipblaslt] Fix dtypes in hipblaslt library logic files](../sources/prs/rocm-libraries/PR-8855.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipdnn): add runtime pass-by-value tensors RFC (ALMIOPEN-2239)](../sources/prs/rocm-libraries/PR-8860.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add TENSILE_DB=0x100000 debug log for SK5 hybrid mode selection](../sources/prs/rocm-libraries/PR-8861.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [rocWMMA] fix: Catch launch errors in regression test](../sources/prs/rocm-libraries/PR-8862.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hip-kernel-provider): Wire rocKE C++ smoke tests into provider CI lane](../sources/prs/rocm-libraries/PR-8864.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCM-27193] Add gfx1250 to MIOpen CK supported archs and known arch list](../sources/prs/rocm-libraries/PR-8875.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipdnn): adopt Conventional Commits for PR titles in AI tooling](../sources/prs/rocm-libraries/PR-8876.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): fail fast on plan-only override execute without override enabled](../sources/prs/rocm-libraries/PR-8881.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipblaslt): add PR title and JIRA ID conventions to AGENTS.md](../sources/prs/rocm-libraries/PR-8882.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Accept .dat.zlib in --use-cache existence check](../sources/prs/rocm-libraries/PR-8892.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): skip gfx1250 subtile codegen tests on other archs](../sources/prs/rocm-libraries/PR-8893.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix incorrect dtypes in yaml files.](../sources/prs/rocm-libraries/PR-8903.md) `[source-pr]` arch:cdna3, cdna4
+- [feat(hipblaslt): Change library logic parsing to error out on incorrect dtypes](../sources/prs/rocm-libraries/PR-8904.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipSPARSE): restore matC pointers so SpGEMM_compute can be reused](../sources/prs/rocm-libraries/PR-8913.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): gfx1201 Tensile tunings for Kokoro-82M GEMM shapes](../sources/prs/rocm-libraries/PR-8916.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ISSUE ID: AIHPBLAS-3139] Updating gfx950 id75a3 F8BS and F8B8BS TN Equality libraries](../sources/prs/rocm-libraries/PR-8918.md) `[source-pr]` arch:cdna4
+- [fix(rocfft): thread-safety fix + plan-capacity regression tests](../sources/prs/rocm-libraries/PR-8920.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipsparselt): raise quick/spmm_quick ctest timeouts to 15m](../sources/prs/rocm-libraries/PR-8922.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): ALM-2186 add batchnorm forward inference bundle sweeps](../sources/prs/rocm-libraries/PR-8926.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Dapper validation](../sources/prs/rocm-libraries/PR-8927.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocke): add rocke-client skeleton](../sources/prs/rocm-libraries/PR-8928.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): fix SpMM with blocked ELL format](../sources/prs/rocm-libraries/PR-8930.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(rocsparse): load-balanced default kernel for skewed SpMM](../sources/prs/rocm-libraries/PR-8932.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Auto-derive arch marks from Architecture field and filename](../sources/prs/rocm-libraries/PR-8935.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix sia bug](../sources/prs/rocm-libraries/PR-8937.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "[stinkytofu] Support function-call CFG (#7858)"](../sources/prs/rocm-libraries/PR-8938.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): Reapply function-call support and fix issues](../sources/prs/rocm-libraries/PR-8939.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite] restore not-tdmMetadata guards for sparse metadata global-read addressing](../sources/prs/rocm-libraries/PR-8942.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): handle skip branch with InitCIterWmma](../sources/prs/rocm-libraries/PR-8943.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Add swiglu_oai (OAI SwiGLU) activation to XDL 2-stage MoE epilogue.](../sources/prs/rocm-libraries/PR-8944.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[rocisa] Add unit tests for gfx12+ scalar-float/u64 instruction classes](../sources/prs/rocm-libraries/PR-8951.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix MX F4 GEMM  bugs on gfx1250](../sources/prs/rocm-libraries/PR-8952.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix test infrastructure: parallel GPU execution and coverage reporting ](../sources/prs/rocm-libraries/PR-8953.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): remove the previously deprecated rocsparse_indextype_u16](../sources/prs/rocm-libraries/PR-8963.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [tests(hip-kernel-provider): Close mlops engine code coverage gaps](../sources/prs/rocm-libraries/PR-8964.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): wrong restrict keyword usage](../sources/prs/rocm-libraries/PR-8966.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs (tensile): Tensile doc improvements](../sources/prs/rocm-libraries/PR-8968.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Add missing assert to testing_auxiliary.hpp](../sources/prs/rocm-libraries/PR-8970.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: [hipblaslt] mi350P performance gap](../sources/prs/rocm-libraries/PR-8973.md) `[source-pr]` arch:cdna4
+- [docs(rocsparse): add missing routines in rocsparse and hipsparse documentation](../sources/prs/rocm-libraries/PR-8978.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Adding ULP measurements to hipblaslt-bench](../sources/prs/rocm-libraries/PR-8979.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): magic division for long_index_t](../sources/prs/rocm-libraries/PR-8983.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [rocBLAS] expand supported ctest options](../sources/prs/rocm-libraries/PR-8984.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add stream_k variant to GEMM Dispatcher codegen](../sources/prs/rocm-libraries/PR-8985.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen/cat): clamp Y grid size to avoid invalid dispatch on gfx1250](../sources/prs/rocm-libraries/PR-8987.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): always register CK grouped-conv solvers in the host (ROCM-27359)](../sources/prs/rocm-libraries/PR-8988.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(stinkytofu): consolidate CDNA5 scheduling tunables into named constants](../sources/prs/rocm-libraries/PR-8990.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): TE to dispatcher GEMM bridge (fp16/bf16, all layouts)](../sources/prs/rocm-libraries/PR-8997.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): TE to dispatcher GEMM bridge for fp8/bf8/int8 (all layouts)](../sources/prs/rocm-libraries/PR-8998.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): schedule barrier better when heavy ds load](../sources/prs/rocm-libraries/PR-8999.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): add grouped GEMM variant to TE to dispatcher bridge](../sources/prs/rocm-libraries/PR-9000.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): represent exec-masked spans as atomic DAG nodes](../sources/prs/rocm-libraries/PR-9004.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): wrong restrict keyword usage #2](../sources/prs/rocm-libraries/PR-9006.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Fix missing precision support page](../sources/prs/rocm-libraries/PR-9008.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(node): implement logical and strict equality for execution nodes](../sources/prs/rocm-libraries/PR-9009.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocprim): update benchmark instructions](../sources/prs/rocm-libraries/PR-9011.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): use hipMemcpyAsync() to fix regression](../sources/prs/rocm-libraries/PR-9013.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ci): Threefold increase timeout limit for standard test filter of rocfft](../sources/prs/rocm-libraries/PR-9018.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): tolerate non-mbcs bytes in vcvarsall.bat output](../sources/prs/rocm-libraries/PR-9021.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft): version bump post ROCm 7.14](../sources/prs/rocm-libraries/PR-9022.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck-tile): stream-K GEMM TE to dispatcher bridge](../sources/prs/rocm-libraries/PR-9028.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): batchnorm CalcStats remainder loop uses wrong thread stride](../sources/prs/rocm-libraries/PR-9031.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): serialize HipGraphExist gtest to prevent concurrent-shard OOM](../sources/prs/rocm-libraries/PR-9032.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): not needed cmake change from test grouped conv bwd data](../sources/prs/rocm-libraries/PR-9034.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): speed up ASAN codegen via asan allocator options](../sources/prs/rocm-libraries/PR-9036.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): emit a relocatable installed CTestTestfile](../sources/prs/rocm-libraries/PR-9047.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[ROCM-27460] Fix integer overflow in tensor ops for large allocations on gfx1250](../sources/prs/rocm-libraries/PR-9049.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[MIOpen] Disable CK grouped conv support for gfx1250](../sources/prs/rocm-libraries/PR-9050.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): tolerate non-mbcs bytes in vcvarsall.bat output](../sources/prs/rocm-libraries/PR-9052.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): use portable getenv wrapper in stinkytofu-opt](../sources/prs/rocm-libraries/PR-9054.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt): Tuning Equality for gfx950_id75a3 JIRA ID : AIHPBLAS-3413](../sources/prs/rocm-libraries/PR-9056.md) `[source-pr]` arch:cdna4
+- [fix(rocprim) Update changelog for fixes that were not included in 7.14](../sources/prs/rocm-libraries/PR-9059.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ refactor(integration-tests): unify tolerance and synthesis pipeline](../sources/prs/rocm-libraries/PR-9062.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Improvements to fix_yaml_types.py](../sources/prs/rocm-libraries/PR-9066.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Enable dynamic-queue and hybrid StreamK on gfx1250](../sources/prs/rocm-libraries/PR-9074.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test: [rocWMMA] FFM Test Filters](../sources/prs/rocm-libraries/PR-9078.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat: [rocBLAS] adds hipblaslt only developer build mode](../sources/prs/rocm-libraries/PR-9079.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Correct tensilelite-host alias ref](../sources/prs/rocm-libraries/PR-9080.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix dtypes in library logic yaml files](../sources/prs/rocm-libraries/PR-9082.md) `[source-pr]` arch:cdna4
+- [fix(hipsparselt): remove spmm from StinkyTofuESM2](../sources/prs/rocm-libraries/PR-9085.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): expose CDNA5 scheduler tuning knobs via ModuleOptions](../sources/prs/rocm-libraries/PR-9103.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Add test to prevent benchmarking in common tests](../sources/prs/rocm-libraries/PR-9104.md) `[source-pr]` arch:cdna3, cdna4
+- [fix(miopen): always register CK grouped-conv solvers in host (ROCM-27359)](../sources/prs/rocm-libraries/PR-9105.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocblas): Add per-batch alpha stride support to scal](../sources/prs/rocm-libraries/PR-9108.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim) Exclude slow tests from the quick test suite to avoid timeouts](../sources/prs/rocm-libraries/PR-9109.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(ck): magic division for long_index_t (#8983)](../sources/prs/rocm-libraries/PR-9110.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Refresh gfx950 SystemDB to cover more models](../sources/prs/rocm-libraries/PR-9111.md) `[source-pr]` arch:cdna4
+- [fix(tensilelite): Add explicit Architecture field to gfx1250 test YAMLs](../sources/prs/rocm-libraries/PR-9117.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [MIOpen error tolerance](../sources/prs/rocm-libraries/PR-912.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ fix(rocprim): speed up host data gen in `ReduceArgMinimum` subtest](../sources/prs/rocm-libraries/PR-9120.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(hipblaslt): Use mxDataGenerator for MX datatypes for gfx1250](../sources/prs/rocm-libraries/PR-9122.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): make format targets platform-agnostic](../sources/prs/rocm-libraries/PR-9124.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): suppress third-party ROCm toolchain warnings](../sources/prs/rocm-libraries/PR-9125.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [refactor(tensilelite): AIHPBLAS-3463 add build(stop_after=...) API](../sources/prs/rocm-libraries/PR-9127.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): guard AI heuristic fdeep model caches with a mutex](../sources/prs/rocm-libraries/PR-9131.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Avoid dsload overlap](../sources/prs/rocm-libraries/PR-9137.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(miopen): Centralize CK compile defs and align FP8 defaults](../sources/prs/rocm-libraries/PR-9146.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(origami): use relative paths in installed CTestTestfile](../sources/prs/rocm-libraries/PR-9148.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): guard AI heuristic fdeep model caches with a mutex (cherry-pick #9131)](../sources/prs/rocm-libraries/PR-9149.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): Add streamk unit tests for complex data types](../sources/prs/rocm-libraries/PR-9150.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): fix csrmv rounding failures](../sources/prs/rocm-libraries/PR-9155.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt) Add prefetch gl2 support for subtile kernel](../sources/prs/rocm-libraries/PR-9161.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): expand FFM testing](../sources/prs/rocm-libraries/PR-9165.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt): raise standard-tier ctest timeout from 30m to 1h](../sources/prs/rocm-libraries/PR-9170.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Restore WG barrier at preloop and in NLL in subtile kernel](../sources/prs/rocm-libraries/PR-9177.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Fix missing parameter issue](../sources/prs/rocm-libraries/PR-9180.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): mark bsrilu0_graph_test as known_bug](../sources/prs/rocm-libraries/PR-9191.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(stinkytofu): onboard to Read the Docs via Doxygen/Sphinx](../sources/prs/rocm-libraries/PR-9193.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocfft): Move misplaced CHANGELOG entry](../sources/prs/rocm-libraries/PR-9195.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): Fix PAP+TDM redundant descriptor rebuild](../sources/prs/rocm-libraries/PR-9196.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [[tensilelite]Skip failing tests for tox -e coverage-cpp](../sources/prs/rocm-libraries/PR-9197.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Type checking of derived parameters](../sources/prs/rocm-libraries/PR-9201.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Extend fast reference gemm to fp64 and tf32](../sources/prs/rocm-libraries/PR-9203.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix gfx1201 test for FP16 T-T GEMM + bias-fused epilogue](../sources/prs/rocm-libraries/PR-9204.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipblaslt-provider): port matmul tests to common integration suite](../sources/prs/rocm-libraries/PR-9205.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(tensilelite): add SIA4 coverage in StreamK GFX1250 tests](../sources/prs/rocm-libraries/PR-9208.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(origami): replace SK5 hybrid-mode table with learned rule](../sources/prs/rocm-libraries/PR-9209.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite):  fix gfx1250 Subtile + TDM + StreamK faults](../sources/prs/rocm-libraries/PR-9210.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): add Python frontend wheel package](../sources/prs/rocm-libraries/PR-9211.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: FMHA batch-prefill paged-KV 32-bit VA overflow at high GPU base addresses](../sources/prs/rocm-libraries/PR-9214.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: Remove GRVW rejection for TDM enabled kernel for gfx1250](../sources/prs/rocm-libraries/PR-9217.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore(hipdnn): remove dnn-benchmarking tool](../sources/prs/rocm-libraries/PR-9224.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): enable TDMSplit for StreamK GEMM on gfx1250](../sources/prs/rocm-libraries/PR-9227.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: guard arg.Print() in WMMA bwd data grouped conv with log level check](../sources/prs/rocm-libraries/PR-9232.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipdnn): pull ROCm from multi-arch nightlies and flag stale wheels](../sources/prs/rocm-libraries/PR-9234.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ci(hipdnn): run CodeQL over the superbuild, host-only](../sources/prs/rocm-libraries/PR-9235.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocsparse): Add Blocked ELL format support to dense to sparse conversion.](../sources/prs/rocm-libraries/PR-9236.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [perf(hipblaslt): add tuned K=1024 grid entries for gfx1151 BF16 GEMMs](../sources/prs/rocm-libraries/PR-9238.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump soupsieve from 2.5 to 2.8.4 in /projects/rocwmma/docs/sphinx](../sources/prs/rocm-libraries/PR-9241.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump soupsieve from 2.8.1 to 2.8.4 in /shared/tensile/docs/sphinx](../sources/prs/rocm-libraries/PR-9242.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): raise standard category ctest timeout to 1h](../sources/prs/rocm-libraries/PR-9252.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "feat(hipblaslt): Change library logic parsing to error out on incorrect dtypes"](../sources/prs/rocm-libraries/PR-9263.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(rocsparse): mark csrilu0/csric0/bsric0_graph_test as known_bug](../sources/prs/rocm-libraries/PR-9271.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-9275.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9276.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocblas/docs/sphinx in the rocblas-docs-dependencies group](../sources/prs/rocm-libraries/PR-9277.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9281.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.35.0 to 1.36.0 in /shared/tensile/docs/sphinx in the tensile-docs-dependencies group](../sources/prs/rocm-libraries/PR-9282.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): Change library logic parsing from warning to error](../sources/prs/rocm-libraries/PR-9284.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): implement RFC 0016 runtime pass-by-value tensors](../sources/prs/rocm-libraries/PR-9286.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): expose python error code bindings](../sources/prs/rocm-libraries/PR-9290.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparse): adding blocked ELL format to hipsparseDenseToSparse](../sources/prs/rocm-libraries/PR-9291.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipblaslt): add Windows DLL VERSIONINFO metadata](../sources/prs/rocm-libraries/PR-9294.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocsparse): Remove use of mat->analysed in SpSV](../sources/prs/rocm-libraries/PR-9295.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rfc): extend RFC 0015 engine support claims for bundle sweeps](../sources/prs/rocm-libraries/PR-9296.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(rocblas): Deprecate ROCBLAS_USE_HIPBLASLT_BATCHED flag](../sources/prs/rocm-libraries/PR-9298.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocisa): resolve dependent DLLs on Windows via os.add_dll_directory](../sources/prs/rocm-libraries/PR-9309.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): skip default_amdclang when CMAKE_TOOLCHAIN_FILE is set](../sources/prs/rocm-libraries/PR-9321.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): prefetchGL2 generalization](../sources/prs/rocm-libraries/PR-9326.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(ck): Add gfx90c build support](../sources/prs/rocm-libraries/PR-9333.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): add CLI argument support to samples for configurable execution](../sources/prs/rocm-libraries/PR-9342.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): enable HalfPLR on StreamK for gfx1250](../sources/prs/rocm-libraries/PR-9344.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore(hipdnn): bump hipDNN component and provider versions](../sources/prs/rocm-libraries/PR-9347.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(hipdnn): add script to report and apply version bumps](../sources/prs/rocm-libraries/PR-9350.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparse): Fix doxygen errors caused by README](../sources/prs/rocm-libraries/PR-9356.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Temporarliy rejecting Subtile on certain cases causing incorrect results for gfx950](../sources/prs/rocm-libraries/PR-9358.md) `[source-pr]` arch:cdna4
+- [fix(ck-tile): Fix compiler issue](../sources/prs/rocm-libraries/PR-9359.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(miopen): Use miopen- targets. ](../sources/prs/rocm-libraries/PR-9365.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): repair superbuild skill provisioning and test discovery](../sources/prs/rocm-libraries/PR-9371.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocBLAS): add FFM test sets](../sources/prs/rocm-libraries/PR-9376.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Fix co-exec harzard in scheduling](../sources/prs/rocm-libraries/PR-9384.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): resolve Windows build issues in samples and dependency fetching](../sources/prs/rocm-libraries/PR-9387.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): defer non-E8 MX scales to slow reference path](../sources/prs/rocm-libraries/PR-9389.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): keep scale-format modifier on MX f4 WMMA to fix MI32x16](../sources/prs/rocm-libraries/PR-9390.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipsparse): fix docs cross-reference warnings in rocSPARSE and hipSPARSE](../sources/prs/rocm-libraries/PR-9397.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocBLAS): ignore Gtest summary line](../sources/prs/rocm-libraries/PR-9399.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): Skip equality library if dynamic kernels are requested](../sources/prs/rocm-libraries/PR-9406.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): track returning atomics in waitcnt dataflow](../sources/prs/rocm-libraries/PR-9407.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): check hipGetDeviceProperties return value in client](../sources/prs/rocm-libraries/PR-9411.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): stop auto-installing hip-python from test.pypi.org](../sources/prs/rocm-libraries/PR-9413.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft-shared): Propagate async reference-FFT exceptions via .get()](../sources/prs/rocm-libraries/PR-9421.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(origami): add problem.num_cus to model a capped CU budget](../sources/prs/rocm-libraries/PR-9424.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(rocblas): add per-batch alpha/beta stride to remaining Level 2 functions](../sources/prs/rocm-libraries/PR-9425.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(miopen): backfill missing 7.14.0 changelog entries](../sources/prs/rocm-libraries/PR-9433.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): refactory and use simpler rule to sheduling barrier](../sources/prs/rocm-libraries/PR-9436.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): Handle WAR hazard for VALU and VMEM  in expert mode2](../sources/prs/rocm-libraries/PR-9438.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): support SourceSwap on non-square MatrixInstruction](../sources/prs/rocm-libraries/PR-9443.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): skip sgemm_dual_fmac_asm on gfx1250](../sources/prs/rocm-libraries/PR-9448.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): make MXDataGenModeTest static helpers public](../sources/prs/rocm-libraries/PR-9458.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert PR #6526 "feat: [CK Tile] mxfp8 support for qr async pipeline (#6526)"](../sources/prs/rocm-libraries/PR-9461.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Add missing namespace prefix to function call](../sources/prs/rocm-libraries/PR-9463.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): support 1-D wg clusters with Stream-K on gfx1250](../sources/prs/rocm-libraries/PR-9464.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck_tile): CK CI Aiter test error](../sources/prs/rocm-libraries/PR-9473.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): de-flake autotune strategy smoke test](../sources/prs/rocm-libraries/PR-9474.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [chore: remove USE_CUDA from rocFFT CMake](../sources/prs/rocm-libraries/PR-9476.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipsparse): expose rocSPARSE CSR nnzsplit SpMV algorithm](../sources/prs/rocm-libraries/PR-9478.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): Fix rotating buffer and flush under adaptive timing](../sources/prs/rocm-libraries/PR-9479.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipdnn): rank ASM SDPA engine above rocKE](../sources/prs/rocm-libraries/PR-9484.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(hipblaslt): add patch-logic to ExperimentalLibrary](../sources/prs/rocm-libraries/PR-9485.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): do not bump numSgprStreamK for SkPrefetchPrimed](../sources/prs/rocm-libraries/PR-9486.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [revert(miopen): "[MIOpen] Disable CK grouped conv support for gfx1250"](../sources/prs/rocm-libraries/PR-9491.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(stinkytofu): Support whole-kernel expert mode2](../sources/prs/rocm-libraries/PR-9493.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [ fix(hipblaslt): map InitMode::Random to rand_int for MX datatypes](../sources/prs/rocm-libraries/PR-9494.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Revert "feat(tensilelite): prefetchGL2 generalization"](../sources/prs/rocm-libraries/PR-9501.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [test(hipdnn): fix IntegrationGpuConvFwd3dFp32 flake](../sources/prs/rocm-libraries/PR-9504.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): use build(stop_after=EMIT) in initD preloop tests](../sources/prs/rocm-libraries/PR-9506.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft): silence compiler warnings for hipfft-test with CUDA backend ](../sources/prs/rocm-libraries/PR-9509.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(tensilelite): remove Stream-K ClusterDim reject shadowing 1-D WG cluster](../sources/prs/rocm-libraries/PR-9514.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(ck-tile): close GEMM_GROUPED entry in arch_filter OPERATOR_TILE_CONSTRAINTS](../sources/prs/rocm-libraries/PR-9520.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(fft-test): skip tests that may need 64-bit indexing in kernel(s)](../sources/prs/rocm-libraries/PR-9528.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [feat(tensilelite): reapply prefetchGL2 generalization](../sources/prs/rocm-libraries/PR-9534.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix (Tensilelite) (StinkyTofu) support-106sgpr-gfx1250](../sources/prs/rocm-libraries/PR-9538.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix: TDM GRVW corner cases for gfx1250](../sources/prs/rocm-libraries/PR-9542.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Fix device_select test timeout in the unit test "quick" suite](../sources/prs/rocm-libraries/PR-9547.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipblaslt): mxDataGenerator can create data where K % block size !=0](../sources/prs/rocm-libraries/PR-9548.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocsparse/docs/sphinx in the rocsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9550.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/hipsparse/docs/sphinx in the hipsparse-docs-dependencies group](../sources/prs/rocm-libraries/PR-9551.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocblas/docs/sphinx in the rocblas-docs-dependencies group](../sources/prs/rocm-libraries/PR-9554.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /projects/rocwmma/docs/sphinx in the rocwmma-docs-dependencies group](../sources/prs/rocm-libraries/PR-9556.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [build(deps): bump rocm-docs-core from 1.36.0 to 1.38.0 in /shared/tensile/docs/sphinx in the tensile-docs-dependencies group](../sources/prs/rocm-libraries/PR-9557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [docs(hipsparselt): Removed hipDataType Doxygen reference](../sources/prs/rocm-libraries/PR-9558.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(CK_TILE): fix error found by Aiter repo tests](../sources/prs/rocm-libraries/PR-9562.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(rocprim): Improve RocprimDeviceSelectTests test filtering](../sources/prs/rocm-libraries/PR-9567.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(hipdnn): initialize all batch-1 inputs in layernorm bprop test](../sources/prs/rocm-libraries/PR-9580.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [Fix intersphinx errors for 7.14.0 release](../sources/prs/rocm-libraries/PR-9582.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(stinkytofu): avoid CFGBuilder split-piece label collisions](../sources/prs/rocm-libraries/PR-9585.md) `[source-pr]` arch:cdna2, cdna3, cdna4
+- [fix(sparse): use safe YAML loaders in test generators](../sources/prs/rocm-libraries/PR-9594.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Enable full transpose layout support for MX GEMM pipeline](../sources/prs/hipblaslt/PR-5813.md) `[source-pr]` arch:cdna4
 - [Correct compute type conversion for User offline tuning](../sources/prs/hipblaslt/PR-6557.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [Add Triton specialization paths to origami (gated on target_t)](../sources/prs/hipblaslt/PR-6604.md) `[source-pr]` arch:cdna2, cdna3, cdna4
@@ -2306,6 +4205,7 @@
 - [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [TDM Descriptor SGPR Sharing for Gather/Scatter Loops](../wiki/techniques/pr-triton-amd-10686.md) `[wiki-technique]` arch:cdna4
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md) `[wiki-technique]` arch:cdna3, cdna4
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4

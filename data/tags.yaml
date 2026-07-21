@@ -301,6 +301,8 @@ kernel_types:
 - normalization
 - communication
 - collective
+- spmm
+- sddmm
 languages:
 - hip-cpp
 - ck-dsl
@@ -363,6 +365,16 @@ aux_tags:
 - int8
 - rocm
 - rocm-kernel
+- rocm-libraries
+- amdmigraphx
+- sparse
+- hipsparselt
+- structured-sparsity
+- 2:4-sparse
+- rocsparse
+- hipsparse
+- winograd
+- stinkytofu
 - composable_kernel
 - hipblaslt
 - flash-attention

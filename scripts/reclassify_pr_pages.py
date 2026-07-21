@@ -194,6 +194,24 @@ def reclassify_page(path: Path, dry_run: bool, stats: Counter) -> bool:
     merge_list("techniques", cls["techniques"])
     merge_list("hardware_features", cls["hardware_features"])
 
+    # Monorepo (ROCm/rocm-libraries) 子库识别：从 changed-files 路径提取 projects/<name>/
+    if "rocm-libraries" in (fm.get("repo") or "").lower():
+        subprojects = set()
+        for p in paths:
+            m = re.match(r"(?:[\w.-]+/)*projects/([a-z0-9_-]+)/", p, re.IGNORECASE)
+            if m:
+                subprojects.add(m.group(1).lower())
+        if subprojects:
+            cur = fm.get("subproject")
+            if isinstance(cur, str):
+                cur = [cur]
+            cur = cur or []
+            merged = sorted(set(cur) | subprojects)
+            if merged != sorted(set(cur)):
+                fm["subproject"] = merged if len(merged) > 1 else merged[0]
+                changed = True
+                stats["set_subproject"] += 1
+
     # Narrow architectures only when we found specific CDNA evidence and the page
     # is currently on the meaningless default triple.
     cur_arch = fm.get("architectures") or []
@@ -241,7 +259,7 @@ def main() -> int:
     print(f"Scanned {total} PR pages{' (dry-run)' if args.dry_run else ''}")
     for k in ("pages_changed", "filled_kernel_types", "filled_languages",
               "filled_techniques", "filled_hardware_features", "narrowed_arch",
-              "flagged_rdna", "added_description"):
+              "flagged_rdna", "added_description", "set_subproject"):
         print(f"  {k:26} {stats[k]}")
     return 0
 

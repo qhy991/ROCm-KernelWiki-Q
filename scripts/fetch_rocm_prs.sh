@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd /Users/haiyan-mini/Agent4Kernel/rocm-kernelwiki-q
+cd "$(dirname "$0")/.."
 
 REPOS=(
     "ROCm/triton"
