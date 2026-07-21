@@ -159,7 +159,7 @@
 
 - [[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216](../sources/prs/hipblaslt/PR-8579.md) `[source-pr]` arch:cdna3, cdna4
 
-## lds (76 pages)
+## lds (77 pages)
 
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -236,6 +236,7 @@
 - [Triton Layer Normalization Optimization on AMD CDNA](../wiki/techniques/pr-triton-641.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md) `[wiki-technique]` arch:cdna3, cdna4
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 
 ## lds-transpose (8 pages)
@@ -253,7 +254,7 @@
 
 - [[hipblaslt][origami] Model changes for mi350P](../sources/prs/hipblaslt/PR-8600.md) `[source-pr]` arch:cdna4
 
-## mfma (120 pages)
+## mfma (121 pages)
 
 - [ROCm FlashAttention Performance Notes](../sources/blogs/flash-attention-rocm.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -373,6 +374,7 @@
 - [Triton 8-bit GEMM Scaling Support](../wiki/techniques/pr-triton-677.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [ROCm Profiling and Performance Analysis (rocprof, Omniperf)](../wiki/techniques/rocm-profiling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md) `[wiki-technique]` arch:cdna3, cdna4
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 

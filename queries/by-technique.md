@@ -5,9 +5,10 @@
 
 - [Full MXFP4 Training Recipe](../sources/prs/transformerengine/PR-537.md)
 
-## assembly-emission (1 pages)
+## assembly-emission (2 pages)
 
 - [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/hipblaslt/PR-8523.md)
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md)
 
 ## async-copy (6 pages)
 
@@ -221,9 +222,10 @@
 
 - [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md)
 
-## code-generation (1 pages)
+## code-generation (2 pages)
 
 - [[CK_TILE] Sparge attention](../sources/prs/composable_kernel/PR-3727.md)
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md)
 
 ## codegen (1 pages)
 
@@ -344,9 +346,10 @@
 
 - [gfx1250 swizzle_xor changes for FP4](../sources/prs/transformerengine/PR-571.md)
 
-## instruction-selection (1 pages)
+## instruction-selection (2 pages)
 
 - [[tensilelite] Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/hipblaslt/PR-8586.md)
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md)
 
 ## jit-compilation (1 pages)
 

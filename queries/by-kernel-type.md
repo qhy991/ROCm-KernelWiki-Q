@@ -383,7 +383,7 @@
 - [VGPR Spilling Avoidance via v_perm_b32 FP32-to-BF16 Packing](../wiki/techniques/pr-triton-amd-10592.md) conf:verified arch:cdna4
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## gemm (360 pages)
+## gemm (361 pages)
 
 - [Batched GEMM on ROCm](../wiki/kernels/batched-gemm-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [CDNA4 (gfx950/MI350) Scaled-MFMA GEMM in hipBLASLt](../wiki/kernels/cdna4-hipblaslt-scaled-mfma-gemm.md) conf:source-reported arch:cdna4
@@ -740,6 +740,7 @@
 - [Triton 8-bit GEMM Scaling Support](../wiki/techniques/pr-triton-677.md) conf:inferred arch:cdna2, cdna3, cdna4
 - [Register Tiling for MFMA Kernels](../wiki/techniques/register-tiling.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md) conf:source-reported arch:cdna3, cdna4
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md) conf:inferred arch:cdna2, cdna3, cdna4
 - [Vectorized Global Memory Loads](../wiki/techniques/vectorized-loads.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) conf:source-reported arch:cdna2, cdna3, cdna4

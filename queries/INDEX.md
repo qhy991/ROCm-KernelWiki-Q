@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-1746 pages. Machine-readable form: [pages.json](pages.json).
+1747 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -1281,7 +1281,7 @@
 - `pattern-tile-quantize-dequant` — [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md)
 - `pattern-warp-specialization` — [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 
-## wiki-technique (493)
+## wiki-technique (494)
 
 - `technique-async-copy-lds` — [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - `technique-atomic-operations-hip` — [HIP Atomic Operations and Contention Reduction](../wiki/techniques/atomic-operations-hip.md)
@@ -1766,6 +1766,7 @@
 - `technique-stream-async-bwd-prepare` — [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md)
 - `technique-swizzling` — [LDS Address Swizzling](../wiki/techniques/swizzling.md)
 - `technique-tdm-descriptor-sharing` — [TDM Descriptor SGPR Sharing for Gather/Scatter Loops](../wiki/techniques/pr-triton-amd-10686.md)
+- `technique-tensilelite-codegen` — [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md)
 - `technique-triton-627` — [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md)
 - `technique-triton-gemm-tuning` — [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md)
 - `technique-triton-persistent-rmsnorm` — [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md)

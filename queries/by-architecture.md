@@ -1268,7 +1268,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna3 (1615 pages)
+## cdna3 (1616 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -2876,6 +2876,7 @@
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Stream-Async Workspace Preparation via Host Callbacks](../wiki/techniques/pr-flash-attention-rocm-183.md) `[wiki-technique]` arch:cdna3
 - [LDS Address Swizzling](../wiki/techniques/swizzling.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md) `[wiki-technique]` arch:cdna3, cdna4
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
@@ -2886,7 +2887,7 @@
 - [Multi-Wavefront Scheduling Strategies](../wiki/techniques/wavefront-scheduling.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [XDLOPS 底层编程 (XDLOPS Low-level Programming)](../wiki/techniques/xdlops-programming.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3
 
-## cdna4 (1324 pages)
+## cdna4 (1325 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Composable Kernel Tile Tutorial](../sources/blogs/ck-tutorial.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -4204,6 +4205,7 @@
 - [Scratch Memory Spill Management](../wiki/techniques/scratch-memory.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [SGPR and Scalar Unit Optimization](../wiki/techniques/sgpr-scalar-unit.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [TDM Descriptor SGPR Sharing for Gather/Scatter Loops](../wiki/techniques/pr-triton-amd-10686.md) `[wiki-technique]` arch:cdna4
+- [GEMM Kernel Code Generation (TensileLite + Stinkytofu)](../wiki/techniques/tensilelite-codegen.md) `[wiki-technique]` arch:cdna3, cdna4
 - [CFG Generator for AMDGCN Assembly in Triton](../wiki/techniques/pr-triton-627.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Advanced GEMM Tuning in Triton: Rotating Tensors, ICache Flushes, and Bias](../wiki/techniques/pr-triton-588.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
 - [Persistent Loop-Based RMSNorm Kernel (Triton)](../wiki/techniques/pr-triton-676.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4

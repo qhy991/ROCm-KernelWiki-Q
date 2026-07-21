@@ -18376,14 +18376,14 @@
    "cdna4"
   ],
   "tags": [
-   "rocm-kernel",
    "rocm",
+   "rocm-kernel",
    "rocm-libraries"
   ],
   "kernel_types": [],
   "languages": [],
   "confidence": "source-reported",
-  "summary": "Several files have wrong dtypes in library logic yaml files. This hipblaslt/utilities/fix_yaml_types.py over them. This is part 1 of 2. The second part with con"
+  "summary": ""
  },
  {
   "id": "pr-rocm-libraries-8854",
@@ -37892,6 +37892,31 @@
   ],
   "languages": [],
   "confidence": "verified",
+  "summary": ""
+ },
+ {
+  "id": "technique-tensilelite-codegen",
+  "type": "wiki-technique",
+  "title": "GEMM Kernel Code Generation (TensileLite + Stinkytofu)",
+  "path": "wiki/techniques/tensilelite-codegen.md",
+  "architectures": [
+   "cdna3",
+   "cdna4"
+  ],
+  "tags": [
+   "hipblaslt",
+   "tensilelite",
+   "codegen",
+   "code-generation",
+   "programming-model",
+   "stinkytofu",
+   "assembly-emission"
+  ],
+  "kernel_types": [
+   "gemm"
+  ],
+  "languages": [],
+  "confidence": "source-reported",
   "summary": ""
  },
  {
