@@ -115,25 +115,27 @@ python3 scripts/query.py --tag dpp --type technique
 ## Data Refresh
 
 ```bash
-# 1. Generate source pages from new PRs (one repo key per run)
-gh pr list --repo ROCm/composable_kernel --state merged --limit 100 \
-    --json number,title,author,mergedAt,url,body > /tmp/ck_prs.json
-python3 scripts/generate_pr_pages.py --json /tmp/ck_prs.json --repo composable_kernel
+# 1. Discover candidates without creating source pages
+python3 scripts/discover_pr_candidates.py \
+    --repo ROCm/rocm-libraries \
+    --repo vllm-project/vllm \
+    --until YYYY-MM-DD \
+    --output candidates/PR-CANDIDATES-$(date +%F).md
 
-# 2. Enrich pages with PR body + changed files (needs `gh`)
-python3 scripts/enrich_pr_pages.py
+# 2. Inspect selected PR bodies and changed files
+gh pr view NUMBER --repo OWNER/REPO \
+    --json author,baseRefName,body,files,mergeCommit,mergedAt,state,title,url
 
-# 3. Re-classify pages from body + changed files (fills kernel_types/languages/techniques)
-python3 scripts/reclassify_pr_pages.py
+# 3. Author an evidence-rich source page, then update a curated wiki page
+# See PR_REFRESH_WORKFLOW.md for the quality gate and ID conventions.
 
-# 4. Author wiki pages citing sources (cite pr-* / doc-* / blog- ids in `sources:`)
-
-# 5. Regenerate indices + manifest (queries/*.md, pages.json, INDEX.md)
+# 4. Regenerate indices + manifest (queries/*.md, pages.json, INDEX.md)
 python3 scripts/generate-indices.py
 
-# 6. Validate (use --strict in CI to also gate on warnings)
+# 5. Validate and test
 python3 scripts/validate.py
+python3 -m pytest tests/ -q
 
-# 7. Update cutoff
-# Edit data/refresh-cutoff.yaml
+# 6. Advance data/refresh-cutoff.yaml only after every tracked repo was
+# reviewed through the same date. Selective batches stay recorded in candidates/.
 ```

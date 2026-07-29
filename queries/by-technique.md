@@ -1,20 +1,25 @@
 # Index: By Technique
 
 
-## aiter-dispatch (1 pages)
+## aiter-dispatch (2 pages)
 
 - [Full MXFP4 Training Recipe](../sources/prs/transformerengine/PR-537.md)
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md)
 
 ## assembly-emission (1 pages)
 
 - [[hipblaslt][tensilelite] Add cluster barrier support for subtile gfx1250 kernels](../sources/prs/hipblaslt/PR-8523.md)
 
-## async-copy (5 pages)
+## async-copy (9 pages)
 
+- [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
 - [Cooperative Loading](../wiki/patterns/cooperative-loading.md)
 - [生产者-消费者流水线 (Producer-Consumer Pipeline)](../wiki/patterns/producer-consumer-pipeline.md)
 - [Wavefront Specialization (Warp Specialization)](../wiki/patterns/warp-specialization.md)
 - [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md)
+- [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md)
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md)
 
 ## autotuning (1 pages)
@@ -34,10 +39,14 @@
 - [Integrate ck tile backward](../sources/prs/flash-attention/PR-65.md)
 - [Improve FMHA bwd](../sources/prs/flash-attention/PR-70.md)
 
-## bank-conflict-padding (4 pages)
+## bank-conflict-padding (8 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md)
+- [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
 - [add MXFP8 pre-swizzling for gfx1250 GEMM (#568)](../sources/prs/hipblaslt/PR-605.md)
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - [LDS Bank Conflict Padding](../wiki/techniques/bank-conflict-padding.md)
 
@@ -124,15 +133,16 @@
 
 - [[CK_TILE] Add support and tests for V6 pipeline in conv fwd](../sources/prs/composable_kernel/PR-3708.md)
 
-## correctness-guard (1 pages)
+## correctness-guard (2 pages)
 
 - [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/hipblaslt/PR-8624.md)
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md)
 
 ## csv-tuning (1 pages)
 
 - [MXFP4: Add GEMM kernel tuning and MXFP4Quantizer.copy()](../sources/prs/transformerengine/PR-535.md)
 
-## double-buffering (22 pages)
+## double-buffering (23 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md)
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
@@ -150,6 +160,7 @@
 - [[CK Tile] Wavelet gemm pipeline for conv fwd](../sources/prs/hipblaslt/PR-7196.md)
 - [Remove SGPR for SwInstructionPrefetchRelStaticPass](../sources/prs/hipblaslt/PR-8340.md)
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md)
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md)
 - [异步 Global→LDS 拷贝 (Asynchronous Global to LDS Copy)](../wiki/techniques/async-copy-lds.md)
 - [CK Tile Programming Model](../wiki/techniques/ck-tile-programming.md)
 - [LDS Double Buffering](../wiki/techniques/double-buffering.md)
@@ -198,9 +209,10 @@
 
 - [[hipblaslt][origami] Model changes for mi350P](../sources/prs/hipblaslt/PR-8600.md)
 
-## hazard-avoidance (1 pages)
+## hazard-avoidance (2 pages)
 
 - [[tensilelite] Fix subtile PGR=0 WMMA-source WAR hazard on gfx1250](../sources/prs/hipblaslt/PR-8603.md)
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md)
 
 ## host-problem-construction (1 pages)
 
@@ -238,13 +250,16 @@
 
 - [[CK] Add support for large tensor index handling into conv bwd data WMMA](../sources/prs/hipblaslt/PR-8518.md)
 
-## launch-configuration (1 pages)
+## launch-configuration (3 pages)
 
 - [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/hipblaslt/PR-8531.md)
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
 
-## layout-transform (6 pages)
+## layout-transform (7 pages)
 
 - [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md)
+- [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md)
 - [[RL] MXFP8 flashinfer_trtllm_routed MoE for V4](../sources/prs/sglang/PR-28676.md)
 - [[AMD] Optimize o_proj gemm and attn output rope performance](../sources/prs/sglang/PR-28722.md)
 - [[TE] Improve backward performance for CK Tile FP8 Group GEMM](../sources/prs/transformerengine/PR-544.md)
@@ -271,7 +286,7 @@
 
 - [RCCL Multi-GPU Communication](../wiki/techniques/multi-gpu-rccl.md)
 
-## mfma-scheduling (31 pages)
+## mfma-scheduling (34 pages)
 
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md)
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
@@ -295,6 +310,9 @@
 - [Support biased SwiGLU in MXFP4 MoE](../sources/prs/composable_kernel/PR-3735.md)
 - [[origami] Subtile-aware heuristic: reject gfx950 BF16 TN subtile kernels for K<512 with large free dim](../sources/prs/hipblaslt/PR-8604.md)
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md)
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
 - [CK Tile MXFP8 Group GEMM gfx1250](../sources/prs/transformerengine/PR-578.md)
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md)
 - [[Bugfix][ROCm] Fix OOB query read in paged_attention_rocm for head_size < 128](../sources/prs/vllm/PR-40745.md)
@@ -317,7 +335,7 @@
 
 - [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/hipblaslt/PR-8531.md)
 
-## occupancy-tuning (30 pages)
+## occupancy-tuning (31 pages)
 
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
@@ -337,6 +355,7 @@
 - [[hipblaslt][tensilelite] Single-hop next-neighbor StreamK work stealing](../sources/prs/hipblaslt/PR-8442.md)
 - [[origami] Subtile-aware heuristic: reject gfx950 BF16 TN subtile kernels for K<512 with large free dim](../sources/prs/hipblaslt/PR-8604.md)
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md)
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
 - [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md)
 - [Mxfp8 grouped and multi quantize](../sources/prs/transformerengine/PR-598.md)
 - [[Fix] TE RMSNorm Triton Kernel Optimization](../sources/prs/transformerengine/PR-615.md)
@@ -362,8 +381,9 @@
 
 - [[CK] Add FP8 KV_BLOCKSCALE support for batch prefill](../sources/prs/composable_kernel/PR-3696.md)
 
-## persistent-kernel (14 pages)
+## persistent-kernel (16 pages)
 
+- [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
 - [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md)
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
 - [Stream-K and Split-K GEMM on ROCm](../wiki/kernels/streamk-splitk-gemm-rocm.md)
@@ -372,6 +392,7 @@
 - [[hipblaslt][tensilelite] Single-hop next-neighbor StreamK work stealing](../sources/prs/hipblaslt/PR-8442.md)
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
 - [[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests](../sources/prs/hipblaslt/PR-8622.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
 - [[ROCm][Kernel][AITER] BlockScale FP8 SplitK zero-init fusion](../sources/prs/vllm/PR-44976.md)
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - [Kernel Launch Overhead Optimization](../wiki/techniques/kernel-launch-overhead.md)
@@ -422,12 +443,16 @@
 - [[CK] Add support for large tensor index handling into conv bwd data WMMA](../sources/prs/hipblaslt/PR-8518.md)
 - [[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216](../sources/prs/hipblaslt/PR-8579.md)
 
-## runtime-arch-dispatch (1 pages)
+## runtime-arch-dispatch (2 pages)
 
 - [CK MXFP8 Group Gemm gfx1250 Enablement](../sources/prs/transformerengine/PR-613.md)
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md)
 
-## runtime-dispatch (8 pages)
+## runtime-dispatch (11 pages)
 
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
 - [[Fix] compressed-tensors block FP8: requantize weight scales to UE8M0 for DeepGEMM on Blackwell](../sources/prs/sglang/PR-28662.md)
 - [[AMD][Perf] Fuse QK RMSNorm + 3D mRoPE + KV-cache store into single aiter op for Qwen3.5-397B-A17B-MXFP4 (TP=2, ROCm/aiter) on HIP](../sources/prs/sglang/PR-28700.md)
 - [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md)
@@ -469,8 +494,11 @@
 - [[hipblaslt][origami] Model changes for mi350P](../sources/prs/hipblaslt/PR-8600.md)
 - [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md)
 
-## shape-based-kernel-selection (7 pages)
+## shape-based-kernel-selection (10 pages)
 
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md)
 - [MXFP4: Add GEMM kernel tuning and MXFP4Quantizer.copy()](../sources/prs/transformerengine/PR-535.md)
 - [[CI] Add aiter installation to CI image for MXFP4 FP4 GEMM kernels](../sources/prs/transformerengine/PR-562.md)
 - [HipKittens MXFP8 GEMM Support](../sources/prs/transformerengine/PR-566.md)
@@ -495,14 +523,16 @@
 
 - [[hipblaslt][origami] Model changes for mi350P](../sources/prs/hipblaslt/PR-8600.md)
 
-## sparse-attention (2 pages)
+## sparse-attention (3 pages)
 
 - [[CK_TILE] Sparge attention](../sources/prs/composable_kernel/PR-3727.md)
 - [[minimax-m3] Split 4/4: model + VL + glue + function-call + fp8 quant + generic infra](../sources/prs/sglang/PR-28715.md)
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md)
 
-## split-kv (1 pages)
+## split-kv (2 pages)
 
 - [Ck tile/kvcache](../sources/prs/flash-attention/PR-74.md)
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md)
 
 ## staged-gemm (1 pages)
 
@@ -550,7 +580,7 @@
 
 - [gfx1250 mxfp8 gemm: add NN/NT transpose workaround](../sources/prs/transformerengine/PR-630.md)
 
-## vectorized-load (28 pages)
+## vectorized-load (29 pages)
 
 - [AMDGPU Kernel Optimization Guide](../sources/blogs/amdgpu-kernel-opt.md)
 - [CK Tile GEMM on ROCm](../wiki/kernels/ck-tile-gemm-rocm.md)
@@ -572,6 +602,7 @@
 - [[tensilelite] Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/hipblaslt/PR-8586.md)
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
 - [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/hipblaslt/PR-8624.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
 - [[AMD] Fuse shared-expert sigmoid + bf16->fp32 cast into the MoE append kernel (3 kernels -> 1)](../sources/prs/sglang/PR-28658.md)
 - [Mxfp8 grouped and multi quantize](../sources/prs/transformerengine/PR-598.md)
 - [[Fix] TE RMSNorm Triton Kernel Optimization](../sources/prs/transformerengine/PR-615.md)

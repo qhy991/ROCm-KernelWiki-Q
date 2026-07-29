@@ -3,12 +3,12 @@ id: kernel-flash-decoding-rocm
 title: Flash Decoding on ROCm
 type: wiki-kernel
 architectures: [cdna2, cdna3, cdna4]
-tags: [inference, optimization, memory-bound, mi300x]
+tags: [inference, optimization, memory-bound, mi300x, sparse-attention]
 confidence: source-reported
-kernel_types: [attention, flash-attention, reduction]
+kernel_types: [attention, flash-attention, sparse-attention, reduction]
 languages: [hip-cpp, triton-rocm]
-related: [kernel-flash-attention-rocm, kernel-reduction-rocm]
-sources: []
+related: [kernel-flash-attention-rocm, kernel-reduction-rocm, kernel-mla-attention]
+sources: [pr-vllm-46275]
 reproducibility: snippet
 ---
 
@@ -120,17 +120,20 @@ __global__ void flash_decoding_reduce_kernel(
 }
 ```
 
-## Performance on MI300X
+## Source-Backed MI300X Sparse Decode Case
 
-Flash Decoding profoundly impacts performance for large sequence lengths. In typical auto-regressive generation (batch size 1-4) without Flash Decoding, throughput degrades severely once context length exceeds 8K-16K tokens. Flash Decoding recovers near-constant decode latency up to 64K-128K context lengths.
+`pr-vllm-46275` enables the partial-plus-reduce Triton sparse-decode path for
+gfx942. In the reported `MAIN_LEN=80`, `EXTRA_LEN=32` benchmark, the combined
+partial and reduction kernels take 22.836-34.121 microseconds for 1-128
+queries, compared with 42.260-43.463 microseconds for the monolithic ragged
+fallback.
 
-| Context Length | Standard FA Decode (Tokens/s) | Flash Decoding (Tokens/s) | Speedup |
-|----------------|-------------------------------|---------------------------|---------|
-| 4K             | 145.2                         | 149.8                     | 1.03x   |
-| 16K            | 68.4                          | 138.5                     | 2.02x   |
-| 32K            | 35.1                          | 122.3                     | 3.48x   |
-| 128K           | OOM / Timeout                 | 85.6                      | ∞       |
+This result illustrates the central Flash Decoding tradeoff: splitting exposes
+parallel work, but it also creates intermediate data and a second reduction
+kernel. The benefit narrows as query count grows, from 46.59% at one query to
+21.49% at 128 queries in the source benchmark.
 
-*(Note: Data is illustrative of relative MI300X scaling trends for a Llama-2-70B scale model, FP16 KV cache).*
-
-Using persistent kernels with Global Wave Sync (GWS) can merge the two stages into a single launch, saving ~3-5 microseconds of kernel launch latency. This is particularly beneficial for small batch scenarios where execution time approaches the launch overhead.
+The serving-level result is deliberately more conservative than the kernel
+result. Sparse-decode profiler time falls by 39.58%, while warm
+high-throughput output throughput remains near parity and a low-rate
+decode-heavy workload reports about 4.5% lower warm TPOT.

@@ -115,7 +115,7 @@
 
 - [[hipBLASLt] Fix int8 GEMM crash on alpha=1065353216](../sources/prs/hipblaslt/PR-8579.md) `[source-pr]` arch:cdna3, cdna4
 
-## lds (64 pages)
+## lds (69 pages)
 
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
 - [LDS — Local Data Share](../wiki/hardware/lds.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -161,6 +161,11 @@
 - [# [TensileLite] Decouple MXFP8 scale DepthU from data DepthU (`ScaleDepthURatio`)](../sources/prs/hipblaslt/PR-7767.md) `[source-pr]` arch:cdna4
 - [[CK Tile] MX GEMM kernel unification](../sources/prs/hipblaslt/PR-8554.md) `[source-pr]` arch:cdna4, rdna4
 - [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md) `[source-pr]` arch:cdna3
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md) `[source-pr]` arch:cdna4
+- [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md) `[source-pr]` arch:cdna4
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md) `[source-pr]` arch:cdna4
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md) `[source-pr]` arch:cdna4
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md) `[source-pr]` arch:cdna3
 - [[AIROCMLIR-798] Add LDS usage estimate CAPI function](../sources/prs/hipblaslt/PR-2400.md) `[source-pr]` arch:cdna2, cdna3, cdna4
 - [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md) `[source-pr]` arch:cdna3, cdna4
 - [[AMD][Perf] Fuse QK RMSNorm + 3D mRoPE + KV-cache store into single aiter op for Qwen3.5-397B-A17B-MXFP4 (TP=2, ROCm/aiter) on HIP](../sources/prs/sglang/PR-28700.md) `[source-pr]` arch:cdna4
@@ -196,7 +201,7 @@
 
 - [[hipblaslt][origami] Model changes for mi350P](../sources/prs/hipblaslt/PR-8600.md) `[source-pr]` arch:cdna4
 
-## mfma (86 pages)
+## mfma (90 pages)
 
 - [ROCm FlashAttention Performance Notes](../sources/blogs/flash-attention-rocm.md) `[source-blog]` arch:cdna2, cdna3, cdna4
 - [Matrix Core Programming on CDNA](../sources/blogs/matrix-cores-cdna.md) `[source-blog]` arch:cdna2, cdna3, cdna4
@@ -251,6 +256,10 @@
 - [[origami] Subtile-aware heuristic: reject gfx950 BF16 TN subtile kernels for K<512 with large free dim](../sources/prs/hipblaslt/PR-8604.md) `[source-pr]` arch:cdna4
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md) `[source-pr]` arch:cdna4
 - [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md) `[source-pr]` arch:cdna3
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md) `[source-pr]` arch:cdna4
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md) `[source-pr]` arch:cdna4
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md) `[source-pr]` arch:cdna4
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md) `[source-pr]` arch:cdna3
 - [[Fix] compressed-tensors block FP8: requantize weight scales to UE8M0 for DeepGEMM on Blackwell](../sources/prs/sglang/PR-28662.md) `[source-pr]` arch:cdna3, cdna4
 - [[RL] MXFP8 flashinfer_trtllm_routed MoE for V4](../sources/prs/sglang/PR-28676.md) `[source-pr]` arch:cdna3, cdna4
 - [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md) `[source-pr]` arch:cdna4
@@ -364,15 +373,21 @@
 
 - [[tensilelite] Fix rocisa instruction mnemonics and add gfx12+ scalar ops](../sources/prs/hipblaslt/PR-8586.md) `[source-pr]` arch:rdna4
 
-## vector-memory (2 pages)
+## vector-memory (3 pages)
 
 - [[GFX1250][CK_TILE] Coalesce MX scale16 scale load](../sources/prs/hipblaslt/PR-8566.md) `[source-pr]` arch:rdna4
 - [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/hipblaslt/PR-8624.md) `[source-pr]` arch:rdna3, rdna4, cdna3, cdna4
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md) `[source-pr]` arch:cdna4
 
-## vgpr (12 pages)
+## vgpr (17 pages)
 
+- [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) `[wiki-kernel]` arch:cdna2, cdna3, cdna4
 - [Compute-Bound Optimization Patterns (算力密集优化模式)](../wiki/patterns/compute-bound-optimization.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
 - [Tile Quantization and Dequantization](../wiki/patterns/tile-quantize-dequant.md) `[wiki-pattern]` arch:cdna2, cdna3, cdna4
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md) `[source-pr]` arch:cdna4
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md) `[source-pr]` arch:cdna4
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md) `[source-pr]` arch:cdna4
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md) `[source-pr]` arch:cdna3
 - [LDS Direct Read](../wiki/techniques/lds-direct-read.md) `[wiki-technique]` arch:cdna3, cdna4
 - [Occupancy Tuning on ROCm](../wiki/techniques/occupancy-tuning.md) `[wiki-technique]` arch:cdna1, cdna2, cdna3, cdna4
 - [Explicit Multiply-Reduce GEMM for Small Block Sizes in Triton](../wiki/techniques/pr-triton-621.md) `[wiki-technique]` arch:cdna2, cdna3, cdna4
@@ -392,7 +407,7 @@
 
 - [[CK_TILE] Use launched block size for GEMM occupancy query](../sources/prs/hipblaslt/PR-8531.md) `[source-pr]` arch:rdna4, cdna4
 
-## wavefront (44 pages)
+## wavefront (45 pages)
 
 - [AMD GCN Assembly Cross-Lane Operations](../sources/blogs/gcn-cross-lane.md) `[source-blog]` arch:cdna1, cdna2, cdna3, cdna4
 - [Compute Unit (CU) Microarchitecture](../wiki/hardware/compute-unit.md) `[wiki-hardware]` arch:cdna1, cdna2, cdna3, cdna4
@@ -414,6 +429,7 @@
 - [[hipblaslt][tensilelite] Single-hop next-neighbor StreamK work stealing](../sources/prs/hipblaslt/PR-8442.md) `[source-pr]` arch:cdna4
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md) `[source-pr]` arch:rdna4
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md) `[source-pr]` arch:cdna4
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md) `[source-pr]` arch:cdna4
 - [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md) `[source-pr]` arch:cdna3, cdna4
 - [Fix Qwen MoE precision issue with PP and all-reduce fusion](../sources/prs/sglang/PR-28619.md) `[source-pr]` arch:cdna3, cdna4
 - [[feat] add ag_gemm and moe_rs overlap kernels for dsv4 prefill](../sources/prs/sglang/PR-28639.md) `[source-pr]` arch:cdna3, cdna4

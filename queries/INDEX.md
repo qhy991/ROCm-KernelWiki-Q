@@ -1,7 +1,7 @@
 # Page Manifest
 
 
-1072 pages. Machine-readable form: [pages.json](pages.json).
+1078 pages. Machine-readable form: [pages.json](pages.json).
 
 
 ## source-blog (5)
@@ -23,7 +23,7 @@
 - `doc-hip-programming-guide` — [HIP Programming Guide](../sources/docs/hip-programming-guide.md)
 - `doc-mi300x-workload` — [MI300X Workload Optimization Guide](../sources/docs/mi300x-workload.md)
 
-## source-pr (490)
+## source-pr (496)
 
 - `pr-MIOpen-3427` — [Softmax log backward : Increase precision of fp16's accumulator to fp32](../sources/prs/MIOpen/PR-3427.md)
 - `pr-MIOpen-3479` — [Convert softmax from CTest to GTest](../sources/prs/MIOpen/PR-3479.md)
@@ -342,6 +342,11 @@
 - `pr-rocm_libraries-8622` — [[hipblaslt][tensilelite] Reorganize and expand coverage of GFX1250 StreamK tests](../sources/prs/hipblaslt/PR-8622.md)
 - `pr-rocm_libraries-8624` — [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/hipblaslt/PR-8624.md)
 - `pr-rocm_libraries-8631` — [Tune gfx1100 BBS GEMM kernels for Llama-3.1-8b-Instruct](../sources/prs/hipblaslt/PR-8631.md)
+- `pr-rocm_libraries-9233` — [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- `pr-rocm_libraries-9260` — [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md)
+- `pr-rocm_libraries-9403` — [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
+- `pr-rocm_libraries-9480` — [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
+- `pr-rocm_libraries-9662` — [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md)
 - `pr-rocmlir-2400` — [[AIROCMLIR-798] Add LDS usage estimate CAPI function](../sources/prs/hipblaslt/PR-2400.md)
 - `pr-sglang-13` — [[AMD/gfx950] FlyDSL kgather diagnostic backend for DSv4 sparse FP8 MLA decode](../sources/prs/hipblaslt/PR-13.md)
 - `pr-sglang-27745` — [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md)
@@ -443,6 +448,7 @@
 - `pr-vllm-46117` — [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - `pr-vllm-46123` — [[ROCm][Perf] Optional FlyDSL BF16 MoE for the MXFP8-emulation path on MiniMax-M3](../sources/prs/vllm/PR-46123.md)
 - `pr-vllm-46148` — [[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention](../sources/prs/vllm/PR-46148.md)
+- `pr-vllm-46275` — [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md)
 - `pr-vllm-569` — [Fix attention fp8 output fusion for split attention path in v1](../sources/prs/vllm/PR-569.md)
 - `pr-vllm-596` — [Add PTPC Fused MoE and PTPC Gemm Support; AITER upgrade to `916bf3c`](../sources/prs/vllm/PR-596.md)
 - `pr-vllm-608` — [[FEAT] Replace `apply_rotary_emb_torch` and `from flash_attn.ops.triton.rotary import apply_rotary`](../sources/prs/vllm/PR-608.md)

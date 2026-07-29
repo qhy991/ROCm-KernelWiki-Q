@@ -138,11 +138,14 @@
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md)
 - [support ck-tile blockquant gemm in vllm](../sources/prs/vllm/PR-642.md)
 
-## cpp (7 pages)
+## cpp (10 pages)
 
 - [[ROCm] fa3 update ck: Enable FlashAttention-3 Asynchrony via Composable Kernel](../sources/prs/flash-attention/PR-117.md)
 - [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md)
 - [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md)
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
 - [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md)
 - [[AMD][gfx1250] TDM gather/scatter: reuse one descriptor across chunks to cut in-loop SALU](../sources/prs/triton/PR-10686.md)
 - [[ROCm][MoE] Pad hybrid MoE's GEMMs weight row stride off the gfx11x cache cliff](../sources/prs/vllm/PR-1003.md)
@@ -289,11 +292,12 @@
 
 - [[AMD] Restrict BlockPingPong scheduling for loop-variant masked loads](../sources/prs/hipblaslt/PR-10585.md)
 
-## llvm-ir (1 pages)
+## llvm-ir (2 pages)
 
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
 
-## python (108 pages)
+## python (114 pages)
 
 - [Convolution Kernels on ROCm (CK Grouped Conv)](../wiki/kernels/conv-rocm.md)
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md)
@@ -367,6 +371,11 @@
 - [[hipBLASLt] Overlap accum init (initD) with GR across all Subtile paths](../sources/prs/hipblaslt/PR-8615.md)
 - [[CK DSL] conv heuristic: fix gemm_k_per_block, add K_per_C + log features, update all models to 101 features](../sources/prs/hipblaslt/PR-8620.md)
 - [[CK][CK DSL] Pass vector sizes as arguments for implicit gemm](../sources/prs/hipblaslt/PR-8624.md)
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md)
+- [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md)
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md)
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md)
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md)
 - [[AMD/gfx950] FlyDSL kgather diagnostic backend for DSv4 sparse FP8 MLA decode](../sources/prs/hipblaslt/PR-13.md)
 - [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md)
 - [Fix Qwen MoE precision issue with PP and all-reduce fusion](../sources/prs/sglang/PR-28619.md)
@@ -400,17 +409,17 @@
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
 - [[ROCm][Perf] Optional FlyDSL BF16 MoE for the MXFP8-emulation path on MiniMax-M3](../sources/prs/vllm/PR-46123.md)
 - [[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention](../sources/prs/vllm/PR-46148.md)
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md)
 - [[ROCm][Bugfix][Perf] enable shared expert fusion for Qwen3.5](../sources/prs/vllm/PR-44434.md)
 - [[AMD][OCP MX] Improve w_mxfp4_a_fp8 emulation support on MI300](../sources/prs/vllm/PR-46142.md)
 - [PR Insight: triton #457 - [Tuning] Gemm tuning v3](../wiki/techniques/pr-triton-457.md)
 
-## triton (3 pages)
+## triton (2 pages)
 
-- [Multi-Head Latent Attention (MLA) on ROCm](../wiki/kernels/mla-attention-rocm.md)
 - [Fused RMSNorm and Quantization](../wiki/kernels/rms-norm-quant-fused.md)
 - [[feat] add ag_gemm and moe_rs overlap kernels for dsv4 prefill](../sources/prs/sglang/PR-28639.md)
 
-## triton-rocm (101 pages)
+## triton-rocm (103 pages)
 
 - [Activation Kernels (SiLU, GELU, SwiGLU)](../wiki/kernels/activation-kernels.md)
 - [Embedding Lookup Kernel Optimization](../wiki/kernels/embedding-lookup.md)
@@ -420,6 +429,7 @@
 - [Fused Attention Bias and Causal Masking](../wiki/kernels/fused-attention-bias.md)
 - [Fused MoE GEMM (vLLM ROCm)](../wiki/kernels/fused-moe-gemm-rocm.md)
 - [hipBLASLt Fused GEMM and Quantization on ROCm](../wiki/kernels/hipblaslt-fused-gemm-rocm.md)
+- [Multi-Head Latent Attention (MLA) on ROCm](../wiki/kernels/mla-attention-rocm.md)
 - [MoE / Grouped GEMM on CDNA4 (Block-Scaled FP4/FP8)](../wiki/kernels/moe-grouped-gemm-cdna4.md)
 - [W4A16 Quantized GEMM on ROCm](../wiki/kernels/quantized-gemm-w4a16.md)
 - [W8A8 Quantized GEMM](../wiki/kernels/quantized-gemm-w8a8.md)
@@ -473,6 +483,7 @@
 - [[AMD] Use v_dot for bf16 multiplication on gfx11/gfx12 (triton-lang#8444)](../sources/prs/triton/PR-891.md)
 - [[ROCm][Kernel] Add HybridW4A16LinearKernel: Triton prefill + HIP skinny decode](../sources/prs/vllm/PR-40977.md)
 - [[ROCm][Perf] MXFP8 dense-linear + grouped-MoE GEMM optimizations for MiniMax-M3](../sources/prs/vllm/PR-46117.md)
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md)
 - [[FEAT] Replace `apply_rotary_emb_torch` and `from flash_attn.ops.triton.rotary import apply_rotary`](../sources/prs/vllm/PR-608.md)
 - [[FEAT] Support Triton MRoPE kernel](../sources/prs/vllm/PR-621.md)
 - [Support overlap feature by creating kv indices in triton](../sources/prs/vllm/PR-624.md)

@@ -9,7 +9,7 @@ techniques: [persistent-kernel]
 hardware_features: [gws]
 kernel_types: [gemm, attention, moe, grouped-gemm]
 related: [hw-gws, hw-mfma-matrix-core, technique-ck-tile-programming]
-sources: [doc-mi300x-workload, blog-amdgpu-kernel-opt]
+sources: [doc-mi300x-workload, blog-amdgpu-kernel-opt, pr-rocm_libraries-9480]
 reproducibility: snippet
 ---
 
@@ -122,6 +122,24 @@ for (int t = group_start; t < group_start + TILES_PER_GROUP && t < total; t++) {
 2. **Flash Attention**: Process variable-length sequences in one kernel
 3. **Grouped GEMM**: Variable M sizes across groups
 4. **Batch decoding**: Process multiple decode requests concurrently
+
+## Dense Attention Case Study
+
+`pr-rocm_libraries-9480` implements gfx950 dense causal prefill with a
+persistent grid-stride schedule. A bounded resident grid processes successive
+attention tiles rather than relying on one static workgroup per tile.
+
+The PR also changes K-tile padding, softmax exponential selection, partial
+`vmcnt` prefetch, MFMA priority, and output stores. It therefore supports two
+important interpretation rules:
+
+1. Persistence is a work-distribution mechanism, not a complete performance
+   explanation.
+2. A persistent kernel still needs resource control; the source reports 250
+   VGPRs and no spills for its BF16 D128 gfx950 path.
+
+The reported 940-970 TFLOPS range is source-reported on MI355X and must not be
+projected onto MI300X.
 
 ## CK Support
 

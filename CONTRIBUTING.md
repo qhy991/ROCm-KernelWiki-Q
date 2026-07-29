@@ -31,9 +31,17 @@ important rule: **wiki pages must connect back to the source layer.**
 
 ## Adding / refreshing source PRs
 
-See the *Data Refresh* section of `CLAUDE.md`. After `enrich_pr_pages.py`, always
-run `reclassify_pr_pages.py` so `kernel_types` / `languages` / `techniques` are
-populated from the changed-file paths (the original importer only read titles).
+Follow `PR_REFRESH_WORKFLOW.md`. Discovery output is not source content: inspect
+the PR body and changed files, apply the quality gate, then author an
+evidence-rich source page and update the relevant curated Wiki page. Never
+bulk-ingest search results. Record `base_branch` and `merge_commit`; if a PR
+merged to a feature branch, trace the later default-branch landing before
+describing it as shipped.
+
+For legacy generated pages, after `enrich_pr_pages.py` always run
+`reclassify_pr_pages.py` so `kernel_types` / `languages` / `techniques` are
+populated from changed-file paths. Do not use the legacy importer for new
+curated batches.
 
 ## CI
 

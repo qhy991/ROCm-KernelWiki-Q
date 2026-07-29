@@ -11,7 +11,7 @@
 - [[PR 4/7] Multi-arch ROCm kernel support with runtime optimization](../sources/prs/sglang/PR-27745.md) conf:source-reported arch:cdna3, cdna4
 - [[AMD] Fuse shared-expert sigmoid + bf16->fp32 cast into the MoE append kernel (3 kernels -> 1)](../sources/prs/sglang/PR-28658.md) conf:source-reported arch:cdna3, cdna4
 
-## attention (106 pages)
+## attention (112 pages)
 
 - [ROCm FlashAttention Performance Notes](../sources/blogs/flash-attention-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [ROCm Flash Attention Repository](../sources/docs/flash-attention-rocm.md) conf:verified arch:cdna2, cdna3, cdna4
@@ -81,6 +81,11 @@
 - [[ROCm] Enable native AsyncTP](../sources/prs/hipblaslt/PR-177961.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[CK_TILE] Add Tile Engine -> Dispatcher bridge for GEMM](../sources/prs/hipblaslt/PR-8123.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md) conf:source-reported arch:rdna4
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md) conf:source-reported arch:cdna4
+- [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md) conf:source-reported arch:cdna4
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md) conf:source-reported arch:cdna4
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md) conf:source-reported arch:cdna4
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md) conf:source-reported arch:cdna3
 - [[AIROCMLIR-798] Add LDS usage estimate CAPI function](../sources/prs/hipblaslt/PR-2400.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [[AMD/gfx950] FlyDSL kgather diagnostic backend for DSv4 sparse FP8 MLA decode](../sources/prs/hipblaslt/PR-13.md) conf:source-reported arch:cdna4
 - [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md) conf:source-reported arch:cdna4
@@ -99,6 +104,7 @@
 - [[Attention Backend] add HPC-Ops Attention backend](../sources/prs/vllm/PR-46020.md) conf:source-reported arch:cdna3, cdna4
 - [[Attention][DSA] support dcp for FLASHINFER_MLA_SPARSE](../sources/prs/vllm/PR-46076.md) conf:source-reported arch:cdna3, cdna4
 - [[ROCm][CI] Only require q_scale==1.0 for fp8 query in RocmAttention](../sources/prs/vllm/PR-46148.md) conf:source-reported arch:cdna3, cdna4
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md) conf:source-reported arch:cdna3
 - [Fix attention fp8 output fusion for split attention path in v1](../sources/prs/vllm/PR-569.md) conf:source-reported arch:cdna3
 - [[FEAT] Use `flash-attn` in ViT instead of `torch.sdpa`](../sources/prs/vllm/PR-610.md) conf:source-reported arch:cdna3
 - [[ROCm][Perf] Enable shuffle kv cache layout and assembly paged attention kernel for AiterFlashAttentionBackend](../sources/prs/vllm/PR-836.md) conf:source-reported arch:cdna3
@@ -224,7 +230,7 @@
 - [Memory-Bound Optimization Patterns](../wiki/patterns/memory-bound-optimization.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Scatter/Gather Memory Access Patterns](../wiki/patterns/scatter-gather.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## flash-attention (36 pages)
+## flash-attention (41 pages)
 
 - [Flash Attention on ROCm](../wiki/kernels/flash-attention-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Flash Decoding on ROCm](../wiki/kernels/flash-decoding-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
@@ -251,6 +257,11 @@
 - [[CK_TILE] Use Unified Workspace for FMHA BWD](../sources/prs/flash-attention/PR-182.md) conf:? arch:cdna3
 - [[CK_TILE] FMHA BWD: stream-async workspace prepare](../sources/prs/flash-attention/PR-183.md) conf:? arch:cdna3
 - [[CK DSL] gfx1250 unified attention, moe, topK, RopE kernel support.](../sources/prs/hipblaslt/PR-8609.md) conf:source-reported arch:rdna4
+- [feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path](../sources/prs/rocm-libraries/PR-9233.md) conf:source-reported arch:cdna4
+- [feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix](../sources/prs/rocm-libraries/PR-9260.md) conf:source-reported arch:cdna4
+- [perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch](../sources/prs/rocm-libraries/PR-9403.md) conf:source-reported arch:cdna4
+- [feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)](../sources/prs/rocm-libraries/PR-9480.md) conf:source-reported arch:cdna4
+- [perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring](../sources/prs/rocm-libraries/PR-9662.md) conf:source-reported arch:cdna3
 - [[AMD] Pack fp32->bf16 RTZ with v_perm_b32 to relieve VGPR pressure](../sources/prs/triton/PR-10592.md) conf:? arch:cdna4
 - [[ROCm] Faster Custom Paged Attention kernels](../sources/prs/vllm/PR-12348.md) conf:source-reported arch:cdna3
 - [Non-Temporal Store (L2 Cache Bypass)](../wiki/techniques/buffer-store-nt.md) conf:source-reported arch:cdna1, cdna2, cdna3, cdna4
@@ -742,9 +753,12 @@
 - [VGPR 压力与占用率权衡 (VGPR Pressure & Occupancy Tradeoffs)](../wiki/techniques/vgpr-pressure.md) conf:source-reported arch:cdna2, cdna3, cdna4
 - [Cross-Lane Communication with DPP (Warp Shuffle Equivalent)](../wiki/techniques/warp-shuffle-dpp.md) conf:source-reported arch:cdna2, cdna3, cdna4
 
-## sparse-attention (4 pages)
+## sparse-attention (7 pages)
 
+- [Flash Decoding on ROCm](../wiki/kernels/flash-decoding-rocm.md) conf:source-reported arch:cdna2, cdna3, cdna4
+- [Multi-Head Latent Attention (MLA) on ROCm](../wiki/kernels/mla-attention-rocm.md) conf:source-reported arch:cdna2, cdna3
 - [[CK_TILE] Sparge attention](../sources/prs/composable_kernel/PR-3727.md) conf:source-reported arch:cdna3, cdna4
 - [[minimax-m3] Split 1/4: sparse attention ops + JIT kernels + config foundation](../sources/prs/sglang/PR-28712.md) conf:source-reported arch:cdna4
 - [[minimax-m3] Split 4/4: model + VL + glue + function-call + fp8 quant + generic infra](../sources/prs/sglang/PR-28715.md) conf:source-reported arch:cdna3, cdna4
 - [[Attention][DSA] support dcp for FLASHINFER_MLA_SPARSE](../sources/prs/vllm/PR-46076.md) conf:source-reported arch:cdna3, cdna4
+- [[ROCm][Perf][DSV4] Enable split sparse decode on gfx942](../sources/prs/vllm/PR-46275.md) conf:source-reported arch:cdna3

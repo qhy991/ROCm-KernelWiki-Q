@@ -1,0 +1,4 @@
+# Incremental quality budget. Lower this number when warning debt is removed;
+# do not raise it to admit new warnings.
+validation:
+  max_warnings: 195

@@ -314,6 +314,10 @@ languages:
 - yaml
 tracked_repos:
 - org: ROCm
+  name: rocm-libraries
+  description: ROCm libraries monorepo, including CK, hipBLASLt, MIOpen, and rocKE
+  url: https://github.com/ROCm/rocm-libraries
+- org: ROCm
   name: composable_kernel
   description: Composable Kernel library
   url: https://github.com/ROCm/composable_kernel

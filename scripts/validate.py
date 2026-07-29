@@ -13,9 +13,10 @@ Checks (ERROR = fails the build, WARN = should be cleaned up):
          unresolved performance_claims source_id
 
 Usage:
-    python3 scripts/validate.py            # report; exit non-zero only on ERRORs
+    python3 scripts/validate.py            # fail on ERRORs or warning-budget regressions
     python3 scripts/validate.py --strict   # exit non-zero on ERRORs or WARNs
-    python3 scripts/validate.py --quiet     # only print the summary
+    python3 scripts/validate.py --strict path/to/page.md [...]
+    python3 scripts/validate.py --quiet    # only print the summary
 """
 
 import argparse
@@ -160,7 +161,7 @@ def validate_page(filepath, schemas, vocab, all_ids):
         warn(f"url does not look like a link: {url!r}")
 
     # link integrity (WARN)
-    for field in ["sources", "related"]:
+    for field in ["sources", "related", "landed_via"]:
         for ref in _as_list(fm.get(field)):
             if ref not in all_ids:
                 warn(f"{field}: unresolved reference {ref!r}")
@@ -171,6 +172,14 @@ def validate_page(filepath, schemas, vocab, all_ids):
             warn("source-pr has empty kernel_types AND languages (un-retrievable by those indices)")
         if sorted(_as_list(fm.get("architectures"))) == DEFAULT_ARCH_TRIPLE:
             warn("source-pr still on default [cdna2,cdna3,cdna4] arch triple")
+        if str(fm.get("captured_at", "")) >= "2026-07-29":
+            if not fm.get("base_branch"):
+                warn("new source-pr is missing base_branch")
+            if fm.get("status") == "merged" and not fm.get("merge_commit"):
+                warn("new merged source-pr is missing merge_commit")
+        merge_commit = str(fm.get("merge_commit", ""))
+        if merge_commit and not re.fullmatch(r"[0-9a-f]{40}", merge_commit):
+            warn("merge_commit is not a 40-character lowercase hex SHA")
 
     # performance_claims structure (ERROR) + source_id resolution (WARN)
     if page_type == "wiki-kernel":
@@ -189,37 +198,66 @@ def main():
     parser = argparse.ArgumentParser(description="Validate ROCm-KernelWiki-Q pages")
     parser.add_argument("--strict", action="store_true", help="exit non-zero on warnings too")
     parser.add_argument("--quiet", action="store_true", help="only print the summary")
+    parser.add_argument("paths", nargs="*", help="optional Wiki/source pages to validate")
     args = parser.parse_args()
 
     schemas = load_yaml(DATA_DIR / "schemas.yaml")
     vocab = build_vocab(load_yaml(DATA_DIR / "tags.yaml"))
+    quality_baseline = load_yaml(DATA_DIR / "quality-baseline.yaml")
+    max_warnings = quality_baseline.get("validation", {}).get("max_warnings")
     all_ids = collect_all_ids()
 
     total_errors = total_warnings = total_pages = 0
 
-    for dir_path in [WIKI_DIR, SOURCES_DIR]:
-        if not dir_path.exists():
-            continue
-        for md_file in sorted(dir_path.rglob("*.md")):
-            total_pages += 1
-            errors, warnings = validate_page(md_file, schemas, vocab, all_ids)
-            rel = md_file.relative_to(ROOT)
-            if not args.quiet:
-                for e in errors:
-                    print(f"  ERROR  {rel}: {e}")
-                for w in warnings:
-                    print(f"  WARN   {rel}: {w}")
-            total_errors += len(errors)
-            total_warnings += len(warnings)
+    if args.paths:
+        pages = []
+        for value in args.paths:
+            path = Path(value)
+            if not path.is_absolute():
+                path = ROOT / path
+            try:
+                path.relative_to(ROOT)
+            except ValueError:
+                parser.error(f"path is outside the repository: {value}")
+            if not path.is_file() or path.suffix != ".md":
+                parser.error(f"not a Markdown page: {value}")
+            pages.append(path)
+    else:
+        pages = [
+            md_file
+            for dir_path in [WIKI_DIR, SOURCES_DIR]
+            if dir_path.exists()
+            for md_file in sorted(dir_path.rglob("*.md"))
+        ]
+
+    for md_file in pages:
+        total_pages += 1
+        errors, warnings = validate_page(md_file, schemas, vocab, all_ids)
+        rel = md_file.relative_to(ROOT)
+        if not args.quiet:
+            for e in errors:
+                print(f"  ERROR  {rel}: {e}")
+            for w in warnings:
+                print(f"  WARN   {rel}: {w}")
+        total_errors += len(errors)
+        total_warnings += len(warnings)
 
     print(f"\n{'='*60}")
     print(f"Validated: {total_pages} pages")
     print(f"Errors:    {total_errors}")
     print(f"Warnings:  {total_warnings}")
+    if max_warnings is not None:
+        print(f"Budget:    {max_warnings} warnings")
     print(f"Known IDs: {len(all_ids)}")
     print(f"{'='*60}")
 
     if total_errors > 0:
+        return 1
+    if max_warnings is not None and total_warnings > int(max_warnings):
+        print(
+            f"Warning budget exceeded: {total_warnings} > {max_warnings}",
+            file=sys.stderr,
+        )
         return 1
     if args.strict and total_warnings > 0:
         return 1
