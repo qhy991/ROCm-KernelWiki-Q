@@ -61,6 +61,18 @@ python3 scripts/reclassify_pr_pages.py
 python3 scripts/repair_pr_pages.py
 ```
 
+For a repeatable, quality-gated GitHub refresh, follow
+[PR_REFRESH_WORKFLOW.md](PR_REFRESH_WORKFLOW.md). Candidate discovery is
+separate from ingestion:
+
+```bash
+python3 scripts/discover_pr_candidates.py \
+  --repo ROCm/rocm-libraries \
+  --repo vllm-project/vllm \
+  --until YYYY-MM-DD \
+  --output candidates/PR-CANDIDATES-$(date +%F).md
+```
+
 ## Page Types
 
 | Type | ID Prefix | Purpose |

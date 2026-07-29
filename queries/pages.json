@@ -802,11 +802,13 @@
    "inference",
    "optimization",
    "memory-bound",
-   "mi300x"
+   "mi300x",
+   "sparse-attention"
   ],
   "kernel_types": [
    "attention",
    "flash-attention",
+   "sparse-attention",
    "reduction"
   ],
   "languages": [
@@ -1105,15 +1107,18 @@
   ],
   "tags": [
    "attention",
+   "sparse-attention",
    "llm",
    "kv-cache",
-   "memory-bound"
+   "memory-bound",
+   "mi300x"
   ],
   "kernel_types": [
-   "attention"
+   "attention",
+   "sparse-attention"
   ],
   "languages": [
-   "triton",
+   "triton-rocm",
    "hip-cpp"
   ],
   "confidence": "source-reported",
@@ -9405,6 +9410,148 @@
   "summary": "Replaces a large Navi31 BBS Tensile logic YAML region to improve TN GEMM performance for Llama-3.1-8B-Instruct problem sizes."
  },
  {
+  "id": "pr-rocm_libraries-9233",
+  "type": "source-pr",
+  "title": "feat(rocke): D256 gfx950 bf16 prefill 32x32 + softmax-MFMA interleave fast path",
+  "path": "sources/prs/rocm-libraries/PR-9233.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "optimization",
+   "performance",
+   "gfx950",
+   "scheduling",
+   "runtime-dispatch",
+   "stride-padding"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "python",
+   "cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Routes batch-1 gfx950 D256 BF16 causal prefill to a 32x32 transposed, softmax-MFMA-interleaved path."
+ },
+ {
+  "id": "pr-rocm_libraries-9260",
+  "type": "source-pr",
+  "title": "feat(rocke): gfx950 slab-granularity K_lds pad bank conflict fix",
+  "path": "sources/prs/rocm-libraries/PR-9260.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "optimization",
+   "performance",
+   "gfx950",
+   "memory",
+   "stride-padding"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Pads between two-row K LDS slabs, preserving DMA continuity while reducing bank conflicts for gfx950 D256 attention."
+ },
+ {
+  "id": "pr-rocm_libraries-9403",
+  "type": "source-pr",
+  "title": "perf(rocke): gfx950 d128 prefill softmax-MFMA interleave + nw=4 dispatch",
+  "path": "sources/prs/rocm-libraries/PR-9403.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "optimization",
+   "performance",
+   "gfx950",
+   "occupancy",
+   "scheduling",
+   "vgpr"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "python",
+   "cpp"
+  ],
+  "confidence": "source-reported",
+  "summary": "Raises gfx950 D128 prefill occupancy by switching from two to four waves and interleaving softmax with MFMA."
+ },
+ {
+  "id": "pr-rocm_libraries-9480",
+  "type": "source-pr",
+  "title": "feat(rocke): gfx950 dense flash-attn prefill (~940-970 TFLOPS)",
+  "path": "sources/prs/rocm-libraries/PR-9480.md",
+  "architectures": [
+   "cdna4"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "optimization",
+   "performance",
+   "gfx950",
+   "inference",
+   "llm",
+   "pipeline"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "python",
+   "cpp",
+   "llvm-ir"
+  ],
+  "confidence": "source-reported",
+  "summary": "Introduces a persistent gfx950 dense prefill kernel reporting roughly 940-970 TFLOPS for BF16 D128 MI355X shapes."
+ },
+ {
+  "id": "pr-rocm_libraries-9662",
+  "type": "source-pr",
+  "title": "perf(rocke/attention): recover fp16 gfx942 D128 prefill via depth-2 sliced-K ring",
+  "path": "sources/prs/rocm-libraries/PR-9662.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "rocm",
+   "flash-attention",
+   "optimization",
+   "performance",
+   "mi300x",
+   "pipeline",
+   "testing"
+  ],
+  "kernel_types": [
+   "attention",
+   "flash-attention"
+  ],
+  "languages": [
+   "python"
+  ],
+  "confidence": "source-reported",
+  "summary": "Uses a depth-2 sliced-K ring and an unconditional drain-on-reuse fence to recover FP16 D128 prefill performance on MI300X without the prior LDS overwrite bug."
+ },
+ {
   "id": "pr-rocmlir-2400",
   "type": "source-pr",
   "title": "[AIROCMLIR-798] Add LDS usage estimate CAPI function",
@@ -11776,6 +11923,36 @@
   ],
   "confidence": "source-reported",
   "summary": "Narrows the ROCm attention q_scale assertion so non-1.0 q_scale is rejected only when the query tensor itself is FP8, avoiding false failures for BF16-query att"
+ },
+ {
+  "id": "pr-vllm-46275",
+  "type": "source-pr",
+  "title": "[ROCm][Perf][DSV4] Enable split sparse decode on gfx942",
+  "path": "sources/prs/vllm/PR-46275.md",
+  "architectures": [
+   "cdna3"
+  ],
+  "tags": [
+   "rocm",
+   "vllm",
+   "sparse-attention",
+   "performance",
+   "mi300x",
+   "inference",
+   "llm",
+   "aiter",
+   "triton"
+  ],
+  "kernel_types": [
+   "attention",
+   "sparse-attention"
+  ],
+  "languages": [
+   "python",
+   "triton-rocm"
+  ],
+  "confidence": "source-reported",
+  "summary": "Routes DeepSeek-V4 sparse MLA decode on gfx942 from a monolithic ragged kernel to split partial and reduction kernels."
  },
  {
   "id": "pr-vllm-569",

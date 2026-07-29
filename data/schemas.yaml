@@ -26,6 +26,10 @@ page_types:
       - kernel_types
       - languages
       - aliases
+      - base_branch
+      - merge_commit
+      - landed_via
+      - upstream_landed_at
 
   source-doc:
     id_prefix: "doc-"

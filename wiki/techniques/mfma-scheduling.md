@@ -9,7 +9,7 @@ techniques: [mfma-scheduling]
 hardware_features: [mfma, dual-cma]
 kernel_types: [gemm, attention]
 related: [hw-mfma-matrix-core, technique-ck-tile-programming]
-sources: [blog-matrix-cores-cdna, doc-cdna4-isa]
+sources: [blog-matrix-cores-cdna, doc-cdna4-isa, pr-rocm_libraries-9403]
 reproducibility: snippet
 ---
 
@@ -39,6 +39,26 @@ __syncthreads();
 ## When to Use CK Instead
 
 For production GEMM/attention, CK Tile pipelines already encode MFMA scheduling, double buffering, and epilogue fusion. Manual scheduling is best for small fused kernels or research prototypes.
+
+## Interleave Scheduling With Launch Geometry
+
+`pr-rocm_libraries-9403` is a concrete gfx950 attention example where
+instruction order and launch geometry are coupled. The targeted D128 prefill
+path interleaves online-softmax operations with MFMA and changes dispatch from
+two to four waves.
+
+The source reports:
+
+- VGPR use decreasing from 296 to 250;
+- AGPR use decreasing from 40 to 0;
+- resident waves increasing from four to eight per CU;
+- occupancy increasing from 11.8% to 23.5%;
+- S8192 throughput increasing from 333.9 to 440.7 TFLOPS.
+
+The reusable lesson is not "always use four waves." Moving independent scalar
+or vector work into MFMA latency slots can alter the register live range, which
+then changes the viable wave count. Re-evaluate both together for each shape
+selector.
 
 ## Related
 

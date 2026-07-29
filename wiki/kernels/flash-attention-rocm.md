@@ -7,8 +7,8 @@ tags: [attention, flash-attention, mfma, lds, dpp]
 confidence: source-reported
 kernel_types: [attention, flash-attention]
 languages: [hip-cpp, ck-dsl, triton-rocm, python]
-techniques: [ck-tile-programming, mfma-scheduling, double-buffering, occupancy-tuning]
-hardware_features: [mfma, lds, dpp, wavefront]
+techniques: [ck-tile-programming, mfma-scheduling, double-buffering, occupancy-tuning, persistent-kernel, bank-conflict-padding, async-copy]
+hardware_features: [mfma, lds, dpp, wavefront, vgpr]
 related:
   - hw-mfma-matrix-core
   - hw-lds
@@ -21,13 +21,16 @@ sources:
   - blog-matrix-cores-cdna
   - doc-flash-attention-rocm
   - blog-flash-attention-rocm
-  - pr-flash-attention-157
   - pr-flash-attention-179
-  - pr-flash-attention-181
-  - pr-flash-attention-182
-  - pr-flash-attention-183
+  - pr-flash-attention-rocm-182
+  - pr-flash-attention-rocm-183
   - pr-flash-attention-178
   - pr-flash-attention-184
+  - pr-rocm_libraries-9260
+  - pr-rocm_libraries-9233
+  - pr-rocm_libraries-9403
+  - pr-rocm_libraries-9480
+  - pr-rocm_libraries-9662
 performance_claims:
   - gpu: MI300X
     dtype: fp16
@@ -165,15 +168,33 @@ max_val = fmax(max_val, __shfl_xor(max_val, 1));
 3. **KV cache layout**: Use paged KV cache (vLLM) for variable-length sequences
 4. **FP8 on CDNA3+**: Use `v_mfma_f32_*_fp8_*` for KV cache in FP8
 
+## rocKE Prefill Scheduling Evidence
+
+Recent `ROCm/rocm-libraries` PRs expose how attention performance emerges from
+the interaction of LDS layout, launch geometry, instruction scheduling, and
+tile assignment:
+
+| Evidence | Architecture | Reusable lesson |
+|---|---|---|
+| `pr-rocm_libraries-9260` | gfx950 | Pad at the asynchronous-DMA slab granularity, not blindly per row; this change first merged to a feature branch. |
+| `pr-rocm_libraries-9233` | gfx950 | Landed the #9260 padding on `develop` together with a 32x32 transposed, softmax-MFMA-interleaved D256 route; launch selectors, cache keys, and codegen flags must agree. |
+| `pr-rocm_libraries-9403` | gfx950 | Interleaving online softmax with MFMA and moving from two to four waves reduced register pressure and doubled resident waves for the targeted D128 path. |
+| `pr-rocm_libraries-9480` | gfx950 | Persistent grid-stride scheduling was combined with K padding, partial-`vmcnt` prefetch, native exponential, MFMA scheduling, and vector output stores in a dense prefill kernel. |
+| `pr-rocm_libraries-9662` | gfx942 | A sliced-K ring needs an explicit LDS-slot lifetime model. Depth 2 plus drain-on-reuse fencing restored FP16 D128 performance without the prior overwrite bug. |
+
+These are architecture- and shape-specific implementations, not a universal
+parameter table. In particular, the depth-2 ring applies to FP16 D128 on
+gfx942; BF16 D128 remains non-ring in that selector. The gfx950 throughput
+claims cannot be reproduced on a gfx942 node.
+
 ## CK Tile Backward Workspace Evolution
 
 The ROCm FlashAttention backward path has a second performance surface outside the MFMA loop: workspace ownership and host/device synchronization. Recent CK Tile PRs show a staged migration:
 
 | Evidence | Lesson |
 |----------|--------|
-| `pr-flash-attention-181` | Small CK submodule/API changes can require host-wrapper argument updates such as `sink_ptr` and `d_sink_ptr`. |
-| `pr-flash-attention-182` | The backward wrapper moved to CK's unified workspace API, replacing explicit `dq_acc` tensor plumbing with workspace-size, prepare, and launcher calls. |
-| `pr-flash-attention-183` | Workspace preparation became stream-async to avoid a host-blocking `cu_seqlens.cpu()` style synchronization in group-mode backward. |
+| `pr-flash-attention-rocm-182` | The backward wrapper moved to CK's unified workspace API, replacing explicit `dq_acc` tensor plumbing with workspace-size, prepare, and launcher calls. |
+| `pr-flash-attention-rocm-183` | Workspace preparation became stream-async to avoid a host-blocking `cu_seqlens.cpu()` style synchronization in group-mode backward. |
 
 For profiling, this means a slow FMHA backward step may not be caused by MFMA occupancy. Check whether the wrapper allocates, copies, or prepares sequence metadata on the host path before tuning tile sizes.
 
@@ -188,13 +209,16 @@ Architecture gating is another recurring theme. `pr-flash-attention-178` enabled
 | Evidence | What it contributes |
 |----------|---------------------|
 | `blog-flash-attention-rocm` | Baseline ROCm FlashAttention performance and backend context |
-| `pr-flash-attention-157` | FlashAttention v3 enablement with FP8 and paged-attention paths |
 | `pr-flash-attention-179` | FMHA backward `seq_q=0` NaN edge-case fix |
-| `pr-flash-attention-181` | CK submodule and `fmha_bwd_args` compatibility update |
-| `pr-flash-attention-182` | Unified workspace API migration for FMHA backward |
-| `pr-flash-attention-183` | Stream-async workspace preparation for FMHA backward |
+| `pr-flash-attention-rocm-182` | Unified workspace API migration for FMHA backward |
+| `pr-flash-attention-rocm-183` | Stream-async workspace preparation for FMHA backward |
 | `pr-flash-attention-178` | RDNA gfx11/gfx12 build support with backward guards |
 | `pr-flash-attention-184` | Open RDNA backward enablement after CK update |
+| `pr-rocm_libraries-9260` | Feature-branch introduction of slab-granularity K LDS padding for gfx950 D256 prefill |
+| `pr-rocm_libraries-9233` | Upstream `develop` landing of the D256 route and #9260 padding |
+| `pr-rocm_libraries-9403` | gfx950 D128 softmax-MFMA interleave and four-wave dispatch |
+| `pr-rocm_libraries-9480` | Persistent gfx950 dense prefill implementation |
+| `pr-rocm_libraries-9662` | Correct depth-2 sliced-K ring for gfx942 FP16 D128 |
 
 ## References
 

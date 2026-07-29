@@ -3,12 +3,12 @@ id: kernel-mla-attention
 title: Multi-Head Latent Attention (MLA) on ROCm
 type: wiki-kernel
 architectures: [cdna2, cdna3]
-tags: [attention, llm, kv-cache, memory-bound]
+tags: [attention, sparse-attention, llm, kv-cache, memory-bound, mi300x]
 confidence: source-reported
-kernel_types: [attention]
-languages: [triton, hip-cpp]
-related: [kernel-flash-attention, technique-mfma-gemm]
-sources: []
+kernel_types: [attention, sparse-attention]
+languages: [triton-rocm, hip-cpp]
+related: [kernel-flash-attention-rocm, kernel-flash-decoding-rocm, technique-mfma-scheduling]
+sources: [pr-vllm-46275]
 reproducibility: snippet
 ---
 
@@ -112,15 +112,27 @@ def mla_decode_kernel(
     tl.store(Out_ptr + pid * latent_dim + tl.arange(0, latent_dim), acc)
 ```
 
-## Performance on AMD Architectures
+## Split Sparse Decode on MI300X
 
-By utilizing weight absorption and reducing the KV cache footprint, MLA shifts decoding from the memory bandwidth bounds into the compute bounds. On MI300X, which boasts 1.3 PFLOPS of FP16/BF16 compute alongside 5.3 TB/s memory bandwidth, the absorbed MLA performs exceptionally well and maintains high utilization.
+`pr-vllm-46275` provides a source-backed DeepSeek-V4 sparse MLA decode case.
+The existing gfx950 partial-plus-reduce Triton path was enabled for gfx942,
+replacing a monolithic ragged-decode fallback.
 
-| Architecture | Model Configuration | KV Cache Size (10k tokens) | Decode Throughput (Tokens/s) | Speedup vs MHA |
-|--------------|---------------------|---------------------------|------------------------------|----------------|
-| **MI300X**   | 71B (MHA baseline)  | ~3200 MB                  | 48                           | 1.0x           |
-| **MI300X**   | 71B (MLA, $d_c=512$)| ~115 MB                   | 135                          | **2.81x**      |
-| **MI250X**   | 71B (MHA baseline)  | ~3200 MB                  | 22                           | 1.0x           |
-| **MI250X**   | 71B (MLA, $d_c=512$)| ~115 MB                   | 61                           | **2.77x**      |
+With `MAIN_LEN=80`, `EXTRA_LEN=32`, and production cache packing on MI300X,
+the source reports:
 
-*Note: Performance numbers are representative of large batch decoding scenarios where MHA is strictly limited by memory bandwidth to fetch the KV cache, while MLA comfortably fits in cache/bandwidth limits and utilizes MFMA pipelines more effectively.*
+| Queries | Ragged fallback | Split partial + reduce | Improvement |
+|---:|---:|---:|---:|
+| 1 | 42.754 us | 22.836 us | 46.59% |
+| 8 | 42.260 us | 23.088 us | 45.37% |
+| 32 | 42.547 us | 24.490 us | 42.44% |
+| 128 | 43.463 us | 34.121 us | 21.49% |
+
+Profiler time attributed to sparse decode decreases by 39.58% in the reported
+high-throughput run. End-to-end impact is smaller and workload-dependent: warm
+high-throughput output throughput is near parity, while the low-rate
+decode-heavy test reports about 4.5% lower warm TPOT.
+
+The PR reports 41 gfx942 kernel tests passing, maximum absolute difference no
+larger than `2.44e-4`, and unchanged GSM8K limit-20 scores on an 8x MI300X
+DeepSeek-V4-Flash serving check.
